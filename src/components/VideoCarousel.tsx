@@ -92,7 +92,7 @@ const VideoCarousel = () => {
             className="w-full h-full bg-transparent"
             style={{
               clipPath: window.innerWidth < 768 
-                ? 'polygon(0% 85%, 100% 0%, 100% 100%, 0% 100%)' 
+                ? 'polygon(-375% 85%, 100% 20%, 100% 100%, 0% 100%)' 
                 : 'polygon(0% 90%, 100% 0%, 100% 100%, 0% 100%)'
             }}
           >
