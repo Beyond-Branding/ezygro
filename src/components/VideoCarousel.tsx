@@ -74,7 +74,7 @@ const VideoCarousel = () => {
     };
   }, []);
 
-  const handleDotClick = (index: number) => {
+  const handleDotClick = (index) => {
     setCurrentVideo(index);
     setProgress(0); // Reset progress when manually changing video
     // Reset and re-trigger animations for both texts on dot click
@@ -634,7 +634,7 @@ const IndustriesSection = () => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
-  const goToSlide = (slideIndex: number) => {
+  const goToSlide = (slideIndex) => {
     setCurrentSlide(slideIndex);
   };
 
@@ -656,7 +656,7 @@ const IndustriesSection = () => {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
               Industries
             </h2>
-           
+            
             {/* Navigation Arrows */}
             <div className="flex items-center gap-4">
               <button
@@ -702,7 +702,7 @@ const IndustriesSection = () => {
                 <div className="flex justify-center mb-6">
                   {industry.icon}
                 </div>
-               
+                
                 {/* Title */}
                 <h3 className="text-xl font-semibold text-gray-900 group-hover:text-red-500 transition-colors duration-300">
                   {industry.title}
@@ -736,6 +736,122 @@ const IndustriesSection = () => {
   );
 };
 
+// MODIFIED: Sustainability Section 
+const SustainabilitySection = () => {
+    const [contentVisible, setContentVisible] = useState(false);
+    const [translateY, setTranslateY] = useState(0);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setContentVisible(true);
+        }, 300);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sectionElement = document.getElementById('sustainability');
+            if (!sectionElement) return;
+
+            const rect = sectionElement.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            if (rect.top < viewportHeight && rect.bottom > 0) {
+                const scrollProgress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+                const maxMove = 60; 
+                const newTranslateY = scrollProgress * maxMove;
+                setTranslateY(Math.min(maxMove, Math.max(0, newTranslateY)));
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); 
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
+        <section id="sustainability" className="relative min-h-screen bg-gray-50 overflow-hidden">
+            {/* Background container with updated clipPath */}
+            <div className="absolute inset-0">
+                <div className="absolute right-0 top-0 w-full h-full">
+                    <div
+                        className="w-full h-full"
+                        style={{
+                            // Updated clipPath as per your request
+                            clipPath: 'polygon(10% 90%, 100% 0%, 100% 100%, 0% 100%)'
+                        }}
+                    >
+                        <img
+                            // Updated image source and position
+                            src="https://insights.techmahindra.com/styles/de2e/s3/images/sustainabilityhompage.jpg"
+                            alt="Sustainability - green leaves"
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: '100% 65%' }}
+                        />
+                        {/* A subtle overlay to make text more readable if needed */}
+                        <div className="absolute inset-0 bg-black/10"></div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Content Container */}
+            <div className="relative z-10 min-h-screen flex items-center py-16">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+                        {/* Left Content - Animated Black Box (Made smaller) */}
+                        <div
+                            className="relative"
+                            style={{
+                                transform: `translateY(${translateY}px)`,
+                                transition: 'transform 0.2s linear'
+                            }}
+                        >
+                            <div className="bg-black px-8 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-16 text-white max-w-md">
+                                <div
+                                    className={`space-y-5 transition-all duration-1000 ease-out ${
+                                        contentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                                    }`}
+                                >
+                                    <div>
+                                        <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
+                                            Towards a<br />
+                                            Sustainable Future
+                                        </h1>
+                                        
+                                        <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6">
+                                            Learn how we maintain a balance between sustainability and overall business profitability.
+                                        </p>
+                                    </div>
+
+                                    <button className="group inline-flex items-center px-5 py-2.5 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-all duration-300">
+                                        <span className="tracking-wider">OUR SUSTAINABILITY EFFORTS</span>
+                                        <svg
+                                            className="ml-2.5 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right side - Empty space */}
+                        <div className="hidden lg:block"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+
 // Main App component to render all sections
 function App() {
   const scrollToTop = () => {
@@ -744,7 +860,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* Existing Sections - Reordered to put Industries last */}
+      {/* Existing Sections */}
       <VideoCarousel />
       <CapabilitiesSection />
       <TechMahindraSection />
@@ -758,7 +874,6 @@ function App() {
             alt="Background"
             className="w-full h-full object-cover opacity-30"
           />
-          {/* Optional: Gradient Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
         </div>
 
@@ -766,15 +881,13 @@ function App() {
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between h-full px-4 sm:px-6 lg:px-8 py-8 sm:py-16 mx-auto max-w-7xl">
           {/* Left Text Content */}
           <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0 lg:mr-8 text-white">
-            {/* Logo */}
-            <div className="mb-4"> {/* Increased bottom margin for the logo to create space */}
+            <div className="mb-4">
               <img
                 src="https://insights.techmahindra.com/images/thebig-thinkerslogo.webp"
                 alt="The Big Thinkers Logo"
                 className="h-8 sm:h-10 mx-auto lg:mx-0"
               />
             </div>
-            {/* Horizontal Line 1 */}
             <div className="h-0.5 w-16 bg-white mb-4 mx-auto lg:mx-0"></div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight mb-4">
@@ -784,7 +897,6 @@ function App() {
             <p className="text-md sm:text-lg mb-2">
               Kellie Romack
             </p>
-            {/* Horizontal Line 2 - Added this line */}
             <div className="h-0.5 w-16 bg-white mb-4 mx-auto lg:mx-0"></div>
             <p className="text-sm sm:text-base text-gray-300 mb-8">
               Chief Digital Information Officer, ServiceNow
@@ -794,7 +906,7 @@ function App() {
             </button>
           </div>
 
-          {/* Right Image (Placeholder for the person's image) */}
+          {/* Right Image */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <img
               src="https://insights.techmahindra.com/images/kellieromack-gbg.webp"
@@ -806,8 +918,11 @@ function App() {
         </div>
       </section>
 
-      {/* Industries Section - Moved to last position */}
+      {/* Industries Section */}
       <IndustriesSection />
+
+      {/* Sustainability Section */}
+      <SustainabilitySection />
 
       {/* Global Scroll to Top Button */}
       <button
