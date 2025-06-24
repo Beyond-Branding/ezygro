@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronUp, ChevronLeft, ChevronRight, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 
 const VideoCarousel = () => {
@@ -124,10 +124,8 @@ const VideoCarousel = () => {
       <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         {/* Left content: Scale at Speed */}
-        {/* Adjusted top positioning for smaller screens, and width to span full width on small screens */}
         <div className="absolute top-8 sm:top-16 left-0 w-full lg:w-1/2 pr-0 lg:pr-6">
           {/* Animated Scale at Speed Text */}
-          {/* Responsive font sizes */}
           <h1
             className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight transition-all duration-700 ease-out ${
               scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
@@ -142,7 +140,6 @@ const VideoCarousel = () => {
               promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
-            {/* Responsive text sizes */}
             <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-800 leading-relaxed">
               Our promise to help enterprises across industries transform at speed,
             </p>
@@ -153,9 +150,7 @@ const VideoCarousel = () => {
         </div>
 
         {/* Right content: Video Title & Button (positioned directly on video) */}
-        {/* Adjusted bottom positioning for smaller screens, and width to span full width on small screens */}
         <div className="absolute bottom-8 sm:bottom-16 right-0 w-full lg:w-1/2 pl-0 lg:pl-6 text-white text-left sm:text-right"> {/* Changed text-right to text-left on small screens */}
-          {/* Responsive font sizes */}
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight mb-4 sm:mb-6">
             {videos[currentVideo].title}
           </h2>
@@ -189,7 +184,6 @@ const VideoCarousel = () => {
           ))}
         </div>
         
-        {/* Red Progress Bar */}
         <div className="w-full bg-gray-600/30 h-0.5 rounded-full overflow-hidden">
           <div 
             className="h-full bg-red-600 transition-all duration-75 ease-linear rounded-full"
@@ -207,95 +201,88 @@ const CapabilitiesSection = () => {
       title: "Artificial Intelligence",
       description: "Amplify your business with TechM by infusing AI in every aspect of your business, democratizing AI responsibly.",
       link: "https://www.techmahindra.com/services/artificial-intelligence/",
-      imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" // AI/Robot face
+      imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Business Process Services",
       description: null,
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" // Business meeting
+      imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Cloud and Infrastructure Services",
       description: null,
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" // Cloud computing
+      imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Digital Enterprise Applications",
       description: null,
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" // Digital applications
+      imageUrl: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Engineering Services",
       description: null,
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" // Engineering/machinery
+      imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Experience Services",
       description: null,
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" // User experience
+      imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Network Services",
       description: null,
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" // Network connections
+      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Testing Services",
       description: null,
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" // Software testing
+      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
   ];
 
   return (
-    <section className="bg-white py-10 sm:py-16 px-4 sm:px-6 lg:px-8"> {/* Adjusted vertical padding */}
+    <section className="bg-white py-10 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Capabilities Header - Adjusted for side-by-side layout */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-12 gap-4 sm:gap-8"> {/* Adjusted margin-bottom and gap */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 lg:w-1/3"> {/* Responsive font sizes */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-12 gap-4 sm:gap-8">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 lg:w-1/3">
             Capabilities
           </h2>
-          <p className="text-base sm:text-lg text-gray-700 lg:w-2/3 lg:text-right leading-relaxed"> {/* Responsive font sizes */}
+          <p className="text-base sm:text-lg text-gray-700 lg:w-2/3 lg:text-right leading-relaxed">
             We offer a wide range of digital solutions and best-in-class platforms to deliver meaningful outcomes, enhance
             customer experiences, and transform industries at scale and with unparalleled speed.
           </p>
         </div>
 
-        {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"> {/* Adjusted gap */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {capabilities.map((capability, index) => (
             <div
               key={index}
               className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] rounded-lg cursor-pointer border border-gray-200"
             >
-              {/* Background Image */}
               <div className="absolute inset-0">
                 <img
                   src={capability.imageUrl}
                   alt={`${capability.title} Visual`}
                   className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out"
                 />
-                {/* Dark overlay for better text readability */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
               </div>
 
-              {/* Content - Title at top, Description centered on hover */}
-              <div className="relative z-10 p-4 sm:p-6 h-full flex flex-col text-center"> {/* Adjusted padding */}
-                {/* Title - Always at the top */}
-                <h3 className="text-lg sm:text-xl font-bold leading-tight text-white mb-1 sm:mb-2"> {/* Responsive font sizes */}
+              <div className="relative z-10 p-4 sm:p-6 h-full flex flex-col text-center">
+                <h3 className="text-lg sm:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
                   {capability.title}
                 </h3>
 
-                {/* Description - Appears centered on hover */}
                 {capability.description && (
-                  <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6"> {/* Adjusted padding */}
-                    <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"> {/* Responsive font sizes */}
+                  <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
+                    <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                       {capability.description}
                     </p>
                   </div>
@@ -309,10 +296,9 @@ const CapabilitiesSection = () => {
   );
 };
 
-// New Tech Mahindra Brand Section
 const TechMahindraSection = () => {
   const [textVisible, setTextVisible] = useState(false);
-  const [boxTranslateY, setBoxTranslateY] = useState(0); // Renamed scrollY to boxTranslateY for clarity
+  const [boxTranslateY, setBoxTranslateY] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -336,7 +322,7 @@ const TechMahindraSection = () => {
 
       const currentScrollY = window.scrollY;
 
-      const maxUpwardTranslate = -200; // Adjust this value to control how much it moves up
+      const maxUpwardTranslate = -200;
 
       if (currentScrollY > startScrollY && currentScrollY < endScrollY) {
         const scrollProgress = (currentScrollY - startScrollY) / (endScrollY - startScrollY);
@@ -357,7 +343,6 @@ const TechMahindraSection = () => {
 
   return (
     <section id="techmahindra" className="relative min-h-screen bg-gray-50 overflow-hidden">
-      {/* Background with diagonal video section */}
       <div className="absolute inset-0">
         <div className="absolute right-0 top-0 w-full h-full">
           <div
@@ -366,7 +351,6 @@ const TechMahindraSection = () => {
               clipPath: 'polygon(0% 90%, 100% 0%, 100% 100%, 0% 100%)'
             }}
           >
-            {/* Video Background */}
             <div className="absolute inset-0 overflow-hidden">
               <video
                 className="w-full h-full object-cover"
@@ -379,19 +363,16 @@ const TechMahindraSection = () => {
                 Your browser does not support the video tag.
               </video>
 
-              {/* Red gradient overlay matching the design */}
               <div className="absolute inset-0 bg-gradient-to-br from-red-600/60 via-red-800/40 to-black/70"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Content Container */}
       <div className="relative z-10 min-h-screen flex items-start py-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-            {/* Left Content - Text */}
             <div className="space-y-4 sm:space-y-8 -mt-16 sm:-mt-32 lg:-mt-48">
               <div
                 className={`transition-all duration-1000 ease-out ${
@@ -417,7 +398,6 @@ const TechMahindraSection = () => {
               </div>
             </div>
 
-            {/* Right Content - Video Overlay Content */}
             <div
               className="relative lg:pl-12 mt-32 lg:mt-52"
               style={{ transform: `translateY(${boxTranslateY}px)`, transition: 'transform 0.1s linear' }}
@@ -450,7 +430,6 @@ const TechMahindraSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 z-20">
         <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-600/80 backdrop-blur-sm flex items-center justify-center">
           <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 rotate-180 text-white" />
@@ -649,15 +628,12 @@ const IndustriesSection = () => {
   return (
     <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-12 gap-8">
-          {/* Left side - Title and Navigation */}
           <div className="flex items-center gap-8">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
               Industries
             </h2>
             
-            {/* Navigation Arrows */}
             <div className="flex items-center gap-4">
               <button
                 onClick={prevSlide}
@@ -678,7 +654,6 @@ const IndustriesSection = () => {
             </div>
           </div>
 
-          {/* Right side - Description */}
           <div className="lg:w-1/2">
             <p className="text-lg text-gray-700 leading-relaxed lg:text-right">
               Our expertise spans 13 industries from banking, insurance,
@@ -688,7 +663,6 @@ const IndustriesSection = () => {
           </div>
         </div>
 
-        {/* Industries Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 min-h-[600px]">
           {getCurrentIndustries().map((industry) => (
             <div
@@ -696,33 +670,27 @@ const IndustriesSection = () => {
               className="relative bg-white overflow-hidden cursor-pointer group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200"
               onClick={() => window.open(industry.link, '_blank')}
             >
-              {/* Top Half - White background with icon and title */}
               <div className="relative z-10 p-12 text-center bg-white h-72 flex flex-col justify-center">
-                {/* Icon */}
                 <div className="flex justify-center mb-6">
                   {industry.icon}
                 </div>
                 
-                {/* Title */}
                 <h3 className="text-xl font-semibold text-gray-900 group-hover:text-red-500 transition-colors duration-300">
                   {industry.title}
                 </h3>
               </div>
 
-              {/* Bottom Half - Background Image with grayscale effect */}
               <div
                 className="h-72 bg-cover bg-center bg-no-repeat relative filter grayscale group-hover:grayscale-0 transition-all duration-500"
                 style={{
                   backgroundImage: `url(${industry.backgroundImage})`,
                 }}
               >
-                {/* No overlay or text content */}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Progress Bar */}
         <div className="mt-8">
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div
@@ -735,8 +703,7 @@ const IndustriesSection = () => {
     </section>
   );
 };
-
-// MODIFIED: Sustainability Section 
+ 
 const SustainabilitySection = () => {
     const [contentVisible, setContentVisible] = useState(false);
     const [translateY, setTranslateY] = useState(0);
@@ -775,35 +742,29 @@ const SustainabilitySection = () => {
 
     return (
         <section id="sustainability" className="relative min-h-screen bg-gray-50 overflow-hidden">
-            {/* Background container with updated clipPath */}
             <div className="absolute inset-0">
                 <div className="absolute right-0 top-0 w-full h-full">
                     <div
                         className="w-full h-full"
                         style={{
-                            // Updated clipPath as per your request
                             clipPath: 'polygon(10% 90%, 100% 0%, 100% 100%, 0% 100%)'
                         }}
                     >
                         <img
-                            // Updated image source and position
                             src="https://insights.techmahindra.com/styles/de2e/s3/images/sustainabilityhompage.jpg"
                             alt="Sustainability - green leaves"
                             className="w-full h-full object-cover"
                             style={{ objectPosition: '100% 65%' }}
                         />
-                        {/* A subtle overlay to make text more readable if needed */}
                         <div className="absolute inset-0 bg-black/10"></div>
                     </div>
                 </div>
             </div>
 
-            {/* Content Container */}
             <div className="relative z-10 min-h-screen flex items-center py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-                        {/* Left Content - Animated Black Box (Made smaller) */}
                         <div
                             className="relative"
                             style={{
@@ -842,7 +803,6 @@ const SustainabilitySection = () => {
                             </div>
                         </div>
 
-                        {/* Right side - Empty space */}
                         <div className="hidden lg:block"></div>
                     </div>
                 </div>
@@ -851,23 +811,296 @@ const SustainabilitySection = () => {
     );
 };
 
+const RiseSection = () => {
+  const [scale, setScale] = useState(1.15);
+  const [contentVisible, setContentVisible] = useState(false);
 
-// Main App component to render all sections
-function App() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById('rise-section');
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        if (rect.top < viewportHeight * 0.75) {
+          setContentVisible(true);
+        }
+
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const scrollProgress = Math.max(0, Math.min(1, rect.top / viewportHeight));
+
+          const newScale = 1 + (scrollProgress * 0.15);
+          setScale(newScale);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section id="rise-section" className="bg-white py-16 sm:py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="w-full h-80 sm:h-96 lg:h-full overflow-hidden">
+            <img
+              src="https://images.pexels.com/photos/1528641/pexels-photo-1528641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Misty mountains at sunrise, representing the 'RISE' philosophy"
+              className="w-full h-full object-cover transition-transform duration-300 ease-out"
+              style={{ transform: `scale(${scale})` }}
+            />
+          </div>
+
+          <div className="relative">
+              <h2 className={`text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight transition-all ease-in-out duration-1000 transform ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+                RISE
+              </h2>
+              <p className={`mt-6 text-lg text-gray-600 leading-relaxed transition-all ease-in-out duration-1000 delay-200 transform ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+                At Tech Mahindra, 'Rise' is our core brand pillar that goes beyond business. It underscores our entire organization's culture and how we inspire our employees, stakeholders, and communities to uphold the three core tenets of this philosophy – Rise for an equal world, to be future-ready, and to create value.
+              </p>
+              <div className={`mt-8 transition-all ease-in-out duration-1000 delay-400 transform ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+                <a
+                  href="#"
+                  className="text-base font-semibold text-red-600 hover:text-red-700 group"
+                >
+                  LEARN MORE
+                  <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-1 ml-1">
+                    →
+                  </span>
+                </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ExploreMoreSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [titleVisible, setTitleVisible] = useState(false);
+
+  const exploreItems = [
+    { title: 'Why TechM', image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', link: '#' },
+    { title: 'Recognition', image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', link: '#' },
+    { title: 'Our Brand', image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', link: '#' },
+    { title: 'Innovation', image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', link: '#' },
+    { title: 'Careers', image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', link: '#' },
+    { title: 'Investors', image: 'https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', link: '#'},
+    { title: 'Partners', image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', link: '#'},
+    { title: 'Media', image: 'https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', link: '#'},
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const prev = () => {
+    setCurrentSlide(current => (current === 0 ? exploreItems.length - 1 : current - 1));
+  };
+
+  const next = () => {
+    setCurrentSlide(current => (current === exploreItems.length - 1 ? 0 : current + 1));
+  };
+  
+  const progress = ((currentSlide + 1) / exploreItems.length) * 100;
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById('explore-more-section');
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          setTitleVisible(true);
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section id="explore-more-section" className="bg-black text-white py-20 sm:py-28 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center mb-12">
+           <h2 className={`text-4xl sm:text-5xl font-bold transition-all duration-1000 ease-out transform ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            Explore More
+          </h2>
+          <div className="flex items-center gap-4">
+            <button onClick={prev} className="w-12 h-12 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-white transition-colors">
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button onClick={next} className="w-12 h-12 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-white transition-colors">
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+
+        <div className="relative h-96">
+          {exploreItems.map((item, index) => {
+             const offset = (index - currentSlide + exploreItems.length) % exploreItems.length;
+             let displayIndex;
+             if (offset === 0) {
+                 displayIndex = 0;
+             } else if (offset === 1) {
+                 displayIndex = 1;
+             } else if (offset === 2) {
+                 displayIndex = 2;
+             } else {
+                 displayIndex = -1;
+             }
+
+             const isMain = displayIndex === 0;
+
+             let transform, width, zIndex, opacity;
+
+             if (displayIndex === 0) {
+                 transform = 'translateX(0%) scale(1)';
+                 width = '50%';
+                 zIndex = 30;
+                 opacity = 1;
+             } else if (displayIndex === 1) {
+                 transform = 'translateX(110%) scale(0.9)';
+                 width = '40%';
+                 zIndex = 20;
+                 opacity = 1;
+             } else if (displayIndex === 2) {
+                 transform = 'translateX(220%) scale(0.8)';
+                 width = '30%';
+                 zIndex = 10;
+                 opacity = 1;
+             } else {
+                 transform = 'translateX(-100%) scale(0.8)';
+                 width = '40%';
+                 zIndex = 0;
+                 opacity = 0;
+             }
+             
+             return (
+                 <a href={item.link} key={index} 
+                    className="group absolute h-full transition-all duration-500 ease-in-out"
+                    style={{ width, zIndex, opacity, transform }}
+                  >
+                     <img 
+                         src={item.image} 
+                         alt={item.title} 
+                         className="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out"
+                     />
+                     <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                     <div className="absolute bottom-0 left-0 p-6">
+                         <h3 className="text-2xl font-bold text-white">{item.title}</h3>
+                     </div>
+                 </a>
+             );
+          })}
+        </div>
+
+
+        <div className="mt-16">
+          <div className="w-full bg-gray-700 h-0.5">
+            <div className="bg-red-600 h-0.5" style={{ width: `${progress}%`, transition: 'width 0.5s ease-in-out' }}></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
+    <footer className="bg-gray-900 text-gray-400">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pb-16">
+          {/* Careers Section */}
+          <div className="text-center md:text-left border-r border-gray-800 pr-8">
+            <h2 className="text-3xl font-bold text-white mb-2">Careers</h2>
+            <p className="mb-6">Gain a heritage. Leave a legacy.</p>
+            <a href="#" className="inline-block px-8 py-3 border border-gray-600 text-white hover:bg-white hover:text-black transition-colors duration-300">
+              JOIN US
+            </a>
+          </div>
+          {/* Contact Us Section */}
+          <div className="text-center md:text-left pl-8">
+            <h2 className="text-3xl font-bold text-white mb-2">Contact Us</h2>
+            <p className="mb-6">What can we help you achieve?</p>
+            <a href="#" className="inline-block px-8 py-3 border border-gray-600 text-white hover:bg-white hover:text-black transition-colors duration-300">
+              SPEAK WITH US
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="py-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 border-t border-gray-800">
+            <div>
+              <img src="https://insights.techmahindra.com/styles/default/s3/images/techm_logo_white.png.webp" alt="Tech Mahindra" className="h-10 filter invert" />
+            </div>
+            <div>
+              <h3 className="font-bold text-white mb-4">Our Brand</h3>
+              <ul>
+                <li className="mb-2"><a href="#" className="hover:text-white">Sustainability</a></li>
+                <li className="mb-2"><a href="#" className="hover:text-white">Corporate Citizenship</a></li>
+                <li className="mb-2"><a href="#" className="hover:text-white">Investor Relations</a></li>
+                <li className="mb-2"><a href="#" className="hover:text-white">Contact Us</a></li>
+              </ul>
+            </div>
+             <div>
+              <h3 className="font-bold text-white mb-4">News</h3>
+              <ul>
+                <li className="mb-2"><a href="#" className="hover:text-white">Events</a></li>
+                <li className="mb-2"><a href="#" className="hover:text-white">Careers</a></li>
+                <li className="mb-2"><a href="#" className="hover:text-white">Alumni</a></li>
+                 <li className="mb-2"><a href="#" className="hover:text-white">Sitemap</a></li>
+                 <li className="mb-2"><a href="#" className="hover:text-white">Cookie Preferences</a></li>
+              </ul>
+            </div>
+            <div className="col-span-2 lg:col-span-1">
+               <h3 className="font-bold text-white mb-4">Follow Us</h3>
+               <div className="flex space-x-4">
+                  <a href="#" className="hover:text-white"><Facebook size={20} /></a>
+                  <a href="#" className="hover:text-white"><Twitter size={20} /></a>
+                  <a href="#" className="hover:text-white"><Linkedin size={20} /></a>
+                  <a href="#" className="hover:text-white"><Instagram size={20} /></a>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-black border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center text-sm">
+          <p>&copy; {new Date().getFullYear()} Tech Mahindra Limited</p>
+          <div className="flex items-center space-x-4 mt-4 sm:mt-0">
+            <a href="#" className="hover:text-white">Terms of Use</a>
+            <a href="#" className="hover:text-white">Accessibility</a>
+            <a href="#" className="hover:text-white">Privacy</a>
+            <a href="#" className="hover:text-white">Cookie</a>
+            <button onClick={scrollToTop} className="hover:text-white">
+              <ChevronUp size={20} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+
+// Main App component to render all sections
+function App() {
+
+  return (
     <div className="App">
-      {/* Existing Sections */}
       <VideoCarousel />
       <CapabilitiesSection />
       <TechMahindraSection />
       
-      {/* "Joy Matters" Section */}
       <section className="relative w-full h-[462.14px] bg-black overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -877,9 +1110,7 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
         </div>
 
-        {/* Main Content Area */}
         <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between h-full px-4 sm:px-6 lg:px-8 py-8 sm:py-16 mx-auto max-w-7xl">
-          {/* Left Text Content */}
           <div className="flex-1 text-center lg:text-left mb-8 lg:mb-0 lg:mr-8 text-white">
             <div className="mb-4">
               <img
@@ -906,7 +1137,6 @@ function App() {
             </button>
           </div>
 
-          {/* Right Image */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <img
               src="https://insights.techmahindra.com/images/kellieromack-gbg.webp"
@@ -918,19 +1148,11 @@ function App() {
         </div>
       </section>
 
-      {/* Industries Section */}
       <IndustriesSection />
-
-      {/* Sustainability Section */}
       <SustainabilitySection />
-
-      {/* Global Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-gray-600 hover:bg-gray-700 text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl z-30"
-      >
-        <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6" />
-      </button>
+      <RiseSection />
+      <ExploreMoreSection />
+      <Footer />
     </div>
   );
 }
