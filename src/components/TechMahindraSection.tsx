@@ -78,7 +78,7 @@ const TechMahindraSection = () => {
       <div className="relative z-10 flex flex-col md:min-h-screen items-center md:items-start py-8 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Content - Text */}
-          <div className="space-y-3 sm:space-y-4 lg:space-y-8 -mt-8 sm:-mt-16 lg:-mt-48 text-center sm:text-left">
+          <div className="space-y-3 sm:space-y-4 lg:space-y-8 -mt-8 sm:-mt-16 lg:-mt-48 sm:text-left">
             <div
               className={`transition-all duration-1000 ease-out ${
                 textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
