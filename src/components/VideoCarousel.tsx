@@ -847,7 +847,7 @@ const RiseSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="w-full h-80 sm:h-96 lg:h-full overflow-hidden">
             <img
-              src="https://images.pexels.com/photos/1528641/pexels-photo-1528641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src="https://insights.techmahindra.com/styles/text_and_image_desktop/s3/images/adobestock_619698910.jpeg.webp"
               alt="Misty mountains at sunrise, representing the 'RISE' philosophy"
               className="w-full h-full object-cover transition-transform duration-300 ease-out"
               style={{ transform: `scale(${scale})` }}
