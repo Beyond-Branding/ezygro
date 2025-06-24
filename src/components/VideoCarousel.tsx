@@ -1039,7 +1039,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 border-t border-gray-800">
             <div>
-              <img src="https://insights.techmahindra.com/styles/default/s3/images/techm_logo_white.png.webp" alt="Tech Mahindra" className="h-10 filter invert" />
+              <img src="{TechMahindraLogo}" alt="Tech Mahindra" className="h-10 filter invert" />
             </div>
             <div>
               <h3 className="font-bold text-white mb-4">Our Brand</h3>
