@@ -142,8 +142,8 @@ const VideoCarousel = () => {
         </div>
 
         {/* Right content: Video Title & Button */}
-        <div className="absolute bottom-4 sm:bottom-8 lg:bottom-16 right-4 sm:right-6 lg:right-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6">
+        <div className="absolute bottom-40 sm:bottom-32 lg:bottom-16 right-4 sm:right-6 lg:right-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6">
             {videos[currentVideo].title}
           </h2>
           <button className="group inline-flex items-center px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-3 border-2 border-white text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 text-sm sm:text-base">
