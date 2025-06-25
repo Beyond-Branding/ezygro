@@ -4,6 +4,15 @@ import { ChevronUp } from 'lucide-react';
 const TechMahindraSection = () => {
   const [textVisible, setTextVisible] = useState(false);
   const [boxTranslateY, setBoxTranslateY] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -38,6 +47,12 @@ const TechMahindraSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Responsive font sizes and line heights (match AboutUs and screenshot)
+  const headingFontSize = windowWidth < 640 ? '32px' : windowWidth < 1024 ? '54px' : '66px';
+  const headingLineHeight = windowWidth < 640 ? '40px' : windowWidth < 1024 ? '62px' : '90px';
+  const paraFontSize = windowWidth < 640 ? '15px' : windowWidth < 1024 ? '17px' : '18px';
+  const paraLineHeight = windowWidth < 640 ? '22px' : windowWidth < 1024 ? '26px' : '28px';
+
   return (
     <section
       id="techmahindra"
@@ -49,7 +64,7 @@ const TechMahindraSection = () => {
           <div
             className="w-full h-full"
             style={{
-              clipPath: window.innerWidth < 768
+              clipPath: windowWidth < 768
                 ? 'polygon(-50% 85%, 100% 40%, 100% 100%, 0% 100%)'
                 : 'polygon(0% 90%, 100% 0%, 100% 100%, 0% 100%)'
             }}
@@ -75,17 +90,17 @@ const TechMahindraSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col md:min-h-screen items-center md:items-start py-8 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 flex flex-col justify-start items-center">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Left Content - Text */}
-          <div className="space-y-3 sm:space-y-4 lg:space-y-8 -mt-8 sm:-mt-16 lg:-mt-48 sm:text-left">
+          <div className="space-y-3 sm:space-y-4 lg:space-y-8 mt-0 mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
             <div
               className={`transition-all duration-1000 ease-out ${
                 textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
             >
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
-                          style={{ fontSize: '35px', lineHeight: '40px' }}>
+              <h1 className="font-semibold leading-tight text-gray-900"
+                style={{ fontSize: headingFontSize, lineHeight: headingLineHeight, fontWeight: 600 }}>
                 <span className="text-gray-900">Scale at Speed</span>
                 <br />
                 <span className="text-red-600">with Tech Mahindra</span>
@@ -97,9 +112,12 @@ const TechMahindraSection = () => {
                 textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
             >
-              <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-700 leading-relaxed max-w-lg mx-auto sm:mx-0">
-                Thriving in the current dynamic landscape demands technological solutions that enable
-                both transformative scale and unparalleled speed.
+              <p className="text-gray-700 leading-snug max-w-lg mx-auto mt-4 font-medium"
+                style={{ fontSize: paraFontSize, lineHeight: paraLineHeight, fontWeight: 400 }}
+              >
+                <span className="block">Thriving in the current dynamic landscape</span>
+                <span className="block">demands technological solutions that enable</span>
+                <span className="block">both transformative scale and unparalleled speed.</span>
               </p>
             </div>
           </div>
@@ -109,20 +127,21 @@ const TechMahindraSection = () => {
             className="relative mt-8 sm:mt-16 lg:mt-52 lg:pl-12"
             style={{ transform: `translateY(${boxTranslateY}px)`, transition: 'transform 0.1s linear' }}
           >
-            <div className="bg-black px-4 py-8 sm:px-6 sm:py-12 lg:px-16 lg:py-28 text-white">
+            <div className="bg-black px-4 py-8 sm:px-6 sm:py-12 lg:px-16 lg:py-28 text-white rounded-lg shadow-lg">
               <div className="space-y-3 sm:space-y-4 lg:space-y-6">
                 <div>
                   <p className="text-xs sm:text-sm uppercase tracking-wider text-gray-300 mb-1 sm:mb-2 font-semibold">
                     Scale at Speed
                   </p>
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight"
+                    style={{ fontSize: windowWidth < 640 ? '22px' : windowWidth < 1024 ? '28px' : '36px', lineHeight: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '36px' : '44px', fontWeight: 700 }}>
                     True Scalability,<br />
                     Agility, and<br />
                     Responsiveness
                   </h2>
                 </div>
 
-                <button className="group inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-3 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-all duration-300 text-sm sm:text-base">
+                <button className="group inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-3 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-all duration-300 text-xs sm:text-base">
                   <span>KNOW MORE</span>
                   <svg
                     className="ml-2 sm:ml-3 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300"
