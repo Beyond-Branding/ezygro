@@ -119,7 +119,7 @@ const VideoCarousel = () => {
         {/* Left content: Scale at Speed */}
         <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-6 lg:left-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pr-0 lg:pr-6">
           <h1
-            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight transition-all duration-700 ease-out ${
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-900 leading-tight transition-all duration-700 ease-out ${
               scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
@@ -132,11 +132,8 @@ const VideoCarousel = () => {
               promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
-            <p className="mt-2 sm:mt-4 lg:mt-6 text-sm sm:text-base lg:text-lg text-gray-800 leading-relaxed">
-              Our promise to help enterprises across industries transform at speed,
-            </p>
-            <p className="mt-1 sm:mt-2 text-sm sm:text-base lg:text-lg text-gray-800 leading-relaxed max-w-lg">
-              agility, resilience, and efficiency to their businesses.
+            <p className="mt-2 sm:mt-4 lg:mt-6 text-sm sm:text-base lg:text-lg text-gray-800 leading-relaxed font-400">
+              Our promise to help enterprises across industries transform at speed,agility, resilience, and efficiency to their businesses.
             </p>
           </div>
         </div>

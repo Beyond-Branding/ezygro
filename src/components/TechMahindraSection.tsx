@@ -84,7 +84,7 @@ const TechMahindraSection = () => {
                 textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
             >
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
                 <span className="text-gray-900">Scale at Speed</span>
                 <br />
                 <span className="text-red-600">with Tech Mahindra</span>
@@ -111,7 +111,7 @@ const TechMahindraSection = () => {
             <div className="bg-black px-4 py-8 sm:px-6 sm:py-12 lg:px-16 lg:py-28 text-white">
               <div className="space-y-3 sm:space-y-4 lg:space-y-6">
                 <div>
-                  <p className="text-xs sm:text-sm uppercase tracking-wider text-gray-300 mb-1 sm:mb-2">
+                  <p className="text-xs sm:text-sm uppercase tracking-wider text-gray-300 mb-1 sm:mb-2 font-semibold">
                     Scale at Speed
                   </p>
                   <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight">
