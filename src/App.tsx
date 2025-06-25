@@ -1,4 +1,4 @@
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import VideoCarousel from './components/VideoCarousel';
 import CapabilitiesSection from './components/CapabilitiesSection';
@@ -10,22 +10,34 @@ import RiseSection from './components/RiseSection';
 import ExploreMoreSection from './components/ExploreMoreSection';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import AboutUs from './components/AboutUs';
+
+const HomePage = () => (
+  <>
+    <VideoCarousel />
+    <CapabilitiesSection />
+    <TechMahindraSection />
+    <JoyMattersSection />
+    <IndustriesSection />
+    <SustainabilitySection />
+    <RiseSection />
+    <ExploreMoreSection />
+  </>
+);
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <VideoCarousel />
-      <CapabilitiesSection />
-      <TechMahindraSection />
-      <JoyMattersSection />
-      <IndustriesSection />
-      <SustainabilitySection />
-      <RiseSection />
-      <ExploreMoreSection />
-      <Footer />
-      <ScrollToTopButton />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+        </Routes>
+        <Footer />
+        <ScrollToTopButton />
+      </div>
+    </Router>
   );
 }
 
