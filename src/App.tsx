@@ -12,7 +12,11 @@ import ExploreMoreSection from './components/ExploreMoreSection';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import AboutUs from './components/AboutUs';
+<<<<<<< HEAD
+import Careers from './components/Careers'
+=======
 import Capabilities from './components/Capabilities';
+>>>>>>> 6bea428e5e743f165054152c7d477b059e49e67a
 
 const HomePage = () => (
   <>
@@ -38,7 +42,11 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUs />} />
+<<<<<<< HEAD
+        <Route path="/careers" element={<Careers />} />
+=======
         <Route path="/capabilities" element={<Capabilities />} />
+>>>>>>> 6bea428e5e743f165054152c7d477b059e49e67a
       </Routes>
       <Footer showCareersContact={isHomePage} />
       <ScrollToTopButton />
