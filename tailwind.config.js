@@ -13,6 +13,16 @@ export default {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
       },
+      fontWeight: {
+        'extra-light': '200',
+        'light': '300',
+        'normal': '400',
+        'medium': '500',
+        'semibold': '600',
+        'bold': '700',
+        'extra-bold': '800',
+        'black': '900',
+      },
       maxWidth: {
         '8xl': '88rem',
         '9xl': '96rem',
