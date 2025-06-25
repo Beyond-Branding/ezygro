@@ -12,6 +12,7 @@ import ExploreMoreSection from './components/ExploreMoreSection';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import AboutUs from './components/AboutUs';
+import Capabilities from './components/Capabilities';
 
 const HomePage = () => (
   <>
@@ -37,6 +38,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/capabilities" element={<Capabilities />} />
       </Routes>
       <Footer showCareersContact={isHomePage} />
       <ScrollToTopButton />
