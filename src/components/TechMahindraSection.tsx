@@ -85,7 +85,7 @@ const TechMahindraSection = () => {
               }`}
             >
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
-                          style={{ fontSize: '60px', lineHeight: '72px' }}>
+                          style={{ fontSize: '35px', lineHeight: '40px' }}>
                 <span className="text-gray-900">Scale at Speed</span>
                 <br />
                 <span className="text-red-600">with Tech Mahindra</span>
