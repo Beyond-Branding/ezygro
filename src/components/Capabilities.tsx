@@ -128,11 +128,11 @@ const Capabilities = () => {
               }`}
             >
               <p className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
-                          style={{ 
-                            fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px', 
-                            lineHeight: windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '30px' 
-                          }}
-                          >
+                 style={{ 
+                   fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px', 
+                   lineHeight: windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '30px' 
+                 }}
+                 >
                 Our portfolio of offerings spans competencies, specialisms, and application services that align with our customers' changing worlds.
               </p>
             </div>
@@ -160,7 +160,8 @@ const Capabilities = () => {
                   transitionDelay: `${index * 150}ms`
                 }}
               >
-                <div className="relative bg-white hover:bg-gray-900 p-8 transition-all duration-500 min-h-[340px] h-full flex flex-col justify-between shadow-md">
+                {/* MODIFIED: Increased min-h from 340px to 450px to make the card taller */}
+                <div className="relative bg-white hover:bg-gray-900 p-8 transition-all duration-500 min-h-[450px] h-full flex flex-col justify-between shadow-md">
                   <div className="flex justify-center mb-6 pt-8">
                     <div className="w-32 h-32 rounded-full overflow-hidden">
                       <img
