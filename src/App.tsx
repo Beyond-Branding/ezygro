@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import VideoCarousel from './components/VideoCarousel';
 import Industries from './components/Industries';
@@ -27,18 +27,27 @@ const HomePage = () => (
   </>
 );
 
+const AppContent = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUs />} />
+      </Routes>
+      <Footer showCareersContact={isHomePage} />
+      <ScrollToTopButton />
+    </div>
+  );
+};
+
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutUs />} />
-        </Routes>
-        <Footer />
-        <ScrollToTopButton />
-      </div>
+      <AppContent />
     </Router>
   );
 }

@@ -1,7 +1,11 @@
 import React from 'react';
 import { ChevronUp, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
-const Footer = () => {
+interface FooterProps {
+  showCareersContact?: boolean;
+}
+
+const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -9,29 +13,31 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-400">
       {/* Main Footer Content - Careers and Contact Us Section */}
-      <div className="bg-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Careers Section */}
-            <div className="text-left">
-              <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Careers</h2>
-              <p className="mb-8 text-lg text-gray-300">Gain a heritage. Leave a legacy.</p>
-              <button className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide">
-                JOIN US
-              </button>
-            </div>
-            
-            {/* Contact Us Section */}
-            <div className="text-left">
-              <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Contact Us</h2>
-              <p className="mb-8 text-lg text-gray-300">What can we help you achieve?</p>
-              <button className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide">
-                SPEAK WITH US
-              </button>
+      {showCareersContact && (
+        <div className="bg-slate-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+              {/* Careers Section */}
+              <div className="text-left">
+                <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Careers</h2>
+                <p className="mb-8 text-lg text-gray-300">Gain a heritage. Leave a legacy.</p>
+                <button className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide">
+                  JOIN US
+                </button>
+              </div>
+              
+              {/* Contact Us Section */}
+              <div className="text-left">
+                <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Contact Us</h2>
+                <p className="mb-8 text-lg text-gray-300">What can we help you achieve?</p>
+                <button className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide">
+                  SPEAK WITH US
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Bottom Footer - Black Section */}
       <div className="bg-black">
