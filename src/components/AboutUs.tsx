@@ -52,7 +52,7 @@ const AboutUs = () => {
                   alt="About Us"
                   className="w-full h-full object-cover opacity-70"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600/40 to-red-800/60"></div>
+                {/* Removed the red tint overlay */}
               </div>
             </div>
           </div>
@@ -121,6 +121,7 @@ const AboutUs = () => {
 
       {/* Vision Purpose Values section */}
       <VisionPurposeValues />
+      <div className="bg-black border-t border-gray-800"></div>
     </>
   );
 };

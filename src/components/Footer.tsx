@@ -25,7 +25,6 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
                   JOIN US
                 </button>
               </div>
-              
               {/* Contact Us Section */}
               <div className="text-left">
                 <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Contact Us</h2>
@@ -38,7 +37,6 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
           </div>
         </div>
       )}
-
       {/* Bottom Footer - Black Section */}
       <div className="bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -49,7 +47,6 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
                 <span className="text-black font-semibold text-sm">Tech Mahindra</span>
               </div>
             </div>
-            
             {/* Our Brand */}
             <div>
               <h3 className="font-semibold text-white mb-6 text-base">Our Brand</h3>
@@ -57,22 +54,18 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Sustainability</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Corporate Citizenship</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Investor Relations</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a></li>
               </ul>
             </div>
-            
             {/* News */}
             <div>
               <h3 className="font-semibold text-white mb-6 text-base">News</h3>
               <ul className="space-y-3">
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Events</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Careers</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Alumni</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Sitemap</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Preferences</a></li>
               </ul>
             </div>
-            
             {/* Follow Us */}
             <div>
               <h3 className="font-semibold text-white mb-6 text-base">Follow Us</h3>
@@ -94,7 +87,6 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
           </div>
         </div>
       </div>
-
       {/* Copyright Section */}
       <div className="bg-black border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

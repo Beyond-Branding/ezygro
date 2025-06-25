@@ -502,42 +502,36 @@ const VisionPurposeValues = () => {
                 />
               </div>
 
-              {/* Mobile animations */}
+              {/* Mobile animations - single overlay for smooth transition */}
               {((hoveredTab !== null && hoveredTab !== activeTab) || hoveredNavButton !== null) && (
                 <div 
-                  className="absolute inset-0 overflow-hidden rounded-full"
+                  className={`absolute inset-0 overflow-hidden rounded-full ${
+                    isExpanding
+                      ? (() => {
+                          let isVision = false;
+                          if (hoveredTab !== null) {
+                            isVision = hoveredTab === 0;
+                          } else if (hoveredNavButton === 'next') {
+                            isVision = ((activeTab + 1) % content.length) === 0;
+                          } else if (hoveredNavButton === 'prev') {
+                            isVision = ((activeTab - 1 + content.length) % content.length) === 0;
+                          }
+                          return isVision ? 'expand-to-full-from-top-left' : 'expand-to-full';
+                        })()
+                      : (() => {
+                          let isVision = false;
+                          if (hoveredTab !== null) {
+                            isVision = hoveredTab === 0;
+                          } else if (hoveredNavButton === 'next') {
+                            isVision = ((activeTab + 1) % content.length) === 0;
+                          } else if (hoveredNavButton === 'prev') {
+                            isVision = ((activeTab - 1 + content.length) % content.length) === 0;
+                          }
+                          return isVision ? 'slide-in-halfway-top-left' : 'slide-in-halfway';
+                        })()
+                  }`}
                   style={{
                     zIndex: 10,
-                    transform: (() => {
-                      let isVision = false;
-                      
-                      if (hoveredTab !== null) {
-                        isVision = hoveredTab === 0;
-                      } else if (hoveredNavButton === 'next') {
-                        isVision = ((activeTab + 1) % content.length) === 0;
-                      } else if (hoveredNavButton === 'prev') {
-                        isVision = ((activeTab - 1 + content.length) % content.length) === 0;
-                      }
-                      
-                      return isVision 
-                        ? 'translateX(-40%) translateY(0%)'
-                        : 'translateX(40%) translateY(-8%)';
-                    })(),
-                    animation: (() => {
-                      let isVision = false;
-                      
-                      if (hoveredTab !== null) {
-                        isVision = hoveredTab === 0;
-                      } else if (hoveredNavButton === 'next') {
-                        isVision = ((activeTab + 1) % content.length) === 0;
-                      } else if (hoveredNavButton === 'prev') {
-                        isVision = ((activeTab - 1 + content.length) % content.length) === 0;
-                      }
-                      
-                      return isVision
-                        ? 'slideInHalfwayFromTopLeft 0.8s ease-out forwards'
-                        : 'slideInHalfway 0.8s ease-out forwards';
-                    })()
                   }}
                 >
                   <img
@@ -548,6 +542,16 @@ const VisionPurposeValues = () => {
                         return content[(activeTab + 1) % content.length].image;
                       } else if (hoveredNavButton === 'prev') {
                         return content[(activeTab - 1 + content.length) % content.length].image;
+                      }
+                      return '';
+                    })()}
+                    alt={(() => {
+                      if (hoveredTab !== null) {
+                        return content[hoveredTab].title;
+                      } else if (hoveredNavButton === 'next') {
+                        return content[(activeTab + 1) % content.length].title;
+                      } else if (hoveredNavButton === 'prev') {
+                        return content[(activeTab - 1 + content.length) % content.length].title;
                       }
                       return '';
                     })()}
