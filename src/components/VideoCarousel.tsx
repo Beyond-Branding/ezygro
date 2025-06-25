@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const VideoCarousel = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
   const videos = [
     {
@@ -55,6 +56,16 @@ const VideoCarousel = () => {
     };
   }, [videos.length, currentVideo]);
 
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Trigger text animations on component mount
   useEffect(() => {
     const scaleTimer = setTimeout(() => {
@@ -91,9 +102,9 @@ const VideoCarousel = () => {
           <div
             className="w-full h-full bg-transparent"
             style={{
-              clipPath: window.innerWidth < 768 
-                ? 'polygon(-375% 85%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(0% 90%, 100% 0%, 100% 100%, 0% 100%)'
+              clipPath: windowWidth < 768 
+                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
+                : 'polygon(-40% 90%, 100% 0%, 100% 100%, 0% 100%)'
             }}
           >
             <div className="absolute inset-0 overflow-hidden">
@@ -117,14 +128,18 @@ const VideoCarousel = () => {
       {/* Content */}
       <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
         {/* Left content: Scale at Speed */}
-        <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-6 lg:left-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pr-0 lg:pr-6">
+        <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-6 lg:left-0 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
           <h1
-            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-900 leading-tight transition-all duration-700 ease-out ${
+            className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-700 ease-out ${
               scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
+            style={{ 
+              fontSize: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px', 
+              lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '56px' : '90px' 
+            }}
           >
             Scale at Speed
-            <span className="text-sm sm:text-base lg:text-lg align-super text-gray-600">™</span>
+            <span className="text-xs sm:text-sm lg:text-base align-super text-gray-600 font-bold">™</span>
           </h1>
           
           <div
@@ -132,18 +147,23 @@ const VideoCarousel = () => {
               promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
           >
-            <p className="mt-2 sm:mt-4 lg:mt-6 text-sm sm:text-base lg:text-lg text-gray-800 leading-relaxed font-400">
-              Our promise to help enterprises across industries transform at speed,agility, resilience, and efficiency to their businesses.
+            <p className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
+                        style={{ 
+                          fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px', 
+                          lineHeight: windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '30px' 
+                        }}
+                        >
+              Our promise to help enterprises across industries transform at speed, agility, resilience, and efficiency to their businesses.
             </p>
           </div>
         </div>
 
         {/* Right content: Video Title & Button */}
-        <div className="absolute bottom-40 sm:bottom-32 lg:bottom-16 right-4 sm:right-6 lg:right-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6">
+        <div className="absolute bottom-32 sm:bottom-24 lg:bottom-16 right-4 sm:right-6 lg:right-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6">
             {videos[currentVideo].title}
           </h2>
-          <button className="group inline-flex items-center px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-3 border-2 border-white text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 text-sm sm:text-base">
+          <button className="group inline-flex items-center px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-3 border-2 border-white text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 text-xs sm:text-sm lg:text-base">
             <span>KNOW MORE</span>
             <svg
               className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300"
