@@ -1,33 +1,54 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Search, Menu, X } from 'lucide-react';
 import TechMahindraLogo from '../logo.png'; // Adjust path as needed
 import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = ['ABOUT US', 'CAPABILITIES', 'INDUSTRIES', 'INSIGHTS', 'CAREERS', 'CONTACT US'];
+  const location = useLocation();
+  
+  const navItems = [
+    { label: 'ABOUT US', path: '/about' },
+    { label: 'CAPABILITIES', path: '/capabilities' },
+    { label: 'INDUSTRIES', path: '/industries' },
+    { label: 'INSIGHTS', path: '/insights' },
+    { label: 'CAREERS', path: '/careers' },
+    { label: 'CONTACT US', path: '/contact' }
+  ];
+
+  const handleNavClick = () => {
+    setIsMobileMenuOpen(false);
+    // Scroll to top when navigating
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm font-poppins">
       <div className="max-w-[1280px] mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0" onClick={handleNavClick}>
             <img src={TechMahindraLogo} alt="Tech Mahindra Logo" className="h-10 md:h-12" />
-          </div>
+          </Link>
 
           {/* Desktop Nav */}                             
           <nav className="hidden lg:flex flex-1 justify-center space-x-10">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-sm font-semibold text-black hover:text-red-600 transition"
+              <Link
+                key={item.label}
+                to={item.path}
+                onClick={handleNavClick}
+                className={`text-sm font-semibold transition ${
+                  location.pathname === item.path 
+                    ? 'text-red-600 border-b-2 border-red-600 pb-1' 
+                    : 'text-black hover:text-red-600'
+                }`}
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </nav>
 
@@ -50,14 +71,18 @@ const Header = () => {
           <div className="lg:hidden border-t border-gray-200">
             <nav className="px-4 py-4 space-y-2">
               {navItems.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="block text-sm font-semibold text-gray-800 hover:text-red-600 py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  onClick={handleNavClick}
+                  className={`block text-sm font-semibold py-2 w-full text-left transition ${
+                    location.pathname === item.path 
+                      ? 'text-red-600' 
+                      : 'text-gray-800 hover:text-red-600'
+                  }`}
                 >
-                  {item}
-                </a>
+                  {item.label}
+                </Link>
               ))}
             </nav>
           </div>
