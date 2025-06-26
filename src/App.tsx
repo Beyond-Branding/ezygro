@@ -14,6 +14,7 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 import AboutUs from './components/AboutUs';
 import Capabilities from './components/Capabilities';
 import Careers from './components/Careers';
+import Contact from './components/Contact';
 
 const HomePage = () => (
   <>
@@ -41,6 +42,7 @@ const AppContent = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/capabilities" element={<Capabilities />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer showCareersContact={isHomePage} />
       <ScrollToTopButton />
