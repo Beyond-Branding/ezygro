@@ -1,27 +1,39 @@
 import { useState, useEffect } from 'react';
-import VisionPurposeValues from './VisionPurposeValues'; // Make sure to import the new component
+import VisionPurposeValues from './VisionPurposeValues'; // Import stays the same
 
 const AboutUs = () => {
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
-  // Handle window resize
+  // Data for the Corporate Citizenship section
+  const citizenshipData = [
+    {
+      title: 'Tech Mahindra Foundation',
+      description: 'The Tech Mahindra Foundation is our corporate social responsibility arm of Tech Mahindra Limited, a Mahindra Group Company.',
+    },
+    {
+      title: 'Mahindra Educational Institutions',
+      description: 'Offer world-class higher education to ensure well-rounded learning for empowering the youth.',
+    },
+    {
+      title: 'Individual Social Responsibility',
+      description: 'Making responsibility personal, TechMighties go the extra mile to embrace it in their daily lives and drive positive change uniquely.',
+    },
+  ];
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Trigger text animations on component mount
   useEffect(() => {
     const scaleTimer = setTimeout(() => {
       setScaleAtSpeedVisible(true);
     }, 200);
-
     const promiseTimer = setTimeout(() => {
       setPromiseTextVisible(true);
     }, 400);
@@ -52,7 +64,6 @@ const AboutUs = () => {
                   alt="About Us"
                   className="w-full h-full object-cover opacity-70"
                 />
-                {/* Removed the red tint overlay */}
               </div>
             </div>
           </div>
@@ -60,7 +71,6 @@ const AboutUs = () => {
 
         {/* Content */}
         <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-          {/* Left content: About Us */}
           <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-6 lg:left-0 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
             <h1
               className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 transition-all duration-700 ease-out ${
@@ -80,11 +90,11 @@ const AboutUs = () => {
               }`}
             >
               <p className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-xs lg:text-sm text-gray-800 leading-relaxed font-400"
-                          style={{
-                            fontSize: windowWidth < 640 ? '12px' : windowWidth < 1024 ? '14px' : '16px',
-                            lineHeight: windowWidth < 640 ? '18px' : windowWidth < 1024 ? '22px' : '26px'
-                          }}
-                          >
+                style={{
+                  fontSize: windowWidth < 640 ? '12px' : windowWidth < 1024 ? '14px' : '16px',
+                  lineHeight: windowWidth < 640 ? '18px' : windowWidth < 1024 ? '22px' : '26px'
+                }}
+              >
                 We are digital changemakers – here to disrupt old ideas, blaze new trails, and help enterprises transform and scale at unparalleled speed.
               </p>
             </div>
@@ -96,17 +106,14 @@ const AboutUs = () => {
       <section className="bg-white py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
-            {/* Content */}
             <div className="relative">
               <h2 className={`text-xl sm:text-2xl md:text-3xl font-medium text-gray-900 tracking-tight transition-all ease-in-out duration-1000 transform ${scaleAtSpeedVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                 Part of Mahindra Group
               </h2>
               <p className={`mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed transition-all ease-in-out duration-1000 delay-200 transform ${promiseTextVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                We are part of the Mahindra Group, founded in 1945, one of the largest and most admired multinational federation of companies with 260,000 employees in over 100 countries. The Group has a strong foothold in farm equipment, utility vehicles, information technology, and financial services in India and is the world's largest tractor company by volume. It also has a leading presence in renewable energy, agriculture, logistics, hospitality, and real estate. The Mahindra Group has a clear focus on leading ESG globally, enabling rural prosperity and enhancing urban living, with a goal to drive positive change in the lives of communities and stakeholders to enable them to Rise.
+                We are part of the Mahindra Group, founded in 1945, one of the largest and most admired multinational federation of companies...
               </p>
             </div>
-
-            {/* Image on the right */}
             <div className="w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden rounded-lg">
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -119,8 +126,36 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Vision Purpose Values section */}
+      {/* Vision Purpose Values section moved up */}
       <VisionPurposeValues />
+
+      {/* Corporate Citizenship section moved below VisionPurposeValues */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-left mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+              Corporate Citizenship
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600 max-w-4xl">
+              We believe that technology holds the power to transform communities worldwide...
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {citizenshipData.map((item, index) => (
+              <div key={index} className="group relative bg-gray-50 p-8 border border-gray-200 transition-shadow duration-300 hover:shadow-lg">
+                <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
+                <p className="mt-4 text-gray-600">{item.description}</p>
+                <a href="#" className="inline-block mt-6 font-semibold text-gray-800 tracking-wider text-sm">
+                  LEARN MORE
+                </a>
+                <div className="absolute bottom-0 left-0 h-1 bg-red-600 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Line */}
       <div className="bg-black border-t border-gray-800"></div>
     </>
   );

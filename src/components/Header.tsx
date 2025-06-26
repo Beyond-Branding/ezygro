@@ -13,8 +13,7 @@ const Header: React.FC = () => {
   const navItems = [
     { label: 'ABOUT US', path: '/about' },
     { label: 'CAPABILITIES', path: '/capabilities' },
-    { label: 'INDUSTRIES', path: '/industries' },
-    { label: 'INSIGHTS', path: '/insights' },
+    { label: 'PRICING', path: '/pricing' },
     { label: 'CAREERS', path: '/careers' },
     { label: 'CONTACT US', path: '/contact' }
   ];
