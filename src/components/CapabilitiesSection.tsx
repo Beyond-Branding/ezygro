@@ -58,12 +58,8 @@ const CapabilitiesSection = () => {
         {/* Header */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-10 lg:mb-12 gap-4 sm:gap-6 lg:gap-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 lg:w-1/3">
-            Capabilities
+            Industries
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-700 lg:w-2/3 lg:text-right leading-relaxed">
-            We offer a wide range of digital solutions and best-in-class platforms to deliver meaningful outcomes, enhance
-            customer experiences, and transform industries at scale and with unparalleled speed.
-          </p>
         </div>
 
         {/* Grid */}

@@ -74,54 +74,54 @@ const Industries: React.FC = () => {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        
-        {/* MODIFIED: This wrapper now contains both the heading and the grid to ensure alignment */}
-        <div className="max-w-6xl mx-auto">
-          {/* MODIFIED: text-center is now text-left */}
-          <div className="text-left mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              All Industries
-            </h2>
-          </div>
+        {/* Header - matches CapabilitiesSection layout and style */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-12 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 lg:w-1/3">
+            Capabilities
+          </h2>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700 lg:w-2/3 lg:text-right leading-relaxed">
+            We offer a wide range of digital solutions and best-in-class platforms to deliver meaningful outcomes, enhance
+            customer experiences, and transform industries at scale and with unparalleled speed.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry, index) => (
-              <div
-                key={industry.id}
-                className={`group relative cursor-pointer transform transition-all duration-700 ease-out hover:scale-105 w-full ${
-                  isVisible 
-                    ? 'translate-y-0 opacity-100' 
-                    : 'translate-y-8 opacity-0'
-                }`}
-                style={{
-                  transitionDelay: `${index * 150}ms`
-                }}
-              >
-                <div className="relative bg-white hover:bg-gray-900 p-8 transition-all duration-500 min-h-[420px] h-full flex flex-col justify-between shadow-md">
-                  
-                  <div className="flex justify-center mb-6 pt-8">
-                    <div className="w-32 h-32 rounded-full overflow-hidden">
-                      <img
-                        src={industry.image}
-                        alt={industry.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {industries.map((industry, index) => (
+            <div
+              key={industry.id}
+              className={`group relative cursor-pointer transform transition-all duration-700 ease-out hover:scale-105 w-full ${
+                isVisible 
+                  ? 'translate-y-0 opacity-100' 
+                  : 'translate-y-8 opacity-0'
+              }`}
+              style={{
+                transitionDelay: `${index * 150}ms`
+              }}
+            >
+              <div className="relative bg-white hover:bg-gray-900 p-8 transition-all duration-500 min-h-[420px] h-full flex flex-col justify-between shadow-md">
+                
+                <div className="flex justify-center mb-6 pt-8">
+                  <div className="w-32 h-32 rounded-full overflow-hidden">
+                    <img
+                      src={industry.image}
+                      alt={industry.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
                   </div>
+                </div>
 
-                  <div className="flex-1 flex flex-col justify-end">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
-                      {industry.title}
-                    </h3>
-                    
-                    <div className="flex justify-end">
-                      <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors duration-500" />
-                    </div>
+                <div className="flex-1 flex flex-col justify-end">
+                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
+                    {industry.title}
+                  </h3>
+                  
+                  <div className="flex justify-end">
+                    <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors duration-500" />
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
