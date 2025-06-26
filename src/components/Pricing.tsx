@@ -1,31 +1,116 @@
 import { useState, useEffect } from 'react';
 
-// --- Data for the new Case Studies section ---
-const caseStudies = [
+// --- Data for the Pricing Cards section, matching the image content ---
+const pricingPlans = [
   {
-    title: 'Accelerating Property Risk Assessment with Digital Tools for a Global Insurer',
-    href: '#', // Replace with actual link
-    backgroundPosition: 'left center',
+    name: 'Enterprise',
+    price: '₹ 14,999/-',
+    description: 'Everything on Professional Package',
+    entries: '400 Transactions a month',
+    features: [
+      {
+        category: 'Accounting',
+        items: ['Everything on Bronze Package'],
+      },
+      {
+        category: 'GST',
+        items: ['Everything on Bronze Package'],
+      },
+      {
+        category: 'Financial Reporting',
+        items: ['Everything on Bronze Package', 'Cash Flow Statement (Quarterly)'],
+      },
+    ],
   },
   {
-    title: 'Unified DevSecOps Platform Cuts Downtime by 60% and Offers 8x Deployment Speed',
-    href: '#', // Replace with actual link
-    backgroundPosition: 'center center',
+    name: 'Standard',
+    price: '₹ 6,999/-',
+    description: 'Ideal For Freelancers, consultants, small businesses, and startups seeking essential accounting and GST',
+    entries: '150 Transactions a month',
+    features: [
+      {
+        category: 'Accounting',
+        items: ['Monthly recording of income & expenses', 'Bank and credit card reconciliation', 'Maintenance of general ledger'],
+      },
+      {
+        category: 'GST',
+        items: ['Monthly GST return filing (GSTR-1 & GSTR-3B)', 'Reconciliation of GSTR-2B with purchase register', 'Filing reminders and compliance alerts'],
+      },
+      {
+        category: 'Financial Reporting',
+        items: ['Outstanding Receivable/Payable', 'Balance Sheet and Profit and Loss (Quarterly)'],
+      },
+    ],
   },
   {
-    title: '30% Decrease in Attrition Due to Targeted Wellness Interventions for an Online Shopping Firm',
-    href: '#', // Replace with actual link
-    backgroundPosition: 'right center',
+    name: 'Professional',
+    price: '₹ 12,499/-',
+    description: 'Everything on STANDARD Package',
+    entries: '300 Transactions a month',
+    features: [
+      {
+        category: 'Accounting',
+        items: ['Everything on Standard Package'],
+      },
+       {
+        category: 'GST',
+        items: ['Everything on Standard Package'],
+      },
+      {
+        category: 'Financial Reporting',
+        items: ['Everything on Standard Package', 'Balance Sheet and Profit and Loss (Monthly)'],
+      },
+    ],
   },
 ];
+
+// --- Sub-component for individual pricing cards with a professional theme ---
+const PricingCard = ({ plan }) => {
+
+  return (
+    // Added a subtle gradient to the card background.
+    <div
+      className="w-full max-w-md mx-auto shadow-2xl p-8 flex flex-col bg-gradient-to-br from-black to-gray-900 text-white transform transition-transform duration-300 ease-in-out hover:-translate-y-4"
+    >
+      <h3 className="text-3xl font-extrabold text-center">{plan.name.toUpperCase()}</h3>
+      <p className="text-center mt-2 text-sm h-12 text-gray-400">{plan.description}</p>
+      
+      <div className="text-left my-6">
+        <span className="text-5xl font-bold">{plan.price}</span>
+      </div>
+
+      <div className="text-center mb-6 p-3 font-semibold bg-gray-800 text-gray-200">
+        {plan.entries}
+      </div>
+
+      <div className="flex-grow space-y-5">
+        {plan.features.map((featureSet) => (
+          <div key={featureSet.category}>
+            <h4 className="font-bold text-lg mb-2 text-gray-300">
+              Includes {featureSet.category}
+            </h4>
+            <ul className="space-y-2">
+              {featureSet.items.map((item) => (
+                <li key={item} className="flex items-start">
+                  <svg className="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <span className={'text-gray-400'}>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 
 const Pricing = () => {
   const [pricingVisible, setPricingVisible] = useState(false);
   const [descriptionVisible, setDescriptionVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
-
+  
   const backgroundVideo = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-  const caseStudiesImageUrl = "/image_b834fe.jpg"; // IMPORTANT: Place your image in the /public folder
 
   // Handle window resize
   useEffect(() => {
@@ -115,50 +200,28 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* --- START: New Case Studies Section --- */}
-      <section className="bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Case Studies
-            </h2>
-          </div>
-          <div className="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-12 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {caseStudies.map((study) => (
-              <a 
-                key={study.title} 
-                href={study.href} 
-                className="group flex max-w-xl flex-col items-start justify-between"
-              >
-                <div className="relative w-full">
-                  <div 
-                    className="aspect-[16/9] w-full rounded-2xl bg-gray-100 group-hover:grayscale-0 filter grayscale transition-all duration-500 ease-in-out"
-                    style={{
-                      backgroundImage: `url(${caseStudiesImageUrl})`,
-                      backgroundSize: '300% 100%',
-                      backgroundPosition: study.backgroundPosition,
-                    }}
-                  >
-                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-                  </div>
+      {/* --- START: Inverted and Elevated Pricing Section --- */}
+      <section className="relative bg-white py-24 px-4 sm:px-6 lg:px-8 -mt-40 z-20">
+        {/* Title is now aligned to the left */}
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl font-extrabold text-black sm:text-6xl tracking-tight">
+            PRICE LIST
+          </h2>
+        </div>
+
+        <div className="mt-16 lg:mt-24 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center items-start">
+            {pricingPlans.map((plan) => (
+                <div key={plan.name} className="w-full flex justify-center">
+                    <PricingCard plan={plan} />
                 </div>
-                <div className="mt-6">
-                  <div className="group relative">
-                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                        <span className="absolute inset-0" />
-                        {study.title}
-                    </h3>
-                  </div>
-                </div>
-              </a>
             ))}
           </div>
         </div>
+        
       </section>
-      {/* --- END: New Case Studies Section --- */}
+      {/* --- END: Inverted and Elevated Pricing Section --- */}
 
-      {/* Footer Line */}
-      <div className="bg-black border-t border-gray-800"></div>
     </>
   );
 };
