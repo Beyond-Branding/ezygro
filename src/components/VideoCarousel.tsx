@@ -10,23 +10,28 @@ const VideoCarousel = () => {
   const videos = [
     {
       id: 1,
-      title: "Tech Mahindra and Fable Partner to Launch the 'Mind Master' Book Club Featuring Chess Grandmaster Viswanathan Anand",
+      title: "Empowering Growth with Every Number We don’t just file and finish we plan, guide, and grow with you. EZYGRO turns boring numbers into bold moves.",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
     },
     {
       id: 2,
-      title: "Digital Transformation Solutions for Modern Enterprises",
+      title: "Driven by Precision. Backed by Ethics. Sharp minds, honest hands. With EZYGRO, you get advice that’s smart, clear, and always has your back.",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
     },
     {
       id: 3,
-      title: "Innovation in Cloud Computing and AI Technologies",
+      title: "Simplifying Compliance, Amplifying Success Legal forms? Tax chaos? Leave that to us. EZYGRO makes the tough stuff simple, so you can focus on winning.",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
     },
     {
       id: 4,
-      title: "Sustainable Technology Solutions for Future Growth",
+      title: "Your Partner in Professional Progress Every business needs a solid support system. EZYGRO walks with you through paperwork, plans, and big dreams.",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+    },
+    {
+      id: 5,
+      title: "Where Strategy Meets Service Smart ideas are nothing without action. At EZYGRO, we turn smart plans into smoother journeys no stress, just results.",
+      videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
     }
   ];
 
@@ -135,11 +140,10 @@ const VideoCarousel = () => {
             }`}
             style={{ 
               fontSize: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px', 
-              lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '56px' : '90px' 
+              lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '38px' : '54px' 
             }}
           >
-            Scale at Speed
-            <span className="text-xs sm:text-sm lg:text-base align-super text-gray-600 font-bold">™</span>
+            Where Expertise Meets Integrity
           </h1>
           
           <div
@@ -163,16 +167,6 @@ const VideoCarousel = () => {
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6">
             {videos[currentVideo].title}
           </h2>
-          <button className="group inline-flex items-center px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-3 border-2 border-white text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 text-xs sm:text-sm lg:text-base">
-            <span>KNOW MORE</span>
-            <svg
-              className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-300"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </button>
         </div>
       </div>
 

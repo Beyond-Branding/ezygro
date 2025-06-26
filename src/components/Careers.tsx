@@ -2,6 +2,51 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
+// --- Data for the alternating sections ---
+const sectionsData = [
+  {
+    id: 1,
+    title: 'Why TechM',
+    description: 'Seeking new frontiers in your career path? Discover how your journey aligns with ours. Explore opportunities at Tech Mahindra, and join a collective of vibrant, creative innovators and technologists.',
+    alt: 'A diverse team collaborating in a modern office meeting room.'
+  },
+  {
+    id: 2,
+    title: 'The TechM Way',
+    description: 'We are a company with the purpose of creating meaningful human experiences for our associates. Let’s help you Rise to new heights, the Tech Mahindra way.',
+    alt: 'A creative team celebrating success with high-fives in a sunlit office.'
+  },
+  {
+    id: 3,
+    title: 'Growth & Development',
+    description: 'We invest in your growth with continuous learning programs, mentorship from industry leaders, and clear career progression paths that empower you to achieve your ambitions.',
+    alt: 'A mentor guiding a colleague on a laptop in a bright, collaborative space.'
+  },
+  {
+    id: 4,
+    title: 'Innovation at Work',
+    description: 'Be at the forefront of technology. Work on cutting-edge projects using AI, cloud, and IoT to solve real-world problems for global clients and drive digital transformation.',
+    alt: 'An engineer working on complex robotics in a high-tech laboratory.'
+  },
+  {
+    id: 5,
+    title: 'Diversity & Inclusion',
+    description: 'Our strength lies in our diversity. We are committed to creating an inclusive environment where every voice is heard, valued, and respected, fostering a true sense of belonging.',
+    alt: 'A group of diverse colleagues laughing and working together in an open office.'
+  },
+  {
+    id: 6,
+    title: 'Global Opportunities',
+    description: 'With a presence in over 100 countries, we offer exciting opportunities to work on international projects, collaborate with global teams, and gain invaluable cross-cultural experience.',
+    alt: 'A world map with interconnected points displayed on a digital screen.'
+  },
+];
+
+// --- The two images to be alternated ---
+const imageOneUrl = 'https://insights.techmahindra.com/styles/text_and_image_desktop/s3/images/intheoffice.jpg.webp';
+const imageTwoUrl = 'https://insights.techmahindra.com/styles/text_and_image_desktop/s3/images/techmway.jpg.webp';
+
+
 // --- Custom Hook for Intersection Observer ---
 const useInView = (options: IntersectionObserverInit) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -216,7 +261,73 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* CONTACT FORM */}
+      {/* ALTERNATING ANIMATED SECTIONS */}
+      <div className="bg-white py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto flex flex-col gap-16 sm:gap-24">
+            {sectionsData.map((section, index) => {
+              const isTextOnLeft = index % 2 === 0;
+              const [ref, isInView] = useInView({ threshold: 0.1 });
+              const imageUrl = index % 2 === 0 ? imageOneUrl : imageTwoUrl;
+
+              return (
+                <div
+                  ref={ref}
+                  key={section.id}
+                  className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 transition-opacity duration-500 ${
+                    isInView ? 'opacity-100' : 'opacity-50'
+                  }`}
+                >
+                  {/* Text Container */}
+                  <div className={`lg:w-3/5 lg:py-8 ${isTextOnLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                    <div
+                      className={`transition-all duration-1000 ease-out ${
+                        isInView
+                          ? 'translate-x-0 opacity-100'
+                          : isTextOnLeft
+                          ? '-translate-x-10 opacity-0'
+                          : 'translate-x-10 opacity-0'
+                      }`}
+                    >
+                      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        {section.title}
+                      </h2>
+                      <p className="mt-6 text-lg leading-8 text-gray-600">
+                        {section.description}
+                      </p>
+                      <div className="mt-8">
+                        <a
+                          href="#"
+                          className="inline-block rounded-md border border-gray-900 px-6 py-3 text-center font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors"
+                        >
+                          Learn more
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Image Container */}
+                  <div className={`lg:w-2/5 ${isTextOnLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+                    <div
+                      className={`overflow-hidden transition-all duration-1000 ease-out ${
+                        isInView ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
+                      }`}
+                    >
+                      <img
+                        src={imageUrl}
+                        alt={section.alt}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      
+      {/* NEWLY ADDED CONTACT FORM */}
       <ContactForm />
     </>
   );
