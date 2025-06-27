@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import { ArrowRight, Building2, Zap, Phone, Shield, Factory, Plane } from 'lucide-react';
 
 interface IndustryCard {
   id: number;
-  title: string;
+  title: React.ReactNode;
   icon: React.ReactNode;
   image: string;
   description: string;
@@ -31,7 +32,11 @@ const Industries: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Income Tax, GST and Audits',
+      title: (
+        <>
+          Income Tax, GST and <br /> Audits
+        </>
+      ),
       icon: <Phone className="w-8 h-8" />,
       image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
       description: 'Next-generation communication technologies and solutions',
@@ -47,7 +52,11 @@ const Industries: React.FC = () => {
     },
     {
       id: 4,
-      title: 'Innovative Dashboards',
+      title: (
+        <>
+          Innovative <br /> Dashboards
+        </>
+      ),
       icon: <Shield className="w-8 h-8" />,
       image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
       description: 'Healthcare technology and digital health solutions',
@@ -63,7 +72,11 @@ const Industries: React.FC = () => {
     },
     {
       id: 6,
-      title: 'Secretarial Compliances',
+      title: (
+        <>
+          Secretarial <br /> Compliances
+        </>
+      ),
       icon: <Plane className="w-8 h-8" />,
       image: 'https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
       description: 'Digital transformation for travel and logistics',
@@ -87,9 +100,11 @@ const Industries: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {industries.map((industry, index) => (
-              <div
+              // Each card is now wrapped in a Link component for navigation
+              <Link
+                to={industry.link}
                 key={industry.id}
-                className={`group relative cursor-pointer transform transition-all duration-700 ease-out hover:scale-105 w-full ${
+                className={`group relative transform transition-all duration-700 ease-out hover:scale-105 w-full ${
                   isVisible 
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-8 opacity-0'
@@ -104,8 +119,13 @@ const Industries: React.FC = () => {
                     <div className="w-32 h-32 rounded-full overflow-hidden">
                       <img
                         src={industry.image}
-                        alt={industry.title}
+                        alt={typeof industry.title === 'string' ? industry.title : ''} // Alt text handled for JSX title
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.onerror = null; 
+                          target.src='https://placehold.co/300x300/e2e8f0/64748b?text=Image';
+                        }}
                       />
                     </div>
                   </div>
@@ -120,7 +140,7 @@ const Industries: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
