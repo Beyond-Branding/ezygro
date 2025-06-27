@@ -14,7 +14,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
     <footer className="bg-gray-900 text-gray-400">
       {/* Main Footer Content - Careers and Contact Us Section */}
       {showCareersContact && (
-        <div className="bg-slate-800">
+        <div className="" style={{ backgroundColor: '#1e1e1e' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Careers Section */}

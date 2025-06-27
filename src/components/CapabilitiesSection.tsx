@@ -53,50 +53,52 @@ const CapabilitiesSection = () => {
   ];
 
   return (
-    <section className="bg-white py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-10 lg:mb-12 gap-4 sm:gap-6 lg:gap-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 lg:w-1/3">
-            Industries
-          </h2>
-        </div>
+    <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-10 lg:mb-12 gap-4 sm:gap-6 lg:gap-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 lg:w-1/3">
+              Industries
+            </h2>
+          </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-          {capabilities.map((capability, index) => (
-            <div
-              key={index}
-              className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] rounded-lg cursor-pointer border border-gray-200"
-            >
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <img
-                  src={capability.imageUrl}
-                  alt={`${capability.title} Visual`}
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            {capabilities.map((capability, index) => (
+              <div
+                key={index}
+                className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] rounded-lg cursor-pointer border border-gray-200"
+              >
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                  <img
+                    src={capability.imageUrl}
+                    alt={`${capability.title} Visual`}
+                    className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
+                  {/* Title */}
+                  <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
+                    {capability.title}
+                  </h3>
+
+                  {/* Description - Appears centered on hover */}
+                  {capability.description && (
+                    <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 lg:p-6">
+                      <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-center leading-relaxed">
+                        {capability.description}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
-
-              {/* Content */}
-              <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
-                {/* Title */}
-                <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
-                  {capability.title}
-                </h3>
-
-                {/* Description - Appears centered on hover */}
-                {capability.description && (
-                  <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 lg:p-6">
-                    <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-center leading-relaxed">
-                      {capability.description}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

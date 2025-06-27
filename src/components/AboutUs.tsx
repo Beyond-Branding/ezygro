@@ -9,16 +9,16 @@ const AboutUs = () => {
   // Data for the Corporate Citizenship section
   const citizenshipData = [
     {
-      title: 'Tech Mahindra Foundation',
-      description: 'The Tech Mahindra Foundation is our corporate social responsibility arm of Tech Mahindra Limited, a Mahindra Group Company.',
+      title: ' Our Belief',
+      description: 'At EZYGRO, we believe true impact comes from creating value that goes beyond business transactions. We’re not just here to offer professional services  we’re here to stand for something greater. Rooted in integrity, trust, and purpose, our belief is that every solution we provide should also contribute to the betterment of society.',
     },
     {
-      title: 'Mahindra Educational Institutions',
-      description: 'Offer world-class higher education to ensure well-rounded learning for empowering the youth.',
+      title: 'Our Approach',
+      description: 'We integrate ethical practices into every step of our process from client consultation to community outreach. Our commitment to fairness, clarity, and accessibility ensures that our services remain transparent and people-centered. Through active engagement with our community and a focus on honest business, we strive to lead with both heart and expertise.',
     },
     {
-      title: 'Individual Social Responsibility',
-      description: 'Making responsibility personal, TechMighties go the extra mile to embrace it in their daily lives and drive positive change uniquely.',
+      title: 'Our Purpose',
+      description: 'Knowledge is power and at EZYGRO, we share it freely. Whether through workshops, awareness initiatives, or simplified financial education, our goal is to help people make informed choices. We aim to build an inclusive environment where every individual, entrepreneur, or enterprise feels supported, valued, and empowered to grow.',
     },
   ];
 
@@ -78,10 +78,10 @@ const AboutUs = () => {
               }`}
               style={{
                 fontSize: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px',
-                lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '56px' : '90px'
+                lineHeight: windowWidth < 640 ? '30px' : windowWidth < 1024 ? '48px' : '70px' // decreased line height
               }}
             >
-              About Us
+              Who We Are
             </h1>
 
             <div
@@ -92,10 +92,12 @@ const AboutUs = () => {
               <p className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-xs lg:text-sm text-gray-800 leading-relaxed font-400"
                 style={{
                   fontSize: windowWidth < 640 ? '12px' : windowWidth < 1024 ? '14px' : '16px',
-                  lineHeight: windowWidth < 640 ? '18px' : windowWidth < 1024 ? '22px' : '26px'
+                  lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px' // decreased line height
                 }}
               >
-                We are digital changemakers – here to disrupt old ideas, blaze new trails, and help enterprises transform and scale at unparalleled speed.
+                Welcome to EZYGRO where expertise meets elegance in legal, tax, audit, and compliance.
+Led by Sushma B. Salunkhe, we simplify the complex with clarity and care.
+Empowering growth with purpose, precision, and trust.
               </p>
             </div>
           </div>
@@ -108,10 +110,10 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
             <div className="relative">
               <h2 className={`text-xl sm:text-2xl md:text-3xl font-medium text-gray-900 tracking-tight transition-all ease-in-out duration-1000 transform ${scaleAtSpeedVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                Part of Mahindra Group
+                Scale easily with EzyGro
               </h2>
               <p className={`mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed transition-all ease-in-out duration-1000 delay-200 transform ${promiseTextVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                We are part of the Mahindra Group, founded in 1945, one of the largest and most admired multinational federation of companies...
+                EZYGRO is a visionary initiative founded by Sushma B. Salunkhe and Dhanashree B. Salunkhe, designed to offer comprehensive, end-to-end solutions across the domains of legal, tax, audit, and corporate advisory. Born from a shared passion for simplifying the intricate challenges faced by businesses and individuals alike, EZYGRO stands as a one-stop destination for navigating the evolving regulatory and financial landscape with confidence. With a foundation built on trust, ethics, and deep industry knowledge, we are committed to delivering more than just services we deliver clarity, confidence, and long-term value. Whether it's guiding a startup through its legal framework, helping businesses stay compliant, or offering tailored financial advice, we combine precision with a personal touch to ensure every client receives support that’s both strategic and sincere.
               </p>
             </div>
             <div className="w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden rounded-lg">
@@ -134,7 +136,7 @@ const AboutUs = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-left mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
-              Corporate Citizenship
+              EZYGRO for YOU
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-4xl">
               We believe that technology holds the power to transform communities worldwide...
@@ -145,9 +147,6 @@ const AboutUs = () => {
               <div key={index} className="group relative bg-gray-50 p-8 border border-gray-200 transition-shadow duration-300 hover:shadow-lg">
                 <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
                 <p className="mt-4 text-gray-600">{item.description}</p>
-                <a href="#" className="inline-block mt-6 font-semibold text-gray-800 tracking-wider text-sm">
-                  LEARN MORE
-                </a>
                 <div className="absolute bottom-0 left-0 h-1 bg-red-600 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}

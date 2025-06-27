@@ -13,26 +13,20 @@ const VisionPurposeValues = () => {
   const content = [
     {
       key: 'vision',
-      title: 'Vision',
-      text: 'We will continue to Rise to be an agile, customer-centric, and purpose-driven company, delivering best-in-class technology solutions to our stakeholders.',
+      title: 'Who we are',
+      text: 'At EZYGRO, our vision is to become a trusted partner in simplifying compliance and empowering growth.',
       image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
     },
     {
       key: 'purpose',
-      title: 'Purpose',
-      text: 'To drive positive change in the lives of our communities. Only when we enable others to Rise will we Rise.\n\n#TogetherWeRise',
+      title: 'Scale easily with EzyGro',
+      text: 'Our purpose is to deliver transparent, reliable, and client-focused solutions',
       image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
     },
     {
       key: 'values',
-      title: 'Values',
-      list: [
-        'Professionalism',
-        'Good Corporate Citizenship',
-        'Customer First',
-        'Quality Focus',
-        'Dignity of the Individual'
-      ],
+      title: 'Where we are headed',
+      text: 'Guided by our core values integrity, accountability, and excellence we build lasting relationships and drive meaningful impact.',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
     }
   ];
@@ -261,7 +255,7 @@ const VisionPurposeValues = () => {
               {content.map((item, index) => (
                 <h2
                   key={item.key}
-                  className={`text-6xl lg:text-7xl font-bold cursor-pointer transition-all duration-300 ${
+                  className={`text-4xl lg:text-5xl font-bold cursor-pointer transition-all duration-300 ${
                     activeTab === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
                   } ${isAnimating ? 'pointer-events-none' : ''}`}
                   onClick={() => handleTabClick(index)}
@@ -462,9 +456,9 @@ const VisionPurposeValues = () => {
                   <p className="text-lg leading-relaxed whitespace-pre-line max-w-lg">{currentContent.text}</p>
                 ) : (
                   <ul className="text-lg space-y-3 max-w-lg">
-                    {currentContent.list?.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
+                    {/* {currentContent.list?.map((item, i) => ( */}
+                      {/* <li key={i}>{item}</li> */}
+                    {/* ))} */}
                   </ul>
                 )}
               </div>
@@ -479,7 +473,7 @@ const VisionPurposeValues = () => {
             {content.map((item, index) => (
               <h2
                 key={item.key}
-                className={`text-xl font-bold cursor-pointer transition-all duration-300 ${
+                className={`text-lg font-bold cursor-pointer transition-all duration-300 ${
                   activeTab === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
                 } ${isAnimating ? 'pointer-events-none' : ''}`}
                 onClick={() => handleTabClick(index)}
@@ -589,9 +583,9 @@ const VisionPurposeValues = () => {
                 <p className="text-sm leading-relaxed whitespace-pre-line max-w-md mx-auto">{currentContent.text}</p>
               ) : (
                 <ul className="text-sm space-y-2 max-w-md mx-auto text-left">
-                  {currentContent.list?.map((item, i) => (
-                    <li key={i}>• {item}</li>
-                  ))}
+                  {/* {currentContent.list?.map((item, i) => ( */}
+                    {/* <li key={i}>• {item}</li> */}
+                  {/* ))} */}
                 </ul>
               )}
             </div>
