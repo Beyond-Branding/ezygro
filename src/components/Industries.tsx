@@ -80,7 +80,7 @@ const Industries: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 lg:w-1/3">
               Capabilities
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-700 lg:w-2/3 lg:text-right leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-700 lg:w-2/3 lg:text-right leading-relaxed text-left lg:text-justify lg:leading-7" style={{maxWidth: '700px', marginLeft: 'auto', marginRight: '0'}}>
               We don’t believe in one-size-fits-all. Your business is unique and your legal, tax, audit, and compliance solutions should be too.
             </p>
           </div>

@@ -45,8 +45,8 @@ const SustainabilitySection = () => {
             className="w-full h-full"
             style={{
               clipPath: window.innerWidth < 768 
-                ? 'polygon(-400% 85%, 100% 20%, 100% 100%, 0% 100%)'
-                : 'polygon(10% 90%, 100% 0%, 100% 100%, 0% 100%)'
+                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
+                : 'polygon(-40% 90%, 100% 0%, 100% 100%, 0% 100%)'
             }}
           >
             <img
@@ -68,7 +68,7 @@ const SustainabilitySection = () => {
             <div
               className="relative"
               style={{
-                transform: `translateY(${translateY}px)`,
+                transform: `translateY(${translateY - (window.innerWidth < 768 ? 180 : 0)}px)`,
                 transition: 'transform 0.2s linear'
               }}
             >

@@ -131,19 +131,19 @@ const VideoCarousel = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+      <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
         {/* Left content: Scale at Speed */}
-        <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-6 lg:left-0 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
+        <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-8 lg:left-16 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
           <h1
             className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-700 ease-out ${
               scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
             style={{ 
-              fontSize: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px', 
-              lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '38px' : '54px' 
+              fontSize: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '38px' : '54px', // increased font sizes
+              lineHeight: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '34px' : '44px'
             }}
           >
-            Where Expertise Meets Integrity
+            Where Expertise<br />Meets Integrity
           </h1>
           
           <div
@@ -154,7 +154,7 @@ const VideoCarousel = () => {
             <p className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
                         style={{ 
                           fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px', 
-                          lineHeight: windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '30px' 
+                          lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px' // decreased line heights
                         }}
                         >
               Our promise to help enterprises across industries transform at speed, agility, resilience, and efficiency to their businesses.
