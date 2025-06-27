@@ -5,7 +5,7 @@ import Industries from './components/Industries';
 import CapabilitiesSection from './components/CapabilitiesSection';
 import TechMahindraSection from './components/TechMahindraSection';
 import JoyMattersSection from './components/JoyMattersSection';
-import IndustriesSection from './components/IndustriesSection';
+// import IndustriesSection from './components/IndustriesSection';
 import SustainabilitySection from './components/SustainabilitySection';
 import RiseSection from './components/RiseSection';
 import ExploreMoreSection from './components/ExploreMoreSection';
@@ -15,7 +15,7 @@ import AboutUs from './components/AboutUs';
 import Capabilities from './components/Capabilities';
 import Careers from './components/Careers';
 import Contact from './components/Contact';
-import Pricing from './components/Pricing';
+// import Pricing from './components/Pricing';
 
 const HomePage = () => (
   <>
@@ -24,7 +24,7 @@ const HomePage = () => (
     <CapabilitiesSection />
     <TechMahindraSection />
     <JoyMattersSection />
-    <IndustriesSection />
+    {/* <IndustriesSection /> */}
     <SustainabilitySection />
     <RiseSection />
     <ExploreMoreSection />
@@ -42,7 +42,7 @@ const AppContent = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/capabilities" element={<Capabilities />} />
-        <Route path="/pricing" element={<Pricing />} />
+        {/* <Route path="/pricing" element={<Pricing />} /> */}
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

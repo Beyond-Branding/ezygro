@@ -125,7 +125,7 @@ export default function App() {
         {/* --- Header Section --- */}
         <div className="mb-8 md:mb-12 w-full text-left">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-4">
-            Contact Us
+            Let's Connect
           </h1>
           <p className="text-lg md:text-xl text-gray-600">
             We would love to hear from you!
@@ -135,22 +135,24 @@ export default function App() {
         {/* --- Google Map Section --- */}
         <div className="w-full h-[50vh] md:h-[65vh] bg-gray-200 overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192454!2d77.0688975490351!3d28.52758200617636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1719372093826!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.234073289305!2d72.86450207519531!3d19.18614098702759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7b2e2e2e2e3%3A0x123456789abcdef!2s12%2C%20Ground%20Floor%2C%20Dadi%20Building%2C%20Rani%20Sati%20Marg%2C%20Kathiyawadi%20Chowk%2C%20near%20Union%20Bank%2C%20Malad%20East%2C%20Mumbai%2C%20Maharashtra%20400097!5e0!3m2!1sen!2sin!4v1719372093826!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Google Map of New Delhi"
+            title="Google Map of Mumbai Office"
           ></iframe>
         </div>
         
          {/* --- Info Footer --- */}
         <div className="my-8 md:my-12 text-center">
-            <div className="flex items-center justify-center text-gray-500">
-                <MapPin />
-                <span>A sample location: New Delhi, India</span>
+            <div className="flex flex-col items-center justify-center text-gray-500 space-y-2">
+                <div className="flex items-center"><MapPin /><span>12, Ground Floor, Dadi Building, Rani Sati Marg, Kathiyawadi Chowk, near Union Bank, Malad East, Mumbai, Maharashtra 400097</span></div>
+                <div className="flex items-center"><span className="font-semibold mr-2">Phone:</span> <span>+91-XXXXXXXXXX</span></div>
+                <div className="flex items-center"><span className="font-semibold mr-2">Email:</span> <span>info@yourcompany.com</span></div>
+                <div className="flex items-center"><span className="font-semibold mr-2">Google Maps:</span> <a href="https://g.co/kgs/8uxN7WU" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">View Location</a></div>
             </div>
         </div>
 
