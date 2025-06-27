@@ -16,6 +16,12 @@ import Capabilities from './components/Capabilities';
 import Careers from './components/Careers';
 import Contact from './components/Contact';
 import Pricing from './components/Pricing';
+import FinancialAndAccounting from './capabilitypages/FinancialAndAccounting';
+import IncomeTax from './capabilitypages/IncomeTax';
+import VirtualCFO from './capabilitypages/VirtualCFO';
+import InnovativeDashboards from './capabilitypages/InnovativeDashboards';
+import LoansAndInsurance from './capabilitypages/LoansAndInsurance';
+import SecretarialCompliances from './capabilitypages/SecretarialCompliances';
 
 const HomePage = () => (
   <>
@@ -45,12 +51,21 @@ const AppContent = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/industries/banking-financial-services" element={<FinancialAndAccounting />} />
+        <Route path="/industries/communications" element={<IncomeTax />} />
+        <Route path="/industries/energy-utilities" element={<VirtualCFO />} />
+        <Route path="/industries/healthcare-life-sciences" element={<InnovativeDashboards />} />
+        <Route path="/industries/manufacturing" element={<LoansAndInsurance />} />
+        <Route path="/industries/travel-transportation" element={<SecretarialCompliances />} />
       </Routes>
       <Footer showCareersContact={isHomePage} />
       <ScrollToTopButton />
     </div>
   );
 };
+
+
 
 function App() {
   return (
