@@ -19,7 +19,13 @@ function OurServices() {
     ],
   };
 
-  const ServiceCard = ({ title, description, items }) => (
+  interface ServiceCardProps {
+    title: string;
+    description: string;
+    items: string[];
+  }
+
+  const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, items }) => (
     <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
       <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
       <p className="text-gray-600 mb-8">{description}</p>
