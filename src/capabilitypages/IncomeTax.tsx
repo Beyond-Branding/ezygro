@@ -104,6 +104,57 @@ const IncomeTax = () => {
           </div>
         </div>
       </section>
+      {/* Our Services Section (copied from FinancialAndAccounting) */}
+      <section className="bg-gray-50 py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Discover</h3>
+              <p className="text-gray-600 mb-8">Tech Mahindra’s design thinking-led approach and frameworks help identify AI opportunities lurking in your organization. Our experts identify the right AI strategy and roadmap for your organization.</p>
+              <ul className="space-y-4">
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Strategy and Roadmap</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Discovery</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Process Mining and Task Mining</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Maturity Assessment</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">CCF Setup</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise IA and AI Architecture evaluation</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Platform/Technology Evaluation</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Evangelize AI Pair Programming</span></li>
+              </ul>
+            </div>
+            <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Experiment</h3>
+              <p className="text-gray-600 mb-8">Our principle of ‘fail fast to learn faster’ is enabled by an ecosystem of experimentation. Our AI Labs for innovative opportunities enable us, along with partners or clients, to co-innovate.</p>
+              <ul className="space-y-4">
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Gen AI Experiment as a Service (XaaS)</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Labs</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Sandbox Setup</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">PoT and Fast Experiment</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Partner/Client Co-innovation</span></li>
+              </ul>
+            </div>
+            <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Scale</h3>
+              <p className="text-gray-600 mb-8">We help you leverage your data and AI assets across the organization coupled with our AI solutions in order to scale up on your AI journey. Our AI enablement programs can help accelerate the democratization of AI.</p>
+              <ul className="space-y-4">
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Model Factory</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Ops and ML Ops</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Digital Workforce Management</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI and Bot Performance Management</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Store</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Enablement</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Data Annotation</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise AI Platform Build</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Responsible Adoption</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise Knowledge Search</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
