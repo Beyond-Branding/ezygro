@@ -13,40 +13,52 @@ const Capabilities = () => {
   const capabilities = [
     {
       id: 1,
-      title: 'Artificial Intelligence',
+      title: 'Financial and Accounting Management',
       image: 'https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      link: '/capabilities/artificial-intelligence',
+      link: '/industries/banking-financial-services',
     },
     {
       id: 2,
-      title: 'Business Process Services',
+      title: (
+        <>
+          Income Tax, GST and <br /> Audits
+        </>
+      ),
       image: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      link: '/capabilities/business-process-services',
+      link: '/industries/communications',
     },
     {
       id: 3,
-      title: 'Cloud and Infrastructure Services',
+      title: 'Virtual CFO and Business Growth Consultancy',
       image: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      link: '/capabilities/cloud-infrastructure',
+      link: '/industries/energy-utilities',
     },
     // New cards from screenshot
     {
       id: 4,
-      title: 'Digital Enterprise Applications',
+      title: (
+        <>
+          Innovative <br /> Dashboards
+        </>
+      ),
       image: 'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      link: '/capabilities/digital-enterprise-applications',
+      link: '/industries/healthcare-life-sciences',
     },
     {
       id: 5,
-      title: 'Engineering Services',
+      title: 'Loans, Insurance and Investments',
       image: 'https://images.pexels.com/photos/1145434/pexels-photo-1145434.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      link: '/capabilities/engineering-services',
+      link: '/industries/manufacturing',
     },
     {
       id: 6,
-      title: 'Experience Services',
+      title: (
+        <>
+          Secretarial <br /> Compliances
+        </>
+      ),
       image: 'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      link: '/capabilities/experience-services',
+      link: '/industries/travel-transportation',
     },
   ];
 
