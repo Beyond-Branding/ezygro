@@ -161,8 +161,9 @@ const Capabilities = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {capabilities.map((cap, index) => (
-              <div
+              <a
                 key={cap.id}
+                href={cap.link}
                 className={`group relative cursor-pointer transform transition-all duration-700 ease-out hover:scale-105 w-full ${
                   capabilitiesVisible 
                     ? 'translate-y-0 opacity-100' 
@@ -178,7 +179,7 @@ const Capabilities = () => {
                     <div className="w-32 h-32 rounded-full overflow-hidden">
                       <img
                         src={cap.image}
-                        alt={cap.title}
+                        alt={typeof cap.title === 'string' ? cap.title : undefined}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
@@ -192,7 +193,7 @@ const Capabilities = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
