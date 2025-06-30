@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
-interface CookiePreferencesModalProps {
+interface TermsOfUseModalProps {
   show: boolean;
   onClose: () => void;
 }
 
-const CookiePreferencesModal: React.FC<CookiePreferencesModalProps> = ({ show, onClose }) => {
+function TermsOfUseModal({ show, onClose }: TermsOfUseModalProps) {
   useEffect(() => {
     if (show) {
       document.body.style.overflow = 'hidden';
@@ -44,13 +44,14 @@ h. We do not assume any risk or liability for any content if it is posted by you
 
 i. You agree to indemnify and hold harmless D B Salunkhe.com a digital property of Dhanashree B Salunkhe and Co, Chartered Accountants and affiliates, and their directors, officers, managers, employees, donors, agents, and licensors, from and against all losses, expenses, damages and costs, including sensible attorneys’ fees, resulting from any violation of this User Agreement or the failure to fulfill any obligations relating to your account acquired by you or any other individual utilizing your account. We reserve the right to take over the exclusive defense of any claim for which we are entitled to indemnification under this User Agreement. In such event, you shall provide us with such participation as is reasonably requested by us.
 
-Your privacy is very critical to us, that is the reason why we’ve created a different Privacy Policy in order to explain in detail how we gather, manage, process, secure, and store your private information. Our privacy policy is incorporated under the scope of this User Agreement. To read our privacy policy in its entirety, click here.`;
+Your privacy is very critical to us, that is the reason why we’ve created a different Privacy Policy in order to explain in detail how we gather, manage, process, secure, and store your private information. Our privacy policy is incorporated under the scope of this User Agreement. To read our privacy policy in its entirety, click here.
+`;
 
   // Use React Router for internal navigation
   const privacyUrl = '/privacy-notice';
   const replaced = terms.replace(
     /click here/g,
-    `<a href="${privacyUrl}" class="text-red-500 underline hover:text-red-700">click here</a>`
+    '<a href="' + privacyUrl + '" class="text-red-500 underline hover:text-red-700">click here</a>'
   );
 
   return (
@@ -59,7 +60,7 @@ Your privacy is very critical to us, that is the reason why we’ve created a di
         <button
           className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold focus:outline-none"
           onClick={onClose}
-          aria-label="Close Cookie Preferences"
+          aria-label="Close Terms of Use"
         >
           ×
         </button>
@@ -77,4 +78,4 @@ Your privacy is very critical to us, that is the reason why we’ve created a di
   );
 };
 
-export default CookiePreferencesModal;
+export default TermsOfUseModal;
