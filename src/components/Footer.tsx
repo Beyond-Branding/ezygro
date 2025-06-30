@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-import CookiePreferencesModal from './CookiePreferencesModal';
+import TermsOfUseModal from './TermsOfUseModal';
 
 import logo from '../logo.png';
 
@@ -71,8 +71,8 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
                     Cookie Preferences
                   </a>
                 </li>
-      {/* Cookie Preferences Modal */}
-      <CookiePreferencesModal show={showCookieModal} onClose={() => setShowCookieModal(false)} />
+      {/* Terms of Use Modal */}
+      <TermsOfUseModal show={showCookieModal} onClose={() => setShowCookieModal(false)} />
               </ul>
             </div>
             {/* Follow Us */}

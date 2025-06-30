@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import CookieConsentBanner from './components/CookieConsentBanner';
 import Header from './components/Header';
 import PrivacyNotice from './components/PrivacyNotice';
 import VideoCarousel from './components/VideoCarousel';
@@ -11,6 +12,7 @@ import SustainabilitySection from './components/SustainabilitySection';
 import RiseSection from './components/RiseSection';
 import ExploreMoreSection from './components/ExploreMoreSection';
 import Footer from './components/Footer';
+import TermsOfUsePage from './components/TermsOfUsePage';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import AboutUs from './components/AboutUs';
 import Capabilities from './components/Capabilities';
@@ -61,9 +63,11 @@ const AppContent = () => {
         <Route path="/industries/travel-transportation" element={<SecretarialCompliances />} />
         {/* Privacy Notice Route */}
         <Route path="/privacy-notice" element={<PrivacyNotice />} />
+        <Route path="/terms-of-use" element={<TermsOfUsePage />} />
       </Routes>
       <Footer showCareersContact={isHomePage} />
       <ScrollToTopButton />
+      <CookieConsentBanner />
     </div>
   );
 };
