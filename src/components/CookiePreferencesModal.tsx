@@ -68,7 +68,7 @@ Your privacy is very critical to us, that is the reason why we’ve created a di
           <span className="h-8 mb-2 text-lg font-semibold tracking-wide text-white drop-shadow-lg">EZYGRO</span>
           <span className="mb-1 text-lg font-semibold text-white">Terms of Use</span>
           <div
-            className="text-gray-200 text-base leading-relaxed text-justify whitespace-pre-line bg-black rounded p-4 shadow-inner"
+            className="text-white text-base leading-relaxed text-justify whitespace-pre-line bg-black rounded p-4 shadow-inner"
             dangerouslySetInnerHTML={{ __html: replaced }}
           />
         </div>
