@@ -1,14 +1,16 @@
-import React from 'react';
-import { ChevronUp, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import React, { useState } from 'react';
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import CookiePreferencesModal from './CookiePreferencesModal';
+
+import logo from '../logo.png';
 
 interface FooterProps {
   showCareersContact?: boolean;
 }
 
+
 const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const [showCookieModal, setShowCookieModal] = useState(false);
 
   return (
     <footer className="bg-gray-900 text-gray-400">
@@ -40,12 +42,10 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
       {/* Bottom Footer - Black Section */}
       <div className="bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Tech Mahindra Logo */}
-            <div className="lg:col-span-1">
-              <div className="inline-block px-4 py-2 bg-white rounded">
-                <span className="text-black font-semibold text-sm">Tech Mahindra</span>
-              </div>
+            <div className="lg:col-span-1 flex items-center" style={{ alignItems: 'flex-start' }}>
+              <img src={logo} alt="Tech Mahindra Logo" className="h-14 w-auto rounded mt-0" />
             </div>
             {/* Our Brand */}
             <div>
@@ -63,7 +63,16 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Events</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Alumni</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Sitemap</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Preferences</a></li>
+                <li>
+                  <button
+                    className="text-gray-400 hover:text-white text-sm transition-colors focus:outline-none"
+                    onClick={() => setShowCookieModal(true)}
+                  >
+                    Cookie Preferences
+                  </button>
+                </li>
+      {/* Cookie Preferences Modal */}
+      <CookiePreferencesModal show={showCookieModal} onClose={() => setShowCookieModal(false)} />
               </ul>
             </div>
             {/* Follow Us */}
@@ -94,15 +103,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
             <p className="text-gray-400 text-sm mb-4 lg:mb-0">© 2025 Tech Mahindra Limited</p>
             <div className="flex items-center space-x-6">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Use</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Accessibility</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy</a>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie</a>
-              <button 
-                onClick={scrollToTop} 
-                className="text-gray-400 hover:text-white transition-colors p-1 rounded-full bg-gray-700 hover:bg-gray-600"
-              >
-                <ChevronUp size={16} />
-              </button>
             </div>
           </div>
         </div>
