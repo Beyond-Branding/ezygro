@@ -111,7 +111,7 @@ Empowering growth with purpose, precision, and trust.
               Virtual CFO
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Grrowwide believes in offering the clients the optimal solutions help them grow their business effectively, so that they can focus on the core business strengths, versus getting tied down with operational duties. We handle all outsourced CFO responsibilities, from Financial Modeling, Cash Flow Management to Compliance Reporting, and more.
+              At EZYGRO, we deliver smart, scalable solutions that empower clients to focus on their core strengths while we handle the rest. From outsourced CFO services to financial modeling, cash flow management, and compliance reporting — we take care of the numbers, so you can drive growth without the operational clutter.
             </p>
           </div>
         </div>
