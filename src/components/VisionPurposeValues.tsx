@@ -13,19 +13,19 @@ const VisionPurposeValues = () => {
   const content = [
     {
       key: 'vision',
-      title: 'Who we are',
+      title: 'Vision',
       text: 'At EZYGRO, our vision is to become a trusted partner in simplifying compliance and empowering growth.',
       image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
     },
     {
       key: 'purpose',
-      title: 'Scale easily with EzyGro',
+      title: 'Purpose',
       text: 'Our purpose is to deliver transparent, reliable, and client-focused solutions',
       image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
     },
     {
       key: 'values',
-      title: 'Where we are headed',
+      title: 'Value',
       text: 'Guided by our core values integrity, accountability, and excellence we build lasting relationships and drive meaningful impact.',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60'
     }

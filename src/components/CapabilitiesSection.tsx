@@ -4,7 +4,7 @@ const CapabilitiesSection = () => {
   const capabilities = [
     {
       title: "Pharma",
-      description: "Amplify your business with TechM by infusing AI in every aspect of your business, democratizing AI responsibly.",
+      description: "Amplify your business by infusing AI in every aspect of your business, democratizing AI responsibly.",
       link: "https://www.techmahindra.com/services/artificial-intelligence/",
       imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
@@ -100,60 +100,70 @@ const CapabilitiesSection = () => {
     }
   ];
 
-  // Progressbar animation logic synced with ticker
   const progressRef = useRef<HTMLDivElement>(null);
   const tickerRef = useRef<HTMLDivElement>(null);
-  const [progressKey, setProgressKey] = useState(0); // Used to retrigger progress animation
-  const [isPaused, setIsPaused] = useState(false); // Control ticker pause
-  const duration = 40000; // match ticker animation duration (40s)
-  const pauseDuration = 2000; // 2 seconds pause at end
+  const [progressKey, setProgressKey] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  
+  const duration = 120000; // 120 seconds for slow scroll
+  const pauseDuration = 1000; // 1 second pause at the end of a cycle
 
-  // Listen for ticker animation loop and pause at end
   useEffect(() => {
     const ticker = tickerRef.current;
     if (!ticker) return;
-    let timeout: number;
+    
+    let timeout: ReturnType<typeof setTimeout>;
+
     const handleIteration = () => {
-      setIsPaused(true); // Pause ticker and progress
+      setIsPaused(true);
       timeout = setTimeout(() => {
-        setIsPaused(false); // Resume ticker and progress
-        setProgressKey(prev => prev + 1); // retrigger progress
+        setIsPaused(false);
+        setProgressKey(prev => prev + 1);
       }, pauseDuration);
     };
+
     ticker.addEventListener('animationiteration', handleIteration);
+
     return () => {
       ticker.removeEventListener('animationiteration', handleIteration);
       if (timeout) clearTimeout(timeout);
     };
-  }, []);
+  }, [pauseDuration]);
 
-  // Animate progress bar in sync with ticker and pause
   useEffect(() => {
     let req: number;
     let start: number | null = null;
-    // removed unused pausedAt
+
     function animateProgress(timestamp: number) {
       if (isPaused) {
         if (progressRef.current) progressRef.current.style.width = '100%';
         return;
       }
+
       if (start === null) start = timestamp;
-      let elapsed = timestamp - start;
-      let percent = Math.min((elapsed / duration) * 100, 100);
+      
+      const elapsed = timestamp - start;
+      const percent = Math.min((elapsed / duration) * 100, 100);
+
       if (progressRef.current) {
         progressRef.current.style.width = percent + '%';
       }
+
       if (elapsed < duration) {
         req = requestAnimationFrame(animateProgress);
-      } else {
-        if (progressRef.current) progressRef.current.style.width = '100%';
+      } else if (progressRef.current) {
+        progressRef.current.style.width = '100%';
       }
     }
-    // Reset progress bar
-    if (progressRef.current) progressRef.current.style.width = isPaused ? '100%' : '0%';
+
+    if (progressRef.current) {
+      progressRef.current.style.width = isPaused ? '100%' : '0%';
+    }
+
     if (!isPaused) {
       req = requestAnimationFrame(animateProgress);
     }
+
     return () => cancelAnimationFrame(req);
   }, [progressKey, duration, isPaused]);
 
@@ -161,27 +171,26 @@ const CapabilitiesSection = () => {
     <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-10 lg:mb-12 gap-4 sm:gap-6 lg:gap-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 lg:w-1/3">
               Industries
             </h2>
           </div>
-
-          {/* Pure CSS Ticker Carousel */}
           <div className="relative overflow-hidden w-full">
             <div
               className={`ticker-track flex w-max${isPaused ? '' : ' animate-ticker'}`}
               ref={tickerRef}
-              style={isPaused ? { animationPlayState: 'paused' } : {}}
+              style={{
+                animationPlayState: isPaused ? 'paused' : 'running',
+                animationDuration: `${duration}ms`
+              }}
             >
               {capabilities.concat(capabilities).map((capability, index) => (
                 <div
                   key={index}
-                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] rounded-lg cursor-pointer border border-gray-200 m-2 min-w-[220px] max-w-[260px] flex-shrink-0"
-                  style={{ width: '240px' }}
+                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] cursor-pointer border border-gray-200 m-2 min-w-[320px] max-w-[360px] flex-shrink-0"
+                  style={{ width: '340px' }}
                 >
-                  {/* Background Image */}
                   <div className="absolute inset-0">
                     <img
                       src={capability.imageUrl}
@@ -190,7 +199,6 @@ const CapabilitiesSection = () => {
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
                   </div>
-                  {/* Content */}
                   <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
                     <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
                       {capability.title}
@@ -206,14 +214,15 @@ const CapabilitiesSection = () => {
                 </div>
               ))}
             </div>
-            {/* Progressbar-style red line at the bottom, like Swiper */}
-            <div className="w-full h-3 rounded-full overflow-hidden mt-6">
+            
+            <div className="w-full h-[1px] bg-gray-200 overflow-hidden mt-6">
               <div
                 ref={progressRef}
-                className="h-full bg-red-600 rounded-full ticker-progressbar"
+                className="h-full bg-red-600"
                 style={{ width: '0%', transition: 'none' }}
               />
             </div>
+
           </div>
         </div>
       </div>
