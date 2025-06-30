@@ -6,39 +6,27 @@ import React, { useState, useEffect, useRef } from 'react';
 const sectionsData = [
   {
     id: 1,
-    title: 'Why TechM',
-    description: 'Seeking new frontiers in your career path? Discover how your journey aligns with ours. Explore opportunities at Tech Mahindra, and join a collective of vibrant, creative innovators and technologists.',
+    title: 'Why EZYGRO',
+    description: 'Looking to elevate your career with purpose-driven work? At EZYGRO, we believe in transforming businesses through smart finance, compliance, and strategy. Join a team of passionate professionals, innovators, and problem-solvers shaping the future of financial growth. Let your journey grow with ours.',
     alt: 'A diverse team collaborating in a modern office meeting room.'
   },
   {
     id: 2,
-    title: 'The TechM Way',
-    description: 'We are a company with the purpose of creating meaningful human experiences for our associates. Let’s help you Rise to new heights, the Tech Mahindra way.',
+    title: 'Empowering Through Finance',
+    description: 'We are a purpose-led firm committed to creating meaningful growth journeys for our clients and team. At EZYGRO, we don’t just deliver financial solutions we empower businesses and people to thrive with clarity, confidence, and compliance. Let’s grow together the EZYGRO way.',
     alt: 'A creative team celebrating success with high-fives in a sunlit office.'
   },
   {
     id: 3,
-    title: 'Growth & Development',
-    description: 'We invest in your growth with continuous learning programs, mentorship from industry leaders, and clear career progression paths that empower you to achieve your ambitions.',
+    title: 'Diversity & Inclusion at EZYGRO',
+    description: 'We value what makes each of us unique because it’s the differences that drive innovation. At EZYGRO, we’re proudly diverse and consciously inclusive, creating a workplace where every voice matters and every perspective adds value.',
     alt: 'A mentor guiding a colleague on a laptop in a bright, collaborative space.'
   },
   {
     id: 4,
-    title: 'Innovation at Work',
-    description: 'Be at the forefront of technology. Work on cutting-edge projects using AI, cloud, and IoT to solve real-world problems for global clients and drive digital transformation.',
+    title: 'Reconnect. Rediscover. Rise Together',
+    description: 'Revisit your journey with EZYGRO reconnect with former colleagues, rediscover new opportunities, and inspire the next wave of growth. Join the EZYGRO Alumni Network to stay updated through newsletters, share your story, and explore pathways to return or collaborate.There are countless reasons to be part of EZYConnect – the EZYGRO Alumni Portal. What’s yours?',
     alt: 'An engineer working on complex robotics in a high-tech laboratory.'
-  },
-  {
-    id: 5,
-    title: 'Diversity & Inclusion',
-    description: 'Our strength lies in our diversity. We are committed to creating an inclusive environment where every voice is heard, valued, and respected, fostering a true sense of belonging.',
-    alt: 'A group of diverse colleagues laughing and working together in an open office.'
-  },
-  {
-    id: 6,
-    title: 'Global Opportunities',
-    description: 'With a presence in over 100 countries, we offer exciting opportunities to work on international projects, collaborate with global teams, and gain invaluable cross-cultural experience.',
-    alt: 'A world map with interconnected points displayed on a digital screen.'
   },
 ];
 
@@ -241,7 +229,7 @@ const Careers = () => {
                 lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '56px' : '90px' 
               }}
             >
-              Careers
+              Careers at EZYGRO
             </h1>
             <div
               className={`transition-all duration-700 ease-out ${
@@ -254,7 +242,7 @@ const Careers = () => {
                    lineHeight: windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '30px' 
                  }}
               >
-                Join our team of innovators and changemakers. Discover your potential and build a future with us.
+                Join a dynamic and growth-driven environment where your ideas matter. At EZYGRO, we nurture talent, encourage innovation, and offer opportunities to build a meaningful, future-ready career.
               </p>
             </div>
           </div>
