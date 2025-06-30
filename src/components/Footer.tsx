@@ -64,12 +64,12 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Alumni</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Sitemap</a></li>
                 <li>
-                  <button
-                    className="text-gray-400 hover:text-white text-sm transition-colors focus:outline-none"
-                    onClick={() => setShowCookieModal(true)}
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Cookie Preferences
-                  </button>
+                  </a>
                 </li>
       {/* Cookie Preferences Modal */}
       <CookiePreferencesModal show={showCookieModal} onClose={() => setShowCookieModal(false)} />
@@ -102,7 +102,12 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
           <div className="flex flex-col lg:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 lg:mb-0">© 2025 Tech Mahindra Limited</p>
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Use</a>
+              <button
+                className="text-gray-400 hover:text-white text-sm transition-colors focus:outline-none"
+                onClick={() => setShowCookieModal(true)}
+              >
+                Terms of Use
+              </button>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie</a>
             </div>
           </div>
