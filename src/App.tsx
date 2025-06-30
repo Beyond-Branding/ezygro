@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
+import PrivacyNotice from './components/PrivacyNotice';
 import VideoCarousel from './components/VideoCarousel';
 import Industries from './components/Industries';
 import CapabilitiesSection from './components/CapabilitiesSection';
@@ -58,6 +59,8 @@ const AppContent = () => {
         <Route path="/industries/healthcare-life-sciences" element={<InnovativeDashboards />} />
         <Route path="/industries/manufacturing" element={<LoansAndInsurance />} />
         <Route path="/industries/travel-transportation" element={<SecretarialCompliances />} />
+        {/* Privacy Notice Route */}
+        <Route path="/privacy-notice" element={<PrivacyNotice />} />
       </Routes>
       <Footer showCareersContact={isHomePage} />
       <ScrollToTopButton />
