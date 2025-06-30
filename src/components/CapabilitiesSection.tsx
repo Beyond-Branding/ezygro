@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const CapabilitiesSection = () => {
   const capabilities = [
@@ -100,6 +100,63 @@ const CapabilitiesSection = () => {
     }
   ];
 
+  // Progressbar animation logic synced with ticker
+  const progressRef = useRef<HTMLDivElement>(null);
+  const tickerRef = useRef<HTMLDivElement>(null);
+  const [progressKey, setProgressKey] = useState(0); // Used to retrigger progress animation
+  const [isPaused, setIsPaused] = useState(false); // Control ticker pause
+  const duration = 40000; // match ticker animation duration (40s)
+  const pauseDuration = 2000; // 2 seconds pause at end
+
+  // Listen for ticker animation loop and pause at end
+  useEffect(() => {
+    const ticker = tickerRef.current;
+    if (!ticker) return;
+    let timeout: number;
+    const handleIteration = () => {
+      setIsPaused(true); // Pause ticker and progress
+      timeout = setTimeout(() => {
+        setIsPaused(false); // Resume ticker and progress
+        setProgressKey(prev => prev + 1); // retrigger progress
+      }, pauseDuration);
+    };
+    ticker.addEventListener('animationiteration', handleIteration);
+    return () => {
+      ticker.removeEventListener('animationiteration', handleIteration);
+      if (timeout) clearTimeout(timeout);
+    };
+  }, []);
+
+  // Animate progress bar in sync with ticker and pause
+  useEffect(() => {
+    let req: number;
+    let start: number | null = null;
+    // removed unused pausedAt
+    function animateProgress(timestamp: number) {
+      if (isPaused) {
+        if (progressRef.current) progressRef.current.style.width = '100%';
+        return;
+      }
+      if (start === null) start = timestamp;
+      let elapsed = timestamp - start;
+      let percent = Math.min((elapsed / duration) * 100, 100);
+      if (progressRef.current) {
+        progressRef.current.style.width = percent + '%';
+      }
+      if (elapsed < duration) {
+        req = requestAnimationFrame(animateProgress);
+      } else {
+        if (progressRef.current) progressRef.current.style.width = '100%';
+      }
+    }
+    // Reset progress bar
+    if (progressRef.current) progressRef.current.style.width = isPaused ? '100%' : '0%';
+    if (!isPaused) {
+      req = requestAnimationFrame(animateProgress);
+    }
+    return () => cancelAnimationFrame(req);
+  }, [progressKey, duration, isPaused]);
+
   return (
     <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -111,41 +168,52 @@ const CapabilitiesSection = () => {
             </h2>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-            {capabilities.map((capability, index) => (
+          {/* Pure CSS Ticker Carousel */}
+          <div className="relative overflow-hidden w-full">
+            <div
+              className={`ticker-track flex w-max${isPaused ? '' : ' animate-ticker'}`}
+              ref={tickerRef}
+              style={isPaused ? { animationPlayState: 'paused' } : {}}
+            >
+              {capabilities.concat(capabilities).map((capability, index) => (
+                <div
+                  key={index}
+                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] rounded-lg cursor-pointer border border-gray-200 m-2 min-w-[220px] max-w-[260px] flex-shrink-0"
+                  style={{ width: '240px' }}
+                >
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <img
+                      src={capability.imageUrl}
+                      alt={`${capability.title} Visual`}
+                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+                  </div>
+                  {/* Content */}
+                  <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
+                    <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
+                      {capability.title}
+                    </h3>
+                    {capability.description && (
+                      <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 lg:p-6">
+                        <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-center leading-relaxed">
+                          {capability.description}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Progressbar-style red line at the bottom, like Swiper */}
+            <div className="w-full h-3 rounded-full overflow-hidden mt-6">
               <div
-                key={index}
-                className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] rounded-lg cursor-pointer border border-gray-200"
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                  <img
-                    src={capability.imageUrl}
-                    alt={`${capability.title} Visual`}
-                    className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
-                  {/* Title */}
-                  <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
-                    {capability.title}
-                  </h3>
-
-                  {/* Description - Appears centered on hover */}
-                  {capability.description && (
-                    <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 lg:p-6">
-                      <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-center leading-relaxed">
-                        {capability.description}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
+                ref={progressRef}
+                className="h-full bg-red-600 rounded-full ticker-progressbar"
+                style={{ width: '0%', transition: 'none' }}
+              />
+            </div>
           </div>
         </div>
       </div>
