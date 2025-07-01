@@ -8,12 +8,12 @@ import CapabilitiesSection from './components/CapabilitiesSection';
 import TechMahindraSection from './components/TechMahindraSection';
 // import JoyMattersSection from './components/JoyMattersSection';
 // import IndustriesSection from './components/IndustriesSection';
-import SustainabilitySection from './components/SustainabilitySection';
+// import SustainabilitySection from './components/SustainabilitySection';
 import RiseSection from './components/RiseSection';
 import ExploreMoreSection from './components/ExploreMoreSection';
 import Footer from './components/Footer';
 import TermsOfUsePage from './components/TermsOfUsePage';
-import ScrollToTopButton from './components/ScrollToTopButton';
+// import ScrollToTopButton from './components/ScrollToTopButton';
 import WhatsAppFloater from './components/WhatsAppFloater';
 import AboutUs from './components/AboutUs';
 import Capabilities from './components/Capabilities';
@@ -35,7 +35,7 @@ const HomePage = () => (
     <TechMahindraSection />
     {/* <JoyMattersSection /> */}
     {/* <IndustriesSection /> */}
-    <SustainabilitySection />
+    {/* <SustainabilitySection /> */}
     <RiseSection />
     <ExploreMoreSection />
   </>
@@ -67,7 +67,7 @@ const AppContent = () => {
         <Route path="/terms-of-use" element={<TermsOfUsePage />} />
       </Routes>
       <Footer showCareersContact={isHomePage} />
-      <ScrollToTopButton />
+      {/* <ScrollToTopButton /> */}
       <WhatsAppFloater phoneNumber="918928710950" />
       <CookieConsentBanner />
     </div>
