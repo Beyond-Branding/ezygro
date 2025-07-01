@@ -38,8 +38,8 @@ const LoansAndInsurance = () => {
               className="w-full h-full bg-transparent"
               style={{
                 clipPath: windowWidth < 768
-                  ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)'
-                  : 'polygon(-40% 90%, 100% 0%, 100% 100%, 0% 100%)'
+                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
+                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
@@ -54,17 +54,17 @@ const LoansAndInsurance = () => {
         </div>
 
         <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-          <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-6 lg:left-0 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
+          <div className="absolute top-4 sm:top-8 lg:top-16 left-8 sm:left-12 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
             <h1
               className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 transition-all duration-700 ease-out ${
                 scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}
               style={{
-                fontSize: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px',
-                lineHeight: windowWidth < 640 ? '30px' : windowWidth < 1024 ? '48px' : '70px'
+                fontSize: windowWidth < 640 ? '22px' : windowWidth < 1024 ? '38px' : '54px',
+                lineHeight: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '40px' : '60px'
               }}
             >
-              Who We Are
+              Loans, Insurance and Investments
             </h1>
 
             <div
@@ -79,9 +79,7 @@ const LoansAndInsurance = () => {
                   lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px'
                 }}
               >
-                Welcome to EZYGRO where expertise meets elegance in legal, tax, audit, and compliance.
-                Led by Sushma B. Salunkhe, we simplify the complex with clarity and care.
-                Empowering growth with purpose, precision, and trust.
+               Access the right financial tools with our expert support in Loans, Insurance, and Investments. Whether it’s securing capital, protecting assets, or growing wealth we help you make informed, confident choices.
               </p>
             </div>
           </div>

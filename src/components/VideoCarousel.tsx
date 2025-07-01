@@ -161,7 +161,7 @@ const VideoCarousel = () => {
             style={{
               clipPath: windowWidth < 768 
                 ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-40% 90%, 100% 0%, 100% 100%, 0% 100%)'
+                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
             }}
           >
             <div className="absolute inset-0 overflow-hidden">
@@ -185,7 +185,7 @@ const VideoCarousel = () => {
       {/* Content */}
       <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
         {/* Left content: Scale at Speed */}
-        <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-8 lg:left-16 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
+        <div className="absolute top-4 sm:top-8 lg:top-16 left-8 sm:left-12 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
           <div className="overflow-hidden pb-2">
             <h1
               className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out ${
@@ -222,8 +222,13 @@ const VideoCarousel = () => {
         </div>
 
         {/* Right content: Video Title & Button */}
-        <div className="absolute bottom-32 sm:bottom-24 lg:bottom-16 right-4 sm:right-6 lg:right-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-6">
+        <div className="absolute bottom-16 sm:bottom-10 lg:bottom-4 right-4 sm:right-6 lg:right-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
+          <h2 className="font-bold leading-tight mb-3 sm:mb-4 lg:mb-6"
+            style={{
+              fontSize: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '20px' : '28px',
+              lineHeight: windowWidth < 640 ? '18px' : windowWidth < 1024 ? '26px' : '34px'
+            }}
+          >
             {videos[currentVideo].title}
           </h2>
         </div>
