@@ -1,7 +1,67 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
 
 const VirtualCFO = () => {
+  // --- Our Services Carousel State (single source of truth) ---
+  const services = [
+    {
+      title: 'MIS (Management Information System)',
+      description: 'MIS refers to the systematic preparation of detailed, timely, and structured reports that give business owners a clear overview of their operational and financial performance. These reports can include sales trends, expense summaries, customer behaviors, and profit margins, enabling top management to take data-backed decisions. For example, a business might use MIS reports to identify underperforming product lines or geographical areas and realign marketing strategies accordingly. A good MIS framework ensures that decisions are proactive rather than reactive.'
+    },
+    {
+      title: 'Budgeting',
+      description: 'Budgeting is the process of forecasting future financial performance by planning the allocation of resources across different departments and activities. It helps businesses set spending limits, prioritize investments, and keep financial discipline. Through effective budgeting, a company can compare actual results with projections and quickly identify deviations. For instance, a company planning a new product launch may allocate ₹10 lakhs for R&D, marketing, and distribution; tracking this budget helps ensure the project remains financially viable and avoids overspending.'
+    },
+    {
+      title: 'Cash Flow Management',
+      description: 'Cash flow management focuses on ensuring that the business has enough cash available at all times to meet its obligations. It includes monitoring incoming receipts and outgoing payments to manage liquidity effectively. Poor cash flow is one of the leading causes of business failure, even in profitable companies. For example, a business that issues invoices on 60-day credit terms might struggle to pay salaries or rent unless it plans its inflows and outflows properly. Good cash flow management helps avoid funding gaps, maintain smooth operations, and build financial resilience.'
+    },
+    {
+      title: 'Compliance Reporting',
+      description: 'Compliance reporting involves the timely preparation and submission of statutory documents required by regulatory authorities such as the MCA, GST Department, Income Tax Department, etc. This includes GST filings, TDS returns, income tax filings, company law compliance, and audit documentation. Failure to comply can lead to penalties, legal issues, and a damaged business reputation. For instance, a company that misses ROC filing deadlines could face heavy late fees or even strike-off proceedings, affecting credibility with banks and investors. A robust compliance system ensures the business remains legally sound.'
+    },
+    {
+      title: 'SOP & Manuals Design',
+      description: 'Designing SOPs (Standard Operating Procedures) and Manuals is crucial for defining structured workflows, ensuring quality control, and reducing process ambiguity. SOPs outline every step of a business process — from how to onboard a new employee to handling customer complaints or processing invoices. This not only improves operational efficiency but also helps in training new staff and maintaining consistency across departments. For example, a retail chain can use SOPs to ensure uniformity in store operations across locations, leading to better customer experiences and fewer errors.'
+    },
+    {
+      title: 'Business Planning',
+      description: 'Business planning is the strategic process of setting goals, identifying resources, and outlining the steps needed to grow and sustain the organization. It involves market research, competitor analysis, financial forecasting, risk management, and implementation timelines. A well-structured business plan acts as a guide for internal management and is often crucial when seeking funding or partnerships. For instance, a small enterprise planning to scale into new regions will benefit from a comprehensive business plan that includes expansion costs, expected ROI, and a risk mitigation strategy.'
+    },
+    {
+      title: 'Financial Marketing',
+      description: 'Financial marketing involves presenting the financial health and potential of a business in a compelling and transparent manner to attract investors, lenders, or strategic partners. It includes preparing investor decks, financial highlights, valuation reports, and projections that tell a story of business growth and stability. For example, a startup seeking venture capital funding will need to communicate its unit economics, customer acquisition cost, profitability timelines, and future revenue potential in a clear and convincing format. Strong financial marketing can significantly enhance a company’s ability to raise funds and build stakeholder trust.'
+    }
+  ];
+  const [serviceIndex, setServiceIndex] = useState(0);
+  const autoScrollRef = useRef<number | null>(null);
+  const resumeTimeoutRef = useRef<number | null>(null);
+
+  // Carousel auto-advance logic with pause on user interaction
+  useEffect(() => {
+    // Clear any previous interval
+    if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+    autoScrollRef.current = setInterval(() => {
+      setServiceIndex((prev) => (prev + 1) % services.length);
+    }, 4000);
+    return () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    };
+  }, [services.length]);
+
+  // Helper to pause auto-scroll and resume after delay
+  const pauseAutoScroll = () => {
+    if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    resumeTimeoutRef.current = setTimeout(() => {
+      autoScrollRef.current = setInterval(() => {
+        setServiceIndex((prev) => (prev + 1) % services.length);
+      }, 4000);
+    }, 5000); // Resume after 5 seconds
+  };
+
   // AboutUs top section logic
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
@@ -27,6 +87,8 @@ const VirtualCFO = () => {
       clearTimeout(promiseTimer);
     };
   }, []);
+
+  // (Removed duplicate services and serviceIndex declarations)
 
   return (
     <>
@@ -115,6 +177,58 @@ Empowering growth with purpose, precision, and trust.
             </p>
           </div>
         </div>
+
+        {/* Our Services Section (carousel of 3 cards at a time) */}
+        <section className="bg-gray-50 py-16 sm:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+              <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+              <div className="flex gap-4 mt-4 sm:mt-0">
+                <button
+                  onClick={() => {
+                    setServiceIndex((prev) => (prev - 1 + services.length) % services.length);
+                    pauseAutoScroll();
+                  }}
+                  className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-400 text-2xl text-gray-800 hover:bg-gray-100 transition"
+                  aria-label="Previous"
+                >
+                  <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button
+                  onClick={() => {
+                    setServiceIndex((prev) => (prev + 1) % services.length);
+                    pauseAutoScroll();
+                  }}
+                  className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-400 text-2xl text-gray-800 hover:bg-gray-100 transition"
+                  aria-label="Next"
+                >
+                  <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+            {/* Animated Carousel (no card style change) */}
+            <div className="overflow-hidden w-full">
+              <div
+                className="flex gap-8 transition-transform duration-500 ease-in-out"
+                style={{
+                  width: `${services.length * (100/3)}%`,
+                  transform: `translateX(-${serviceIndex * (100 / services.length)}%)`,
+                }}
+              >
+                {services.map((service) => (
+                  <div
+                    key={service.title}
+                    className="bg-white p-8 border border-gray-200 rounded-lg h-full"
+                    style={{ width: 'calc(100% / 3)' }}
+                  >
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                    <p className="text-gray-600 mb-8">{service.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Services Grid - 4 icons in first row, 3 in second row (desktop), all centered */}
         <div className="mt-20">
@@ -259,57 +373,6 @@ Empowering growth with purpose, precision, and trust.
       </div>
     </div>
 
-    {/* Our Services Section (copied from FinancialAndAccounting) */}
-    <section className="bg-gray-50 py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Discover</h3>
-            <p className="text-gray-600 mb-8">Tech Mahindra’s design thinking-led approach and frameworks help identify AI opportunities lurking in your organization. Our experts identify the right AI strategy and roadmap for your organization.</p>
-            <ul className="space-y-4">
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Strategy and Roadmap</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Discovery</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Process Mining and Task Mining</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Maturity Assessment</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">CCF Setup</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise IA and AI Architecture evaluation</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Platform/Technology Evaluation</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Evangelize AI Pair Programming</span></li>
-            </ul>
-          </div>
-          <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Experiment</h3>
-            <p className="text-gray-600 mb-8">Our principle of ‘fail fast to learn faster’ is enabled by an ecosystem of experimentation. Our AI Labs for innovative opportunities enable us, along with partners or clients, to co-innovate.</p>
-            <ul className="space-y-4">
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Gen AI Experiment as a Service (XaaS)</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Labs</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Sandbox Setup</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">PoT and Fast Experiment</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Partner/Client Co-innovation</span></li>
-            </ul>
-          </div>
-          <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Scale</h3>
-            <p className="text-gray-600 mb-8">We help you leverage your data and AI assets across the organization coupled with our AI solutions in order to scale up on your AI journey. Our AI enablement programs can help accelerate the democratization of AI.</p>
-            <ul className="space-y-4">
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Model Factory</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Ops and ML Ops</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Digital Workforce Management</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI and Bot Performance Management</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Store</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Enablement</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Data Annotation</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise AI Platform Build</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Responsible Adoption</span></li>
-              <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise Knowledge Search</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
     </>
   );
 };
