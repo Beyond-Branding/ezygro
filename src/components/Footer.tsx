@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import TermsOfUseModal from './TermsOfUseModal';
 
@@ -11,6 +12,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
   const [showCookieModal, setShowCookieModal] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <footer className="bg-gray-900 text-gray-400">
@@ -23,7 +25,10 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
               <div className="text-left">
                 <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Careers</h2>
                 <p className="mb-8 text-lg text-gray-300">Gain a heritage. Leave a legacy.</p>
-                <button className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide">
+                <button
+                  className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
+                  onClick={() => navigate('/careers')}
+                >
                   JOIN US
                 </button>
               </div>
@@ -31,7 +36,10 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
               <div className="text-left">
                 <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Contact Us</h2>
                 <p className="mb-8 text-lg text-gray-300">What can we help you achieve?</p>
-                <button className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide">
+                <button
+                  className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
+                  onClick={() => navigate('/contact')}
+                >
                   SPEAK WITH US
                 </button>
               </div>
@@ -51,30 +59,22 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
             <div>
               <h3 className="font-semibold text-white mb-6 text-base">Our Brand</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Sustainability</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Corporate Citizenship</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Investor Relations</a></li>
-              </ul>
-            </div>
-            {/* News */}
-            <div>
-              <h3 className="font-semibold text-white mb-6 text-base">News</h3>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Events</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Alumni</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Sitemap</a></li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm transition-colors"
-                  >
-                    Cookie Preferences
-                  </a>
+                  <a href="/about" className="text-gray-400 hover:text-white text-sm transition-colors">About Us</a>
                 </li>
-      {/* Terms of Use Modal */}
-      <TermsOfUseModal show={showCookieModal} onClose={() => setShowCookieModal(false)} />
+                <li>
+                  <a href="/capabilities" className="text-gray-400 hover:text-white text-sm transition-colors">Capabilities</a>
+                </li>
+                <li>
+                  <a href="/careers" className="text-gray-400 hover:text-white text-sm transition-colors">Careers</a>
+                </li>
+                <li>
+                  <a href="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a>
+                </li>
               </ul>
             </div>
+            {/* Terms of Use Modal */}
+            <TermsOfUseModal show={showCookieModal} onClose={() => setShowCookieModal(false)} />
             {/* Follow Us */}
             <div>
               <h3 className="font-semibold text-white mb-6 text-base">Follow Us</h3>
@@ -108,7 +108,12 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
               >
                 Terms of Use
               </button>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie</a>
+              <button
+                className="text-gray-400 hover:text-white text-sm transition-colors focus:outline-none"
+                onClick={() => setShowCookieModal(true)}
+              >
+                Cookie Preferences
+              </button>
             </div>
           </div>
         </div>
