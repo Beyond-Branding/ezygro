@@ -96,7 +96,7 @@ const InnovativeDashboards = () => {
           </div>
           <div>
             <p className="text-gray-800 leading-relaxed">
-              Tech Mahindra’s "AI Delivered Right" exemplifies innovation and reliability. We move beyond vision and experimentation to deliver practical, secure, scalable AI solutions that drive meaningful business outcomes. We are committed to empowering our clients with the ideas, models, tools, processes, and systems they need to harness AI’s full potential.
+              At EZYGRO, we turn data into decisions fast. Our custom-built, interactive dashboards are designed to align with your unique business goals, seamlessly integrating your data sources to deliver real-time insights. With secure, scalable solutions and AI-powered analytics, we help you move beyond just reporting—towards predictive and prescriptive outcomes that drive smarter, faster decision-making for growing businesses.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
               MORE <span className="ml-2 text-xl">+</span>
@@ -113,44 +113,45 @@ const InnovativeDashboards = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Discover</h3>
-              <p className="text-gray-600 mb-8">Tech Mahindra’s design thinking-led approach and frameworks help identify AI opportunities lurking in your organization. Our experts identify the right AI strategy and roadmap for your organization.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Sales & Marketing Dashboards</h3>
+              <p className="text-gray-600 mb-8">Who it's for: Marketing Managers, Sales Heads, Growth Teams
+<br></br>Purpose: Optimize sales processes and measure marketing effectiveness
+<br></br>Key Features:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Strategy and Roadmap</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Discovery</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Process Mining and Task Mining</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Maturity Assessment</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">CCF Setup</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise IA and AI Architecture evaluation</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Platform/Technology Evaluation</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Evangelize AI Pair Programming</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Lead Tracking: Visual pipeline of leads by stage, source, and owner</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Conversion Metrics: Analyze conversion rates across campaigns and channels</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Campaign Performance: Measure ROI, CTR, impressions, and engagement</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Customer Journey Mapping: Track user behavior from first touchpoint to sale</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Sales Forecasting: Use historical data to predict future performance</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Segmentation & Targeting: Visualize demographics, geographics, and user profiles</span></li>
               </ul>
             </div>
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Experiment</h3>
-              <p className="text-gray-600 mb-8">Our principle of ‘fail fast to learn faster’ is enabled by an ecosystem of experimentation. Our AI Labs for innovative opportunities enable us, along with partners or clients, to co-innovate.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Operational <br></br>Dashboards</h3>
+              <p className="text-gray-600 mb-8">Who it's for: Operations Heads, Department Managers, Project Leads
+<br></br>Purpose: Enhance organizational efficiency and decision-making
+<br></br>Key Features:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Gen AI Experiment as a Service (XaaS)</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Labs</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Sandbox Setup</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">PoT and Fast Experiment</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Partner/Client Co-innovation</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Real-Time KPI Monitoring: Track productivity, turnaround time, and output across teams</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Performance Analytics: Identify bottlenecks and areas of improvement</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Resource Utilization: View how manpower and assets are allocated and used</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Project Progress Tracking: Monitor milestones, deliverables, and deadlines</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Custom Alerts & Notifications: Set triggers for abnormal performance or delays</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Cross-Departmental Insights: Unified view of performance across HR, logistics, IT, etc.</span></li>
               </ul>
             </div>
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Scale</h3>
-              <p className="text-gray-600 mb-8">We help you leverage your data and AI assets across the organization coupled with our AI solutions in order to scale up on your AI journey. Our AI enablement programs can help accelerate the democratization of AI.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Financial <br></br>Dashboards</h3>
+              <p className="text-gray-600 mb-8">Who it's for: CFOs, Finance Managers, Accountants, Startup Founders
+<br></br>Purpose: Real-time visibility into financial health
+<br></br>Key Features:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Model Factory</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Ops and ML Ops</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Digital Workforce Management</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI and Bot Performance Management</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Store</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">AI Enablement</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Data Annotation</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise AI Platform Build</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Responsible Adoption</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Enterprise Knowledge Search</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Revenue & Expense Tracking: Monitor monthly, quarterly, and annual financial performance</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Profitability Analysis: Understand margins by product, service, or business unit</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Cash Flow Monitoring: Visualize inflows and outflows to manage liquidity</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Budget vs Actual Comparison: Track financial performance against forecasts</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Ratio Analysis: Automated display of key financial ratios (ROI, ROE, Current Ratio, etc.)</span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Drill-Down Functionality: Explore data by region, category, or time frame for detailed insights</span></li>
               </ul>
             </div>
           </div>

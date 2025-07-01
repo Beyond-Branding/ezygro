@@ -1,82 +1,136 @@
-import { useState, useEffect } from 'react';
-
-// The OurServices component to be added
-const OurServices = () => {
-  const services = {
-    discover: [
-      "Strategy and Roadmap", "Discovery", "Process Mining and Task Mining", "AI Maturity Assessment",
-      "CCF Setup", "Enterprise IA and AI Architecture evaluation", "Platform/Technology Evaluation",
-      "Evangelize AI Pair Programming",
-    ],
-    experiment: [
-      "Gen AI Experiment as a Service (XaaS)", "AI Labs", "Sandbox Setup", "PoT and Fast Experiment",
-      "Partner/Client Co-innovation",
-    ],
-    scale: [
-      "Model Factory", "AI Ops and ML Ops", "Digital Workforce Management", "AI and Bot Performance Management",
-      "AI Store", "AI Enablement", "Data Annotation", "Enterprise AI Platform Build",
-      "Responsible Adoption", "Enterprise Knowledge Search",
-    ],
-  };
-
-  const ServiceCard = ({ title, description, items }) => (
-    <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-      <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
-      <p className="text-gray-600 mb-8">{description}</p>
-      <ul className="space-y-4">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-start">
-            <span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span>
-            <span className="text-gray-800">{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-
-  return (
-    <section className="bg-gray-50 py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ServiceCard title="Discover" description="Tech Mahindra’s design thinking-led approach and frameworks help identify AI opportunities lurking in your organization. Our experts identify the right AI strategy and roadmap for your organization." items={services.discover} />
-          <ServiceCard title="Experiment" description="Our principle of ‘fail fast to learn faster’ is enabled by an ecosystem of experimentation. Our AI Labs for innovative opportunities enable us, along with partners or clients, to co-innovate." items={services.experiment} />
-          <ServiceCard title="Scale" description="We help you leverage your data and AI assets across the organization coupled with our AI solutions in order to scale up on your AI journey. Our AI enablement programs can help accelerate the democratization of AI." items={services.scale} />
-        </div>
-      </div>
-    </section>
-  );
-};
-
+import React, { useState, useEffect, useRef } from 'react';
 
 const SecretarialCompliances = () => {
+  // --- Component State ---
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
+  // --- Carousel Data ---
+  const services = [
+    {
+      title: 'Company Law Compliance',
+      description: "Ensure your company is fully compliant with the Companies Act, 2013 and MCA requirements.",
+      features: [
+        'ROC Filings (MGT-7, AOC-4, etc.)',
+        'Board & General Meeting Support',
+        'Maintenance of Statutory Registers',
+        'Director Disclosures & Resolutions',
+        'XBRL Filing',
+      ],
+    },
+    {
+      title: 'Incorporation & Entity Structuring',
+      description: 'Start your business on the right foot.',
+      features: [
+        'Private Limited / LLP / OPC Incorporation',
+        'Name Reservation (RUN & SPICe+)',
+        'PAN, TAN, GST, and other statutory registrations',
+        'Shareholder Agreements & MoA/ AoA Drafting',
+      ],
+    },
+    {
+      title: 'Annual Filings & Returns',
+      description: 'Avoid penalties and non-compliance notices.',
+      features: [
+        'Timely MCA Filings',
+        'DIN KYC Compliance',
+        'Filing of MSME and Beneficial Ownership Returns',
+        'Event-based Compliance Monitoring',
+      ],
+    },
+    {
+        title: 'FEMA & RBI Compliance',
+        description: "Simplify cross-border transactions and investments.",
+        features: [
+          'FDI Reporting (FC-GPR, FC-TRS, etc.)',
+          'RBI Approvals and Compliance Filings',
+          'ODI Compliance',
+          'FEMA Advisory & Documentation',
+        ],
+      },
+      {
+        title: 'Corporate Governance & Advisory',
+        description: "Promote transparency and ethical business practices.",
+        features: [
+          'Secretarial Audits',
+          'Corporate Governance Reports',
+          'Board Process Improvements',
+          'Compliance Calendar Maintenance',
+        ],
+      },
+  ];
+
+  // --- Carousel State and Logic ---
+  const visibleCards = windowWidth < 1024 ? (windowWidth < 768 ? 1 : 2) : 3;
+  const cloneCount = visibleCards;
+
+  const [currentIndex, setCurrentIndex] = useState(cloneCount);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  // CORRECTED: Changed NodeJS.Timeout to number for browser compatibility
+  const autoScrollRef = useRef<number | null>(null);
+  const transitionRef = useRef<number | null>(null);
+
+  const extendedServices = [
+    ...services.slice(-cloneCount),
+    ...services,
+    ...services.slice(0, cloneCount)
+  ];
+
+  const handleNext = () => {
+    if (!isTransitioning) return;
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    if (!isTransitioning) return;
+    setCurrentIndex((prev) => prev - 1);
+  };
+  
+  const pauseAutoScroll = () => {
+    if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+    // @ts-ignore
+    autoScrollRef.current = setTimeout(() => {
+        // @ts-ignore
+        autoScrollRef.current = setInterval(handleNext, 4000);
+    }, 5000); // Resume after 5 seconds
+  };
+  
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+    const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-    const scaleTimer = setTimeout(() => {
-      setScaleAtSpeedVisible(true);
-    }, 200);
-    const promiseTimer = setTimeout(() => {
-      setPromiseTextVisible(true);
-    }, 400);
-
-    return () => {
-      clearTimeout(scaleTimer);
-      clearTimeout(promiseTimer);
-    };
+    const scaleTimer = setTimeout(() => setScaleAtSpeedVisible(true), 200);
+    const promiseTimer = setTimeout(() => setPromiseTextVisible(true), 400);
+    return () => { clearTimeout(scaleTimer); clearTimeout(promiseTimer); };
   }, []);
+
+  useEffect(() => {
+    if (transitionRef.current) clearTimeout(transitionRef.current);
+    if (currentIndex === services.length + cloneCount || currentIndex === cloneCount - 1) {
+      // @ts-ignore
+      transitionRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(currentIndex === 0 ? services.length + (cloneCount -1) : cloneCount);
+      }, 300); 
+    } else if (!isTransitioning) {
+        // A tiny timeout to re-enable transitions after the jump
+        setTimeout(() => {
+            setIsTransitioning(true);
+        }, 50);
+    }
+    return () => { if (transitionRef.current) clearTimeout(transitionRef.current) };
+  }, [currentIndex, services.length, cloneCount]);
+
+  useEffect(() => {
+    pauseAutoScroll(); // Start the auto-scroll cycle
+    return () => { if (autoScrollRef.current) clearInterval(autoScrollRef.current) };
+  }, [currentIndex]);
+
 
   return (
     <>
@@ -115,7 +169,6 @@ const SecretarialCompliances = () => {
             >
               Who We Are
             </h1>
-
             <div
               className={`transition-all duration-700 ease-out ${
                 promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
@@ -137,17 +190,18 @@ const SecretarialCompliances = () => {
         </div>
       </section>
 
-      {/* AI Delivered Right Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold text-black">
-              AI Delivered Right
+              Compliance Delivered Right
             </h2>
           </div>
           <div>
             <p className="text-gray-800 leading-relaxed">
-              Tech Mahindra’s "AI Delivered Right" exemplifies innovation and reliability. We move beyond vision and experimentation to deliver practical, secure, scalable AI solutions that drive meaningful business outcomes. We are committed to empowering our clients with the ideas, models, tools, processes, and systems they need to harness AI’s full potential.
+              At EZYGRO, we specialize in end-to-end Corporate Secretarial and Compliance Services tailored to meet the evolving needs of startups, SMEs, and large enterprises. We understand that staying compliant in today’s dynamic regulatory environment is both critical and complex. That’s why our solutions are designed not just for compliance, but to support your business in scaling responsibly and sustainably.
+              With deep domain expertise and a constantly updated understanding of legal and regulatory frameworks, we ensure that your company remains legally sound, risk-free, and fully compliant with all statutory requirements including the Companies Act, SEBI regulations, FEMA guidelines, and more.
+              From incorporation, board governance, and statutory filings to complex corporate restructuring and due diligence, we provide strategic guidance at every step. At EZYGRO, we are more than just service providers — we are your long-term compliance partners, committed to aligning regulatory integrity with your growth ambitions.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
               MORE <span className="ml-2 text-xl">+</span>
@@ -156,8 +210,57 @@ const SecretarialCompliances = () => {
         </div>
       </section>
 
-      {/* Our Services Section Added Here */}
-      <OurServices />
+      {/* The new dynamic "Our Services" carousel section */}
+      <section className="bg-gray-50 py-16 sm:py-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 flex justify-between items-center">
+            <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+            <div className="flex gap-4">
+              <button
+                onClick={()=>{handlePrev();pauseAutoScroll()}}
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-400 text-2xl text-gray-800 hover:bg-gray-100 transition"
+                aria-label="Previous"
+              >
+                &lt;
+              </button>
+              <button
+                onClick={()=>{handleNext();pauseAutoScroll()}}
+                className="w-12 h-12 flex items-center justify-center rounded-full border border-gray-400 text-2xl text-gray-800 hover:bg-gray-100 transition"
+                aria-label="Next"
+              >
+                &gt;
+              </button>
+            </div>
+          </div>
+          <div className="overflow-hidden">
+            <div
+              className="flex"
+              style={{
+                width: `${(extendedServices.length / visibleCards) * 100}%`,
+                transform: `translateX(-${(currentIndex / extendedServices.length) * 100}%)`,
+                transition: isTransitioning ? 'transform 300ms ease-in-out' : 'none',
+              }}
+            >
+              {extendedServices.map((service, index) => (
+                <div key={index} className="px-4" style={{ width: `${100 / extendedServices.length}%` }}>
+                  <div className="bg-white p-8 border border-gray-200 rounded-lg h-full flex flex-col">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                    <p className="text-gray-600 mb-2">{service.description}</p>
+                    <ul className="space-y-4 flex-grow">
+                      {service.features.map((feature, fIndex) => (
+                        <li key={fIndex} className="flex items-start">
+                          <span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span>
+                          <span className="text-gray-800">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

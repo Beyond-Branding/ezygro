@@ -1,57 +1,7 @@
-import { useState, useEffect } from 'react';
-
-// The OurServices component to be added
-const OurServices = () => {
-  const services = {
-    discover: [
-      "Strategy and Roadmap", "Discovery", "Process Mining and Task Mining", "AI Maturity Assessment",
-      "CCF Setup", "Enterprise IA and AI Architecture evaluation", "Platform/Technology Evaluation",
-      "Evangelize AI Pair Programming",
-    ],
-    experiment: [
-      "Gen AI Experiment as a Service (XaaS)", "AI Labs", "Sandbox Setup", "PoT and Fast Experiment",
-      "Partner/Client Co-innovation",
-    ],
-    scale: [
-      "Model Factory", "AI Ops and ML Ops", "Digital Workforce Management", "AI and Bot Performance Management",
-      "AI Store", "AI Enablement", "Data Annotation", "Enterprise AI Platform Build",
-      "Responsible Adoption", "Enterprise Knowledge Search",
-    ],
-  };
-
-  const ServiceCard = ({ title, description, items }) => (
-    <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-      <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
-      <p className="text-gray-600 mb-8">{description}</p>
-      <ul className="space-y-4">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-start">
-            <span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span>
-            <span className="text-gray-800">{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-
-  return (
-    <section className="bg-gray-50 py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ServiceCard title="Discover" description="Tech Mahindra’s design thinking-led approach and frameworks help identify AI opportunities lurking in your organization. Our experts identify the right AI strategy and roadmap for your organization." items={services.discover} />
-          <ServiceCard title="Experiment" description="Our principle of ‘fail fast to learn faster’ is enabled by an ecosystem of experimentation. Our AI Labs for innovative opportunities enable us, along with partners or clients, to co-innovate." items={services.experiment} />
-          <ServiceCard title="Scale" description="We help you leverage your data and AI assets across the organization coupled with our AI solutions in order to scale up on your AI journey. Our AI enablement programs can help accelerate the democratization of AI." items={services.scale} />
-        </div>
-      </div>
-    </section>
-  );
-};
-
+import React, { useState, useEffect } from 'react';
 
 const LoansAndInsurance = () => {
+  // State and Effects for animations and responsive design
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
@@ -78,6 +28,7 @@ const LoansAndInsurance = () => {
     };
   }, []);
 
+  // Main return statement for the LoansAndInsurance page
   return (
     <>
       <section className="relative min-h-screen bg-white overflow-hidden">
@@ -137,17 +88,17 @@ const LoansAndInsurance = () => {
         </div>
       </section>
 
-      {/* AI Delivered Right Section */}
+      {/* This section now uses the text specific to Loans & Insurance */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold text-black">
-              AI Delivered Right
+              Financial Solutions Delivered Right
             </h2>
           </div>
           <div>
             <p className="text-gray-800 leading-relaxed">
-              Tech Mahindra’s "AI Delivered Right" exemplifies innovation and reliability. We move beyond vision and experimentation to deliver practical, secure, scalable AI solutions that drive meaningful business outcomes. We are committed to empowering our clients with the ideas, models, tools, processes, and systems they need to harness AI’s full potential.
+              At EZYGRO, we are your trusted partner in loans, insurance, and investments offering smart, tailored financial solutions for every stage of life. With decades of expertise, strategic partnerships, and a customer-first approach, we simplify your financial journey by ensuring quick and easy processing, transparent guidance, and secure transactions. Whether you're planning for the future, securing your present, or funding your goals, EZYGRO empowers your financial growth with clarity, trust, and innovation.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
               MORE <span className="ml-2 text-xl">+</span>
@@ -156,8 +107,59 @@ const LoansAndInsurance = () => {
         </div>
       </section>
 
-      {/* Our Services Section Added Here */}
-      <OurServices />
+      {/* The Our Services Section, updated for alignment */}
+      <section className="bg-gray-50 py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1: Loans */}
+            <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Loans</h3>
+              <p className="text-gray-600 mb-8">
+                Whether you're dreaming of a home, expanding your business, or consolidating debt—EZYGRO has you covered.
+                <br></br>Loan Products We Offer:
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Home Loans</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Personal Loans</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Business Loans</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Loan Against Property</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Working Capital Loans</span></li>
+              </ul>
+            </div>
+            {/* Card 2: Insurance */}
+            <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Insurance</h3>
+              <p className="text-gray-600 mb-8">
+                Protect what matters most. Our insurance solutions offer financial security for you and your loved ones.
+                <br></br>Insurance Plans We Provide:
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Life Insurance</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Health Insurance</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Term Plans</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Motor Insurance</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Travel & Property Insurance: Trusted Insurers, Claim Assistance, Affordable Premiums</span></li>
+              </ul>
+            </div>
+            {/* Card 3: Investments */}
+            <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Investments</h3>
+              <p className="text-gray-600 mb-8">
+                Grow your wealth with confidence. Our investment advisory and services are designed to help you reach your financial goals.<br></br>Investment Options:
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Mutual Funds</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">SIPs (Systematic Investment Plans)</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Fixed Deposits</span></li>
+                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Bonds</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
