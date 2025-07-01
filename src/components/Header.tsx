@@ -26,14 +26,19 @@ const Header: React.FC = () => {
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm font-poppins">
-      <div className="max-w-[1280px] mx-auto px-4">
+      <div className="max-w-[1280px] mx-auto px-4"> 
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0" onClick={handleNavClick}>
-            <img src={TechMahindraLogo} alt="Tech Mahindra Logo" className="h-10 md:h-12" />
+          <Link to="/" className="flex-shrink-0 flex items-center h-full" onClick={handleNavClick}>
+            <img
+              src={TechMahindraLogo}
+              alt="EZYGRO Logo"
+              className="h-14 md:h-16 object-contain"
+              style={{ maxHeight: '100%', maxWidth: '170px' }}
+            />
           </Link>
 
-          {/* Desktop Nav */}                             
+          {/* Desktop Nav */}                              
           <nav className="hidden lg:flex flex-1 justify-center space-x-10">
             {navItems.map((item) => (
               <Link

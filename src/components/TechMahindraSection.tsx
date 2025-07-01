@@ -126,12 +126,7 @@ const TechMahindraSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 lg:bottom-8 lg:right-8 z-20">
-        <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full bg-gray-600/80 backdrop-blur-sm flex items-center justify-center">
-          <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 rotate-180 text-white" />
-        </div>
-      </div>
+      {/* Scroll indicator removed as requested */}
     </section>
   );
 };

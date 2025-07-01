@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Tech Mahindra Logo */}
             <div className="lg:col-span-1 flex items-center" style={{ alignItems: 'flex-start' }}>
-              <img src={logo} alt="Tech Mahindra Logo" className="h-14 w-auto rounded mt-0" />
+              <img src={logo} alt="Tech Mahindra Logo" className="h-24 w-auto rounded mt-0" style={{ marginTop: '-0.75rem' }} />
             </div>
             {/* Our Brand */}
             <div>
