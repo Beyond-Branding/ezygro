@@ -6,7 +6,7 @@ import VideoCarousel from './components/VideoCarousel';
 import Industries from './components/Industries';
 import CapabilitiesSection from './components/CapabilitiesSection';
 import TechMahindraSection from './components/TechMahindraSection';
-import JoyMattersSection from './components/JoyMattersSection';
+// import JoyMattersSection from './components/JoyMattersSection';
 // import IndustriesSection from './components/IndustriesSection';
 import SustainabilitySection from './components/SustainabilitySection';
 import RiseSection from './components/RiseSection';
@@ -14,6 +14,7 @@ import ExploreMoreSection from './components/ExploreMoreSection';
 import Footer from './components/Footer';
 import TermsOfUsePage from './components/TermsOfUsePage';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import WhatsAppFloater from './components/WhatsAppFloater';
 import AboutUs from './components/AboutUs';
 import Capabilities from './components/Capabilities';
 import Careers from './components/Careers';
@@ -32,7 +33,7 @@ const HomePage = () => (
     <Industries />
     <CapabilitiesSection />
     <TechMahindraSection />
-    <JoyMattersSection />
+    {/* <JoyMattersSection /> */}
     {/* <IndustriesSection /> */}
     <SustainabilitySection />
     <RiseSection />
@@ -67,6 +68,7 @@ const AppContent = () => {
       </Routes>
       <Footer showCareersContact={isHomePage} />
       <ScrollToTopButton />
+      <WhatsAppFloater phoneNumber="918928710950" />
       <CookieConsentBanner />
     </div>
   );

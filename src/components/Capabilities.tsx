@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Capabilities = () => {
   const [capabilitiesVisible, setCapabilitiesVisible] = useState(false);
   const [descriptionVisible, setDescriptionVisible] = useState(false);
+  const [cardsVisible, setCardsVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const sectionRef = useRef<HTMLElement>(null);
 
   // Single background video for the diagonal section
   const backgroundVideo = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
@@ -72,25 +74,80 @@ const Capabilities = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Trigger text animations on component mount
+  // Intersection Observer for scroll-based animations
   useEffect(() => {
-    const capabilitiesTimer = setTimeout(() => {
-      setCapabilitiesVisible(true);
-    }, 200);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reset animations first
+            setCapabilitiesVisible(false);
+            setDescriptionVisible(false);
+            
+            // Trigger animations with delays
+            setTimeout(() => {
+              setCapabilitiesVisible(true);
+            }, 200);
 
-    const descriptionTimer = setTimeout(() => {
-      setDescriptionVisible(true);
-    }, 400);
+            setTimeout(() => {
+              setDescriptionVisible(true);
+            }, 400);
+          } else {
+            // Reset animations when not in view
+            setCapabilitiesVisible(false);
+            setDescriptionVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the section is visible
+        rootMargin: '-10% 0px -10% 0px' // Add some margin to fine-tune trigger point
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
-      clearTimeout(capabilitiesTimer);
-      clearTimeout(descriptionTimer);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
+  }, []);
+
+  // Initial text animations on component mount
+  useEffect(() => {
+    // Initial animation trigger for first load
+    const initialTimer = setTimeout(() => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+          setCapabilitiesVisible(true);
+          setTimeout(() => {
+            setDescriptionVisible(true);
+          }, 200);
+        }
+      }
+    }, 300);
+
+    return () => clearTimeout(initialTimer);
+  }, []);
+
+  // Separate animation for cards section (no scroll-based reset)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCardsVisible(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      <section className="relative min-h-screen bg-white overflow-hidden">
+      <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden">
         {/* Background with diagonal section for image */}
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-full h-full">
@@ -165,7 +222,7 @@ const Capabilities = () => {
                 key={cap.id}
                 href={cap.link}
                 className={`group relative cursor-pointer transform transition-all duration-700 ease-out hover:scale-105 w-full ${
-                  capabilitiesVisible 
+                  cardsVisible 
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-8 opacity-0'
                 }`}

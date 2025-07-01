@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import VisionPurposeValues from './VisionPurposeValues'; // Import stays the same
 
 const AboutUs = () => {
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
+  const [secondSectionVisible, setSecondSectionVisible] = useState(false);
+  const [secondSectionTextVisible, setSecondSectionTextVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const sectionRef = useRef<HTMLElement>(null);
 
   // Data for the Corporate Citizenship section
   const citizenshipData = [
@@ -30,23 +33,83 @@ const AboutUs = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Intersection Observer for scroll-based animations
   useEffect(() => {
-    const scaleTimer = setTimeout(() => {
-      setScaleAtSpeedVisible(true);
-    }, 200);
-    const promiseTimer = setTimeout(() => {
-      setPromiseTextVisible(true);
-    }, 400);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reset animations first
+            setScaleAtSpeedVisible(false);
+            setPromiseTextVisible(false);
+            
+            // Trigger animations with delays
+            setTimeout(() => {
+              setScaleAtSpeedVisible(true);
+            }, 200);
+
+            setTimeout(() => {
+              setPromiseTextVisible(true);
+            }, 400);
+          } else {
+            // Reset animations when not in view
+            setScaleAtSpeedVisible(false);
+            setPromiseTextVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the section is visible
+        rootMargin: '-10% 0px -10% 0px' // Add some margin to fine-tune trigger point
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
-      clearTimeout(scaleTimer);
-      clearTimeout(promiseTimer);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
+  }, []);
+
+  // Initial text animations on component mount
+  useEffect(() => {
+    // Initial animation trigger for first load
+    const initialTimer = setTimeout(() => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+          setScaleAtSpeedVisible(true);
+          setTimeout(() => {
+            setPromiseTextVisible(true);
+          }, 200);
+        }
+      }
+    }, 300);
+
+    return () => clearTimeout(initialTimer);
+  }, []);
+
+  // Separate animation for second section (no scroll-based reset)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSecondSectionVisible(true);
+      setTimeout(() => {
+        setSecondSectionTextVisible(true);
+      }, 200);
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      <section className="relative min-h-screen bg-white overflow-hidden">
+      <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden">
         {/* Background with diagonal section for image */}
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-full h-full">
@@ -109,10 +172,10 @@ Empowering growth with purpose, precision, and trust.
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
             <div className="relative">
-              <h2 className={`text-xl sm:text-2xl md:text-3xl font-medium text-gray-900 tracking-tight transition-all ease-in-out duration-1000 transform ${scaleAtSpeedVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <h2 className={`text-xl sm:text-2xl md:text-3xl font-medium text-gray-900 tracking-tight transition-all ease-in-out duration-1000 transform ${secondSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                 Scale easily with EzyGro
               </h2>
-              <p className={`mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed transition-all ease-in-out duration-1000 delay-200 transform ${promiseTextVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <p className={`mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed transition-all ease-in-out duration-1000 delay-200 transform ${secondSectionTextVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                 EZYGRO is a visionary initiative founded by Sushma B. Salunkhe and Dhanashree B. Salunkhe, designed to offer comprehensive, end-to-end solutions across the domains of legal, tax, audit, and corporate advisory. Born from a shared passion for simplifying the intricate challenges faced by businesses and individuals alike, EZYGRO stands as a one-stop destination for navigating the evolving regulatory and financial landscape with confidence. With a foundation built on trust, ethics, and deep industry knowledge, we are committed to delivering more than just services we deliver clarity, confidence, and long-term value. Whether it's guiding a startup through its legal framework, helping businesses stay compliant, or offering tailored financial advice, we combine precision with a personal touch to ensure every client receives support that’s both strategic and sincere.
               </p>
             </div>

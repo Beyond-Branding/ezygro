@@ -135,7 +135,7 @@ export default function App() {
         {/* --- Google Map Section --- */}
         <div className="w-full h-[50vh] md:h-[65vh] bg-gray-200 overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.234073289305!2d72.86450207519531!3d19.18614098702759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7b2e2e2e2e3%3A0x123456789abcdef!2s12%2C%20Ground%20Floor%2C%20Dadi%20Building%2C%20Rani%20Sati%20Marg%2C%20Kathiyawadi%20Chowk%2C%20near%20Union%20Bank%2C%20Malad%20East%2C%20Mumbai%2C%20Maharashtra%20400097!5e0!3m2!1sen!2sin!4v1719372093826!5m2!1sen!2sin"
+            src="https://www.google.com/maps?q=19.18614098702759,72.86450207519531&z=17&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
