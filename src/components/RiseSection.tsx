@@ -47,21 +47,13 @@ const RiseSection = () => {
           {/* Content */}
           <div className="relative">
             <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 tracking-tight transition-all ease-in-out duration-1000 transform ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              RISE
+              GROW
             </h2>
             <p className={`mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed transition-all ease-in-out duration-1000 delay-200 transform ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              At Tech Mahindra, 'Rise' is our core brand pillar that goes beyond business. It underscores our entire organization's culture and how we inspire our employees, stakeholders, and communities to uphold the three core tenets of this philosophy – Rise for an equal world, to be future-ready, and to create value.
+              At EZYGRO, ‘GROW’ is more than just a word it’s a mindset that shapes everything we do. It defines how we empower businesses, support our people, and contribute to society. We grow with integrity by building relationships rooted in trust, transparency, and ethical practices. We grow for the future by embracing innovation, continuous learning, and adaptability in a changing world. And we grow by creating impact delivering real, measurable value to our clients, teams, and the communities we serve. At EZYGRO, growth is not just a goal; it's a shared journey.
             </p>
             <div className={`mt-6 sm:mt-8 transition-all ease-in-out duration-1000 delay-400 transform ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <a
-                href="#"
-                className="text-sm sm:text-base font-semibold text-red-600 hover:text-red-700 group"
-              >
-                LEARN MORE
-                <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-1 ml-1">
-                  →
-                </span>
-              </a>
+              
             </div>
           </div>
         </div>

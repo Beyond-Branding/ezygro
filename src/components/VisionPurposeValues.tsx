@@ -37,11 +37,9 @@ const VisionPurposeValues = () => {
     setIsAnimating(true);
     setHoveredTab(index);
     
-    // Show preview animation first
     setTimeout(() => {
       setIsExpanding(true);
       
-      // Then expand to full
       setTimeout(() => {
         setActiveTab(index);
         setHoveredTab(null);
@@ -59,11 +57,9 @@ const VisionPurposeValues = () => {
     setIsAnimating(true);
     setHoveredNavButton('next');
     
-    // Show preview animation first
     setTimeout(() => {
       setIsExpanding(true);
       
-      // Then expand to full
       setTimeout(() => {
         setActiveTab(nextIndex);
         setHoveredNavButton(null);
@@ -81,11 +77,9 @@ const VisionPurposeValues = () => {
     setIsAnimating(true);
     setHoveredNavButton('prev');
     
-    // Show preview animation first
     setTimeout(() => {
       setIsExpanding(true);
       
-      // Then expand to full
       setTimeout(() => {
         setActiveTab(prevIndex);
         setHoveredNavButton(null);
@@ -223,7 +217,7 @@ const VisionPurposeValues = () => {
         `
       }} />
       
-      {/* Navigation buttons - positioned for mobile at top, desktop at top-right */}
+      {/* Navigation buttons */}
       <div className="flex justify-center md:absolute md:top-4 md:right-4 lg:top-8 lg:right-8 mb-6 md:mb-0 gap-3 lg:gap-4">
         <button
           onClick={prevTab}
@@ -255,7 +249,8 @@ const VisionPurposeValues = () => {
               {content.map((item, index) => (
                 <h2
                   key={item.key}
-                  className={`text-4xl lg:text-5xl font-bold cursor-pointer transition-all duration-300 ${
+                  // UPDATED: Increased text size for desktop
+                  className={`text-5xl lg:text-6xl font-bold cursor-pointer transition-all duration-300 ${
                     activeTab === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
                   } ${isAnimating ? 'pointer-events-none' : ''}`}
                   onClick={() => handleTabClick(index)}
@@ -269,9 +264,7 @@ const VisionPurposeValues = () => {
 
             {/* Center circular image */}
             <div className="flex justify-center items-center relative">
-              {/* Circular mask container */}
               <div className="relative w-80 h-80 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl">
-                {/* Current active image - stays in place during transitions */}
                 <div className="absolute inset-0">
                   <img
                     src={currentContent.image}
@@ -279,8 +272,6 @@ const VisionPurposeValues = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* Hover preview image that slides in halfway */}
                 {((hoveredTab !== null && hoveredTab !== activeTab) || hoveredNavButton !== null) && (
                   <div 
                     className={`absolute inset-0 overflow-hidden rounded-full ${
@@ -291,7 +282,6 @@ const VisionPurposeValues = () => {
                       transform: (() => {
                         let targetIndex;
                         let isVision = false;
-                        
                         if (hoveredTab !== null) {
                           targetIndex = hoveredTab;
                           isVision = hoveredTab === 0;
@@ -302,7 +292,6 @@ const VisionPurposeValues = () => {
                           targetIndex = (activeTab - 1 + content.length) % content.length;
                           isVision = targetIndex === 0;
                         }
-                        
                         if (isVision) {
                           return isExpanding 
                             ? 'translateX(-50%) translateY(0%)'
@@ -316,7 +305,6 @@ const VisionPurposeValues = () => {
                       animation: (() => {
                         let targetIndex;
                         let isVision = false;
-                        
                         if (hoveredTab !== null) {
                           targetIndex = hoveredTab;
                           isVision = hoveredTab === 0;
@@ -327,7 +315,6 @@ const VisionPurposeValues = () => {
                           targetIndex = (activeTab - 1 + content.length) % content.length;
                           isVision = targetIndex === 0;
                         }
-                        
                         return isVision
                           ? (isExpanding 
                               ? 'expandToFullFromTopLeft 1.0s ease-out forwards' 
@@ -363,14 +350,11 @@ const VisionPurposeValues = () => {
                     />
                   </div>
                 )}
-
-                {/* Expanding image when clicking on hovered item */}
                 {isExpanding && (hoveredTab !== null || hoveredNavButton !== null) && (
                   <div 
                     className={`absolute inset-0 overflow-hidden rounded-full ${
                       (() => {
                         let isVision = false;
-                        
                         if (hoveredTab !== null) {
                           isVision = hoveredTab === 0;
                         } else if (hoveredNavButton === 'next') {
@@ -378,7 +362,6 @@ const VisionPurposeValues = () => {
                         } else if (hoveredNavButton === 'prev') {
                           isVision = ((activeTab - 1 + content.length) % content.length) === 0;
                         }
-                        
                         return isVision ? 'expand-to-full-from-top-left' : 'expand-to-full';
                       })()
                     }`}
@@ -386,7 +369,6 @@ const VisionPurposeValues = () => {
                       zIndex: 15,
                       transform: (() => {
                         let isVision = false;
-                        
                         if (hoveredTab !== null) {
                           isVision = hoveredTab === 0;
                         } else if (hoveredNavButton === 'next') {
@@ -394,7 +376,6 @@ const VisionPurposeValues = () => {
                         } else if (hoveredNavButton === 'prev') {
                           isVision = ((activeTab - 1 + content.length) % content.length) === 0;
                         }
-                        
                         return isVision 
                           ? 'translateX(-50%) translateY(0%)'
                           : 'translateX(50%) translateY(-10%)';
@@ -427,8 +408,6 @@ const VisionPurposeValues = () => {
                   </div>
                 )}
               </div>
-
-              {/* Enhanced border ring that responds to hover */}
               <div 
                 className={`absolute inset-0 rounded-full border-2 transition-all duration-800 ease-out pointer-events-none ${
                   (hoveredTab !== null || hoveredNavButton !== null)
@@ -453,12 +432,9 @@ const VisionPurposeValues = () => {
                 }`}
               >
                 {currentContent.text ? (
-                  <p className="text-lg leading-relaxed whitespace-pre-line max-w-lg">{currentContent.text}</p>
+                  <p className="text-xl leading-relaxed whitespace-pre-line max-w-lg">{currentContent.text}</p>
                 ) : (
                   <ul className="text-lg space-y-3 max-w-lg">
-                    {/* {currentContent.list?.map((item, i) => ( */}
-                      {/* <li key={i}>{item}</li> */}
-                    {/* ))} */}
                   </ul>
                 )}
               </div>
@@ -468,12 +444,12 @@ const VisionPurposeValues = () => {
 
         {/* Mobile layout */}
         <div className="md:hidden flex flex-col h-full">
-          {/* Navigation titles - horizontal layout for mobile */}
           <div className="flex justify-center space-x-8 mb-6">
             {content.map((item, index) => (
               <h2
                 key={item.key}
-                className={`text-lg font-bold cursor-pointer transition-all duration-300 ${
+                // UPDATED: Increased text size for mobile
+                className={`text-xl font-bold cursor-pointer transition-all duration-300 ${
                   activeTab === index ? 'opacity-100' : 'opacity-40 hover:opacity-70'
                 } ${isAnimating ? 'pointer-events-none' : ''}`}
                 onClick={() => handleTabClick(index)}
@@ -485,7 +461,6 @@ const VisionPurposeValues = () => {
             ))}
           </div>
 
-          {/* Large circular image - centered and prominent */}
           <div className="flex justify-center items-center flex-1 min-h-[40vh] mb-6">
             <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-2xl">
               <div className="absolute inset-0">
@@ -496,7 +471,6 @@ const VisionPurposeValues = () => {
                 />
               </div>
 
-              {/* Mobile animations - single overlay for smooth transition */}
               {((hoveredTab !== null && hoveredTab !== activeTab) || hoveredNavButton !== null) && (
                 <div 
                   className={`absolute inset-0 overflow-hidden rounded-full ${
@@ -554,7 +528,6 @@ const VisionPurposeValues = () => {
                 </div>
               )}
 
-              {/* Enhanced border ring */}
               <div 
                 className={`absolute inset-0 rounded-full border-2 transition-all duration-800 ease-out pointer-events-none ${
                   (hoveredTab !== null || hoveredNavButton !== null)
@@ -572,7 +545,6 @@ const VisionPurposeValues = () => {
             </div>
           </div>
 
-          {/* Content text */}
           <div className="text-center px-4 mb-6">
             <div
               className={`transition-all duration-300 ease-in-out ${
@@ -580,12 +552,9 @@ const VisionPurposeValues = () => {
               }`}
             >
               {currentContent.text ? (
-                <p className="text-sm leading-relaxed whitespace-pre-line max-w-md mx-auto">{currentContent.text}</p>
+                <p className="text-base leading-relaxed whitespace-pre-line max-w-md mx-auto">{currentContent.text}</p>
               ) : (
                 <ul className="text-sm space-y-2 max-w-md mx-auto text-left">
-                  {/* {currentContent.list?.map((item, i) => ( */}
-                    {/* <li key={i}>• {item}</li> */}
-                  {/* ))} */}
                 </ul>
               )}
             </div>
