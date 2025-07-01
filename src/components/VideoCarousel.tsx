@@ -197,7 +197,8 @@ const VideoCarousel = () => {
                 transform: scaleAtSpeedVisible ? 'translateY(0px)' : 'translateY(32px)'
               }}
             >
-              Where Expertise<br />Meets Integrity
+              Where Expertise<br />
+              <span style={{ color: '#4B1D92' }}>Meets Integrity</span>
             </h1>
           </div>
           
@@ -245,13 +246,11 @@ const VideoCarousel = () => {
           ))}
         </div>
         
-        <div className="w-full bg-gray-600/30 h-0.5 rounded-full overflow-hidden">
-          <div 
-            className="h-full bg-red-600 transition-all duration-75 ease-linear rounded-full"
-            style={{ width: `${progress}%` }}
+       
+          <div
           />
         </div>
-      </div>
+
     </section>
   );
 };

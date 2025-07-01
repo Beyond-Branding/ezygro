@@ -9,24 +9,22 @@ import '@fontsource/poppins/600.css';
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  
+
   const navItems = [
     { label: 'ABOUT US', path: '/about' },
     { label: 'CAPABILITIES', path: '/capabilities' },
-    //{ label: 'PRICING', path: '/pricing' },
     { label: 'CAREERS', path: '/careers' },
     { label: 'CONTACT US', path: '/contact' }
   ];
 
   const handleNavClick = () => {
     setIsMobileMenuOpen(false);
-    // Scroll to top when navigating
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm font-poppins">
-      <div className="max-w-[1280px] mx-auto px-4"> 
+      <div className="max-w-[1280px] mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 flex items-center h-full" onClick={handleNavClick}>
@@ -38,17 +36,17 @@ const Header: React.FC = () => {
             />
           </Link>
 
-          {/* Desktop Nav */}                              
+          {/* Desktop Nav */}
           <nav className="hidden lg:flex flex-1 justify-center space-x-10">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.path}
                 onClick={handleNavClick}
-                className={`text-sm font-semibold transition ${
-                  location.pathname === item.path 
-                    ? 'text-red-600 border-b-2 border-red-600 pb-1' 
-                    : 'text-black hover:text-red-600'
+                className={`text-sm font-semibold transition-colors duration-200 pb-1 ${
+                  location.pathname === item.path
+                    ? 'border-b-2 text-[#4B1D92] border-[#4B1D92]'
+                    : 'text-black hover:text-[#4B1D92]'
                 }`}
               >
                 {item.label}
@@ -58,11 +56,11 @@ const Header: React.FC = () => {
 
           {/* Search + Mobile Toggle */}
           <div className="flex items-center space-x-2">
-            <button className="p-2 text-gray-600 hover:text-red-600">
+            <button className="p-2 text-gray-600 hover:text-[#4B1D92]">
               <Search className="h-5 w-5" />
             </button>
             <button
-              className="lg:hidden p-2 text-gray-600 hover:text-red-600"
+              className="lg:hidden p-2 text-gray-600 hover:text-[#4B1D92]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -79,10 +77,10 @@ const Header: React.FC = () => {
                   key={item.label}
                   to={item.path}
                   onClick={handleNavClick}
-                  className={`block text-sm font-semibold py-2 w-full text-left transition ${
-                    location.pathname === item.path 
-                      ? 'text-red-600' 
-                      : 'text-gray-800 hover:text-red-600'
+                  className={`block text-sm font-semibold py-2 w-full text-left transition-colors duration-200 ${
+                    location.pathname === item.path
+                      ? 'text-[#4B1D92]'
+                      : 'text-[#333] hover:text-[#4B1D92]'
                   }`}
                 >
                   {item.label}

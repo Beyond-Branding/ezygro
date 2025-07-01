@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 
-const TechMahindraSection = () => {
+const EzygroHeroSection = () => {
   const [textVisible, setTextVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
@@ -20,15 +20,17 @@ const TechMahindraSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Responsive font sizes and line heights (desktop: original, mobile: like Capabilities)
+  // Responsive font sizes and line heights
   const headingFontSize = windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px';
   const paraFontSize = windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px';
-  const paraLineHeight = windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '28px'; // desktop: 28px
+  const paraLineHeight = windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '28px';
 
   return (
+    // --- FIX #1 ---
+    // Increased top padding significantly from pt-8 to pt-24 to create more space.
     <section
-      id="techmahindra"
-      className="relative min-h-screen bg-gray-50 overflow-hidden"
+      id="ezygro"
+      className="relative min-h-[130vh] bg-gray-50 overflow-hidden pt-32 pb-20"
     >
       {/* Background with diagonal video section */}
       <div className="absolute inset-0">
@@ -50,21 +52,24 @@ const TechMahindraSection = () => {
                 playsInline
               >
                 <source
-                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+                  src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
               </video>
-              <div className="absolute inset-0 bg-gradient-to-br from-red-600/60 via-red-800/40 to-black/70"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4B1D92]/60 via-[#4B1D92]/40 to-black/70"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Top Texts absolutely at the top, above diagonal (mobile only) */}
+      {/* Mobile Text Container */}
       {windowWidth < 1024 && (
-        <div className="absolute left-0 right-0 top-0 z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-2 sm:pt-4 flex flex-col items-start"
-          style={{ pointerEvents: 'none' }}>
+        <div 
+          className="absolute left-0 right-0 z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-start"
+          style={{ top: '0rem', pointerEvents: 'none' }}
+        >
+          {/* Mobile text content... */}
           <div className="space-y-2 sm:space-y-4 text-left w-full max-w-full sm:max-w-lg">
             <div
               className={`transition-all duration-1000 ease-out ${
@@ -74,8 +79,8 @@ const TechMahindraSection = () => {
             >
               <h1 className="font-bold text-gray-900"
                 style={{ fontSize: headingFontSize, lineHeight: 1.1, fontWeight: 600 }}>
-                <span className="text-gray-900 block">Scale at Speed</span>
-                <span className="text-red-600 block mt-0.5">with Tech Mahindra</span>
+                <span className="text-gray-900 block">Grow with Confidence</span>
+                <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
               </h1>
             </div>
             <div
@@ -84,20 +89,26 @@ const TechMahindraSection = () => {
               }`}
               style={{ pointerEvents: 'auto' }}
             >
-              <p className="text-gray-700 leading-snug mt-2 sm:mt-4 font-400 text-left"
+              <p className="text-gray-700 leading-snug mt-1 sm:mt-2 font-400 text-left"
                 style={{ fontSize: paraFontSize, lineHeight: paraLineHeight, fontWeight: 400 }}
               >
-                <span className="block">Thriving in the current dynamic landscape</span>
-                <span className="block">demands technological solutions that enable</span>
-                <span className="block">both transformative scale and unparalleled speed.</span>
+                In today’s fast-paced business environment, success requires financial clarity and compliance you can count on. EZYGRO empowers you with smart solutions that drive sustainable growth, strategic decision-making, and operational excellence—all at the speed your business demands.
               </p>
             </div>
           </div>
         </div>
       )}
 
-      {/* Top Texts in grid for desktop */}
-      <div className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${windowWidth < 1024 ? 'hidden' : 'block'}`} style={{paddingTop: windowWidth >= 1024 ? '2rem' : undefined}}>
+      {/* Desktop Text Container */}
+      <div 
+        className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${windowWidth < 1024 ? 'hidden' : 'block'}`} 
+        style={{
+          paddingTop: '3rem', 
+          // --- FIX #2 ---
+          // Increased negative margin from -2rem to -4rem to pull the text higher.
+          marginTop: '-8rem' 
+        }}
+      >
         <div className="space-y-4 lg:space-y-8 text-left w-full max-w-2xl">
           <div
             className={`transition-all duration-1000 ease-out ${
@@ -106,8 +117,8 @@ const TechMahindraSection = () => {
           >
             <h1 className="font-bold text-gray-900"
               style={{ fontSize: 50, lineHeight: 1.1, fontWeight: 600 }}>
-              <span className="text-gray-900 block">Scale at Speed</span>
-              <span className="text-red-600 block mt-0.5">with Tech Mahindra</span>
+                <span className="text-gray-900 block">Grow with Confidence</span>
+                <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
             </h1>
           </div>
           <div
@@ -115,20 +126,16 @@ const TechMahindraSection = () => {
               textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
-            <p className="text-gray-700 leading-snug mt-4 font-400 text-left"
-              style={{ fontSize: paraFontSize, lineHeight: paraLineHeight, fontWeight: 400 }}
-            >
-              <span className="block">Thriving in the current dynamic landscape</span>
-              <span className="block">demands technological solutions that enable</span>
-              <span className="block">both transformative scale and unparalleled speed.</span>
-            </p>
-          </div>
+              <p className="text-gray-700 leading-snug mt-4 font-400 text-left"
+                style={{ fontSize: paraFontSize, lineHeight: paraLineHeight, fontWeight: 400 }}
+              >
+                In today’s fast-paced business environment, success requires financial clarity and compliance you can count on. EZYGRO empowers you with smart solutions that drive sustainable growth, strategic decision-making, and operational excellence—all at the speed your business demands.
+              </p>
+            </div>
         </div>
       </div>
-
-      {/* Scroll indicator removed as requested */}
     </section>
   );
 };
 
-export default TechMahindraSection;
+export default EzygroHeroSection;
