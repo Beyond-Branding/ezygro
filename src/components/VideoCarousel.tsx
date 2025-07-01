@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const VideoCarousel = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -6,6 +6,7 @@ const VideoCarousel = () => {
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
   const [progress, setProgress] = useState(0);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const videos = [
     {
@@ -71,36 +72,87 @@ const VideoCarousel = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Trigger text animations on component mount
+  // Intersection Observer for scroll-based animations
   useEffect(() => {
-    const scaleTimer = setTimeout(() => {
-      setScaleAtSpeedVisible(true);
-    }, 200);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reset animations first
+            setScaleAtSpeedVisible(false);
+            setPromiseTextVisible(false);
+            
+            // Trigger animations with delays
+            setTimeout(() => {
+              setScaleAtSpeedVisible(true);
+            }, 300);
 
-    const promiseTimer = setTimeout(() => {
-      setPromiseTextVisible(true);
-    }, 200);
+            setTimeout(() => {
+              setPromiseTextVisible(true);
+            }, 600);
+          } else {
+            // Reset animations when not in view
+            setScaleAtSpeedVisible(false);
+            setPromiseTextVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the section is visible
+        rootMargin: '-10% 0px -10% 0px' // Add some margin to fine-tune trigger point
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
-      clearTimeout(scaleTimer);
-      clearTimeout(promiseTimer);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
+  }, []);
+
+  // Initial text animations on component mount (removed old useEffect)
+  useEffect(() => {
+    // Initial animation trigger for first load
+    const initialTimer = setTimeout(() => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+          setScaleAtSpeedVisible(true);
+          setTimeout(() => {
+            setPromiseTextVisible(true);
+          }, 400);
+        }
+      }
+    }, 300);
+
+    return () => clearTimeout(initialTimer);
   }, []);
 
   const handleDotClick = (index: number) => {
     setCurrentVideo(index);
     setProgress(0);
+    
+    // Brief animation reset and restart for smooth transition
     setScaleAtSpeedVisible(false);
     setPromiseTextVisible(false);
 
     setTimeout(() => {
       setScaleAtSpeedVisible(true);
+    }, 150);
+    
+    setTimeout(() => {
       setPromiseTextVisible(true);
-    }, 100);
+    }, 350);
   };
 
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden">
       {/* Background with diagonal section for video */}
       <div className="absolute inset-0">
         <div className="absolute right-0 top-0 w-full h-full">
@@ -134,27 +186,33 @@ const VideoCarousel = () => {
       <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
         {/* Left content: Scale at Speed */}
         <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-8 lg:left-16 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
-          <h1
-            className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-700 ease-out ${
-              scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}
-            style={{ 
-              fontSize: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '38px' : '54px', // increased font sizes
-              lineHeight: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '34px' : '44px'
-            }}
-          >
-            Where Expertise<br />Meets Integrity
-          </h1>
+          <div className="overflow-hidden pb-2">
+            <h1
+              className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out ${
+                scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              }`}
+              style={{ 
+                fontSize: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '38px' : '54px',
+                lineHeight: windowWidth < 640 ? '32px' : windowWidth < 1024 ? '42px' : '52px',
+                transform: scaleAtSpeedVisible ? 'translateY(0px)' : 'translateY(32px)'
+              }}
+            >
+              Where Expertise<br />Meets Integrity
+            </h1>
+          </div>
           
           <div
-            className={`transition-all duration-700 ease-out ${
-              promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            className={`mt-1 sm:mt-2 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
+              promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}
+            style={{
+              transform: promiseTextVisible ? 'translateY(0px)' : 'translateY(24px)'
+            }}
           >
-            <p className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
+            <p className="text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
                         style={{ 
                           fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px', 
-                          lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px' // decreased line heights
+                          lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px'
                         }}
                         >
               Our promise to help enterprises across industries transform at speed, agility, resilience, and efficiency to their businesses.

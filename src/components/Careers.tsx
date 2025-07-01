@@ -35,14 +35,18 @@ const imageOneUrl = 'https://insights.techmahindra.com/styles/text_and_image_des
 const imageTwoUrl = 'https://insights.techmahindra.com/styles/text_and_image_desktop/s3/images/techmway.jpg.webp';
 
 
-// --- Custom Hook for Intersection Observer ---
+// --- Custom Hook for Intersection Observer (one-time animation) ---
 const useInView = (options: IntersectionObserverInit) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      setIsInView(entry.isIntersecting);
+      if (entry.isIntersecting && !hasAnimated) {
+        setIsInView(true);
+        setHasAnimated(true);
+      }
     }, options);
 
     const currentRef = ref.current;
@@ -55,7 +59,7 @@ const useInView = (options: IntersectionObserverInit) => {
         observer.unobserve(currentRef);
       }
     };
-  }, [ref, options]);
+  }, [ref, options, hasAnimated]);
 
   return [ref, isInView] as const;
 };
@@ -159,6 +163,7 @@ const Careers = () => {
   const [titleVisible, setTitleVisible] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const sectionRef = useRef<HTMLElement>(null);
 
   // Background video for the hero section
   const backgroundVideo = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
@@ -173,26 +178,72 @@ const Careers = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Effect for hero section animations
+  // Intersection Observer for scroll-based animations
   useEffect(() => {
-    const titleTimer = setTimeout(() => {
-      setTitleVisible(true);
-    }, 200);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reset animations first
+            setTitleVisible(false);
+            setTextVisible(false);
+            
+            // Trigger animations with delays
+            setTimeout(() => {
+              setTitleVisible(true);
+            }, 200);
 
-    const textTimer = setTimeout(() => {
-      setTextVisible(true);
-    }, 400);
+            setTimeout(() => {
+              setTextVisible(true);
+            }, 400);
+          } else {
+            // Reset animations when not in view
+            setTitleVisible(false);
+            setTextVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the section is visible
+        rootMargin: '-10% 0px -10% 0px' // Add some margin to fine-tune trigger point
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     return () => {
-      clearTimeout(titleTimer);
-      clearTimeout(textTimer);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
+  }, []);
+
+  // Initial text animations on component mount
+  useEffect(() => {
+    // Initial animation trigger for first load
+    const initialTimer = setTimeout(() => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+          setTitleVisible(true);
+          setTimeout(() => {
+            setTextVisible(true);
+          }, 200);
+        }
+      }
+    }, 300);
+
+    return () => clearTimeout(initialTimer);
   }, []);
 
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative min-h-screen bg-white overflow-hidden">
+      <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-full h-full">
             <div
