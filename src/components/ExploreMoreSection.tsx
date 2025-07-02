@@ -160,7 +160,7 @@ const ExploreMoreSection = () => {
         {/* Progress Bar */}
         <div className="mt-8 sm:mt-12 lg:mt-16">
           <div className="w-full bg-gray-700 h-0.5">
-            <div className="bg-red-600 h-0.5" style={{ width: `${progress}%`, transition: 'width 0.5s ease-in-out' }}></div>
+            <div className="bg-purple-900 h-0.5" style={{ width: `${progress}%`, transition: 'width 0.5s ease-in-out' }}></div>
           </div>
         </div>
       </div>

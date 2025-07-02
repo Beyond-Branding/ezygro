@@ -100,7 +100,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
       <div className="bg-black border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col lg:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 lg:mb-0">© 2025 Tech Mahindra Limited</p>
+            <p className="text-gray-400 text-sm mb-4 lg:mb-0">© 2025 EZYGRO Limited</p>
             <div className="flex items-center space-x-6">
               <button
                 className="text-gray-400 hover:text-white text-sm transition-colors focus:outline-none"
