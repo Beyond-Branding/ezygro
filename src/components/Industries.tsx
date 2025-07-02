@@ -1,147 +1,212 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import { ArrowRight, Building2, Zap, Phone, Shield, Factory, Plane } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
-interface IndustryCard {
-  id: number;
-  title: React.ReactNode;
-  icon: React.ReactNode;
-  image: string;
-  description: string;
-  link: string;
-}
-
-const Industries: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const industries: IndustryCard[] = [
+const Industries = () => {
+  const industries = [
     {
-      id: 1,
-      title: 'Financial and Accounting Management',
-      icon: <Building2 className="w-8 h-8" />,
-      image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      description: 'Digital transformation solutions for financial institutions',
-      link: '/industries/banking-financial-services'
+      title: "Pharma",
+      link: "https://www.techmahindra.com/services/artificial-intelligence/",
+      imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
-      id: 2,
-      title: (
-        <>
-          Income Tax, GST and <br /> Audits
-        </>
-      ),
-      icon: <Phone className="w-8 h-8" />,
-      image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      description: 'Next-generation communication technologies and solutions',
-      link: '/industries/communications'
+      title: "Retail",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
-      id: 3,
-      title: 'Virtual CFO and Business Growth Consultancy',
-      icon: <Zap className="w-8 h-8" />,
-      image: 'https://images.pexels.com/photos/433308/pexels-photo-433308.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      description: 'Smart grid and renewable energy solutions',
-      link: '/industries/energy-utilities'
+      title: "Real Estate & Infrastructure",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
-      id: 4,
-      title: (
-        <>
-          Innovative <br /> Dashboards
-        </>
-      ),
-      icon: <Shield className="w-8 h-8" />,
-      image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      description: 'Healthcare technology and digital health solutions',
-      link: '/industries/healthcare-life-sciences'
+      title: "Information Technology",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
-      id: 5,
-      title: 'Loans, Insurance and Investments',
-      icon: <Factory className="w-8 h-8" />,
-      image: 'https://images.pexels.com/photos/2882552/pexels-photo-2882552.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      description: 'Industry 4.0 and smart manufacturing solutions',
-      link: '/industries/manufacturing'
+      title: "Banking, Finance & Investment Insurance",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
-      id: 6,
-      title: (
-        <>
-          Secretarial <br /> Compliances
-        </>
-      ),
-      icon: <Plane className="w-8 h-8" />,
-      image: 'https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      description: 'Digital transformation for travel and logistics',
-      link: '/industries/travel-transportation'
+      title: "Telecom",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Hospitality & Leisure",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "FMCG",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Automotive",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Food & Beverage",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Advertising",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Health Care",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Apparel & Accessories",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Call Centers",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Consumer and Industrial Products",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+    },
+    {
+      title: "Educational Institutions",
+      link: "#",
+      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     }
   ];
 
+  const progressRef = useRef<HTMLDivElement>(null);
+  const tickerRef = useRef<HTMLDivElement>(null);
+  const [progressKey, setProgressKey] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  
+  const duration = 120000; // 120 seconds for slow scroll
+  const pauseDuration = 1000; // 1 second pause at the end of a cycle
+
+  useEffect(() => {
+    const ticker = tickerRef.current;
+    if (!ticker) return;
+    
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const handleIteration = () => {
+      setIsPaused(true);
+      timeout = setTimeout(() => {
+        setIsPaused(false);
+        setProgressKey(prev => prev + 1);
+      }, pauseDuration);
+    };
+
+    ticker.addEventListener('animationiteration', handleIteration);
+
+    return () => {
+      ticker.removeEventListener('animationiteration', handleIteration);
+      if (timeout) clearTimeout(timeout);
+    };
+  }, [pauseDuration]);
+
+  useEffect(() => {
+    let req: number;
+    let start: number | null = null;
+
+    function animateProgress(timestamp: number) {
+      if (isPaused) {
+        if (progressRef.current) progressRef.current.style.width = '100%';
+        return;
+      }
+
+      if (start === null) start = timestamp;
+      
+      const elapsed = timestamp - start;
+      const percent = Math.min((elapsed / duration) * 100, 100);
+
+      if (progressRef.current) {
+        progressRef.current.style.width = percent + '%';
+      }
+
+      if (elapsed < duration) {
+        req = requestAnimationFrame(animateProgress);
+      } else if (progressRef.current) {
+        progressRef.current.style.width = '100%';
+      }
+    }
+
+    if (progressRef.current) {
+      progressRef.current.style.width = isPaused ? '100%' : '0%';
+    }
+
+    if (!isPaused) {
+      req = requestAnimationFrame(animateProgress);
+    }
+
+    return () => cancelAnimationFrame(req);
+  }, [progressKey, duration, isPaused]);
+
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header with title and description, styled like CapabilitiesSection */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-12 gap-4 sm:gap-6 lg:gap-8">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-10 lg:mb-12 gap-4 sm:gap-6 lg:gap-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 lg:w-1/3">
-              Capabilities
+              Industries
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-700 lg:w-2/3 lg:text-right leading-relaxed text-left lg:text-justify lg:leading-7" style={{maxWidth: '700px', marginLeft: 'auto', marginRight: '0'}}>
-              We don’t believe in one-size-fits-all. Your business is unique and your legal, tax, audit, and compliance solutions should be too.
-            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {industries.map((industry, index) => (
-              // Each card is now wrapped in a Link component for navigation
-              <Link
-                to={industry.link}
-                key={industry.id}
-                className={`group relative transform transition-all duration-700 ease-out hover:scale-105 w-full ${
-                  isVisible 
-                    ? 'translate-y-0 opacity-100' 
-                    : 'translate-y-8 opacity-0'
-                }`}
-                style={{
-                  transitionDelay: `${index * 150}ms`
-                }}
-              >
-                <div className="relative bg-white hover:bg-gray-900 p-8 transition-all duration-500 min-h-[420px] h-full flex flex-col justify-between shadow-md">
-                  
-                  <div className="flex justify-center mb-6 pt-8">
-                    <div className="w-32 h-32 rounded-full overflow-hidden">
-                      <img
-                        src={industry.image}
-                        alt={typeof industry.title === 'string' ? industry.title : ''} // Alt text handled for JSX title
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.onerror = null; 
-                          target.src='https://placehold.co/300x300/e2e8f0/64748b?text=Image';
-                        }}
-                      />
-                    </div>
+          <div className="relative overflow-hidden w-full">
+            <div
+              className={`ticker-track flex w-max${isPaused ? '' : ' animate-ticker'}`}
+              ref={tickerRef}
+              style={{
+                animationPlayState: isPaused ? 'paused' : 'running',
+                animationDuration: `${duration}ms`
+              }}
+            >
+              {industries.concat(industries).map((industry, index) => (
+                <div
+                  key={index}
+                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] cursor-pointer border border-gray-200 m-2 min-w-[320px] max-w-[360px] flex-shrink-0"
+                  style={{ width: '340px' }}
+                >
+                  <div className="absolute inset-0">
+                    <img
+                      src={industry.imageUrl}
+                      alt={`${industry.title} Visual`}
+                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
                   </div>
-
-                  <div className="flex-1 flex flex-col justify-end">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
+                  <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
+                    <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
                       {industry.title}
                     </h3>
-                    
-                    <div className="flex justify-end">
-                      <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors duration-500" />
-                    </div>
+                    {industry && (
+                      <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 lg:p-6">
+                        <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-center leading-relaxed">
+                          
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
-              </Link>
-            ))}
+              ))}
+            </div>
+            
+            <div className="w-full h-[1px] bg-gray-200 overflow-hidden mt-6">
+              <div
+                ref={progressRef}
+                className="h-full bg-purple-900"
+                style={{ width: '0%', transition: 'none' }}
+              />
+            </div>
+
           </div>
         </div>
       </div>

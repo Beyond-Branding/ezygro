@@ -37,7 +37,7 @@ const RiseSection = () => {
           {/* Image */}
           <div className="w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden rounded-lg">
             <img
-              src="https://insights.techmahindra.com/styles/text_and_image_desktop/s3/images/adobestock_619698910.jpeg.webp"
+              src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751476535/grow_yjqi2b.jpg"
               alt="Misty mountains at sunrise, representing the 'RISE' philosophy"
               className="w-full h-full object-cover transition-transform duration-300 ease-out"
               style={{ transform: `scale(${scale})` }}

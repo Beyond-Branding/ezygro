@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const SecretarialCompliances = () => {
-  // --- Component State ---
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
-  // --- Carousel Data ---
   const services = [
     {
       title: 'Company Law Compliance',
@@ -68,7 +66,6 @@ const SecretarialCompliances = () => {
   const [currentIndex, setCurrentIndex] = useState(cloneCount);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
-  // CORRECTED: Changed NodeJS.Timeout to number for browser compatibility
   const autoScrollRef = useRef<number | null>(null);
   const transitionRef = useRef<number | null>(null);
 
@@ -202,13 +199,11 @@ const SecretarialCompliances = () => {
               From incorporation, board governance, and statutory filings to complex corporate restructuring and due diligence, we provide strategic guidance at every step. At EZYGRO, we are more than just service providers — we are your long-term compliance partners, committed to aligning regulatory integrity with your growth ambitions.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
-              MORE <span className="ml-2 text-xl">+</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The new dynamic "Our Services" carousel section */}
       <section className="bg-gray-50 py-16 sm:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex justify-between items-center">

@@ -96,7 +96,6 @@ function FinancialAndAccounting() {
               EZYGRO provides end-to-end Financial and Accounting Management Services tailored to meet the dynamic needs of modern businesses. As regulations evolve, technology advances, and talent expectations shift, our expert-led solutions ensure your financial operations remain compliant, efficient, and future-ready. From streamlining processes and ensuring accurate reporting to optimizing financial strategies, we handle the critical functions so you can focus on innovation, scaling, and driving long-term success. With EZYGRO, finance becomes a catalyst for growth, not a burden.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
-              MORE <span className="ml-2 text-xl">+</span>
             </div>
           </div>
         </div>

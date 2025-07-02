@@ -84,7 +84,6 @@ const InnovativeDashboards = () => {
         </div>
       </section>
 
-      {/* AI Delivered Right Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
@@ -97,13 +96,11 @@ const InnovativeDashboards = () => {
               At EZYGRO, we turn data into decisions fast. Our custom-built, interactive dashboards are designed to align with your unique business goals, seamlessly integrating your data sources to deliver real-time insights. With secure, scalable solutions and AI-powered analytics, we help you move beyond just reporting—towards predictive and prescriptive outcomes that drive smarter, faster decision-making for growing businesses.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
-              MORE <span className="ml-2 text-xl">+</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Services Section (copied from FinancialAndAccounting) */}
       <section className="bg-gray-50 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">

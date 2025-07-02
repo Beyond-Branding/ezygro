@@ -65,7 +65,6 @@ const ExploreMoreSection = () => {
           </div>
         </div>
 
-        {/* Carousel */}
         <div className="relative h-64 sm:h-80 lg:h-96">
           {exploreItems.map((item, index) => {
             const offset = (index - currentSlide + exploreItems.length) % exploreItems.length;

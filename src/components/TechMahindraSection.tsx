@@ -20,27 +20,23 @@ const EzygroHeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Responsive font sizes and line heights
   const headingFontSize = windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px';
   const paraFontSize = windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px';
   const paraLineHeight = windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '28px';
 
   return (
-    // --- FIX #1 ---
-    // Increased top padding significantly from pt-8 to pt-24 to create more space.
     <section
       id="ezygro"
       className="relative min-h-[130vh] bg-gray-50 overflow-hidden pt-32 pb-20"
     >
-      {/* Background with diagonal video section */}
       <div className="absolute inset-0">
         <div className="absolute right-0 top-0 w-full h-full">
           <div
             className="w-full h-full bg-transparent"
             style={{
               clipPath: windowWidth < 768
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)'
-                : 'polygon(-40% 90%, 100% 0%, 100% 100%, 0% 100%)'
+                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
+                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
             }}
           >
             <div className="absolute inset-0 overflow-hidden">
@@ -104,8 +100,6 @@ const EzygroHeroSection = () => {
         className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${windowWidth < 1024 ? 'hidden' : 'block'}`} 
         style={{
           paddingTop: '3rem', 
-          // --- FIX #2 ---
-          // Increased negative margin from -2rem to -4rem to pull the text higher.
           marginTop: '-8rem' 
         }}
       >

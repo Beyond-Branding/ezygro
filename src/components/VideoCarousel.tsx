@@ -12,27 +12,27 @@ const VideoCarousel = () => {
     {
       id: 1,
       title: "Empowering Growth with Every Number We don’t just file and finish we plan, guide, and grow with you. EZYGRO turns boring numbers into bold moves.",
-      videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475664/1_bhjviq.mp4"
     },
     {
       id: 2,
       title: "Driven by Precision. Backed by Ethics. Sharp minds, honest hands. With EZYGRO, you get advice that’s smart, clear, and always has your back.",
-      videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475708/2_sv5b42.mp4"
     },
     {
       id: 3,
       title: "Simplifying Compliance, Amplifying Success Legal forms? Tax chaos? Leave that to us. EZYGRO makes the tough stuff simple, so you can focus on winning.",
-      videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475745/3_zlm6td.mp4"
     },
     {
       id: 4,
       title: "Your Partner in Professional Progress Every business needs a solid support system. EZYGRO walks with you through paperwork, plans, and big dreams.",
-      videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475778/4_xdzdvi.mp4"
     },
     {
       id: 5,
       title: "Where Strategy Meets Service Smart ideas are nothing without action. At EZYGRO, we turn smart plans into smoother journeys no stress, just results.",
-      videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475895/5_qww1ot.mp4"
     }
   ];
 
@@ -167,7 +167,7 @@ const VideoCarousel = () => {
             <div className="absolute inset-0 overflow-hidden">
               <video
                 key={videos[currentVideo].id}
-                className="w-full h-full object-cover opacity-70"
+                className="w-full h-full object-cover opacity-100"
                 autoPlay
                 muted
                 loop
@@ -176,7 +176,7 @@ const VideoCarousel = () => {
                 <source src={videos[currentVideo].videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <div className="absolute inset-0 bg-black/30"></div>
+              {/* Overlay removed for clear video */}
             </div>
           </div>
         </div>

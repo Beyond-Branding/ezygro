@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import VisionPurposeValues from './VisionPurposeValues'; // Import stays the same
+import VisionPurposeValues from './VisionPurposeValues'; 
 
 const AboutUs = () => {
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
@@ -110,22 +110,22 @@ const AboutUs = () => {
   return (
     <>
       <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden">
-        {/* Background with diagonal section for image */}
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-full h-full">
             <div
               className="w-full h-full bg-transparent"
               style={{
                 clipPath: windowWidth < 768
-                  ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)'
-                  : 'polygon(-40% 90%, 100% 0%, 100% 100%, 0% 100%)'
+                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
+                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751476223/aboutus_uqobbt.jpg"
                   alt="About Us"
-                  className="w-full h-full object-cover opacity-70"
+                  className="w-full h-full object-cover"
+                  style={{ opacity: 1 }}
                 />
               </div>
             </div>
@@ -167,7 +167,6 @@ Empowering growth with purpose, precision, and trust.
         </div>
       </section>
 
-      {/* Part of Mahindra Group section */}
       <section className="bg-white py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
@@ -181,7 +180,7 @@ Empowering growth with purpose, precision, and trust.
             </div>
             <div className="w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden rounded-lg">
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751476463/aboutus2_xazpd2.jpg"
                 alt="Mahindra Group - Modern office building representing innovation and growth"
                 className="w-full h-full object-cover transition-transform duration-300 ease-out"
                 style={{ transform: `scale(1.05)` }}
@@ -191,10 +190,8 @@ Empowering growth with purpose, precision, and trust.
         </div>
       </section>
 
-      {/* Vision Purpose Values section moved up */}
       <VisionPurposeValues />
 
-      {/* Corporate Citizenship section moved below VisionPurposeValues */}
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-left mb-12">

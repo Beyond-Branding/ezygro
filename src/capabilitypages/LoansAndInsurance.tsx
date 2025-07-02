@@ -28,7 +28,6 @@ const LoansAndInsurance = () => {
     };
   }, []);
 
-  // Main return statement for the LoansAndInsurance page
   return (
     <>
       <section className="relative min-h-screen bg-white overflow-hidden">
@@ -86,7 +85,6 @@ const LoansAndInsurance = () => {
         </div>
       </section>
 
-      {/* This section now uses the text specific to Loans & Insurance */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
@@ -99,13 +97,11 @@ const LoansAndInsurance = () => {
               At EZYGRO, we are your trusted partner in loans, insurance, and investments offering smart, tailored financial solutions for every stage of life. With decades of expertise, strategic partnerships, and a customer-first approach, we simplify your financial journey by ensuring quick and easy processing, transparent guidance, and secure transactions. Whether you're planning for the future, securing your present, or funding your goals, EZYGRO empowers your financial growth with clarity, trust, and innovation.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
-              MORE <span className="ml-2 text-xl">+</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Our Services Section, updated for alignment */}
       <section className="bg-gray-50 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
