@@ -564,7 +564,7 @@ const VisionPurposeValues = () => {
           <div className="px-4 pb-4">
             <div className="w-full bg-gray-700 h-1 rounded-full">
               <div 
-                className="bg-red-600 h-1 rounded-full transition-all duration-500 ease-out" 
+                className="bg-purple-900 h-1 rounded-full transition-all duration-500 ease-out" 
                 style={{ width: `${((activeTab + 1) / content.length) * 100}%` }}
               ></div>
             </div>

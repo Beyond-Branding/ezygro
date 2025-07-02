@@ -225,8 +225,8 @@ const VideoCarousel = () => {
         <div className="absolute bottom-16 sm:bottom-10 lg:bottom-4 right-4 sm:right-6 lg:right-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
           <h2 className="font-bold leading-tight mb-3 sm:mb-4 lg:mb-6"
             style={{
-              fontSize: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '20px' : '28px',
-              lineHeight: windowWidth < 640 ? '18px' : windowWidth < 1024 ? '26px' : '34px'
+              fontSize: windowWidth < 640 ? '13px' : windowWidth < 1024 ? '18px' : '24px',
+              lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '24px' : '30px'
             }}
           >
             {videos[currentVideo].title}

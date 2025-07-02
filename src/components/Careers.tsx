@@ -334,14 +334,7 @@ const Careers = () => {
                       <p className="mt-6 text-lg leading-8 text-gray-600">
                         {section.description}
                       </p>
-                      <div className="mt-8">
-                        <a
-                          href="#"
-                          className="inline-block rounded-md border border-gray-900 px-6 py-3 text-center font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors"
-                        >
-                          Learn more
-                        </a>
-                      </div>
+                      
                     </div>
                   </div>
 
