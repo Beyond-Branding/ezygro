@@ -159,11 +159,10 @@ const VirtualCFO = () => {
       if (autoScrollRef.current) clearInterval(autoScrollRef.current);
       if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
     };
-  }, [isTransitioning]); // Reset interval if transitioning state changes
+  }, [isTransitioning]); 
 
   return (
     <>
-      {/* AboutUs Top Section */}
       <section className="relative min-h-screen bg-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-full h-full">
@@ -215,33 +214,24 @@ const VirtualCFO = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-black">
+              Your Growth Partner
+            </h2>
+          </div>
+          <div>
+            <p className="text-gray-800 leading-relaxed">
+              At EZYGRO, we deliver smart, scalable solutions that empower clients to focus on their core strengths while we handle the rest. From outsourced CFO services to financial modeling, cash flow management, and compliance reporting — we take care of the numbers, so you can drive growth without the operational clutter.
+            </p>
+            <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
+            </div>
+          </div>
+        </div>      </section>
 
-      {/* Virtual CFO Section */}
-      <div className="bg-gray-50">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="bg-white rounded-3xl p-7 shadow-lg max-w-lg mx-auto">
-                <img
-                  src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
-                  alt="Virtual CFO Services - Financial charts and calculator"
-                  className="w-full h-64 object-cover rounded-2xl"
-                />
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <h1 className="text-4xl lg:text-5xl font-bold text-black mb-6">
-                Your Growth Partner
-              </h1>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                At EZYGRO, we deliver smart, scalable solutions that empower clients to focus on their core strengths while we handle the rest. From outsourced CFO services to financial modeling, cash flow management, and compliance reporting — we take care of the numbers, so you can drive growth without the operational clutter.
-              </p>
-            </div>
-          </div>
-
-          {/* Our Services Section (Carousel) */}
-          <section className="bg-gray-50 pt-16 pb-24 sm:pt-24 sm:pb-32">
+      {/* Our Services Section (Carousel) */}
+      <section className="bg-gray-50 pt-8 pb-24 sm:pt-12 sm:pb-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
@@ -292,14 +282,11 @@ const VirtualCFO = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      
-    </>
-  );
+              </div>            </div>
+          </section>
+      
+    </>
+  );
 };
 
 export default VirtualCFO;

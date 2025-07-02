@@ -11,12 +11,11 @@ const Capabilities = () => {
   // Single background video for the diagonal section
   const backgroundVideo = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
-  // Capabilities data (similar to Industries)
   const capabilities = [
     {
       id: 1,
       title: 'Financial and Accounting Management',
-      image: 'https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751477559/financial_ggjj6g.jpg',
       link: '/industries/banking-financial-services',
     },
     {
@@ -26,16 +25,15 @@ const Capabilities = () => {
           Income Tax, GST and <br /> Audits
         </>
       ),
-      image: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478035/Incometax_vzg8fz.jpg',
       link: '/industries/communications',
     },
     {
       id: 3,
       title: 'Virtual CFO and Business Growth Consultancy',
-      image: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478055/Virtual_cfo_vup51w.jpg',
       link: '/industries/energy-utilities',
     },
-    // New cards from screenshot
     {
       id: 4,
       title: (
@@ -43,13 +41,13 @@ const Capabilities = () => {
           Innovative <br /> Dashboards
         </>
       ),
-      image: 'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478024/Dashboards_trcrbv.jpg',
       link: '/industries/healthcare-life-sciences',
     },
     {
       id: 5,
       title: 'Loans, Insurance and Investments',
-      image: 'https://images.pexels.com/photos/1145434/pexels-photo-1145434.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478036/Loans_x8mwb3.jpg',
       link: '/industries/manufacturing',
     },
     {
@@ -59,7 +57,7 @@ const Capabilities = () => {
           Secretarial <br /> Compliances
         </>
       ),
-      image: 'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
+      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478046/Secretorial_compliances_y3onhw.jpg',
       link: '/industries/travel-transportation',
     },
   ];
@@ -155,29 +153,23 @@ const Capabilities = () => {
               className="w-full h-full bg-transparent"
               style={{
                 clipPath: windowWidth < 768 
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+                  ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
+                  : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
-                <video
-                  className="w-full h-full object-cover opacity-70"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src={backgroundVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <img
+                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751476928/capabilities_kmmqcl.jpg"
+                  alt="Capabilities Background"
+                  className="w-full h-full object-cover"
+                  style={{ opacity: 1 }}
+                />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Content */}
         <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-          {/* Left content: Capabilities */}
           <div className="absolute top-2 sm:top-4 lg:top-8 left-8 sm:left-12 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
             <h1
               className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-700 ease-out ${
@@ -230,7 +222,6 @@ const Capabilities = () => {
                   transitionDelay: `${index * 150}ms`
                 }}
               >
-                {/* MODIFIED: Increased min-h from 340px to 450px to make the card taller */}
                 <div className="relative bg-white hover:bg-gray-900 p-8 transition-all duration-500 min-h-[450px] h-full flex flex-col justify-between shadow-md">
                   <div className="flex justify-center mb-6 pt-8">
                     <div className="w-32 h-32 rounded-full overflow-hidden">

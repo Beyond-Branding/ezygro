@@ -1,8 +1,5 @@
-// src/components/Careers.tsx
-
 import React, { useState, useEffect, useRef } from 'react';
 
-// --- Data for the alternating sections ---
 const sectionsData = [
   {
     id: 1,
@@ -30,12 +27,10 @@ const sectionsData = [
   },
 ];
 
-// --- The two images to be alternated ---
 const imageOneUrl = 'https://insights.techmahindra.com/styles/text_and_image_desktop/s3/images/intheoffice.jpg.webp';
 const imageTwoUrl = 'https://insights.techmahindra.com/styles/text_and_image_desktop/s3/images/techmway.jpg.webp';
 
 
-// --- Custom Hook for Intersection Observer (one-time animation) ---
 const useInView = (options: IntersectionObserverInit) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
@@ -66,7 +61,6 @@ const useInView = (options: IntersectionObserverInit) => {
 
 // --- Form Component ---
 const ContactForm = () => {
-    // A reusable input component for the form for cleaner code
     const FormInput = ({ id, label, type = "text", required = false, children }: { id: string, label: string, type?: string, required?: boolean, children?: React.ReactNode }) => (
         <div className={type === 'textarea' ? 'md:col-span-2' : ''}>
             <label htmlFor={id} className="block text-sm font-medium text-gray-400">
@@ -157,18 +151,14 @@ const ContactForm = () => {
 };
 
 
-// --- The Main Page Component ---
 const Careers = () => {
-  // State for the hero section
   const [titleVisible, setTitleVisible] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Background video for the hero section
   const backgroundVideo = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
-  // Effect for handling window resize (for hero section)
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -178,7 +168,6 @@ const Careers = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Intersection Observer for scroll-based animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -242,7 +231,6 @@ const Careers = () => {
 
   return (
     <>
-      {/* HERO SECTION */}
       <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-full h-full">
@@ -255,16 +243,12 @@ const Careers = () => {
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
-                <video
-                  className="w-full h-full object-cover opacity-70"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src={backgroundVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <img
+                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751476929/carrer_dtd9ts.jpg"
+                  alt="Careers Background"
+                  className="w-full h-full object-cover"
+                  style={{ opacity: 1 }}
+                />
               </div>
             </div>
           </div>
@@ -300,7 +284,6 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* ALTERNATING ANIMATED SECTIONS */}
       <div className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto flex flex-col gap-16 sm:gap-24">
@@ -317,7 +300,6 @@ const Careers = () => {
                     isInView ? 'opacity-100' : 'opacity-50'
                   }`}
                 >
-                  {/* Text Container */}
                   <div className={`lg:w-3/5 lg:py-8 ${isTextOnLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                     <div
                       className={`transition-all duration-1000 ease-out ${
@@ -338,7 +320,6 @@ const Careers = () => {
                     </div>
                   </div>
 
-                  {/* Image Container */}
                   <div className={`lg:w-2/5 ${isTextOnLeft ? 'lg:order-2' : 'lg:order-1'}`}>
                     <div
                       className={`overflow-hidden transition-all duration-1000 ease-out ${

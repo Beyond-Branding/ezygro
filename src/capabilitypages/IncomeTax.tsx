@@ -84,7 +84,6 @@ const IncomeTax = () => {
         </div>
       </section>
 
-      {/* AI Delivered Right Section */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
@@ -97,7 +96,6 @@ const IncomeTax = () => {
               At EZYGRO, we provide expert Income Tax, GST, and Audit services to help individuals and businesses stay compliant, save money, and focus on growth. As your trusted finance and compliance partner, we serve clients across India with precision, reliability, and professionalism. From individual tax filings to corporate audits and GST compliance, our deep domain knowledge and personalized approach simplify complex processes and empower informed financial decisions. We believe in transparent advice, timely delivery, and building long-term financial health for every client we serve.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
-              MORE <span className="ml-2 text-xl">+</span>
             </div>
           </div>
         </div>

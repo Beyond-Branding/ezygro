@@ -18,7 +18,6 @@ const CookieConsentBanner: React.FC = () => {
   };
 
   const handleSettings = () => {
-    // You can open a modal or redirect to a settings page here
     alert('Cookie settings modal coming soon!');
   };
 
@@ -28,7 +27,6 @@ const CookieConsentBanner: React.FC = () => {
 
   return (
     <>
-      {/* Overlay to block interaction with the rest of the page */}
       <div className="fixed inset-0 bg-black bg-opacity-60 z-[1000] cursor-not-allowed" style={{pointerEvents: 'auto', cursor: 'default'}} aria-hidden="true"></div>
       <div className="fixed bottom-0 left-0 w-full bg-black text-white z-[1001] flex flex-col md:flex-row items-center justify-between p-6 md:p-12 shadow-2xl min-h-[130px] md:min-h-[150px] gap-6 md:gap-8">
         <span className="text-base md:text-sm lg:text-base whitespace-normal text-center md:text-left mb-2 md:mb-0">

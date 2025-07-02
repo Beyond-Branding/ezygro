@@ -30,8 +30,8 @@ import SecretarialCompliances from './capabilitypages/SecretarialCompliances';
 const HomePage = () => (
   <>
     <VideoCarousel />
-    <Industries />
     <CapabilitiesSection />
+    <Industries />
     <TechMahindraSection />
     {/* <JoyMattersSection /> */}
     {/* <IndustriesSection /> */}

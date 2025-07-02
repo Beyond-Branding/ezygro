@@ -1,6 +1,5 @@
 import React from 'react';
 
-// A placeholder icon component.
 const MapPin = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -19,9 +18,7 @@ const MapPin = () => (
   </svg>
 );
 
-// --- Form Component (Dark Theme) ---
 const ContactForm = () => {
-    // A reusable input component for the form for cleaner code
     const FormInput = ({ id, label, type = "text", required = false, children }: { id: string, label: string, type?: string, required?: boolean, children?: React.ReactNode }) => (
         <div className={type === 'textarea' ? 'md:col-span-2' : ''}>
             <label htmlFor={id} className="block text-sm font-medium text-gray-400">
@@ -116,13 +113,10 @@ const ContactForm = () => {
 
 export default function App() {
   return (
-    // Set the overall page background to white
     <div className="bg-white text-gray-800 min-h-screen flex flex-col items-center font-sans">
       
-      {/* --- White Section for Header and Map --- */}
       <div className="w-full max-w-6xl mx-auto flex flex-col items-center p-4 sm:p-6 md:p-8">
 
-        {/* --- Header Section --- */}
         <div className="mb-8 md:mb-12 w-full text-left">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-4">
             Let's Connect
@@ -132,7 +126,6 @@ export default function App() {
           </p>
         </div>
 
-        {/* --- Google Map Section --- */}
         <div className="w-full h-[50vh] md:h-[65vh] bg-gray-200 overflow-hidden">
           <iframe
             src="https://www.google.com/maps?q=19.18614098702759,72.86450207519531&z=17&output=embed"
@@ -146,7 +139,6 @@ export default function App() {
           ></iframe>
         </div>
         
-         {/* --- Info Footer --- */}
         <div className="my-8 md:my-12 text-center">
             <div className="flex flex-col items-center justify-center text-gray-500 space-y-2">
                 <div className="flex items-center"><MapPin /><span>12, Ground Floor, Dadi Building, Rani Sati Marg, Kathiyawadi Chowk, near Union Bank, Malad East, Mumbai, Maharashtra 400097</span></div>
