@@ -4,97 +4,81 @@ const CapabilitiesSection = () => {
   const capabilities = [
     {
       title: "Pharma",
-      description: "Amplify your business by infusing AI in every aspect of your business, democratizing AI responsibly.",
       link: "https://www.techmahindra.com/services/artificial-intelligence/",
       imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Retail",
-      description: "Streamline operations with intelligent automation and process optimization solutions.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Real Estate & Infrastructure",
-      description: "Accelerate digital transformation with scalable cloud solutions and modern infrastructure.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Information Technology",
-      description: "Transform business processes with next-generation enterprise applications and platforms.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Banking, Finance & Investment Insurance",
-      description: "Drive innovation with comprehensive engineering solutions and product development expertise.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Telecom",
-      description: "Create exceptional customer experiences through design thinking and user-centric solutions.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Hospitality & Leisure",
-      description: "Enable seamless connectivity with advanced network solutions and 5G technologies.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "FMCG",
-      description: "Ensure quality and reliability with comprehensive testing and quality assurance solutions.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Automotive",
-      description: "Drive innovation with comprehensive engineering solutions and product development expertise.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Food & Beverage",
-      description: "Create exceptional customer experiences through design thinking and user-centric solutions.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Advertising",
-      description: "Enable seamless connectivity with advanced network solutions and 5G technologies.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Health Care",
-      description: "Ensure quality and reliability with comprehensive testing and quality assurance solutions.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Apparel & Accessories",
-      description: "Drive innovation with comprehensive engineering solutions and product development expertise.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Call Centers",
-      description: "Create exceptional customer experiences through design thinking and user-centric solutions.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Consumer and Industrial Products",
-      description: "Enable seamless connectivity with advanced network solutions and 5G technologies.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     },
     {
       title: "Educational Institutions",
-      description: "Ensure quality and reliability with comprehensive testing and quality assurance solutions.",
       link: "#",
       imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
     }
@@ -203,10 +187,10 @@ const CapabilitiesSection = () => {
                     <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
                       {capability.title}
                     </h3>
-                    {capability.description && (
+                    {capability && (
                       <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 lg:p-6">
                         <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-center leading-relaxed">
-                          {capability.description}
+                          
                         </p>
                       </div>
                     )}

@@ -91,7 +91,7 @@ const LoansAndInsurance = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold text-black">
-              Financial Solutions Delivered Right
+              Your Trusted Partner in Loans, Insurance & Investments
             </h2>
           </div>
           <div>
@@ -120,11 +120,11 @@ const LoansAndInsurance = () => {
                 <br></br>Loan Products We Offer:
               </p>
               <ul className="space-y-4">
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Home Loans</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Personal Loans</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Business Loans</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Loan Against Property</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Working Capital Loans</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Home Loans</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Personal Loans</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Business Loans</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Loan Against Property</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Working Capital Loans</span></li>
               </ul>
             </div>
             {/* Card 2: Insurance */}
@@ -135,11 +135,11 @@ const LoansAndInsurance = () => {
                 <br></br>Insurance Plans We Provide:
               </p>
               <ul className="space-y-4">
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Life Insurance</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Health Insurance</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Term Plans</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Motor Insurance</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Travel & Property Insurance: Trusted Insurers, Claim Assistance, Affordable Premiums</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Life Insurance</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Health Insurance</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Term Plans</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Motor Insurance</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Travel & Property Insurance: Trusted Insurers, Claim Assistance, Affordable Premiums</span></li>
               </ul>
             </div>
             {/* Card 3: Investments */}
@@ -149,10 +149,10 @@ const LoansAndInsurance = () => {
                 Grow your wealth with confidence. Our investment advisory and services are designed to help you reach your financial goals.<br></br>Investment Options:
               </p>
               <ul className="space-y-4">
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Mutual Funds</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">SIPs (Systematic Investment Plans)</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Fixed Deposits</span></li>
-                <li className="flex items-center"><span className="text-red-500 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Bonds</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Mutual Funds</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">SIPs (Systematic Investment Plans)</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Fixed Deposits</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Bonds</span></li>
               </ul>
             </div>
           </div>

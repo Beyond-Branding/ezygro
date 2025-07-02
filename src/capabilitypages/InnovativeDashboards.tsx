@@ -89,7 +89,7 @@ const InnovativeDashboards = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold text-black">
-              AI Delivered Right
+              Visualize Success
             </h2>
           </div>
           <div>
@@ -116,12 +116,12 @@ const InnovativeDashboards = () => {
 <br></br>Purpose: Optimize sales processes and measure marketing effectiveness
 <br></br>Key Features:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Lead Tracking: Visual pipeline of leads by stage, source, and owner</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Conversion Metrics: Analyze conversion rates across campaigns and channels</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Campaign Performance: Measure ROI, CTR, impressions, and engagement</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Customer Journey Mapping: Track user behavior from first touchpoint to sale</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Sales Forecasting: Use historical data to predict future performance</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Segmentation & Targeting: Visualize demographics, geographics, and user profiles</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Lead Tracking: Visual pipeline of leads by stage, source, and owner</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Conversion Metrics: Analyze conversion rates across campaigns and channels</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Campaign Performance: Measure ROI, CTR, impressions, and engagement</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Customer Journey Mapping: Track user behavior from first touchpoint to sale</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Sales Forecasting: Use historical data to predict future performance</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Segmentation & Targeting: Visualize demographics, geographics, and user profiles</span></li>
               </ul>
             </div>
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
@@ -130,12 +130,12 @@ const InnovativeDashboards = () => {
 <br></br>Purpose: Enhance organizational efficiency and decision-making
 <br></br>Key Features:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Real-Time KPI Monitoring: Track productivity, turnaround time, and output across teams</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Performance Analytics: Identify bottlenecks and areas of improvement</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Resource Utilization: View how manpower and assets are allocated and used</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Project Progress Tracking: Monitor milestones, deliverables, and deadlines</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Custom Alerts & Notifications: Set triggers for abnormal performance or delays</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Cross-Departmental Insights: Unified view of performance across HR, logistics, IT, etc.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Real-Time KPI Monitoring: Track productivity, turnaround time, and output across teams</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Performance Analytics: Identify bottlenecks and areas of improvement</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Resource Utilization: View how manpower and assets are allocated and used</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Project Progress Tracking: Monitor milestones, deliverables, and deadlines</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Custom Alerts & Notifications: Set triggers for abnormal performance or delays</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Cross-Departmental Insights: Unified view of performance across HR, logistics, IT, etc.</span></li>
               </ul>
             </div>
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
@@ -144,12 +144,12 @@ const InnovativeDashboards = () => {
 <br></br>Purpose: Real-time visibility into financial health
 <br></br>Key Features:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Revenue & Expense Tracking: Monitor monthly, quarterly, and annual financial performance</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Profitability Analysis: Understand margins by product, service, or business unit</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Cash Flow Monitoring: Visualize inflows and outflows to manage liquidity</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Budget vs Actual Comparison: Track financial performance against forecasts</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Ratio Analysis: Automated display of key financial ratios (ROI, ROE, Current Ratio, etc.)</span></li>
-                <li className="flex items-start"><span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Drill-Down Functionality: Explore data by region, category, or time frame for detailed insights</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Revenue & Expense Tracking: Monitor monthly, quarterly, and annual financial performance</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Profitability Analysis: Understand margins by product, service, or business unit</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Cash Flow Monitoring: Visualize inflows and outflows to manage liquidity</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Budget vs Actual Comparison: Track financial performance against forecasts</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Ratio Analysis: Automated display of key financial ratios (ROI, ROE, Current Ratio, etc.)</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Drill-Down Functionality: Explore data by region, category, or time frame for detailed insights</span></li>
               </ul>
             </div>
           </div>

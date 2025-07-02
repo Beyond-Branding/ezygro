@@ -192,7 +192,7 @@ const SecretarialCompliances = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold text-black">
-              Compliance Delivered Right
+              Stay Compliant Stay Confident
             </h2>
           </div>
           <div>
@@ -247,7 +247,7 @@ const SecretarialCompliances = () => {
                     <ul className="space-y-4 flex-grow">
                       {service.features.map((feature, fIndex) => (
                         <li key={fIndex} className="flex items-start">
-                          <span className="text-red-500 mr-3 mt-1 flex-shrink-0">■</span>
+                          <span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span>
                           <span className="text-gray-800">{feature}</span>
                         </li>
                       ))}
