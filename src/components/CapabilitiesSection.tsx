@@ -218,7 +218,7 @@ const CapabilitiesSection = () => {
             <div className="w-full h-[1px] bg-gray-200 overflow-hidden mt-6">
               <div
                 ref={progressRef}
-                className="h-full bg-red-600"
+                className="h-full bg-purple-900"
                 style={{ width: '0%', transition: 'none' }}
               />
             </div>

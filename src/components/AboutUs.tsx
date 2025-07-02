@@ -210,7 +210,7 @@ Empowering growth with purpose, precision, and trust.
               <div key={index} className="group relative bg-gray-50 p-8 border border-gray-200 transition-shadow duration-300 hover:shadow-lg">
                 <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
                 <p className="mt-4 text-gray-600">{item.description}</p>
-                <div className="absolute bottom-0 left-0 h-1 bg-red-600 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute bottom-0 left-0 h-1 bg-purple-900 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </div>
             ))}
           </div>
