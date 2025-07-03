@@ -42,9 +42,9 @@ const IncomeTax = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534368/2_smojod.jpg"
                   alt="About Us"
-                  className="w-full h-full object-cover opacity-70"
+                  className="w-full h-full object-cover opacity-"
                 />
               </div>
             </div>

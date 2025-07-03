@@ -4,83 +4,83 @@ const Industries = () => {
   const industries = [
     {
       title: "Pharma",
-      link: "https://www.techmahindra.com/services/artificial-intelligence/",
-      imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      link: "#",
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751531424/pexels-karolina-grabowska-4021811_fydijx.jpg"
     },
     {
       title: "Retail",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751531527/pexels-asphotograpy-230544_i77lpd.jpg"
     },
     {
       title: "Real Estate & Infrastructure",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751531756/pexels-brett-sayles-2881224_m6w7rj.jpg"
     },
     {
       title: "Information Technology",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751531878/pexels-cytonn-955402_ioqecu.jpg"
     },
     {
       title: "Banking, Finance & Investment Insurance",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532018/pexels-artempodrez-5716032_hwbayc.jpg"
     },
     {
       title: "Telecom",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532125/pexels-tuichupanh-32779161_dwefsm.jpg"
     },
     {
       title: "Hospitality & Leisure",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532257/pexels-nubikini-386009_lrntht.jpg"
     },
     {
       title: "FMCG",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532407/pexels-freestocks-1366594_byxpvw.jpg"
     },
     {
       title: "Automotive",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532529/pexels-pixabay-417018_bllqjy.jpg"
     },
     {
       title: "Food & Beverage",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532589/pexels-miff-ibra-387362143-32824086_wckbad.jpg"
     },
     {
       title: "Advertising",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532728/pexels-meganbucknall-2448522_etgfdh.jpg"
     },
     {
       title: "Health Care",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532797/pexels-pixabay-356040_mke2cx.jpg"
     },
     {
       title: "Apparel & Accessories",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532868/pexels-arina-krasnikova-5418889_dtyvzu.jpg"
     },
     {
       title: "Call Centers",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532916/pexels-shkrabaanthony-7971724_q7qzz4.jpg"
     },
     {
       title: "Consumer and Industrial Products",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532966/pexels-shkrabaanthony-5486124_hlyjhp.jpg"
     },
     {
       title: "Educational Institutions",
       link: "#",
-      imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+      imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751533011/pexels-ivan-samkov-5676736_yheiaz.jpg"
     }
   ];
 
@@ -89,8 +89,8 @@ const Industries = () => {
   const [progressKey, setProgressKey] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   
-  const duration = 120000; // 120 seconds for slow scroll
-  const pauseDuration = 1000; // 1 second pause at the end of a cycle
+  const duration = 120000; 
+  const pauseDuration = 1000; 
 
   useEffect(() => {
     const ticker = tickerRef.current;
