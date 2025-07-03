@@ -87,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/ezygro/" className="text-gray-400 hover:text-white transition-colors">
                   <Instagram size={20} />
                 </a>
               </div>
