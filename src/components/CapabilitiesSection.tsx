@@ -28,7 +28,7 @@ const CapabilitiesSection: React.FC = () => {
       icon: <Building2 className="w-8 h-8" />,
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751477559/financial_ggjj6g.jpg',
       description: 'Digital transformation solutions for financial institutions',
-      link: '/industries/banking-financial-services'
+      link: '/financial-accounting'
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ const CapabilitiesSection: React.FC = () => {
       icon: <Phone className="w-8 h-8" />,
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478035/Incometax_vzg8fz.jpg',
       description: 'Next-generation communication technologies and solutions',
-      link: '/industries/communications'
+      link: '/income-tax'
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const CapabilitiesSection: React.FC = () => {
       icon: <Zap className="w-8 h-8" />,
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478055/Virtual_cfo_vup51w.jpg',
       description: 'Smart grid and renewable energy solutions',
-      link: '/industries/energy-utilities'
+      link: '/virtual-cfo'
     },
     {
       id: 4,
@@ -60,7 +60,7 @@ const CapabilitiesSection: React.FC = () => {
       icon: <Shield className="w-8 h-8" />,
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478024/Dashboards_trcrbv.jpg',
       description: 'Healthcare technology and digital health solutions',
-      link: '/industries/healthcare-life-sciences'
+      link: '/innovative-dashboards'
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ const CapabilitiesSection: React.FC = () => {
       icon: <Factory className="w-8 h-8" />,
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478036/Loans_x8mwb3.jpg',
       description: 'Industry 4.0 and smart manufacturing solutions',
-      link: '/industries/manufacturing'
+      link: '/loans-insurance'
     },
     {
       id: 6,
@@ -80,7 +80,7 @@ const CapabilitiesSection: React.FC = () => {
       icon: <Plane className="w-8 h-8" />,
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478046/Secretorial_compliances_y3onhw.jpg',
       description: 'Digital transformation for travel and logistics',
-      link: '/industries/travel-transportation'
+      link: '/secretarial-compliances'
     }
   ];
 
