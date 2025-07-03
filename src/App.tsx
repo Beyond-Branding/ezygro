@@ -56,12 +56,12 @@ const AppContent = () => {
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
 
-        <Route path="/industries/banking-financial-services" element={<FinancialAndAccounting />} />
-        <Route path="/industries/communications" element={<IncomeTax />} />
-        <Route path="/industries/energy-utilities" element={<VirtualCFO />} />
-        <Route path="/industries/healthcare-life-sciences" element={<InnovativeDashboards />} />
-        <Route path="/industries/manufacturing" element={<LoansAndInsurance />} />
-        <Route path="/industries/travel-transportation" element={<SecretarialCompliances />} />
+        <Route path="/financial-accounting" element={<FinancialAndAccounting />} />
+        <Route path="/income-tax" element={<IncomeTax />} />
+        <Route path="/virtual-cfo" element={<VirtualCFO />} />
+        <Route path="/innovative-dashboards" element={<InnovativeDashboards />} />
+        <Route path="/loans-insurance" element={<LoansAndInsurance />} />
+        <Route path="/secretarial-compliances" element={<SecretarialCompliances />} />
         {/* Privacy Notice Route */}
         <Route path="/privacy-notice" element={<PrivacyNotice />} />
         <Route path="/terms-of-use" element={<TermsOfUsePage />} />

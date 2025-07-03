@@ -16,7 +16,7 @@ const Capabilities = () => {
       id: 1,
       title: 'Financial and Accounting Management',
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751477559/financial_ggjj6g.jpg',
-      link: '/industries/banking-financial-services',
+      link: '/financial-accounting',
     },
     {
       id: 2,
@@ -26,13 +26,13 @@ const Capabilities = () => {
         </>
       ),
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478035/Incometax_vzg8fz.jpg',
-      link: '/industries/communications',
+      link: '/income-tax',
     },
     {
       id: 3,
       title: 'Virtual CFO and Business Growth Consultancy',
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478055/Virtual_cfo_vup51w.jpg',
-      link: '/industries/energy-utilities',
+      link: '/virtual-cfo',
     },
     {
       id: 4,
@@ -42,13 +42,13 @@ const Capabilities = () => {
         </>
       ),
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478024/Dashboards_trcrbv.jpg',
-      link: '/industries/healthcare-life-sciences',
+      link: '/innovative-dashboards',
     },
     {
       id: 5,
       title: 'Loans, Insurance and Investments',
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478036/Loans_x8mwb3.jpg',
-      link: '/industries/manufacturing',
+      link: '/loans-insurance',
     },
     {
       id: 6,
@@ -58,7 +58,7 @@ const Capabilities = () => {
         </>
       ),
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478046/Secretorial_compliances_y3onhw.jpg',
-      link: '/industries/travel-transportation',
+      link: '/secretarial-compliances',
     },
   ];
 
