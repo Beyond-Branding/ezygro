@@ -113,7 +113,9 @@ const LoansAndInsurance = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Loans</h3>
               <p className="text-gray-600 mb-8">
                 Whether you're dreaming of a home, expanding your business, or consolidating debt—EZYGRO has you covered.
-                <br></br>Loan Products We Offer:
+                <br />
+                <span className="block h-4" />
+                Loan Products We Offer:
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Home Loans</span></li>
@@ -128,7 +130,9 @@ const LoansAndInsurance = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Insurance</h3>
               <p className="text-gray-600 mb-8">
                 Protect what matters most. Our insurance solutions offer financial security for you and your loved ones.
-                <br></br>Insurance Plans We Provide:
+                <br />
+                <span className="block h-10" />
+                Insurance Plans We Provide:
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Life Insurance</span></li>
@@ -142,7 +146,10 @@ const LoansAndInsurance = () => {
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Investments</h3>
               <p className="text-gray-600 mb-8">
-                Grow your wealth with confidence. Our investment advisory and services are designed to help you reach your financial goals.<br></br>Investment Options:
+                Grow your wealth with confidence. Our investment advisory and services are designed to help you reach your financial goals.
+                <br />
+                <span className="block h-4" />
+                Investment Options:
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Mutual Funds</span></li>

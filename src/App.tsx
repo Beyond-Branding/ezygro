@@ -10,7 +10,7 @@ import TechMahindraSection from './components/TechMahindraSection';
 // import IndustriesSection from './components/IndustriesSection';
 // import SustainabilitySection from './components/SustainabilitySection';
 import RiseSection from './components/RiseSection';
-import ExploreMoreSection from './components/ExploreMoreSection';
+// import ExploreMoreSection from './components/ExploreMoreSection';
 import Footer from './components/Footer';
 import TermsOfUsePage from './components/TermsOfUsePage';
 // import ScrollToTopButton from './components/ScrollToTopButton';
@@ -37,7 +37,7 @@ const HomePage = () => (
     {/* <IndustriesSection /> */}
     {/* <SustainabilitySection /> */}
     <RiseSection />
-    <ExploreMoreSection />
+    {/* <ExploreMoreSection /> */}
   </>
 );
 
