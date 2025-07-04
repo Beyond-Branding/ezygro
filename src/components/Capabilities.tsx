@@ -222,9 +222,9 @@ const Capabilities = () => {
                   transitionDelay: `${index * 150}ms`
                 }}
               >
-                <div className="relative bg-white hover:bg-gray-900 p-8 transition-all duration-500 min-h-[450px] h-full flex flex-col justify-between shadow-md">
+                <div className="relative bg-white hover:bg-purple-900 p-8 transition-all duration-500 min-h-[470px] h-full flex flex-col justify-between shadow-md">
                   <div className="flex justify-center mb-6 pt-8">
-                    <div className="w-32 h-32 rounded-full overflow-hidden">
+                    <div className="w-52 h-52 rounded-full overflow-hidden">
                       <img
                         src={cap.image}
                         alt={typeof cap.title === 'string' ? cap.title : undefined}

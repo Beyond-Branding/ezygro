@@ -88,14 +88,7 @@ const ContactForm = () => {
                                         <p className="text-gray-400">By clicking on the submit button, you agree with the <a href="#" className="font-medium text-white hover:underline">Privacy Policy</a>.</p>
                                     </div>
                                 </div>
-                                <div className="relative flex items-start">
-                                    <div className="flex h-6 items-center">
-                                        <input id="subscribe" name="subscribe" type="checkbox" className="h-4 w-4 rounded border-gray-500 bg-gray-800 text-indigo-600 focus:ring-indigo-600" />
-                                    </div>
-                                    <div className="ml-3 text-sm leading-6">
-                                        <p className="text-gray-400">Subscribe me to the latest updates on events, news and thought leadership from Tech Mahindra.</p>
-                                    </div>
-                                </div>
+                        
                             </div>
                             <div>
                                 <button type="submit" className="inline-block rounded-md border border-white px-8 py-3 text-center font-medium text-white hover:bg-white hover:text-gray-900 transition-colors">
