@@ -132,12 +132,34 @@ export default function App() {
           ></iframe>
         </div>
         
-        <div className="my-8 md:my-12 text-center">
-            <div className="flex flex-col items-center justify-center text-gray-500 space-y-2">
-                <div className="flex items-center"><MapPin /><span>12, Ground Floor, Dadi Building, Rani Sati Marg, Kathiyawadi Chowk, near Union Bank, Malad East, Mumbai, Maharashtra 400097</span></div>
-                <div className="flex items-center"><span className="font-semibold mr-2">Phone:</span> <span>+91-XXXXXXXXXX</span></div>
-                <div className="flex items-center"><span className="font-semibold mr-2">Email:</span> <span>info@yourcompany.com</span></div>
-                <div className="flex items-center"><span className="font-semibold mr-2">Google Maps:</span> <a href="https://g.co/kgs/8uxN7WU" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">View Location</a></div>
+        <div className="my-8 md:my-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-500 items-start">
+                {/* Left side - Address */}
+                <div className="flex items-start text-left">
+                    <MapPin />
+                    <div className="text-sm md:text-base">
+                        <div>12, Ground Floor, Dadi Building, Rani Sati Marg, Kathiyawadi Chowk,</div>
+                        <div>near Union Bank, Malad East, Mumbai, Maharashtra 400097</div>
+                    </div>
+                </div>
+                
+                {/* Center - Phone */}
+                <div className="flex flex-col items-center text-center">
+                    <div className="flex items-center"><span className="font-semibold mr-2">Phone:</span> <span>+91-9372963906</span></div>
+                </div>
+                
+                {/* Right side - Email */}
+                <div className="flex flex-col items-end text-right">
+                    <div className="flex items-center"><span className="font-semibold mr-2">Email:</span> <span>9372963906</span></div>
+                </div>
+            </div>
+            
+            {/* Google Maps Link - Below all contact info */}
+            <div className="flex justify-center mt-6">
+                <div className="flex items-center text-gray-500">
+                    <span className="font-semibold mr-2">Google Maps:</span> 
+                    <a href="https://g.co/kgs/8uxN7WU" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">View Location</a>
+                </div>
             </div>
         </div>
 

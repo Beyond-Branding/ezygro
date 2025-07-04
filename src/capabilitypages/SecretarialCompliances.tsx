@@ -107,24 +107,27 @@ const SecretarialCompliances = () => {
   }, []);
 
   useEffect(() => {
-    if (transitionRef.current) clearTimeout(transitionRef.current);
-    if (currentIndex === services.length + cloneCount || currentIndex === cloneCount - 1) {
-      // @ts-ignore
-      transitionRef.current = setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(currentIndex === 0 ? services.length + (cloneCount -1) : cloneCount);
-      }, 300); 
-    } else if (!isTransitioning) {
-        // A tiny timeout to re-enable transitions after the jump
-        setTimeout(() => {
-            setIsTransitioning(true);
-        }, 50);
+    if (transitionRef.current) clearTimeout(transitionRef.current as number);
+    // When reaching the end (right after last real card), jump to the first real card instantly
+    if (currentIndex === extendedServices.length - cloneCount) {
+      setIsTransitioning(false);
+      setCurrentIndex(cloneCount);
     }
-    return () => { if (transitionRef.current) clearTimeout(transitionRef.current) };
-  }, [currentIndex, services.length, cloneCount]);
+    // When reaching the start (left before first real card), jump to the last real card instantly
+    else if (currentIndex === 0) {
+      setIsTransitioning(false);
+      setCurrentIndex(extendedServices.length - 2 * cloneCount);
+    }
+    else if (!isTransitioning) {
+      setTimeout(() => {
+        setIsTransitioning(true);
+      }, 50);
+    }
+    return () => { if (transitionRef.current) clearTimeout(transitionRef.current as number) };
+  }, [currentIndex, cloneCount, extendedServices.length, isTransitioning]);
 
   useEffect(() => {
-    pauseAutoScroll(); // Start the auto-scroll cycle
+    pauseAutoScroll(); 
     return () => { if (autoScrollRef.current) clearInterval(autoScrollRef.current) };
   }, [currentIndex]);
 
@@ -230,8 +233,8 @@ const SecretarialCompliances = () => {
               className="flex"
               style={{
                 width: `${(extendedServices.length / visibleCards) * 100}%`,
-                transform: `translateX(-${(currentIndex / extendedServices.length) * 100}%)`,
-                transition: isTransitioning ? 'transform 300ms ease-in-out' : 'none',
+                transform: `translateX(-${(currentIndex * (100 / extendedServices.length))}%)`,
+                transition: isTransitioning ? 'transform 300ms cubic-bezier(0.4,0,0.2,1)' : 'none',
               }}
             >
               {extendedServices.map((service, index) => (

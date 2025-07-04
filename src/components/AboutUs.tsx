@@ -158,8 +158,7 @@ const AboutUs = () => {
                   lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px' // decreased line height
                 }}
               >
-                Welcome to EZYGRO where expertise meets elegance in legal, tax, audit, and compliance.
-Led by Sushma B. Salunkhe, we simplify the complex with clarity and care.
+                Welcome to EZYGRO where expertise meets elegance in legal, tax, audit, and compliance. We simplify the complex with clarity and care.
 Empowering growth with purpose, precision, and trust.
               </p>
             </div>

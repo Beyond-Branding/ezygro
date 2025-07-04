@@ -77,7 +77,7 @@ const InnovativeDashboards = () => {
                   lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px'
                 }}
               >
-                Make smarter decisions, faster with Innovative Dashboards that turn complex data into clear, visual insights. Track performance, monitor KPIs, and stay in control with real-time analytics tailored to your business.
+                Make smarter decisions, faster with Innovative Dashboards that turn complex data into clear, visual insights. Track performance, monitor Key Performing Indicators, and stay in control with real-time analytics tailored to your business.
               </p>
             </div>
           </div>
@@ -109,9 +109,15 @@ const InnovativeDashboards = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Sales & Marketing Dashboards</h3>
-              <p className="text-gray-600 mb-8">Who it's for: Marketing Managers, Sales Heads, Growth Teams
-<br></br>Purpose: Optimize sales processes and measure marketing effectiveness
-<br></br>Key Features:</p>
+              <p className="text-gray-600 mb-8">
+                Who it's for: Marketing Managers, Sales Heads, Growth Teams
+                <br />
+                <span className="block h-4" />
+                Purpose: Optimize sales processes and measure marketing effectiveness
+                <br />
+                <span className="block h-4" />
+                <span className="font-semibold">Key Features:</span>
+              </p>
               <ul className="space-y-4">
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Lead Tracking: Visual pipeline of leads by stage, source, and owner</span></li>
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Conversion Metrics: Analyze conversion rates across campaigns and channels</span></li>
@@ -122,12 +128,18 @@ const InnovativeDashboards = () => {
               </ul>
             </div>
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Operational <br></br>Dashboards</h3>
-              <p className="text-gray-600 mb-8">Who it's for: Operations Heads, Department Managers, Project Leads
-<br></br>Purpose: Enhance organizational efficiency and decision-making
-<br></br>Key Features:</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Operational <br />Dashboards</h3>
+              <p className="text-gray-600 mb-8">
+                Who it's for: Operations Heads, Department Managers, Project Leads
+                <br />
+                <span className="block h-4" />
+                Purpose: Enhance organizational efficiency and decision-making
+                <br />
+                <span className="block h-4" />
+                <span className="font-semibold">Key Features:</span>
+              </p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Real-Time KPI Monitoring: Track productivity, turnaround time, and output across teams</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Real-Time Key Performing Indicator Monitoring: Track productivity, turnaround time, and output across teams</span></li>
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Performance Analytics: Identify bottlenecks and areas of improvement</span></li>
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Resource Utilization: View how manpower and assets are allocated and used</span></li>
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Project Progress Tracking: Monitor milestones, deliverables, and deadlines</span></li>
@@ -136,10 +148,16 @@ const InnovativeDashboards = () => {
               </ul>
             </div>
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Financial <br></br>Dashboards</h3>
-              <p className="text-gray-600 mb-8">Who it's for: CFOs, Finance Managers, Accountants, Startup Founders
-<br></br>Purpose: Real-time visibility into financial health
-<br></br>Key Features:</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Financial <br />Dashboards</h3>
+              <p className="text-gray-600 mb-8">
+                Who it's for: CFOs, Finance Managers, Accountants, Startup Founders
+                <br />
+                <span className="block h-4" />
+                Purpose: Real-time visibility into financial health
+                <br />
+                <span className="block h-4" />
+                <span className="font-semibold">Key Features:</span>
+              </p>
               <ul className="space-y-4">
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Revenue & Expense Tracking: Monitor monthly, quarterly, and annual financial performance</span></li>
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Profitability Analysis: Understand margins by product, service, or business unit</span></li>
