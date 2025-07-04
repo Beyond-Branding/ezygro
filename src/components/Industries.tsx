@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 const Industries = () => {
   const industries = [
+    // Your industries array remains the same...
     {
       title: "Pharma",
       link: "#",
@@ -84,95 +85,113 @@ const Industries = () => {
     }
   ];
 
-  const progressRef = useRef<HTMLDivElement>(null);
   const tickerRef = useRef<HTMLDivElement>(null);
-  const [progressKey, setProgressKey] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  
-  const duration = 120000; 
-  const pauseDuration = 1000; 
+  const cardRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardWidth, setCardWidth] = useState(0);
 
   useEffect(() => {
-    const ticker = tickerRef.current;
-    if (!ticker) return;
-    
-    let timeout: ReturnType<typeof setTimeout>;
+    if (cardRef.current) {
+      const cardElement = cardRef.current;
+      const style = window.getComputedStyle(cardElement);
+      const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+      setCardWidth(cardElement.offsetWidth + margin);
+    }
+  }, []);
 
-    const handleIteration = () => {
-      setIsPaused(true);
-      timeout = setTimeout(() => {
-        setIsPaused(false);
-        setProgressKey(prev => prev + 1);
-      }, pauseDuration);
-    };
+  const resetAutoScroll = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex(prev => prev + 1);
+    }, 3000); // Auto-scroll every 3 seconds
+  }, []);
 
-    ticker.addEventListener('animationiteration', handleIteration);
+  const handlePrev = () => {
+    setCurrentIndex(prev => prev - 1);
+    resetAutoScroll();
+  };
 
+  const handleNext = () => {
+    setCurrentIndex(prev => prev + 1);
+    resetAutoScroll();
+  };
+
+  useEffect(() => {
+    if (cardWidth > 0) {
+      resetAutoScroll();
+    }
     return () => {
-      ticker.removeEventListener('animationiteration', handleIteration);
-      if (timeout) clearTimeout(timeout);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
-  }, [pauseDuration]);
+  }, [cardWidth, resetAutoScroll]);
 
   useEffect(() => {
-    let req: number;
-    let start: number | null = null;
-
-    function animateProgress(timestamp: number) {
-      if (isPaused) {
-        if (progressRef.current) progressRef.current.style.width = '100%';
-        return;
-      }
-
-      if (start === null) start = timestamp;
-      
-      const elapsed = timestamp - start;
-      const percent = Math.min((elapsed / duration) * 100, 100);
-
-      if (progressRef.current) {
-        progressRef.current.style.width = percent + '%';
-      }
-
-      if (elapsed < duration) {
-        req = requestAnimationFrame(animateProgress);
-      } else if (progressRef.current) {
-        progressRef.current.style.width = '100%';
+    if (tickerRef.current && cardWidth > 0) {
+      if (currentIndex < 0) {
+        const newIndex = industries.length - 1;
+        tickerRef.current.style.transition = 'none';
+        tickerRef.current.style.transform = `translateX(-${newIndex * cardWidth}px)`;
+        setCurrentIndex(newIndex);
+      } else if (currentIndex >= industries.length) {
+        tickerRef.current.style.transition = 'transform 0.5s ease-in-out';
+        tickerRef.current.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        setTimeout(() => {
+          if (tickerRef.current) {
+            tickerRef.current.style.transition = 'none';
+            tickerRef.current.style.transform = `translateX(0px)`;
+            setCurrentIndex(0);
+          }
+        }, 500);
+      } else {
+        tickerRef.current.style.transition = 'transform 0.5s ease-in-out';
+        tickerRef.current.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
       }
     }
-
-    if (progressRef.current) {
-      progressRef.current.style.width = isPaused ? '100%' : '0%';
-    }
-
-    if (!isPaused) {
-      req = requestAnimationFrame(animateProgress);
-    }
-
-    return () => cancelAnimationFrame(req);
-  }, [progressKey, duration, isPaused]);
+  }, [currentIndex, cardWidth, industries.length]);
 
   return (
-    <section className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white">
+    <section 
+      className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white"
+      onMouseEnter={() => intervalRef.current && clearInterval(intervalRef.current)}
+      onMouseLeave={resetAutoScroll}
+    >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 sm:mb-10 lg:mb-12 gap-4 sm:gap-6 lg:gap-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 lg:w-1/3">
+          <div className="flex flex-row items-center justify-between mb-8 sm:mb-10 lg:mb-12 gap-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Industries
             </h2>
+            <div className="flex items-center gap-5">
+              <button
+                onClick={handlePrev}
+                aria-label="Previous Item"
+                className="p-3 border-2 border-gray-400 rounded-full hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
+              >
+                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
+              </button>
+              <button
+                onClick={handleNext}
+                aria-label="Next Item"
+                className="p-3 border-2 border-gray-400 rounded-full hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
+              >
+                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+              </button>
+            </div>
           </div>
+
           <div className="relative overflow-hidden w-full">
-            <div
-              className={`ticker-track flex w-max${isPaused ? '' : ' animate-ticker'}`}
-              ref={tickerRef}
-              style={{
-                animationPlayState: isPaused ? 'paused' : 'running',
-                animationDuration: `${duration}ms`
-              }}
-            >
-              {industries.concat(industries).map((industry, index) => (
+            <div className="ticker-track flex w-max" ref={tickerRef}>
+              {[...industries, ...industries].map((industry, index) => (
                 <div
+                  ref={index === 0 ? cardRef : null}
                   key={index}
-                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] cursor-pointer border border-gray-200 m-2 min-w-[320px] max-w-[360px] flex-shrink-0"
+                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-500 ease-in-out aspect-[3/4] cursor-pointer border border-gray-200 m-2 flex-shrink-0"
                   style={{ width: '340px' }}
                 >
                   <div className="absolute inset-0">
@@ -184,29 +203,13 @@ const Industries = () => {
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
                   </div>
                   <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
-                    <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold leading-tight text-white mb-1 sm:mb-2">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight text-white mb-1 sm:mb-2">
                       {industry.title}
                     </h3>
-                    {industry && (
-                      <div className="absolute inset-0 flex items-center justify-center p-3 sm:p-4 lg:p-6">
-                        <p className="text-xs sm:text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-center leading-relaxed">
-                          
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               ))}
             </div>
-            
-            <div className="w-full h-[1px] bg-gray-200 overflow-hidden mt-6">
-              <div
-                ref={progressRef}
-                className="h-full bg-purple-900"
-                style={{ width: '0%', transition: 'none' }}
-              />
-            </div>
-
           </div>
         </div>
       </div>
