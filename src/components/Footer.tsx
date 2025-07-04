@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import TermsOfUseModal from './TermsOfUseModal';
 
@@ -12,7 +11,6 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
   const [showCookieModal, setShowCookieModal] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <footer className="bg-gray-900 text-gray-400">
@@ -24,23 +22,23 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
               <div className="text-left">
                 <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Careers</h2>
                 <p className="mb-8 text-lg text-gray-300">Gain a heritage. Leave a legacy.</p>
-                <button
-                  className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
-                  onClick={() => navigate('/careers')}
+                <a
+                  href="/careers"
+                  className="inline-block px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
                 >
                   JOIN US
-                </button>
+                </a>
               </div>
               {/* Contact Us Section */}
               <div className="text-left">
                 <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Contact Us</h2>
                 <p className="mb-8 text-lg text-gray-300">What can we help you achieve?</p>
-                <button
-                  className="px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
-                  onClick={() => navigate('/contact')}
+                <a
+                  href="/contact"
+                  className="inline-block px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
                 >
                   SPEAK WITH US
-                </button>
+                </a>
               </div>
             </div>
           </div>
