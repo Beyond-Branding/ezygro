@@ -10,7 +10,7 @@ const SecretarialCompliances = () => {
       title: 'Company Law Compliance',
       description: "Ensure your company is fully compliant with the Companies Act, 2013 and MCA requirements.",
       features: [
-        'ROC Filings (MGT-7, AOC-4, etc.)',
+        'MCA Filings (MGT-7, AOC-4, etc.)',
         'Board & General Meeting Support',
         'Maintenance of Statutory Registers',
         'Director Disclosures & Resolutions',
@@ -53,7 +53,7 @@ const SecretarialCompliances = () => {
         features: [
           'Secretarial Audits',
           'Corporate Governance Reports',
-          'Board Process Improvements',
+          'Board PMCAess Improvements',
           'Compliance Calendar Maintenance',
         ],
       },
@@ -181,7 +181,7 @@ const SecretarialCompliances = () => {
                   lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px'
                 }}
               >
-                Ensure smooth governance with complete Secretarial Compliance services. From ROC filings to board meeting documentation, we help you stay legally sound and effortlessly compliant
+                Ensure smooth governance with complete Secretarial Compliance services. From MCA filings to board meeting documentation, we help you stay legally sound and effortlessly compliant
               </p>
             </div>
           </div>
