@@ -1,22 +1,62 @@
+function EmailIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-5 w-5 mr-2"
+    >
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <polyline points="3 7 12 13 21 7" />
+    </svg>
+  );
+}
 import React from 'react';
 
-const MapPin = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-5 w-5 mr-2"
-  >
-    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-    <circle cx="12" cy="10" r="3" />
-  </svg>
-);
+function MapPin() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-5 w-5 mr-2"
+    >
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-5 w-5 mr-2"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.16 9.81 19.86 19.86 0 0 1 .11 1.64 2 2 0 0 1 2.11-.36h3a2 2 0 0 1 2 1.72c.13 1.13.37 2.24.72 3.32a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c1.08.35 2.19.59 3.32.72a2 2 0 0 1 1.72 2z" />
+    </svg>
+  );
+}
 
 const ContactForm = () => {
     const FormInput = ({ id, label, type = "text", required = false, children }: { id: string, label: string, type?: string, required?: boolean, children?: React.ReactNode }) => (
@@ -133,32 +173,34 @@ export default function App() {
         </div>
         
         <div className="my-8 md:my-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-500 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-500 items-start break-words">
                 {/* Left side - Address */}
-                <div className="flex items-start text-left">
-                    <MapPin />
-                    <div className="text-sm md:text-base">
-                        <div>12, Ground Floor, Dadi Building, Rani Sati Marg, Kathiyawadi Chowk,</div>
-                        <div>near Union Bank, Malad East, Mumbai, Maharashtra 400097</div>
+                <div className="flex flex-col items-center text-center justify-center w-full">
+                    <div className="flex flex-col items-start w-full">
+                        <div className="flex flex-row items-center w-full">
+                            <span className="mt-1 mr-2 shrink-0 flex items-center justify-center"><MapPin /></span>
+                            <span className="text-sm md:text-base text-left w-full">12, Ground Floor, Dadi Building,</span>
+                        </div>
+                        <div className="text-sm md:text-base text-left w-full ml-7">Rani Sati Marg, Kathiyawadi Chowk, near Union Bank, Malad East, Mumbai, Maharashtra 400097</div>
                     </div>
                 </div>
                 
                 {/* Center - Phone */}
-                <div className="flex flex-col items-center text-center">
-                    <div className="flex items-center"><span className="font-semibold mr-2">Phone:</span> <span>+91-9372963906</span></div>
+                <div className="flex flex-col items-center text-center justify-center">
+                    <div className="flex items-center w-full mt-4 ml-8 md:ml-16">
+                        <span className="mt-1 mr-2 shrink-0"><PhoneIcon /></span>
+                        <span className="font-semibold mr-2">Phone:</span> 
+                        <span className="break-words">+91-9372963906</span>
+                    </div>
                 </div>
                 
                 {/* Right side - Email */}
-                <div className="flex flex-col items-end text-right">
-                    <div className="flex items-center"><span className="font-semibold mr-2">Email:</span> <span>9372963906</span></div>
-                </div>
-            </div>
-            
-            {/* Google Maps Link - Below all contact info */}
-            <div className="flex justify-center mt-6">
-                <div className="flex items-center text-gray-500">
-                    <span className="font-semibold mr-2">Google Maps:</span> 
-                    <a href="https://g.co/kgs/8uxN7WU" className="text-blue-600 underline" target="_blank" rel="noopener noreferrer">View Location</a>
+                <div className="flex flex-col items-end text-right justify-center">
+                    <div className="flex items-center w-full mt-4 ml-8 md:ml-16">
+                        <span className="mt-1 mr-2 shrink-0"><EmailIcon /></span>
+                        <span className="font-semibold mr-2">Email:</span>
+                        <span className="break-words">ezygrofin@gmail.com</span>
+                    </div>
                 </div>
             </div>
         </div>
