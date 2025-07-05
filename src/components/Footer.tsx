@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
               {/* Careers Section */}
               <div className="text-left">
                 <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">Careers</h2>
-                <p className="mb-8 text-lg text-gray-300">Gain a heritage. Leave a legacy.</p>
+                <p className="mb-8 text-lg text-gray-300">Gain a HERITAGE. Leave a LEGACY.</p>
                 <a
                   href="/careers"
                   className="inline-block px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"

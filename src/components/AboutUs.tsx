@@ -198,7 +198,7 @@ Empowering growth with purpose, precision, and trust.
               EZYGRO for YOU
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-4xl">
-              We believe that technology holds the power to transform communities worldwide.
+              We believe We have the power to revolutionize financial services and <br></br>uplift communities across the globe.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
