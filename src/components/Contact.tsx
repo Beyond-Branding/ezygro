@@ -95,9 +95,12 @@ const ContactForm = () => {
                             <FormInput id="enquiryType" label="Type of enquiry" required>
                                 <select id="enquiryType" name="enquiryType" className="block w-full bg-transparent border-0 border-b border-gray-600 focus:ring-0 focus:border-white py-2 text-white">
                                     <option className="bg-gray-800">Select an enquiry type</option>
-                                    <option className="bg-gray-800">General</option>
-                                    <option className="bg-gray-800">Careers</option>
-                                    <option className="bg-gray-800">Partnership</option>
+                                    <option className="bg-gray-800">Financial & Accounting</option>
+                                    <option className="bg-gray-800">Income Tax</option>
+                                    <option className="bg-gray-800">Virtual CFO</option>
+                                    <option className="bg-gray-800">Innovative Dashboards</option>
+                                    <option className="bg-gray-800">Loans & Insurance</option>
+                                    <option className="bg-gray-800">Secretarial Compliances</option>
                                 </select>
                             </FormInput>
                             <div></div> {/* Spacer */}

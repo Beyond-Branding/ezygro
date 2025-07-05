@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import TechMahindraLogo from '../logo.png'; 
 import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/500.css';
@@ -55,11 +55,8 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Search + Mobile Toggle */}
-          <div className="flex items-center space-x-2">
-            <button className="p-2 text-gray-600 hover:text-[#4B1D92]">
-              <Search className="h-5 w-5" />
-            </button>
+          {/* Mobile Toggle */}
+          <div className="flex items-center">
             <button
               className="lg:hidden p-2 text-gray-600 hover:text-[#4B1D92]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
