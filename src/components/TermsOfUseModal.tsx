@@ -72,6 +72,13 @@ Your privacy is very critical to us, that is the reason why we’ve created a di
             className="text-white text-base leading-relaxed text-justify whitespace-pre-line bg-black rounded p-4 shadow-inner"
             dangerouslySetInnerHTML={{ __html: replaced }}
           />
+          <button
+            className="mt-6 self-center bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-8 rounded-lg shadow transition-colors duration-200"
+            onClick={onClose}
+            aria-label="Okay"
+          >
+            Okay
+          </button>
         </div>
       </div>
     </div>
