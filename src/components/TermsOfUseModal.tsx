@@ -19,7 +19,7 @@ function TermsOfUseModal({ show, onClose }: TermsOfUseModalProps) {
 
   if (!show) return null;
 
-  const terms = `Welcome to Ezygro.com. This website is owned and operated by Dhanashree B Salunkhe and Co, Chartered Accountants and having its registered office at 001, 1st Floor, A-Wing, Neelyog Samruddhi, khot Kuwa Road, Dhanjiwadi, Malad (E), Mumbai – 400 097, Maharashtra, India. You must understand and agree to accept and adhere to the following terms of service as stated in this policy hereafter referred to as ‘User Agreement’, along with the terms and conditions as stated in our Privacy Policy, by visiting our website and accessing the information, resources, services, products, and tools we provide.
+  const terms = `Welcome to Ezygro.com. This website is owned and operated by EZYGRO financial services, Chartered Accountants and having its registered office at 001, 1st Floor, A-Wing, Neelyog Samruddhi, khot Kuwa Road, Dhanjiwadi, Malad (E), Mumbai – 400 097, Maharashtra, India. You must understand and agree to accept and adhere to the following terms of service as stated in this policy hereafter referred to as ‘User Agreement’, along with the terms and conditions as stated in our Privacy Policy, by visiting our website and accessing the information, resources, services, products, and tools we provide.
 
 a. You may be asked to provide certain information about yourself (such as identification, email, phone number, contact details, etc.) as part of the registration procedure, or as part of your ability to use the resources, in a request to access our resources. You agree that any information you provide will always be accurate, correct, and up to date.
 
