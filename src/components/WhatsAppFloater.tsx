@@ -7,7 +7,7 @@ interface WhatsAppFloaterProps {
 
 const WhatsAppFloater: React.FC<WhatsAppFloaterProps> = ({ 
   phoneNumber, 
-  message = "Hello! I'm interested in your services." 
+  message = "Hello! I'm interested." 
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
