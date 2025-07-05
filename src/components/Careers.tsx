@@ -112,15 +112,6 @@ const ContactForm = () => {
                             <FormInput id="organisation" label="Organisation" />
                             <FormInput id="jobTitle" label="Job Title" />
                             <FormInput id="phoneNumber" label="Phone Number" />
-                            <FormInput id="country" label="Country" required>
-                                 <select id="country" name="country" className="block w-full bg-transparent border-0 border-b border-gray-600 focus:ring-0 focus:border-white py-2 text-white">
-                                    <option className="bg-gray-800">-Select-</option>
-                                    <option className="bg-gray-800">United States</option>
-                                    <option className="bg-gray-800">Canada</option>
-                                    <option className="bg-gray-800">India</option>
-                                    <option className="bg-gray-800">United Kingdom</option>
-                                </select>
-                            </FormInput>
                              <FormInput id="message" label="Message" type="textarea" required>
                                 <textarea id="message" name="message" rows={4} className="block w-full bg-transparent border border-gray-600 focus:ring-0 focus:border-white p-2 text-white"></textarea>
                             </FormInput>
