@@ -251,7 +251,7 @@ const Careers = () => {
                 lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '56px' : '90px' 
               }}
             >
-              Careers at EZYGRO
+              Careers at <span style={{ color: '#4B1D92' }}>EZYGRO</span>
             </h1>
             <div
               className={`transition-all duration-700 ease-out ${

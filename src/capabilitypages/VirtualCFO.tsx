@@ -4,72 +4,72 @@ const VirtualCFO = () => {
   const services = [
     {
       title: 'MIS',
-      description: 'MIS is a system for creating structured, timely reports that give insights into a company’s operations and finances. It helps management make informed, data-driven decisions.',
+      description: 'MIS is a system for creating structured, timely reports that give insights into a company’s operations and finances. It helps management make informed, data driven decisions.',
       features: [
-        'Reports cover sales trends, expenses, customer behavior, and profit margins',
-        'Assists in identifying underperforming products or regions',
-        'Enables proactive rather than reactive decision-making',
-        'Strengthens strategic planning through real-time insights',
+        'Reports cover sales trends, expenses, customer behavior, and profit margins.',
+        'Assists in identifying underperforming products or regions.',
+        'Enables proactive rather than reactive decision-making.',
+        'Strengthens strategic planning through real-time insights.',
       ]
     },
     {
       title: 'Budgeting',
       description: 'Budgeting is the process of planning how financial resources will be allocated to meet business objectives. It sets limits and helps control spending.',
       features: [
-        'Allows comparison between projected and actual performance',
-        'Promotes financial discipline and efficient resource use',
-        'Highlights areas of overspending or underfunding',
-        'Ensures projects stay within financial boundaries',
+        'Allows comparison between projected and actual performance.',
+        'Promotes financial discipline and efficient resource use.',
+        'Highlights areas of overspending or underfunding.',
+        'Ensures projects stay within financial boundaries.',
       ]
     },
     {
       title: 'Cash Flow Management',
-      description: 'Cash flow management ensures the business has enough liquid funds to meet daily obligations. It focuses on balancing cash inflows and outflows',
+      description: 'Cash flow management ensures the business has enough liquid funds to meet daily obligations. It focuses on balancing cash inflows and outflows.',
       features: [
-        'Prevents liquidity crises even if the business is profitable',
-        'Tracks receivables, payables, and due dates',
-        'Avoids funding gaps that can disrupt operations',
-        'Ensures smooth payment of salaries, rent, and bills',
+        'Prevents liquidity crises even if the business is profitable.',
+        'Tracks receivables, payables, and due dates.',
+        'Avoids funding gaps that can disrupt operations.',
+        'Ensures smooth payment of salaries, rent, and bills.',
       ]
     },
     {
       title: 'Compliance Reporting',
-      description: 'Compliance reporting involves submitting timely and accurate reports to regulatory bodies. It keeps the business legally sound and avoids penalties',
+      description: 'Compliance reporting involves submitting timely and accurate reports to regulatory bodies. It keeps the business legally sound and avoids penalties.',
       features: [
-        'Covers GST, TDS, income tax, ROC filings, and audits',
-        'Protects from legal action and heavy fines',
-        'Maintains reputation and credibility with stakeholders',
-        'Ensures seamless functioning with no legal interruptions',
+        'Covers GST, TDS, income tax, ROC filings, and audits.',
+        'Protects from legal action and heavy fines.',
+        'Maintains reputation and credibility with stakeholders.',
+        'Ensures seamless functioning with no legal interruptions.',
       ]
     },
     {
       title: 'SOP & Manuals Design',
-      description: 'SOPs (Standard Operating Procedures) provide step-by-step instructions for business processes. They enhance consistency, training, and efficiency',
+      description: 'SOPs (Standard Operating Procedures) provide step-by-step instructions for business processes. They enhance consistency, training, and efficiency.',
       features: [
-        'Reduces errors by defining clear procedures',
-        'Helps new staff quickly adapt to roles',
-        'Improves quality control and service standards',
-        'Promotes uniformity across locations or departments',
+        'Reduces errors by defining clear procedures.',
+        'Helps new staff quickly adapt to roles.',
+        'Improves quality control and service standards.',
+        'Promotes uniformity across locations or departments.',
       ]
     },
     {
       title: 'Business Planning',
-      description: 'Business planning involves setting long-term goals and creating strategies to achieve them. It includes research, forecasting, and risk management',
+      description: 'Business planning involves setting long term goals and creating strategies to achieve them. It includes research, forecasting, and risk management.',
       features: [
-        'Acts as a blueprint for expansion and operations',
-        'Essential for attracting investors or loans',
-        'Details resources, timelines, and expected returns',
-        'Helps manage risks and measure progress',
+        'Acts as a blueprint for expansion and operations.',
+        'Essential for attracting investors or loans.',
+        'Details resources, timelines, and expected returns.',
+        'Helps manage risks and measure progress.',
       ]
     },
     {
       title: 'Financial Marketing',
-      description: 'Financial marketing presents the company’s financial story in a clear, appealing way to attract investors or partners. It builds confidence in the business’s future',
+      description: 'Financial marketing presents the company’s financial story in a clear, appealing way to attract investors or partners. It builds confidence in the business’s future.',
       features: [
-        'Includes investor decks, valuation reports, and projections',
-        'Showcases financial stability and growth potential',
-        'Helps secure funding and partnerships',
-        'Builds stakeholder trust and enhances brand image'
+        'Includes investor decks, valuation reports, and projections.',
+        'Showcases financial stability and growth potential.',
+        'Helps secure funding and partnerships.',
+        'Builds stakeholder trust and enhances brand image.'
       ]
     }
   ];
@@ -196,7 +196,7 @@ const VirtualCFO = () => {
                 lineHeight: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '40px' : '60px'
               }}
             >
-              Virtual CFO and Business Growth Consultancy
+              Virtual CFO and Business Growth <span style={{ color: '#4B1D92' }}>Consultancy</span>
             </h1>
             <div
               className={`transition-all duration-700 ease-out ${
@@ -209,7 +209,7 @@ const VirtualCFO = () => {
                   lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px'
                 }}
               >
-                Gain strategic direction with our Virtual CFO and Business Growth Consultancy services. From financial planning and cash flow management to performance insights and growth strategies get expert guidance without the cost of a full-time CFO
+                Gain strategic direction with our Virtual CFO and Business Growth Consultancy services. From financial planning and cash flow management to performance insights and growth strategies get expert guidance without the cost of a full time CFO.
               </p>
             </div>
           </div>
@@ -223,7 +223,7 @@ const VirtualCFO = () => {
           </div>
           <div>
             <p className="text-gray-800 leading-relaxed">
-              At EZYGRO, we deliver smart, scalable solutions that empower clients to focus on their core strengths while we handle the rest. From outsourced CFO services to financial modeling, cash flow management, and compliance reporting — we take care of the numbers, so you can drive growth without the operational clutter.
+              At EZYGRO, we deliver smart, scalable solutions that empower clients to focus on their core strengths while we handle the rest. From outsourced CFO services to financial modeling, cash flow management, and compliance reporting. We take care of the numbers, so you can drive growth without the operational clutter.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
             </div>

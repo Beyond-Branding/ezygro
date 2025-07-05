@@ -41,14 +41,14 @@ const EzygroHeroSection = () => {
           >
             <div className="absolute inset-0 overflow-hidden">
               <video
-                className="w-full h-full object-cover opacity-70"
+                className="w-full h-full object-cover opacity-"
                 autoPlay
                 muted
                 loop
                 playsInline
               >
                 <source
-                  src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4"
+                  src="https://res.cloudinary.com/dzlxesyxg/video/upload/v1751692183/7_unfk2r.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.
@@ -75,7 +75,7 @@ const EzygroHeroSection = () => {
             >
               <h1 className="font-bold text-gray-900"
                 style={{ fontSize: headingFontSize, lineHeight: 1.1, fontWeight: 600 }}>
-                <span className="text-gray-900 block">Grow with Confidence</span>
+                <span className="text-gray-900 block">Grow Easily</span>
                 <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
               </h1>
             </div>
@@ -110,8 +110,8 @@ const EzygroHeroSection = () => {
             }`}
           >
             <h1 className="font-bold text-gray-900"
-              style={{ fontSize: 50, lineHeight: 1.1, fontWeight: 600 }}>
-                <span className="text-gray-900 block">Grow with Confidence</span>
+              style={{ fontSize: 60, lineHeight: 1.1, fontWeight: 600 }}>
+                <span className="text-gray-900 block">Grow Easily</span>
                 <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
             </h1>
           </div>
@@ -123,7 +123,7 @@ const EzygroHeroSection = () => {
               <p className="text-gray-700 leading-snug mt-4 font-400 text-left"
                 style={{ fontSize: paraFontSize, lineHeight: paraLineHeight, fontWeight: 400 }}
               >
-                In today’s fast-paced business environment, success requires financial clarity and compliance you can count on. EZYGRO empowers you with smart solutions that drive sustainable growth, strategic decision-making, and operational excellence—all at the speed your business demands.
+                In today’s fast paced business environment, success requires financial clarity and compliance you can count on. EZYGRO empowers you with smart solutions that drive sustainable growth, strategic decision making, and operational excellence all at the speed your business demands.
               </p>
             </div>
         </div>

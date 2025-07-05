@@ -62,7 +62,7 @@ function FinancialAndAccounting() {
                 lineHeight: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '40px' : '60px'
               }}
             >
-              Financial and Accounting Management
+              Financial and <span style={{ color: '#4B1D92' }}>Accounting Management</span>
             </h1>
 
             <div
@@ -93,7 +93,7 @@ function FinancialAndAccounting() {
           </div>
           <div>
             <p className="text-gray-800 leading-relaxed">
-              EZYGRO provides end-to-end Financial and Accounting Management Services tailored to meet the dynamic needs of modern businesses. As regulations evolve, technology advances, and talent expectations shift, our expert-led solutions ensure your financial operations remain compliant, efficient, and future-ready. From streamlining processes and ensuring accurate reporting to optimizing financial strategies, we handle the critical functions so you can focus on innovation, scaling, and driving long-term success. With EZYGRO, finance becomes a catalyst for growth, not a burden.
+              EZYGRO provides end-to-end Financial and Accounting Management Services tailored to meet the dynamic needs of modern businesses. As regulations evolve, technology advances, and talent expectations shift, our expert led solutions ensure your financial operations remain compliant, efficient, and future ready. From streamlining processes and ensuring accurate reporting to optimizing financial strategies, we handle the critical functions so you can focus on innovation, scaling, and driving long-term success. With EZYGRO, finance becomes a catalyst for growth, not a burden.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
             </div>

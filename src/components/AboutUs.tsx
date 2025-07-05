@@ -144,7 +144,7 @@ const AboutUs = () => {
                 lineHeight: windowWidth < 640 ? '30px' : windowWidth < 1024 ? '48px' : '70px' // decreased line height
               }}
             >
-              Who We Are
+              Who <span style={{ color: '#4B1D92' }}>We Are</span>
             </h1>
 
             <div
@@ -171,7 +171,7 @@ Empowering growth with purpose, precision, and trust.
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
             <div className="relative">
               <h2 className={`text-xl sm:text-2xl md:text-3xl font-medium text-gray-900 tracking-tight transition-all ease-in-out duration-1000 transform ${secondSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                Scale easily with EzyGro
+                Grow Smart with EzyGro
               </h2>
               <p className={`mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed transition-all ease-in-out duration-1000 delay-200 transform ${secondSectionTextVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                 EZYGRO is a visionary initiative founded by Sushma B. Salunkhe and Dhanashree B. Salunkhe, designed to offer comprehensive, end-to-end solutions across the domains of legal, tax, audit, and corporate advisory. Born from a shared passion for simplifying the intricate challenges faced by businesses and individuals alike, EZYGRO stands as a one-stop destination for navigating the evolving regulatory and financial landscape with confidence. With a foundation built on trust, ethics, and deep industry knowledge, we are committed to delivering more than just services we deliver clarity, confidence, and long-term value. Whether it's guiding a startup through its legal framework, helping businesses stay compliant, or offering tailored financial advice, we combine precision with a personal touch to ensure every client receives support that’s both strategic and sincere.
@@ -198,7 +198,7 @@ Empowering growth with purpose, precision, and trust.
               EZYGRO for YOU
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-4xl">
-              We believe that technology holds the power to transform communities worldwide...
+              We believe that technology holds the power to transform communities worldwide.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

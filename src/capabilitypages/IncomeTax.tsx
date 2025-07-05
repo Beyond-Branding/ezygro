@@ -62,7 +62,7 @@ const IncomeTax = () => {
                 lineHeight: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '40px' : '60px'
               }}
             >
-              Income Tax, GST and Audits
+              Income Tax, GST and <span style={{ color: '#4B1D92' }}>Audits</span>
             </h1>
 
             <div
@@ -77,7 +77,7 @@ const IncomeTax = () => {
                   lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px'
                 }}
               >
-                Stay worry-free with end-to-end support for Income Tax, GST, and Audits. From accurate filings to smooth assessments, we ensure your business stays compliant, efficient, and audit-ready at every step.
+                Stay worry free with end-to-end support for Income Tax, GST, and Audits. From accurate filings to smooth assessments, we ensure your business stays compliant, efficient, and audit-ready at every step.
               </p>
             </div>
           </div>
@@ -112,23 +112,23 @@ const IncomeTax = () => {
               <p className="text-gray-600 mb-8">Stay ahead of deadlines and optimize your tax liability with our expert filing and advisory services.
                 <br></br>We help with:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">ITR Filing for Individuals, Professionals, & Corporates</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Tax Planning & Advisory</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">TDS Compliance & Returns</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Advance Tax Computation</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Representation before Tax Authorities</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">ITR Filing for Individuals, Professionals, & Corporates.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Tax Planning & Advisory.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">TDS Compliance & Returns.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Advance Tax Computation.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Representation before Tax Authorities.</span></li>
               </ul>
             </div>
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">GST Services</h3>
-              <p className="text-gray-600 mb-8">From registration to return filing and advisory, we offer full-spectrum GST support.
+              <p className="text-gray-600 mb-8">From registration to return filing and advisory, we offer full spectrum GST support.
                 <br></br>Our GST offerings include:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Registration & Migration</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Monthly/Quarterly GST Return Filing (GSTR-1, GSTR-3B, GSTR-9)</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Reconciliation & Input Credit Optimization</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">E-Invoicing & E-Way Bill Compliance</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Audit & Departmental Representation</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Registration & Migration.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Monthly/Quarterly GST Return Filing (GSTR-1, GSTR-3B, GSTR-9).</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Reconciliation & Input Credit Optimization.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">E-Invoicing & E-Way Bill Compliance.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Audit & Departmental Representation.</span></li>
               </ul>
             </div>
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
@@ -136,12 +136,12 @@ const IncomeTax = () => {
               <p className="text-gray-600 mb-8">Our audit approach is risk-based, client-centric, and fully compliant with regulatory standards.
                 <br></br>We conduct:</p>
               <ul className="space-y-4">
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Statutory Audits</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Tax Audits (u/s 44AB)</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Internal Audits</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Audits</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Management & Process Audits</span></li>
-                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Stock and Inventory Audits</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Statutory Audits.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Tax Audits (u/s 44AB).</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Internal Audits.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Audits.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Management & Process Audits.</span></li>
+                <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Stock and Inventory Audits.</span></li>
               </ul>
             </div>
           </div>

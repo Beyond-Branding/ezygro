@@ -20,7 +20,7 @@ const VisionPurposeValues = () => {
     {
       key: 'purpose',
       title: 'Purpose',
-      text: 'Our purpose is to deliver transparent, reliable, and client-focused solutions',
+      text: 'Our purpose is to deliver transparent, reliable, and client-focused solutions.',
       image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751477131/mission_bbmkfq.jpg'
     },
     {

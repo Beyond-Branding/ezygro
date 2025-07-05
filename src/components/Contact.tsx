@@ -152,7 +152,7 @@ export default function App() {
 
         <div className="mb-8 md:mb-12 w-full text-left">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-4">
-            Let's Connect
+            Let's <span style={{ color: '#4B1D92' }}>Connect</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600">
             We would love to hear from you!

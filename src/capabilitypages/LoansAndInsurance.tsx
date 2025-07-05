@@ -63,7 +63,7 @@ const LoansAndInsurance = () => {
                 lineHeight: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '40px' : '60px'
               }}
             >
-              Loans, Insurance and Investments
+              Loans, Insurance and <span style={{ color: '#4B1D92' }}>Investments</span>
             </h1>
 
             <div
@@ -94,7 +94,7 @@ const LoansAndInsurance = () => {
           </div>
           <div>
             <p className="text-gray-800 leading-relaxed">
-              At EZYGRO, we are your trusted partner in loans, insurance, and investments offering smart, tailored financial solutions for every stage of life. With decades of expertise, strategic partnerships, and a customer-first approach, we simplify your financial journey by ensuring quick and easy processing, transparent guidance, and secure transactions. Whether you're planning for the future, securing your present, or funding your goals, EZYGRO empowers your financial growth with clarity, trust, and innovation.
+              At EZYGRO, we are your trusted partner in loans, insurance, and investments offering smart, tailored financial solutions for every stage of life. With decades of expertise, strategic partnerships, and a customer first approach, we simplify your financial journey by ensuring quick and easy processing, transparent guidance, and secure transactions. Whether you're planning for the future, securing your present, or funding your goals, EZYGRO empowers your financial growth with clarity, trust, and innovation.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
             </div>
@@ -112,17 +112,17 @@ const LoansAndInsurance = () => {
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Loans</h3>
               <p className="text-gray-600 mb-8">
-                Whether you're dreaming of a home, expanding your business, or consolidating debt—EZYGRO has you covered.
+                Whether you're dreaming of a home, expanding your business, or consolidating debt EZYGRO has you covered.
                 <br />
                 <span className="block h-4" />
                 Loan Products We Offer:
               </p>
               <ul className="space-y-4">
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Home Loans</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Personal Loans</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Business Loans</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Loan Against Property</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Working Capital Loans</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Home Loans.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Personal Loans.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Business Loans.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Loan Against Property.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Working Capital Loans.</span></li>
               </ul>
             </div>
             {/* Card 2: Insurance */}
@@ -135,11 +135,11 @@ const LoansAndInsurance = () => {
                 Insurance Plans We Provide:
               </p>
               <ul className="space-y-4">
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Life Insurance</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Health Insurance</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Term Plans</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Motor Insurance</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Travel & Property Insurance: Trusted Insurers, Claim Assistance, Affordable Premiums</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Life Insurance.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Health Insurance.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Term Plans.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Motor Insurance.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Travel & Property Insurance: Trusted Insurers, Claim Assistance, Affordable Premiums.</span></li>
               </ul>
             </div>
             {/* Card 3: Investments */}
@@ -152,10 +152,10 @@ const LoansAndInsurance = () => {
                 Investment Options:
               </p>
               <ul className="space-y-4">
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Mutual Funds</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">SIPs (Systematic Investment Plans)</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Fixed Deposits</span></li>
-                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Bonds</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Mutual Funds.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">SIPs (Systematic Investment Plans).</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Fixed Deposits.</span></li>
+                <li className="flex items-center"><span className="text-purple-900 mr-3 flex-shrink-0">■</span><span className="text-gray-800">Bonds.</span></li>
               </ul>
             </div>
           </div>

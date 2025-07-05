@@ -32,7 +32,7 @@ const VideoCarousel = () => {
     {
       id: 5,
       title: "Where Strategy Meets Service Smart ideas are nothing without action. At EZYGRO, we turn smart plans into smoother journeys no stress, just results.",
-      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475895/5_qww1ot.mp4"
+      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751692184/6_ycd4gn.mp4"
     }
   ];
 

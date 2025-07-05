@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+const styles = `
+  .pre-line-text {
+    white-space: pre-line;
+  }
+`;
+
 const SecretarialCompliances = () => {
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
@@ -10,51 +16,51 @@ const SecretarialCompliances = () => {
       title: 'Company Law Compliance',
       description: "Ensure your company is fully compliant with the Companies Act, 2013 and MCA requirements.",
       features: [
-        'MCA Filings (MGT-7, AOC-4, etc.)',
-        'Board & General Meeting Support',
-        'Maintenance of Statutory Registers',
-        'Director Disclosures & Resolutions',
-        'XBRL Filing',
+        'MCA Filings (MGT-7, AOC-4, etc.).',
+        'Board & General Meeting Support.',
+        'Maintenance of Statutory Registers.',
+        'Director Disclosures & Resolutions.',
+        'XBRL Filing.',
       ],
     },
     {
       title: 'Incorporation & Entity Structuring',
       description: 'Start your business on the right foot.',
       features: [
-        'Private Limited / LLP / OPC Incorporation',
-        'Name Reservation (RUN & SPICe+)',
-        'PAN, TAN, GST, and other statutory registrations',
-        'Shareholder Agreements & MoA/ AoA Drafting',
+        'Private Limited / LLP / OPC Incorporation.',
+        'Name Reservation (RUN & SPICe+).',
+        'PAN, TAN, GST, and other statutory registrations.',
+        'Shareholder Agreements & MoA/ AoA Drafting.',
       ],
     },
     {
-      title: 'Annual Filings & Returns',
+      title: 'Annual Filings and Returns',
       description: 'Avoid penalties and non-compliance notices.',
       features: [
-        'Timely MCA Filings',
-        'DIN KYC Compliance',
-        'Filing of MSME and Beneficial Ownership Returns',
-        'Event-based Compliance Monitoring',
+        'Timely MCA Filings.',
+        'DIN KYC Compliance.',
+        'Filing of MSME and Beneficial Ownership Returns.',
+        'Event-based Compliance Monitoring.',
       ],
     },
     {
-        title: 'FEMA & RBI Compliance',
+        title: 'FEMA and RBI Compliance',
         description: "Simplify cross-border transactions and investments.",
         features: [
-          'FDI Reporting (FC-GPR, FC-TRS, etc.)',
-          'RBI Approvals and Compliance Filings',
-          'ODI Compliance',
-          'FEMA Advisory & Documentation',
+          'FDI Reporting (FC-GPR, FC-TRS, etc.).',
+          'RBI Approvals and Compliance Filings.',
+          'ODI Compliance.',
+          'FEMA Advisory & Documentation.',
         ],
       },
       {
         title: 'Corporate Governance & Advisory',
         description: "Promote transparency and ethical business practices.",
         features: [
-          'Secretarial Audits',
-          'Corporate Governance Reports',
-          'Board PMCAess Improvements',
-          'Compliance Calendar Maintenance',
+          'Secretarial Audits.',
+          'Corporate Governance Reports.',
+          'Board PMCAess Improvements.',
+          'Compliance Calendar Maintenance.',
         ],
       },
   ];
@@ -167,7 +173,7 @@ const SecretarialCompliances = () => {
                 lineHeight: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '40px' : '60px'
               }}
             >
-              Secretarial Compliances
+              Secretarial <span style={{ color: '#4B1D92' }}>Compliances</span>
             </h1>
             <div
               className={`transition-all duration-700 ease-out ${
@@ -181,7 +187,7 @@ const SecretarialCompliances = () => {
                   lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px'
                 }}
               >
-                Ensure smooth governance with complete Secretarial Compliance services. From MCA filings to board meeting documentation, we help you stay legally sound and effortlessly compliant
+                Ensure smooth governance with complete Secretarial Compliance services. From MCA filings to board meeting documentation, we help you stay legally sound and effortlessly compliant.
               </p>
             </div>
           </div>
@@ -198,8 +204,8 @@ const SecretarialCompliances = () => {
           <div>
             <p className="text-gray-800 leading-relaxed">
               At EZYGRO, we specialize in end-to-end Corporate Secretarial and Compliance Services tailored to meet the evolving needs of startups, SMEs, and large enterprises. We understand that staying compliant in today’s dynamic regulatory environment is both critical and complex. That’s why our solutions are designed not just for compliance, but to support your business in scaling responsibly and sustainably.
-              With deep domain expertise and a constantly updated understanding of legal and regulatory frameworks, we ensure that your company remains legally sound, risk-free, and fully compliant with all statutory requirements including the Companies Act, SEBI regulations, FEMA guidelines, and more.
-              From incorporation, board governance, and statutory filings to complex corporate restructuring and due diligence, we provide strategic guidance at every step. At EZYGRO, we are more than just service providers — we are your long-term compliance partners, committed to aligning regulatory integrity with your growth ambitions.
+              With deep domain expertise and a constantly updated understanding of legal and regulatory frameworks, we ensure that your company remains legally sound, risk free, and fully compliant with all statutory requirements including the Companies Act, SEBI regulations, FEMA guidelines, and more.
+              From incorporation, board governance, and statutory filings to complex corporate restructuring and due diligence, we provide strategic guidance at every step. At EZYGRO, we are more than just service providers we are your long term compliance partners, committed to aligning regulatory integrity with your growth ambitions.
             </p>
             <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
             </div>
