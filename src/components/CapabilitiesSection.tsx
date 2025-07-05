@@ -98,47 +98,47 @@ const CapabilitiesSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {capabilities.map((capability, index) => (
-              <Link
-                to={capability.link}
-                key={capability.id}
-                className={`group relative transform transition-all duration-700 ease-out hover:scale-105 w-full ${
-                  isVisible
-                    ? 'translate-y-0 opacity-100'
-                    : 'translate-y-8 opacity-0'
-                }`}
-                style={{
-                  transitionDelay: `${index * 150}ms`
-                }}
-              >
-                <div className="relative bg-white hover:bg-[#4B1D92] p-4 transition-all duration-500 min-h-[470px] h-full flex flex-col justify-between shadow-md">
-                  <div className="flex justify-center pt-4">
-                    <div className="w-52 h-52 rounded-full overflow-hidden mx-auto mb-6">
-                      <img
-                        src={capability.image}
-                        alt={typeof capability.title === 'string' ? capability.title : ''}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.onerror = null;
-                          target.src = 'https://placehold.co/300x300/e2e8f0/64748b?text=Image';
-                        }}
-                      />
-                    </div>
-                  </div>
+            {capabilities.map((capability, index) => (
+              <a
+                href={capability.link}
+                key={capability.id}
+                className={`group relative transform transition-all duration-700 ease-out hover:scale-105 w-full ${
+                  isVisible
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-8 opacity-0'
+                }`}
+                style={{
+                  transitionDelay: `${index * 150}ms`
+                }}
+              >
+                <div className="relative bg-white hover:bg-[#4B1D92] p-4 transition-all duration-500 min-h-[470px] h-full flex flex-col justify-between shadow-md">
+                  <div className="flex justify-center pt-4">
+                    <div className="w-52 h-52 rounded-full overflow-hidden mx-auto mb-6">
+                      <img
+                        src={capability.image}
+                        alt={typeof capability.title === 'string' ? capability.title : ''}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.onerror = null;
+                          target.src = 'https://placehold.co/300x300/e2e8f0/64748b?text=Image';
+                        }}
+                      />
+                    </div>
+                  </div>
 
-                  <div className="flex-1 flex flex-col justify-end">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
-                      {capability.title}
-                    </h3>
+                  <div className="flex-1 flex flex-col justify-end">
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
+                      {capability.title}
+                    </h3>
 
-                    <div className="flex justify-end">
-                      <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors duration-500" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                    <div className="flex justify-end">
+                      <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors duration-500" />
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
