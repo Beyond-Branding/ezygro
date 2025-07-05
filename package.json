@@ -11,14 +11,17 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.6",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^7.6.3",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
+    "@types/leaflet": "^1.9.19",
     "@types/node": "^24.0.10",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",

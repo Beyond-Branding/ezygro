@@ -18,19 +18,19 @@ const pricingPlans: PricingPlan[] = [
     name: 'Enterprise',
     price: '₹ 14,999/-',
     description: 'Everything on Professional Package',
-    entries: '400 Transactions a month',
+    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 5 Crore',
     features: [
       {
         category: 'Accounting',
-        items: ['Everything on Bronze Package'],
+        items: ['Everything on Professional Package'],
       },
       {
         category: 'GST',
-        items: ['Everything on Bronze Package'],
+        items: ['Everything on Professional Package'],
       },
       {
         category: 'Financial Reporting',
-        items: ['Everything on Bronze Package', 'Cash Flow Statement (Quarterly)'],
+        items: ['Everything on Professional Package', 'Cash Flow Statement (Quarterly)'],
       },
     ],
   },
@@ -38,7 +38,7 @@ const pricingPlans: PricingPlan[] = [
     name: 'Standard',
     price: '₹ 6,999/-',
     description: 'Ideal For Freelancers, consultants, small businesses, and startups seeking essential accounting and GST',
-    entries: '150 Transactions a month',
+    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 1.5 Crore',
     features: [
       {
         category: 'Accounting',
@@ -58,7 +58,7 @@ const pricingPlans: PricingPlan[] = [
     name: 'Professional',
     price: '₹ 12,499/-',
     description: 'Everything on STANDARD Package',
-    entries: '300 Transactions a month',
+    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 3 Crore',
     features: [
       {
         category: 'Accounting',
@@ -92,8 +92,8 @@ const PricingCard = ({ plan }: { plan: PricingPlan }) => {
           {plan.price}
         </span>
       </div>
-      <div className="text-center mb-6 p-3 font-semibold bg-gray-100 text-gray-700 group-hover:bg-white/10 group-hover:text-white transition-colors">
-        {plan.entries}
+      <div className="text-center mb-6 p-3 bg-gray-100 text-gray-700 group-hover:bg-white/10 group-hover:text-white transition-colors">
+        <span dangerouslySetInnerHTML={{ __html: plan.entries }} />
       </div>
       <div className="flex-grow space-y-5">
         {plan.features.map((featureSet) => (

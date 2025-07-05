@@ -26,6 +26,7 @@ import VirtualCFO from './capabilitypages/VirtualCFO';
 import InnovativeDashboards from './capabilitypages/InnovativeDashboards';
 import LoansAndInsurance from './capabilitypages/LoansAndInsurance';
 import SecretarialCompliances from './capabilitypages/SecretarialCompliances';
+import 'leaflet/dist/leaflet.css';
 
 const HomePage = () => (
   <>
