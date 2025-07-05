@@ -100,10 +100,15 @@ const EzygroHeroSection = () => {
         className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${windowWidth < 1024 ? 'hidden' : 'block'}`} 
         style={{
           paddingTop: '3rem', 
-          marginTop: '-8rem' 
+          marginTop: '-8rem',
+          display: 'flex',
+          justifyContent: 'flex-start',
         }}
       >
-        <div className="space-y-4 lg:space-y-8 text-left w-full max-w-2xl">
+        <div
+          className="space-y-4 lg:space-y-8 text-left w-full max-w-2xl"
+          style={{ marginLeft: '3vw' }}
+        >
           <div
             className={`transition-all duration-1000 ease-out ${
               textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
@@ -123,7 +128,7 @@ const EzygroHeroSection = () => {
               <p className="text-gray-700 leading-snug mt-4 font-400 text-left"
                 style={{ fontSize: paraFontSize, lineHeight: paraLineHeight, fontWeight: 400 }}
               >
-                In today’s fast paced business environment, success requires financial clarity and compliance you can count on. EZYGRO empowers you with smart solutions that drive sustainable growth, strategic decision making, and operational excellence all at the speed your business demands.
+                In today’s fast paced business environment, success requires financial clarity and compliance you can rely on. EZYGRO empowers you with smart solutions that drive sustainable growth, strategic decision making, and operational excellence all at the speed your business demands.
               </p>
             </div>
         </div>

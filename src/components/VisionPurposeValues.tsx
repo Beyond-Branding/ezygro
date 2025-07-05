@@ -242,10 +242,10 @@ const VisionPurposeValues = () => {
       {/* Main content container */}
       <div className="flex-1 flex flex-col md:block">
         {/* Desktop layout */}
-        <div className="hidden md:block max-w-7xl w-full mx-auto">
+        <div className="hidden md:block max-w-7xl w-full mx-auto px-4 sm:px-8 lg:px-16">
           <div className="grid md:grid-cols-3 gap-8 items-center min-h-[70vh]">
             {/* Left side navigation */}
-            <div className="space-y-10">
+            <div className="space-y-10 lg:pl-4 sm:pl-4 pl-2">
               {content.map((item, index) => (
                 <h2
                   key={item.key}

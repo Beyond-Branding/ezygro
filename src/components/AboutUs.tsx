@@ -116,8 +116,8 @@ const AboutUs = () => {
               className="w-full h-full bg-transparent"
               style={{
                 clipPath: windowWidth < 768
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+                  ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)'
+                  : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
@@ -132,16 +132,16 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-          <div className="absolute top-4 sm:top-8 lg:top-16 left-4 sm:left-6 lg:left-0 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
+        {/* Content - match VideoCarousel positioning */}
+        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
+          <div className="absolute top-4 sm:top-8 lg:top-16 left-8 sm:left-12 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
             <h1
               className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 transition-all duration-700 ease-out ${
                 scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}
               style={{
                 fontSize: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px',
-                lineHeight: windowWidth < 640 ? '30px' : windowWidth < 1024 ? '48px' : '70px' // decreased line height
+                lineHeight: windowWidth < 640 ? '30px' : windowWidth < 1024 ? '48px' : '70px'
               }}
             >
               Who <span style={{ color: '#4B1D92' }}>We Are</span>
@@ -155,11 +155,10 @@ const AboutUs = () => {
               <p className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-xs lg:text-sm text-gray-800 leading-relaxed font-400"
                 style={{
                   fontSize: windowWidth < 640 ? '12px' : windowWidth < 1024 ? '14px' : '16px',
-                  lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px' // decreased line height
+                  lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px'
                 }}
               >
-                Welcome to EZYGRO where expertise meets elegance in legal, tax, audit, and compliance. We simplify the complex with clarity and care.
-Empowering growth with purpose, precision, and trust.
+                Welcome to EZYGRO where expertise meets elegance in legal, tax, audit, and compliance. We simplify the complex with clarity and care. Empowering growth with purpose, precision, and trust.
               </p>
             </div>
           </div>
@@ -167,9 +166,9 @@ Empowering growth with purpose, precision, and trust.
       </section>
 
       <section className="bg-white py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
-            <div className="relative">
+            <div className="relative lg:pl-4 sm:pl-4 pl-2">
               <h2 className={`text-xl sm:text-2xl md:text-3xl font-medium text-gray-900 tracking-tight transition-all ease-in-out duration-1000 transform ${secondSectionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                 Grow Smart with EzyGro
               </h2>
@@ -192,8 +191,8 @@ Empowering growth with purpose, precision, and trust.
       <VisionPurposeValues />
 
       <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-left mb-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
+          <div className="text-left mb-12 lg:pl-4 sm:pl-4 pl-2">
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
               EZYGRO for YOU
             </h2>
