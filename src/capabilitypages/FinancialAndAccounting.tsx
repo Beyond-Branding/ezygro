@@ -222,7 +222,7 @@ function FinancialAndAccounting() {
           <h2 className="text-5xl font-bold text-gray-900 pl-4">Price List</h2>
         </div>
         <div className="mt-16 lg:mt-24 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center items-stretch">
             {pricingPlans.map((plan) => (
               <div key={plan.name} className="w-full flex justify-center">
                   <PricingCard plan={plan} />
