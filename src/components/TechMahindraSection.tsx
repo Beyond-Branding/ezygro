@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronUp } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { ChevronUp } from "lucide-react";
 
 const EzygroHeroSection = () => {
   const [textVisible, setTextVisible] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1024
+  );
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -20,9 +22,12 @@ const EzygroHeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const headingFontSize = windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px';
-  const paraFontSize = windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px';
-  const paraLineHeight = windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '28px';
+  const headingFontSize =
+    windowWidth < 640 ? "28px" : windowWidth < 1024 ? "48px" : "66px";
+  const paraFontSize =
+    windowWidth < 640 ? "14px" : windowWidth < 1024 ? "16px" : "18px";
+  const paraLineHeight =
+    windowWidth < 640 ? "20px" : windowWidth < 1024 ? "24px" : "28px";
 
   return (
     <section
@@ -34,9 +39,10 @@ const EzygroHeroSection = () => {
           <div
             className="w-full h-full bg-transparent"
             style={{
-              clipPath: windowWidth < 768
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+              clipPath:
+                windowWidth < 768
+                  ? "polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)"
+                  : "polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)",
             }}
           >
             <div className="absolute inset-0 overflow-hidden">
@@ -60,77 +66,108 @@ const EzygroHeroSection = () => {
       </div>
 
       {/* Mobile Text Container */}
-      {windowWidth < 1024 && (
-        <div 
-          className="absolute left-0 right-0 z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-start"
-          style={{ top: '0rem', pointerEvents: 'none' }}
-        >
-          {/* Mobile text content... */}
-          <div className="space-y-2 sm:space-y-4 text-left w-full max-w-full sm:max-w-lg">
-            <div
-              className={`transition-all duration-1000 ease-out ${
-                textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-              }`}
-              style={{ pointerEvents: 'auto' }}
-            >
-              <h1 className="font-bold text-gray-900"
-                style={{ fontSize: headingFontSize, lineHeight: 1.1, fontWeight: 600 }}>
-                <span className="text-gray-900 block">Grow Easily</span>
-                <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
-              </h1>
-            </div>
-            <div
-              className={`transition-all duration-1000 ease-out delay-300 ${
-                textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-              }`}
-              style={{ pointerEvents: 'auto' }}
-            >
-              <p className="text-gray-700 leading-snug mt-1 sm:mt-2 font-400 text-left"
-                style={{ fontSize: paraFontSize, lineHeight: paraLineHeight, fontWeight: 400 }}
-              >
-                In today’s fast-paced business environment, success requires financial clarity and compliance you can count on. EZYGRO empowers you with smart solutions that drive sustainable growth, strategic decision-making, and operational excellence—all at the speed your business demands.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Desktop Text Container */}
-      <div 
-        className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${windowWidth < 1024 ? 'hidden' : 'block'}`} 
-        style={{
-          paddingTop: '3rem', 
-          marginTop: '-8rem',
-          display: 'flex',
-          justifyContent: 'flex-start',
-        }}
+      <div
+        className="absolute left-0 right-0 z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 flex md:hidden flex-col items-start"
+        style={{ top: "0rem", pointerEvents: "none" }}
       >
-        <div
-          className="space-y-4 lg:space-y-8 text-left w-full max-w-2xl"
-          style={{ marginLeft: '3vw' }}
-        >
+        {/* Mobile text content... */}
+        <div className="space-y-2 sm:space-y-4 text-left w-full max-w-full sm:max-w-lg">
           <div
             className={`transition-all duration-1000 ease-out ${
-              textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              textVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
             }`}
+            style={{ pointerEvents: "auto" }}
           >
-            <h1 className="font-bold text-gray-900"
-              style={{ fontSize: 60, lineHeight: 1.1, fontWeight: 600 }}>
-                <span className="text-gray-900 block">Grow Easily</span>
-                <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
+            <h1
+              className="font-bold text-gray-900"
+              style={{
+                fontSize: headingFontSize,
+                lineHeight: 1.1,
+                fontWeight: 600,
+              }}
+            >
+              <span className="text-gray-900 block">Grow Easily</span>
+              <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
             </h1>
           </div>
           <div
             className={`transition-all duration-1000 ease-out delay-300 ${
-              textVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              textVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
+            }`}
+            style={{ pointerEvents: "auto" }}
+          >
+            <p
+              className="text-gray-700 leading-snug mt-1 sm:mt-2 font-400 text-left"
+              style={{
+                fontSize: paraFontSize,
+                lineHeight: paraLineHeight,
+                fontWeight: 400,
+              }}
+            >
+              In today’s fast-paced business environment, success requires
+              financial clarity and compliance you can count on. EZYGRO empowers
+              you with smart solutions that drive sustainable growth, strategic
+              decision-making, and operational excellence—all at the speed your
+              business demands.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Text Container */}
+      <div
+        className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hidden md:flex`}
+        style={{
+          paddingTop: "3rem",
+          marginTop: "-8rem",
+          justifyContent: "flex-start",
+        }}
+      >
+        <div
+          className="space-y-4 lg:space-y-8 text-left w-full max-w-2xl"
+          style={{ marginLeft: "3vw" }}
+        >
+          <div
+            className={`transition-all duration-1000 ease-out ${
+              textVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
             }`}
           >
-              <p className="text-gray-700 leading-snug mt-4 font-400 text-left"
-                style={{ fontSize: paraFontSize, lineHeight: paraLineHeight, fontWeight: 400 }}
-              >
-                In today’s fast paced business environment, success requires financial clarity and compliance you can rely on. EZYGRO empowers you with smart solutions that drive sustainable growth, strategic decision making, and operational excellence all at the speed your business demands.
-              </p>
-            </div>
+            <h1
+              className="font-bold text-gray-900"
+              style={{ fontSize: 60, lineHeight: 1.1, fontWeight: 600 }}
+            >
+              <span className="text-gray-900 block">Grow Easily</span>
+              <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
+            </h1>
+          </div>
+          <div
+            className={`transition-all duration-1000 ease-out delay-300 ${
+              textVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
+            }`}
+          >
+            <p
+              className="text-gray-700 leading-snug mt-4 font-400 text-left"
+              style={{
+                fontSize: paraFontSize,
+                lineHeight: paraLineHeight,
+                fontWeight: 400,
+              }}
+            >
+              In today’s fast paced business environment, success requires
+              financial clarity and compliance you can rely on. EZYGRO empowers
+              you with smart solutions that drive sustainable growth, strategic
+              decision making, and operational excellence all at the speed your
+              business demands.
+            </p>
+          </div>
         </div>
       </div>
     </section>
