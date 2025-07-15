@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+// MODIFIED: Imports updated to include Youtube and remove unused icons
+import { Youtube, Linkedin, Instagram } from 'lucide-react';
 import TermsOfUseModal from './TermsOfUseModal';
 
 import logo from '../logo.png';
@@ -7,7 +8,6 @@ import logo from '../logo.png';
 interface FooterProps {
   showCareersContact?: boolean;
 }
-
 
 const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -47,74 +47,71 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
       {/* Bottom Footer - Black Section */}
       <div className="bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        {/* Tech Mahindra Logo */}
-        <div className="lg:col-span-1 flex items-center" style={{ alignItems: 'flex-start' }}>
-          <img src={logo} alt="Tech Mahindra Logo" className="h-24 w-auto rounded mt-0" style={{ marginTop: '-0.75rem', filter: 'brightness(0) invert(1)' }} />
-        </div>
-        {/* Our Brand */}
-        <div>
-          <h3 className="font-semibold text-white mb-6 text-base">Our Brand</h3>
-          <ul className="space-y-3">
-            <li>
-              <a href="/about" className="text-gray-400 hover:text-white text-sm transition-colors">About Us</a>
-            </li>
-            <li>
-              <a href="/capabilities" className="text-gray-400 hover:text-white text-sm transition-colors">Capabilities</a>
-            </li>
-            <li>
-              <a href="/careers" className="text-gray-400 hover:text-white text-sm transition-colors">Careers</a>
-            </li>
-            <li>
-              <a href="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-        {/* Our Services */}
-        <div>
-          <h3 className="font-semibold text-white mb-6 text-base">Our Services</h3>
-          <ul className="space-y-3">
-            <li>
-              <a href="/financial-accounting" className="text-gray-400 hover:text-white text-sm transition-colors">Financial &amp; Accounting</a>
-            </li>
-            <li>
-              <a href="/income-tax" className="text-gray-400 hover:text-white text-sm transition-colors">Income Tax</a>
-            </li>
-            <li>
-              <a href="/virtual-cfo" className="text-gray-400 hover:text-white text-sm transition-colors">Virtual CFO</a>
-            </li>
-            <li>
-              <a href="/innovative-dashboards" className="text-gray-400 hover:text-white text-sm transition-colors">Innovative Dashboards</a>
-            </li>
-            <li>
-              <a href="/loans-insurance" className="text-gray-400 hover:text-white text-sm transition-colors">Loans &amp; Insurance</a>
-            </li>
-            <li>
-              <a href="/secretarial-compliances" className="text-gray-400 hover:text-white text-sm transition-colors">Secretarial Compliances</a>
-            </li>
-          </ul>
-          {/* ...existing code... */}
-        </div>
-        {/* Terms of Use Modal */}
-        <TermsOfUseModal show={showCookieModal} onClose={() => setShowCookieModal(false)} />
-        {/* Follow Us */}
-        <div>
-          <h3 className="font-semibold text-white mb-6 text-base">Follow Us</h3>
-          <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Facebook size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Twitter size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="https://www.instagram.com/ezygro/" className="text-gray-400 hover:text-white transition-colors">
-              <Instagram size={20} />
-            </a>
-          </div>
-        </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {/* Tech Mahindra Logo */}
+            <div className="lg:col-span-1 flex items-center" style={{ alignItems: 'flex-start' }}>
+              <img src={logo} alt="Tech Mahindra Logo" className="h-24 w-auto rounded mt-0" style={{ marginTop: '-0.75rem', filter: 'brightness(0) invert(1)' }} />
+            </div>
+            {/* Our Brand */}
+            <div>
+              <h3 className="font-semibold text-white mb-6 text-base">Our Brand</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="/about" className="text-gray-400 hover:text-white text-sm transition-colors">About Us</a>
+                </li>
+                <li>
+                  <a href="/capabilities" className="text-gray-400 hover:text-white text-sm transition-colors">Capabilities</a>
+                </li>
+                <li>
+                  <a href="/careers" className="text-gray-400 hover:text-white text-sm transition-colors">Careers</a>
+                </li>
+                <li>
+                  <a href="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            {/* Our Services */}
+            <div>
+              <h3 className="font-semibold text-white mb-6 text-base">Our Services</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="/financial-accounting" className="text-gray-400 hover:text-white text-sm transition-colors">Financial &amp; Accounting</a>
+                </li>
+                <li>
+                  <a href="/income-tax" className="text-gray-400 hover:text-white text-sm transition-colors">Income Tax</a>
+                </li>
+                <li>
+                  <a href="/virtual-cfo" className="text-gray-400 hover:text-white text-sm transition-colors">Virtual CFO</a>
+                </li>
+                <li>
+                  <a href="/innovative-dashboards" className="text-gray-400 hover:text-white text-sm transition-colors">Innovative Dashboards</a>
+                </li>
+                <li>
+                  <a href="/loans-insurance" className="text-gray-400 hover:text-white text-sm transition-colors">Loans &amp; Insurance</a>
+                </li>
+                <li>
+                  <a href="/secretarial-compliances" className="text-gray-400 hover:text-white text-sm transition-colors">Secretarial Compliances</a>
+                </li>
+              </ul>
+            </div>
+            {/* Terms of Use Modal */}
+            <TermsOfUseModal show={showCookieModal} onClose={() => setShowCookieModal(false)} />
+            {/* Follow Us */}
+            <div>
+              <h3 className="font-semibold text-white mb-6 text-base">Follow Us</h3>
+              {/* MODIFIED: Social icons updated */}
+              <div className="flex space-x-4">
+                <a href="https://www.youtube.com/channel/UCYjgY2a1e5E2jMJcjyC1iCA/posts?pvf=CAI%253D" className="text-gray-400 hover:text-white transition-colors">
+                  <Youtube size={20} />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://www.instagram.com/ezygro/" className="text-gray-400 hover:text-white transition-colors">
+                  <Instagram size={20} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

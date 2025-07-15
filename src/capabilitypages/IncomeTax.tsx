@@ -36,15 +36,15 @@ const IncomeTax = () => {
               className="w-full h-full bg-transparent"
               style={{
                 clipPath: windowWidth < 768
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+                  ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)'
+                  : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
                   src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534368/2_smojod.jpg"
-                  alt="About Us"
-                  className="w-full h-full object-cover opacity-"
+                  alt="Tax and Audit Services"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -95,22 +95,22 @@ const IncomeTax = () => {
             <p className="text-gray-800 leading-relaxed">
               At EZYGRO, we provide expert Income Tax, GST, and Audit services to help individuals and businesses stay compliant, save money, and focus on growth. As your trusted finance and compliance partner, we serve clients across India with precision, reliability, and professionalism. From individual tax filings to corporate audits and GST compliance, our deep domain knowledge and personalized approach simplify complex processes and empower informed financial decisions. We believe in transparent advice, timely delivery, and building long-term financial health for every client we serve.
             </p>
-            <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
-            </div>
           </div>
         </div>
       </section>
-      {/* Our Services Section (copied from FinancialAndAccounting) */}
+      
       <section className="bg-gray-50 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* --- Income Tax Services Card --- */}
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Income Tax Services</h3>
-              <p className="text-gray-600 mb-8">Stay ahead of deadlines and optimize your tax liability with our expert filing and advisory services.
-                <br></br>We help with:</p>
+              <p className="text-gray-600 mb-4">Stay ahead of deadlines and optimize your tax liability with our expert filing and advisory services.</p>
+              <p className="text-gray-600 mb-3">We help with:</p>
               <ul className="space-y-4">
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">ITR Filing for Individuals, Professionals, & Corporates.</span></li>
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Tax Planning & Advisory.</span></li>
@@ -119,10 +119,12 @@ const IncomeTax = () => {
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Representation before Tax Authorities.</span></li>
               </ul>
             </div>
+
+            {/* --- GST Services Card --- */}
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">GST Services</h3>
-              <p className="text-gray-600 mb-8">From registration to return filing and advisory, we offer full spectrum GST support.
-                <br></br>Our GST offerings include:</p>
+              <p className="text-gray-600 mb-4">From registration to return filing and advisory, we offer full spectrum GST support.</p>
+              <p className="text-gray-600 mb-3">Our GST offerings include:</p>
               <ul className="space-y-4">
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Registration & Migration.</span></li>
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Monthly/Quarterly GST Return Filing (GSTR-1, GSTR-3B, GSTR-9).</span></li>
@@ -131,10 +133,12 @@ const IncomeTax = () => {
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">GST Audit & Departmental Representation.</span></li>
               </ul>
             </div>
+
+            {/* --- Audit & Assurance Card --- */}
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Audit & Assurance</h3>
-              <p className="text-gray-600 mb-8">Our audit approach is risk-based, client-centric, and fully compliant with regulatory standards.
-                <br></br>We conduct:</p>
+              <p className="text-gray-600 mb-4">Our audit approach is risk-based, client-centric, and fully compliant with regulatory standards.</p>
+              <p className="text-gray-600 mb-3">We conduct:</p>
               <ul className="space-y-4">
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Statutory Audits.</span></li>
                 <li className="flex items-start"><span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span><span className="text-gray-800">Tax Audits (u/s 44AB).</span></li>

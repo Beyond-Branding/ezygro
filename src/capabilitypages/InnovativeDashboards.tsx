@@ -42,7 +42,7 @@ const InnovativeDashboards = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534822/1_yr05vn.jpg"
+                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1752587896/dashboard1_qsuyqr.jpg"
                   alt="About Us"
                   className="w-full h-full object-cover opacity-"
                 />
@@ -104,7 +104,7 @@ const InnovativeDashboards = () => {
       <section className="bg-gray-50 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-8 border border-gray-200 rounded-lg h-full">

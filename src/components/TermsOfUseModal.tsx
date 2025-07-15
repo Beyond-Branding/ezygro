@@ -19,7 +19,7 @@ function TermsOfUseModal({ show, onClose }: TermsOfUseModalProps) {
 
   if (!show) return null;
 
-  const terms = `Welcome to Ezygro.com. This website is owned and operated by EZYGRO financial services, Chartered Accountants and having its registered office at 001, 1st Floor, A-Wing, Neelyog Samruddhi, khot Kuwa Road, Dhanjiwadi, Malad (E), Mumbai – 400 097, Maharashtra, India. You must understand and agree to accept and adhere to the following terms of service as stated in this policy hereafter referred to as ‘User Agreement’, along with the terms and conditions as stated in our Privacy Policy, by visiting our website and accessing the information, resources, services, products, and tools we provide.
+  const terms = `Welcome to Ezygro.in. This website is owned and operated by EZYGRO financial services and having its registered office at 12, Ground Floor, Dadi Building, Rani Sati Marg, Kathiyawadi Chowk, near Union Bank, Malad East, Mumbai, Maharashtra 400097, India. You must understand and agree to accept and adhere to the following terms of service as stated in this policy hereafter referred to as ‘User Agreement’, along with the terms and conditions as stated in our Privacy Policy, by visiting our website and accessing the information, resources, services, products, and tools we provide.
 
 a. You may be asked to provide certain information about yourself (such as identification, email, phone number, contact details, etc.) as part of the registration procedure, or as part of your ability to use the resources, in a request to access our resources. You agree that any information you provide will always be accurate, correct, and up to date.
 
@@ -37,12 +37,12 @@ g. We may provide various open communication tools on our website, such as blog 
 1. Is threatening, illicit, harassing, degrading, defamatory intimidating, fraudulent, deceptive, abusive, invasive, racist, or contains any type of suggestive, inappropriate, or explicit language;
 2. Breaches on any trademark, patent, trade secret, copyright, or another restrictive right of any party;
 3. Contains any type of unauthorized or unsolicited advertising;
-4. Impersonates any person or entity, including any www.Ezygro.com employees or representatives.
+4. Impersonates any person or entity, including any www.Ezygro.in employees or representatives.
 We have the right at our sole discretion to remove any content that, we feel in our judgment does not consent with this User Agreement, along with any content that we feel is otherwise offensive, harmful, objectionable, inaccurate, or violates any 3rd party copyrights or trademarks. We are not responsible for any delay or failure in removing such content. In the event that you post content that we choose to remove, you hereby consent to such removal, and consent to waive any claim against us.
 
-h. We do not assume any risk or liability for any content if it is posted by you or any other 3rd party users of our website. However, any content posted by you utilizing any open communication tools on our website, provided that it doesn’t violate or infringe on any 3rd party copyrights or trademarks, becomes the property of www.Ezygro.com, and as such, gives us a perpetual, irrevocable, worldwide, royalty-free, exclusive license to reproduce, modify, adapt, translate, publish, publicly display and/or distribute as we see fit. This only mentions and applies to content posted by means of open communication tools as described, and does not refer to information that is provided as part of the registration procedure, necessary in order to utilize our Resources. All information provided as part of our registration procedure is covered by our Privacy Policy.
+h. We do not assume any risk or liability for any content if it is posted by you or any other 3rd party users of our website. However, any content posted by you utilizing any open communication tools on our website, provided that it doesn’t violate or infringe on any 3rd party copyrights or trademarks, becomes the property of www.Ezygro.in, and as such, gives us a perpetual, irrevocable, worldwide, royalty-free, exclusive license to reproduce, modify, adapt, translate, publish, publicly display and/or distribute as we see fit. This only mentions and applies to content posted by means of open communication tools as described, and does not refer to information that is provided as part of the registration procedure, necessary in order to utilize our Resources. All information provided as part of our registration procedure is covered by our Privacy Policy.
 
-i. You agree to indemnify and hold harmless Ezygro.com a digital property of Dhanashree B Salunkhe and Co, Chartered Accountants and affiliates, and their directors, officers, managers, employees, donors, agents, and licensors, from and against all losses, expenses, damages and costs, including sensible attorneys’ fees, resulting from any violation of this User Agreement or the failure to fulfill any obligations relating to your account acquired by you or any other individual utilizing your account. We reserve the right to take over the exclusive defense of any claim for which we are entitled to indemnification under this User Agreement. In such event, you shall provide us with such participation as is reasonably requested by us.
+i. You agree to indemnify and hold harmless Ezygro.in , Chartered Accountants and affiliates, and their directors, officers, managers, employees, donors, agents, and licensors, from and against all losses, expenses, damages and costs, including sensible attorneys’ fees, resulting from any violation of this User Agreement or the failure to fulfill any obligations relating to your account acquired by you or any other individual utilizing your account. We reserve the right to take over the exclusive defense of any claim for which we are entitled to indemnification under this User Agreement. In such event, you shall provide us with such participation as is reasonably requested by us.
 
 Your privacy is very critical to us, that is the reason why we’ve created a different Privacy Policy in order to explain in detail how we gather, manage, process, secure, and store your private information. Our privacy policy is incorporated under the scope of this User Agreement. To read our privacy policy in its entirety, click here.
 `;
@@ -51,7 +51,7 @@ Your privacy is very critical to us, that is the reason why we’ve created a di
   const privacyUrl = '/privacy-notice';
   const replaced = terms.replace(
     /click here/g,
-    '<a href="' + privacyUrl + '" class="text-red-500 underline hover:text-red-700">click here</a>'
+    '<a href="' + privacyUrl + '" class="text-purple-900 underline hover:text-purple-900">click here</a>'
   );
 
   return (

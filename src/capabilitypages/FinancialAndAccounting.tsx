@@ -13,32 +13,13 @@ interface PricingPlan {
   features: FeatureSet[];
 }
 
+// MODIFIED: Reordered plans and updated the 'entries' text.
 const pricingPlans: PricingPlan[] = [
-  {
-    name: 'Enterprise',
-    price: '₹ 14,999/-',
-    description: 'Everything on Professional Package',
-    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 5 Crore',
-    features: [
-      {
-        category: 'Accounting',
-        items: ['Everything on Professional Package'],
-      },
-      {
-        category: 'GST',
-        items: ['Everything on Professional Package'],
-      },
-      {
-        category: 'Financial Reporting',
-        items: ['Everything on Professional Package', 'Cash Flow Statement (Quarterly)'],
-      },
-    ],
-  },
   {
     name: 'Standard',
     price: '₹ 6,999/-',
     description: 'Ideal For Freelancers, consultants, small businesses, and startups seeking essential accounting and GST',
-    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 1.5 Crore',
+    entries: 'Turnover below 1.5 Crore',
     features: [
       {
         category: 'Accounting',
@@ -58,7 +39,7 @@ const pricingPlans: PricingPlan[] = [
     name: 'Professional',
     price: '₹ 12,499/-',
     description: 'Everything on STANDARD Package',
-    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 3 Crore',
+    entries: 'Turnover below 3 Crore',
     features: [
       {
         category: 'Accounting',
@@ -71,6 +52,26 @@ const pricingPlans: PricingPlan[] = [
       {
         category: 'Financial Reporting',
         items: ['Everything on Standard Package', 'Balance Sheet and Profit and Loss (Monthly)'],
+      },
+    ],
+  },
+  {
+    name: 'Enterprise',
+    price: '₹ 14,999/-',
+    description: 'Everything on Professional Package',
+    entries: 'Turnover below 5 Crore',
+    features: [
+      {
+        category: 'Accounting',
+        items: ['Everything on Professional Package'],
+      },
+      {
+        category: 'GST',
+        items: ['Everything on Professional Package'],
+      },
+      {
+        category: 'Financial Reporting',
+        items: ['Everything on Professional Package', 'Cash Flow Statement (Quarterly)'],
       },
     ],
   },
@@ -87,7 +88,8 @@ const PricingCard = ({ plan }: { plan: PricingPlan }) => {
       <p className="text-center mt-2 text-sm h-12 text-gray-500 group-hover:text-gray-200 transition-colors">
         {plan.description}
       </p>
-      <div className="text-left my-6">
+      {/* MODIFIED: Changed text-left to text-center */}
+      <div className="text-center my-6">
         <span className="text-5xl font-bold text-black group-hover:text-white transition-colors">
           {plan.price}
         </span>
@@ -154,15 +156,15 @@ function FinancialAndAccounting() {
               className="w-full h-full bg-transparent"
               style={{
                 clipPath: windowWidth < 768
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+                  ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)'
+                  : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
                   src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534369/5_tkrtos.jpg"
-                  alt="About Us"
-                  className="w-full h-full object-cover opacity-"
+                  alt="Financial and Accounting Management"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -204,22 +206,23 @@ function FinancialAndAccounting() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold text-black">
-              Smarter Finance for <br></br>Smarter Business
+              Smarter Finance for <br />Smarter Business
             </h2>
           </div>
           <div>
             <p className="text-gray-800 leading-relaxed">
               EZYGRO provides end-to-end Financial and Accounting Management Services tailored to meet the dynamic needs of modern businesses. As regulations evolve, technology advances, and talent expectations shift, our expert led solutions ensure your financial operations remain compliant, efficient, and future ready. From streamlining processes and ensuring accurate reporting to optimizing financial strategies, we handle the critical functions so you can focus on innovation, scaling, and driving long-term success. With EZYGRO, finance becomes a catalyst for growth, not a burden.
             </p>
-            <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
-            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-white py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-gray-900 pl-4">Price List</h2>
+          {/* MODIFIED: Heading updated for better visual impact */}
+          <h2 className="text-6xl font-bold text-purple-900 text-left">
+            Price List
+          </h2>
         </div>
         <div className="mt-16 lg:mt-24 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center items-stretch">

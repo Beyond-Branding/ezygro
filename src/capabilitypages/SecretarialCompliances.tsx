@@ -216,7 +216,7 @@ const SecretarialCompliances = () => {
       <section className="bg-gray-50 py-16 sm:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex justify-between items-center">
-            <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
             <div className="flex gap-4">
               <button
                 onClick={()=>{handlePrev();pauseAutoScroll()}}

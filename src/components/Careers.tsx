@@ -87,7 +87,7 @@ const ContactForm = () => {
                         <h2 className="text-4xl font-bold tracking-tight">Get In Touch</h2>
                         <p className="mt-4 text-lg text-gray-400">
                             Need more information? <br />
-                            We will take approximately 3-5 working days to respond to your enquiry.
+                            We will respond to your enquiry.
                         </p>
                     </div>
                     <div className="lg:col-span-2">
@@ -101,8 +101,7 @@ const ContactForm = () => {
                                     <option className="bg-gray-800">Innovative Dashboards</option>
                                     <option className="bg-gray-800">Loans & Insurance</option>
                                     <option className="bg-gray-800">Secretarial Compliances</option>
-                                    
-
+                                    <option className="bg-gray-800">Others</option>
                                 </select>
                             </FormInput>
                             <div></div> {/* Spacer */}
@@ -110,7 +109,7 @@ const ContactForm = () => {
                             <FormInput id="lastName" label="Last Name" required />
                             <FormInput id="email" label="Email Address" type="email" required />
                             <FormInput id="organisation" label="Organisation" />
-                            <FormInput id="jobTitle" label="Job Title" />
+                            
                             <FormInput id="phoneNumber" label="Phone Number" />
                              <FormInput id="message" label="Message" type="textarea" required>
                                 <textarea id="message" name="message" rows={4} className="block w-full bg-transparent border border-gray-600 focus:ring-0 focus:border-white p-2 text-white"></textarea>

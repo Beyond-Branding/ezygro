@@ -113,7 +113,7 @@ const CapabilitiesSection: React.FC = () => {
               >
                 <div className="relative bg-white hover:bg-[#4B1D92] p-4 transition-all duration-500 min-h-[470px] h-full flex flex-col justify-between shadow-md">
                   <div className="flex justify-center pt-4">
-                    <div className="w-52 h-52 rounded-full overflow-hidden mx-auto mb-6">
+                    <div className="w-60 h-60 rounded-full overflow-hidden mx-auto mb-6">
                       <img
                         src={capability.image}
                         alt={typeof capability.title === 'string' ? capability.title : ''}
@@ -128,7 +128,7 @@ const CapabilitiesSection: React.FC = () => {
                   </div>
 
                   <div className="flex-1 flex flex-col justify-end">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
+                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
                       {capability.title}
                     </h3>
 

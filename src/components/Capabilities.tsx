@@ -224,7 +224,7 @@ const Capabilities = () => {
               >
                 <div className="relative bg-white hover:bg-purple-900 p-8 transition-all duration-500 min-h-[470px] h-full flex flex-col justify-between shadow-md">
                   <div className="flex justify-center mb-6 pt-8">
-                    <div className="w-52 h-52 rounded-full overflow-hidden">
+                    <div className="w-60 h-60 rounded-full overflow-hidden">
                       <img
                         src={cap.image}
                         alt={typeof cap.title === 'string' ? cap.title : undefined}
@@ -233,7 +233,7 @@ const Capabilities = () => {
                     </div>
                   </div>
                   <div className="flex-1 flex flex-col justify-end">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
+                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
                       {cap.title}
                     </h3>
                     <div className="flex justify-end">
