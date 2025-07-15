@@ -26,7 +26,7 @@ const Header: React.FC = () => {
     { label: 'HOME', path: '/' },
     { label: 'ABOUT US', path: '/about' },
     {
-      label: 'CAPABILITIES',
+      label: 'SERVICES',
       path: '/capabilities', // Main link for the capabilities overview page
       subItems: capabilitiesItems,
     },

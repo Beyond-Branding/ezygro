@@ -263,6 +263,21 @@ const SecretarialCompliances = () => {
           </div>
         </div>
       </section>
+
+      <section className="bg-white pb-16">
+        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <p className="text-lg text-gray-800">
+                For any queries, please contact us at:{" "}
+                <a 
+                    href="tel:+91 9372963906" 
+                    className="text-purple-900 font-bold hover:underline"
+                >
+                    +91 9372963906
+                </a>
+            </p>
+        </div>
+      </section>
+      
     </>
   );
 };

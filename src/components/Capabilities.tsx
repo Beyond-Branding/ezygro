@@ -180,7 +180,7 @@ const Capabilities = () => {
                 lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '56px' : '90px' 
               }}
             >
-              Our <span style={{ color: '#4B1D92' }}>Capabilities</span>
+              <span style={{ color: '#4B1D92' }}>Services</span>
             </h1>
             
             <div
