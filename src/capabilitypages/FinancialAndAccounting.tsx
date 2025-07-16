@@ -15,42 +15,26 @@ interface PricingPlan {
 
 const pricingPlans: PricingPlan[] = [
   {
-    name: 'Enterprise',
-    price: '₹ 14,999/-',
-    description: 'Everything on Professional Package',
-    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 5 Crore',
-    features: [
-      {
-        category: 'Accounting',
-        items: ['Everything on Professional Package'],
-      },
-      {
-        category: 'GST',
-        items: ['Everything on Professional Package'],
-      },
-      {
-        category: 'Financial Reporting',
-        items: ['Everything on Professional Package', 'Cash Flow Statement (Quarterly)'],
-      },
-    ],
-  },
-  {
     name: 'Standard',
     price: '₹ 6,999/-',
     description: 'Ideal For Freelancers, consultants, small businesses, and startups seeking essential accounting and GST',
-    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 1.5 Crore',
+    entries: 'Turnover below 1.5 Crore',
     features: [
       {
-        category: 'Accounting',
+        category: 'Includes Accounting',
         items: ['Monthly recording of income & expenses', 'Bank and credit card reconciliation', 'Maintenance of general ledger'],
       },
       {
-        category: 'GST',
+        category: 'Includes GST',
         items: ['Monthly GST return filing (GSTR-1 & GSTR-3B)', 'Reconciliation of GSTR-2B with purchase register', 'Filing reminders and compliance alerts'],
       },
       {
-        category: 'Financial Reporting',
+        category: 'Includes Financial Reporting',
         items: ['Outstanding Receivable/Payable', 'Balance Sheet and Profit and Loss (Quarterly)'],
+      },
+      {
+        category: 'Add on services :',
+        items: ['With E-Way Bill: ₹3,000/month', 'With TDS Filing: ₹2,000/month'],
       },
     ],
   },
@@ -58,19 +42,39 @@ const pricingPlans: PricingPlan[] = [
     name: 'Professional',
     price: '₹ 12,499/-',
     description: 'Everything on STANDARD Package',
-    entries: '<strong>No. of Entries Per Month</strong><br/>Turnover below 3 Crore',
+    entries: 'Turnover below 3 Crore',
     features: [
       {
-        category: 'Accounting',
+        category: 'Includes Accounting',
         items: ['Everything on Standard Package'],
       },
       {
-        category: 'GST',
+        category: 'Includes GST',
         items: ['Everything on Standard Package'],
       },
       {
-        category: 'Financial Reporting',
+        category: 'Includes Financial Reporting',
         items: ['Everything on Standard Package', 'Balance Sheet and Profit and Loss (Monthly)'],
+      },
+    ],
+  },
+  {
+    name: 'Enterprise',
+    price: '₹ 14,999/-',
+    description: 'Everything on Professional Package',
+    entries: 'Turnover below 5 Crore',
+    features: [
+      {
+        category: 'Includes Accounting',
+        items: ['Everything on Professional Package'],
+      },
+      {
+        category: 'Includes GST',
+        items: ['Everything on Professional Package'],
+      },
+      {
+        category: 'Includes Financial Reporting',
+        items: ['Everything on Professional Package', 'Cash Flow Statement (Quarterly)'],
       },
     ],
   },
@@ -87,7 +91,7 @@ const PricingCard = ({ plan }: { plan: PricingPlan }) => {
       <p className="text-center mt-2 text-sm h-12 text-gray-500 group-hover:text-gray-200 transition-colors">
         {plan.description}
       </p>
-      <div className="text-left my-6">
+      <div className="text-center my-6">
         <span className="text-5xl font-bold text-black group-hover:text-white transition-colors">
           {plan.price}
         </span>
@@ -99,7 +103,7 @@ const PricingCard = ({ plan }: { plan: PricingPlan }) => {
         {plan.features.map((featureSet) => (
           <div key={featureSet.category}>
             <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-gray-100 transition-colors">
-              Includes {featureSet.category}
+              {featureSet.category}
             </h4>
             <ul className="space-y-2">
               {featureSet.items.map((item) => (
@@ -154,15 +158,15 @@ function FinancialAndAccounting() {
               className="w-full h-full bg-transparent"
               style={{
                 clipPath: windowWidth < 768
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+                  ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)'
+                  : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
                   src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534369/5_tkrtos.jpg"
-                  alt="About Us"
-                  className="w-full h-full object-cover opacity-"
+                  alt="Financial and Accounting Management"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -204,22 +208,22 @@ function FinancialAndAccounting() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold text-black">
-              Smarter Finance for <br></br>Smarter Business
+              Smarter Finance for <br />Smarter Business
             </h2>
           </div>
           <div>
             <p className="text-gray-800 leading-relaxed">
               EZYGRO provides end-to-end Financial and Accounting Management Services tailored to meet the dynamic needs of modern businesses. As regulations evolve, technology advances, and talent expectations shift, our expert led solutions ensure your financial operations remain compliant, efficient, and future ready. From streamlining processes and ensuring accurate reporting to optimizing financial strategies, we handle the critical functions so you can focus on innovation, scaling, and driving long-term success. With EZYGRO, finance becomes a catalyst for growth, not a burden.
             </p>
-            <div className="mt-4 font-semibold text-black flex items-center cursor-pointer">
-            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-white py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-gray-900 pl-4">Price List</h2>
+          <h2 className="text-6xl font-bold text-purple-900 text-left">
+            Price List
+          </h2>
         </div>
         <div className="mt-16 lg:mt-24 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center items-stretch">
@@ -232,6 +236,50 @@ function FinancialAndAccounting() {
         </div>
       </section>
       
+      {/* MODIFIED: Payment Options section with hover effects */}
+      <section className="bg-white pt-12 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+            Payment Options
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Monthly Plan Card */}
+            <div className="group cursor-pointer bg-gray-50 p-8 rounded-lg border border-gray-200 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:bg-[#4B1D92]">
+              <h3 className="text-2xl font-bold text-purple-900 mb-4 transition-colors group-hover:text-white">
+                Monthly Plan
+              </h3>
+              <p className="text-gray-800 leading-relaxed transition-colors group-hover:text-gray-200">
+                Perfect for businesses that prefer flexibility. Pay only for the months you need, no long-term commitment.
+              </p>
+            </div>
+            
+            {/* Yearly Plan Card */}
+            <div className="group cursor-pointer bg-gray-50 p-8 rounded-lg border border-gray-200 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:bg-[#4B1D92]">
+              <h3 className="text-2xl font-bold text-purple-900 mb-4 transition-colors group-hover:text-white">
+                Yearly Plan
+              </h3>
+              <p className="text-gray-800 leading-relaxed transition-colors group-hover:text-gray-200">
+                Get the same great features at a better price. Pay for the full year upfront and receive an instant 5% discount saving you money while staying compliant all year long.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact section with clickable phone number */}
+      <section className="bg-white pb-24">
+        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <p className="text-lg text-gray-800">
+                For any queries, please contact us at:{" "}
+                <a 
+                    href="tel:+919372963906" 
+                    className="text-purple-900 font-bold hover:underline"
+                >
+                    +91 9372963906
+                </a>
+            </p>
+        </div>
+      </section>
     </>
   );
 }

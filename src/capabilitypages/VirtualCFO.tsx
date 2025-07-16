@@ -234,7 +234,7 @@ const VirtualCFO = () => {
       <section className="bg-gray-50 pt-8 pb-24 sm:pt-12 sm:pb-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+                <h2 className="text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
                 <div className="flex gap-4 mt-4 sm:mt-0">
                   <button
                     onClick={() => { handlePrev(); pauseAutoScroll(); }}
@@ -284,6 +284,20 @@ const VirtualCFO = () => {
                 </div>
               </div>            </div>
           </section>
+
+          <section className="bg-white pb-16">
+        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <p className="text-lg text-gray-800">
+                For any queries, please contact us at:{" "}
+                <a 
+                    href="tel:+91 9372963906" 
+                    className="text-purple-900 font-bold hover:underline"
+                >
+                    +91 9372963906
+                </a>
+            </p>
+        </div>
+      </section>
       
     </>
   );

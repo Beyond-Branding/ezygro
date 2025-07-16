@@ -38,7 +38,7 @@ const VideoCarousel = () => {
 
   // Auto-advance carousel with progress tracking
   useEffect(() => {
-    const videoDuration = 8000;
+    const videoDuration = 3000;
     const progressInterval = 50;
     
     const progressTimer = setInterval(() => {
@@ -78,89 +78,58 @@ const VideoCarousel = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Reset animations first
             setScaleAtSpeedVisible(false);
             setPromiseTextVisible(false);
-            
-            // Trigger animations with delays
-            setTimeout(() => {
-              setScaleAtSpeedVisible(true);
-            }, 300);
-
-            setTimeout(() => {
-              setPromiseTextVisible(true);
-            }, 600);
+            setTimeout(() => setScaleAtSpeedVisible(true), 300);
+            setTimeout(() => setPromiseTextVisible(true), 600);
           } else {
-            // Reset animations when not in view
             setScaleAtSpeedVisible(false);
             setPromiseTextVisible(false);
           }
         });
       },
-      {
-        threshold: 0.3, // Trigger when 30% of the section is visible
-        rootMargin: '-10% 0px -10% 0px' // Add some margin to fine-tune trigger point
-      }
+      { threshold: 0.3, rootMargin: '-10% 0px -10% 0px' }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
-  // Initial text animations on component mount (removed old useEffect)
+  // Initial text animations
   useEffect(() => {
-    // Initial animation trigger for first load
     const initialTimer = setTimeout(() => {
       if (sectionRef.current) {
         const rect = sectionRef.current.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-        
-        if (isVisible) {
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
           setScaleAtSpeedVisible(true);
-          setTimeout(() => {
-            setPromiseTextVisible(true);
-          }, 400);
+          setTimeout(() => setPromiseTextVisible(true), 400);
         }
       }
     }, 300);
-
     return () => clearTimeout(initialTimer);
   }, []);
 
   const handleDotClick = (index: number) => {
     setCurrentVideo(index);
     setProgress(0);
-    
-    // Brief animation reset and restart for smooth transition
     setScaleAtSpeedVisible(false);
     setPromiseTextVisible(false);
-
-    setTimeout(() => {
-      setScaleAtSpeedVisible(true);
-    }, 150);
-    
-    setTimeout(() => {
-      setPromiseTextVisible(true);
-    }, 350);
+    setTimeout(() => setScaleAtSpeedVisible(true), 150);
+    setTimeout(() => setPromiseTextVisible(true), 350);
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden -mt-16">
       {/* Background with diagonal section for video */}
       <div className="absolute inset-0">
         <div className="absolute right-0 top-0 w-full h-full">
           <div
             className="w-full h-full bg-transparent"
             style={{
-              clipPath: windowWidth < 768 
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
+              clipPath: windowWidth < 768
+                ? 'polygon(-375% 75%, 100% 35%, 100% 100%, 0% 100%)'
                 : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
             }}
           >
@@ -176,22 +145,21 @@ const VideoCarousel = () => {
                 <source src={videos[currentVideo].videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              {/* Overlay removed for clear video */}
             </div>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
-        {/* Left content: Scale at Speed */}
-        <div className="absolute top-4 sm:top-8 lg:top-16 left-8 sm:left-12 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
+      <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-16 sm:pt-24 lg:pt-28 pb-8 sm:pb-16">
+        {/* MODIFIED: Changed top and left classes for better mobile layout */}
+        <div className="absolute top-15 left-2 sm:top-20 sm:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
           <div className="overflow-hidden pb-2">
             <h1
               className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out ${
                 scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
-              style={{ 
+              style={{
                 fontSize: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '38px' : '54px',
                 lineHeight: windowWidth < 640 ? '32px' : windowWidth < 1024 ? '42px' : '52px',
                 transform: scaleAtSpeedVisible ? 'translateY(0px)' : 'translateY(32px)'
@@ -211,11 +179,11 @@ const VideoCarousel = () => {
             }}
           >
             <p className="text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
-                        style={{ 
-                          fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px', 
-                          lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px'
-                        }}
-                        >
+                       style={{
+                         fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px',
+                         lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px'
+                       }}
+                      >
               Our promise to help enterprises across industries transform at speed, agility, resilience, and efficiency to their businesses.
             </p>
           </div>
@@ -234,9 +202,8 @@ const VideoCarousel = () => {
         </div>
       </div>
 
-      {/* Carousel Navigation Dots with Progress Bar */}
+      {/* Carousel Navigation Dots */}
       <div className="absolute bottom-2 sm:bottom-4 lg:bottom-8 left-2 sm:left-4 lg:left-8 z-20 w-auto max-w-xs">
-        {/* Navigation Dots */}
         <div className="flex space-x-1 sm:space-x-2 lg:space-x-3 mb-2">
           {videos.map((_, index) => (
             <button
@@ -250,12 +217,7 @@ const VideoCarousel = () => {
             />
           ))}
         </div>
-        
-       
-          <div
-          />
-        </div>
-
+      </div>
     </section>
   );
 };

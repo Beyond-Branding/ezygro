@@ -216,7 +216,7 @@ const SecretarialCompliances = () => {
       <section className="bg-gray-50 py-16 sm:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex justify-between items-center">
-            <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
             <div className="flex gap-4">
               <button
                 onClick={()=>{handlePrev();pauseAutoScroll()}}
@@ -263,6 +263,21 @@ const SecretarialCompliances = () => {
           </div>
         </div>
       </section>
+
+      <section className="bg-white pb-16">
+        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <p className="text-lg text-gray-800">
+                For any queries, please contact us at:{" "}
+                <a 
+                    href="tel:+91 9372963906" 
+                    className="text-purple-900 font-bold hover:underline"
+                >
+                    +91 9372963906
+                </a>
+            </p>
+        </div>
+      </section>
+      
     </>
   );
 };

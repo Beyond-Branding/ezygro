@@ -105,7 +105,7 @@ const LoansAndInsurance = () => {
       <section className="bg-gray-50 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-4xl font-bold text-gray-900">Our Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1: Loans */}
@@ -159,6 +159,20 @@ const LoansAndInsurance = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-16">
+        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <p className="text-lg text-gray-800">
+                For any queries, please contact us at:{" "}
+                <a 
+                    href="tel:+91 9372963906" 
+                    className="text-purple-900 font-bold hover:underline"
+                >
+                    +91 9372963906
+                </a>
+            </p>
         </div>
       </section>
     </>

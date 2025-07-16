@@ -2,7 +2,6 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 
 const Industries = () => {
   const industries = [
-    // Your industries array remains the same...
     {
       title: "Pharma",
       link: "#",
@@ -195,12 +194,14 @@ const Industries = () => {
                   style={{ width: '340px' }}
                 >
                   <div className="absolute inset-0">
+                    {/* ## CHANGE 1: Removed grayscale classes ## */}
                     <img
                       src={industry.imageUrl}
                       alt={`${industry.title} Visual`}
-                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-in-out"
                     />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+                    {/* ## CHANGE 2: Adjusted overlay ## */}
+                    <div className="absolute inset-0 bg-black/20 transition-all duration-500"></div>
                   </div>
                   <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
                     <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight text-white mb-1 sm:mb-2">

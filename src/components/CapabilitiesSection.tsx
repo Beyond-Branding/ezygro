@@ -90,7 +90,7 @@ const CapabilitiesSection: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-12 gap-4 sm:gap-6 lg:gap-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 lg:w-1/3">
-              Capabilities
+              Services
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-gray-700 lg:w-2/3 lg:text-right leading-relaxed text-left lg:text-justify lg:leading-7" style={{ maxWidth: '700px', marginLeft: 'auto', marginRight: '0' }}>
               We don't believe in one-size-fits-all. Your business is unique and your legal, tax, audit, and compliance solutions should be too.
@@ -113,7 +113,7 @@ const CapabilitiesSection: React.FC = () => {
               >
                 <div className="relative bg-white hover:bg-[#4B1D92] p-4 transition-all duration-500 min-h-[470px] h-full flex flex-col justify-between shadow-md">
                   <div className="flex justify-center pt-4">
-                    <div className="w-52 h-52 rounded-full overflow-hidden mx-auto mb-6">
+                    <div className="w-60 h-60 rounded-full overflow-hidden mx-auto mb-6">
                       <img
                         src={capability.image}
                         alt={typeof capability.title === 'string' ? capability.title : ''}
@@ -128,7 +128,7 @@ const CapabilitiesSection: React.FC = () => {
                   </div>
 
                   <div className="flex-1 flex flex-col justify-end">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
+                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
                       {capability.title}
                     </h3>
 
