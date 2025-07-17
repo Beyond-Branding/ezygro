@@ -1,8 +1,8 @@
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
 } from "react-router-dom";
 import CookieConsentBanner from "./components/CookieConsentBanner";
 import Header from "./components/Header";
@@ -32,75 +32,75 @@ import InnovativeDashboards from "./capabilitypages/InnovativeDashboards";
 import LoansAndInsurance from "./capabilitypages/LoansAndInsurance";
 import SecretarialCompliances from "./capabilitypages/SecretarialCompliances";
 import "leaflet/dist/leaflet.css";
-import ComingSoonPage from "./components/ComingSoonPage";
-import { useState } from "react";
+// import ComingSoonPage from "./components/ComingSoonPage";
+// import { useState } from "react";
 
 const HomePage = () => (
-  <>
-    <VideoCarousel />
-    <CapabilitiesSection />
-    <Industries />
-    <TechMahindraSection />
-    {/* <JoyMattersSection /> */}
-    {/* <IndustriesSection /> */}
-    {/* <SustainabilitySection /> */}
-    <RiseSection />
-    {/* <ExploreMoreSection /> */}
-  </>
+  <>
+    <VideoCarousel />
+    <CapabilitiesSection />
+    <Industries />
+    <TechMahindraSection />
+    {/* <JoyMattersSection /> */}
+    {/* <IndustriesSection /> */}
+    {/* <SustainabilitySection /> */}
+    <RiseSection />
+    {/* <ExploreMoreSection /> */}
+  </>
 );
 
 const AppContent = () => {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
-  const [isLaunched, setIsLaunched] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  // const [isLaunched, setIsLaunched] = useState(false);
 
-  if (!isLaunched)
-    return <ComingSoonPage onLaunch={() => setIsLaunched(true)} />;
-  else
-    return (
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/capabilities" element={<Capabilities />} />
-          {/* <Route path="/pricing" element={<Pricing />} /> */}
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/contact" element={<Contact />} />
+  // if (!isLaunched)
+  //   return <ComingSoonPage onLaunch={() => setIsLaunched(true)} />;
+  // else
+    return (
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/capabilities" element={<Capabilities />} />
+          {/* <Route path="/pricing" element={<Pricing />} /> */}
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
 
-          <Route
-            path="/financial-accounting"
-            element={<FinancialAndAccounting />}
-          />
-          <Route path="/income-tax" element={<IncomeTax />} />
-          <Route path="/virtual-cfo" element={<VirtualCFO />} />
-          <Route
-            path="/innovative-dashboards"
-            element={<InnovativeDashboards />}
-          />
-          <Route path="/loans-insurance" element={<LoansAndInsurance />} />
-          <Route
-            path="/secretarial-compliances"
-            element={<SecretarialCompliances />}
-          />
-          {/* Privacy Notice Route */}
-          <Route path="/privacy-notice" element={<PrivacyNotice />} />
-          <Route path="/terms-of-use" element={<TermsOfUsePage />} />
-        </Routes>
-        <Footer showCareersContact={isHomePage} />
-        {/* <ScrollToTopButton /> */}
-        <WhatsAppFloater phoneNumber="919372963906" />
-        <CookieConsentBanner />
-      </div>
-    );
+          <Route
+            path="/financial-accounting"
+            element={<FinancialAndAccounting />}
+          />
+          <Route path="/income-tax" element={<IncomeTax />} />
+          <Route path="/virtual-cfo" element={<VirtualCFO />} />
+          <Route
+            path="/innovative-dashboards"
+            element={<InnovativeDashboards />}
+          />
+          <Route path="/loans-insurance" element={<LoansAndInsurance />} />
+          <Route
+            path="/secretarial-compliances"
+            element={<SecretarialCompliances />}
+          />
+          {/* Privacy Notice Route */}
+          <Route path="/privacy-notice" element={<PrivacyNotice />} />
+          <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+        </Routes>
+        <Footer showCareersContact={isHomePage} />
+        {/* <ScrollToTopButton /> */}
+        <WhatsAppFloater phoneNumber="919372963906" />
+        <CookieConsentBanner />
+      </div>
+    );
 };
 
 function App() {
-  return (
-    <Router>
-      <AppContent />
-    </Router>
-  );
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
 }
 
 export default App;

@@ -101,14 +101,15 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
               <h3 className="font-semibold text-white mb-6 text-base">Follow Us</h3>
               {/* MODIFIED: Social icons updated */}
               <div className="flex space-x-4">
-                <a href="https://www.youtube.com/channel/UCYjgY2a1e5E2jMJcjyC1iCA/posts?pvf=CAI%253D" className="text-gray-400 hover:text-white transition-colors">
-                  <Youtube size={20} />
-                </a>
+                
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Linkedin size={20} />
                 </a>
                 <a href="https://www.instagram.com/ezygro/" className="text-gray-400 hover:text-white transition-colors">
                   <Instagram size={20} />
+                </a>
+                <a href="https://www.youtube.com/channel/UCYjgY2a1e5E2jMJcjyC1iCA/posts?pvf=CAI%253D" className="text-gray-400 hover:text-white transition-colors">
+                  <Youtube size={20} />
                 </a>
               </div>
             </div>
