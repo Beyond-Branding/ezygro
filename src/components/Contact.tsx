@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-
-// --- IMPORTS AND FIX FOR DEFAULT LEAFLET ICONS ---
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import 'leaflet/dist/leaflet.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-// This boilerplate code corrects the default Leaflet marker icon path
 const DefaultIcon = L.icon({
     iconUrl: icon,
     shadowUrl: iconShadow,
@@ -15,7 +13,6 @@ const DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-// --- Icon Components (EmailIcon, MapPin, PhoneIcon) ---
 function EmailIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-purple-900">
@@ -32,18 +29,50 @@ function MapPin() {
     </svg>
   );
 }
+
 function PhoneIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-6 text-purple-900">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.16 9.81 19.86 19.86 0 0 1 .11 1.64 2 2 0 0 1 2.11-.36h3a2 2 0 0 1 2 1.72c.13 1.13.37 2.24.72 3.32a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c1.08.35 2.19.59 3.32.72a2 2 0 0 1 1.72 2z" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-6 text-purple-900">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   );
 }
 
-// --- ContactForm Component (Unchanged) ---
 const ContactForm = () => {
-    const FormInput = ({ id, label, type = "text", required = false, children }: { id: string, label: string, type?: string, required?: boolean, children?: React.ReactNode }) => (
-        <div className={type === 'textarea' ? 'md:col-span-2' : ''}>
+    const form = useRef<HTMLFormElement>(null);
+    const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+    const [statusMessage, setStatusMessage] = useState('');
+
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!form.current) return;
+
+        setSubmissionStatus('sending');
+        setStatusMessage('Sending...');
+
+        const serviceID = 'YOUR_SERVICE_ID';
+        const templateID = 'YOUR_TEMPLATE_ID';
+        const userID = 'YOUR_USER_ID'; 
+
+        emailjs.sendForm(serviceID, templateID, form.current, userID)
+            
+            .then((result: EmailJSResponseStatus) => {
+                console.log(result.text);
+                setSubmissionStatus('success');
+                setStatusMessage('Your message has been sent successfully!');
+                form.current?.reset();
+                setTimeout(() => setSubmissionStatus('idle'), 5000); 
+            }, (error: EmailJSResponseStatus) => {
+                console.log(error.text);
+                setSubmissionStatus('error');
+                setStatusMessage('Failed to send the message. Please try again.');
+                setTimeout(() => setSubmissionStatus('idle'), 5000); 
+            });
+    };
+    
+    const FormInput = ({ id, label, type = "text", required = false, children, className, name }: { id: string, label: string, type?: string, required?: boolean, children?: React.ReactNode, className?: string, name: string }) => (
+        <div className={`${type === 'textarea' ? 'md:col-span-2' : ''} ${className || ''}`}>
             <label htmlFor={id} className="block text-sm font-medium text-gray-400">
                 {required && <span className="text-red-500 mr-1">*</span>}{label}
             </label>
@@ -53,8 +82,9 @@ const ContactForm = () => {
                 ) : (
                     <input
                         type={type}
-                        name={id}
+                        name={name}
                         id={id}
+                        required={required}
                         className="block w-full bg-transparent border-0 border-b border-gray-600 focus:ring-0 focus:border-white py-2 text-white"
                     />
                 )}
@@ -74,9 +104,9 @@ const ContactForm = () => {
                         </p>
                     </div>
                     <div className="lg:col-span-2">
-                        <form action="#" method="POST" className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-left">
-                            <FormInput id="enquiryType" label="Type of enquiry" required>
-                                <select id="enquiryType" name="enquiryType" className="block w-full bg-transparent border-0 border-b border-gray-600 focus:ring-0 focus:border-white py-2 text-white">
+                        <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-left">
+                            <FormInput id="enquiryType" name="enquiry_type" label="Type of Job" required>
+                                <select id="enquiryType" name="enquiry_type" className="block w-full bg-transparent border-0 border-b border-gray-600 focus:ring-0 focus:border-white py-2 text-white">
                                     <option className="bg-gray-800">Select an enquiry type</option>
                                     <option className="bg-gray-800">Financial & Accounting</option>
                                     <option className="bg-gray-800">Income Tax</option>
@@ -88,30 +118,43 @@ const ContactForm = () => {
                                 </select>
                             </FormInput>
                             <div></div>
-                            <FormInput id="firstName" label="First Name" required />
-                            <FormInput id="lastName" label="Last Name" required />
-                            <FormInput id="email" label="Email Address" type="email" required />
-                            <FormInput id="organisation" label="Organisation" />
+                            <FormInput id="firstName" name="first_name" label="First Name" required />
+                            <FormInput id="lastName" name="last_name" label="Last Name" required />
+                            <FormInput id="email" name="email" label="Email Address" type="email" required />
+                            <FormInput id="phoneNumber" name="phone_number" label="Phone Number" required />
                             
-                            <FormInput id="phoneNumber" label="Phone Number" />
-                             <FormInput id="message" label="Message" type="textarea" required>
-                                <textarea id="message" name="message" rows={4} className="block w-full bg-transparent border border-gray-600 focus:ring-0 focus:border-white p-2 text-white rounded-md"></textarea>
+                            <FormInput id="resume" name="resume" label="Upload Resume" required className="md:col-span-2">
+                                <input
+                                    id="resume"
+                                    name="resume"
+                                    type="file"
+                                    required
+                                    className="block w-full text-sm text-gray-400 cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-white file:text-purple-900 hover:file:bg-gray-200 transition-colors"
+                                />
+                            </FormInput>
+
+                            <FormInput id="message" name="message" label="Message" type="textarea" required>
+                                <textarea id="message" name="message" rows={4} required className="block w-full bg-transparent border border-gray-600 focus:ring-0 focus:border-white p-2 text-white rounded-md"></textarea>
                             </FormInput>
                             <div className="md:col-span-2 space-y-5">
                                 <div className="relative flex items-start">
                                     <div className="flex h-6 items-center">
-                                        <input id="privacy" name="privacy" type="checkbox" className="h-4 w-4 rounded border-gray-500 bg-gray-800 text-indigo-600 focus:ring-indigo-600" />
+                                        <input id="privacy" name="privacy" type="checkbox" required className="h-4 w-4 rounded border-gray-500 bg-gray-800 text-indigo-600 focus:ring-indigo-600" />
                                     </div>
                                     <div className="ml-3 text-sm leading-6">
                                         <p className="text-gray-400">By clicking on the submit button, you agree with the <a href="#" className="font-medium text-white hover:underline">Privacy Policy</a>.</p>
                                     </div>
                                 </div>
-                            
                             </div>
-                            <div>
-                                <button type="submit" className="inline-block rounded-md border border-white px-8 py-3 text-center font-medium text-white hover:bg-white hover:text-gray-900 transition-colors">
-                                    Submit
+                            <div className="md:col-span-2 flex items-center gap-4">
+                                <button type="submit" disabled={submissionStatus === 'sending'} className="inline-block rounded-md border border-white px-8 py-3 text-center font-medium text-white hover:bg-white hover:text-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                                    {submissionStatus === 'sending' ? 'Sending...' : 'Submit'}
                                 </button>
+                                {submissionStatus !== 'idle' && (
+                                    <p className={`text-sm ${submissionStatus === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                                        {statusMessage}
+                                    </p>
+                                )}
                             </div>
                         </form>
                     </div>
@@ -121,14 +164,11 @@ const ContactForm = () => {
     );
 };
 
-
-// --- Main App Component ---
 export default function App() {
   const position: [number, number] = [19.1887, 72.8582];
   const fullAddress = "12, Ground Floor, Dadi Building, Rani Sati Marg, Malad East, Mumbai, Maharashtra 400097";
   const simpleAddress = "12, Ground Floor, Dadi Building, Rani Sati Marg, Kathiyawadi Chowk, near Union Bank, Malad East, Mumbai, Maharashtra 400097";
 
-  // --- UPDATED: Icon anchor and popup anchor to prevent overlap ---
   const customIcon = L.divIcon({
     html: `
       <div style="display: flex; flex-direction: column; align-items: center; filter: drop-shadow(0 3px 3px rgba(0,0,0,0.4));">
@@ -140,9 +180,7 @@ export default function App() {
     `,
     className: '',
     iconSize: [80, 50],
-    // The point of the pin emoji is the anchor
     iconAnchor: [40, 50],
-    // Positions the popup nicely above the icon
     popupAnchor: [0, -50] 
   });
 
@@ -163,7 +201,6 @@ export default function App() {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
             
-            {/* --- LEFT COLUMN: Map --- */}
             <div className="w-full h-[50vh] md:h-full min-h-[500px] bg-gray-200 rounded-lg overflow-hidden shadow-lg">
                 <MapContainer center={position} zoom={17} scrollWheelZoom={false} className="w-full h-full relative z-0">
                     <TileLayer
@@ -176,7 +213,7 @@ export default function App() {
                         <h3 className="font-bold text-base text-gray-800">Ezygro</h3>
                         <p className="text-sm text-gray-600">{fullAddress}</p>
                         <a 
-                            href={`http://googleusercontent.com/maps.google.com/7{encodeURIComponent(fullAddress)}`}
+                            href={`https://maps.google.com/?q=${encodeURIComponent(fullAddress)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-600 font-semibold hover:underline mt-1 inline-block text-sm"
@@ -189,7 +226,6 @@ export default function App() {
                 </MapContainer>
             </div>
 
-            {/* --- RIGHT COLUMN: Contact Details with Clickable Links --- */}
             <div className="flex flex-col space-y-8 text-left">
                 <div className="flex items-start space-x-4">
                     <div className="shrink-0 pt-1">
@@ -198,15 +234,15 @@ export default function App() {
                     <div>
                          <p className="text-lg font-semibold text-gray-800">Address:</p>
                          <p className="text-base text-gray-600 break-words">
-                            {simpleAddress}
+                           {simpleAddress}
                          </p>
                     </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
                      <div className="shrink-0">
-                        <PhoneIcon />
-                    </div>
+                         <PhoneIcon />
+                     </div>
                     <div>
                         <p className="text-lg font-semibold text-gray-800">Phone:</p>
                         <a href="tel:+919372963906" className="text-base text-gray-600 hover:text-indigo-600 break-all">
@@ -230,7 +266,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* --- Contact Form Section (Unchanged) --- */}
       <div className="w-full">
         <ContactForm />
       </div>
