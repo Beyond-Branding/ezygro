@@ -261,7 +261,7 @@ const Careers = () => {
 
   return (
     <>
-      <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden">
+      <section ref={sectionRef} className="relative min-h-screen bg-white overflow-hidden -mt-16">
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-full h-full">
             <div
@@ -269,7 +269,7 @@ const Careers = () => {
               style={{
                 clipPath: windowWidth < 768 
                 ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+                : 'polygon(-25% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
@@ -283,29 +283,37 @@ const Careers = () => {
             </div>
           </div>
         </div>
-        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-          <div className="absolute top-2 sm:top-4 lg:top-8 left-8 sm:left-12 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
-            <h1
-              className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-700 ease-out ${
-                titleVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+        {/* Content */}
+        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-16 sm:pt-24 lg:pt-28 pb-8 sm:pb-16">
+          {/* MODIFIED: Changed top and left classes for better mobile layout */}
+          <div className="absolute top-15 left-2 sm:top-20 sm:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
+            <div className="overflow-hidden pb-2">
+              <h1
+                className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out ${
+                  titleVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                }`}
+                style={{
+                  fontSize: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '38px' : '54px',
+                  lineHeight: windowWidth < 640 ? '32px' : windowWidth < 1024 ? '42px' : '52px',
+                  transform: titleVisible ? 'translateY(0px)' : 'translateY(32px)'
+                }}
+              >
+                Careers at <span style={{ color: '#4B1D92' }}>EZYGRO</span>
+              </h1>
+            </div>
+            <div
+              className={`mt-1 sm:mt-2 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
+                textVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
               }`}
-              style={{ 
-                fontSize: windowWidth < 640 ? '28px' : windowWidth < 1024 ? '48px' : '66px', 
-                lineHeight: windowWidth < 640 ? '36px' : windowWidth < 1024 ? '56px' : '90px' 
+              style={{
+                transform: textVisible ? 'translateY(0px)' : 'translateY(24px)'
               }}
             >
-              Careers at <span style={{ color: '#4B1D92' }}>EZYGRO</span>
-            </h1>
-            <div
-              className={`transition-all duration-700 ease-out ${
-                textVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-              }`}
-            >
-              <p className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
-                 style={{ 
-                   fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px', 
-                   lineHeight: windowWidth < 640 ? '20px' : windowWidth < 1024 ? '24px' : '30px' 
-                 }}
+              <p className="text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
+                style={{
+                  fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px',
+                  lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px'
+                }}
               >
                 Join a dynamic and growth-driven environment where your ideas matter. At EZYGRO, we nurture talent, encourage innovation, and offer opportunities to build a meaningful, future-ready career.
               </p>

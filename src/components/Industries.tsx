@@ -109,15 +109,6 @@ const Industries = () => {
     }, 3000); // Auto-scroll every 3 seconds
   }, []);
 
-  const handlePrev = () => {
-    setCurrentIndex(prev => prev - 1);
-    resetAutoScroll();
-  };
-
-  const handleNext = () => {
-    setCurrentIndex(prev => prev + 1);
-    resetAutoScroll();
-  };
 
   useEffect(() => {
     if (cardWidth > 0) {
@@ -166,22 +157,6 @@ const Industries = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Industries
             </h2>
-            <div className="flex items-center gap-5">
-              <button
-                onClick={handlePrev}
-                aria-label="Previous Item"
-                className="p-3 border-2 border-gray-400 rounded-full hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
-              >
-                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-              </button>
-              <button
-                onClick={handleNext}
-                aria-label="Next Item"
-                className="p-3 border-2 border-gray-400 rounded-full hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
-              >
-                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-              </button>
-            </div>
           </div>
 
           <div className="relative overflow-hidden w-full">
