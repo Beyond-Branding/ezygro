@@ -128,9 +128,11 @@ const VideoCarousel = () => {
           <div
             className="w-full h-full bg-transparent"
             style={{
-              clipPath: windowWidth < 768
+              clipPath: windowWidth < 640
                 ? 'polygon(-375% 75%, 100% 35%, 100% 100%, 0% 100%)'
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+                : windowWidth < 1024
+                ? 'polygon(-75% 85%, 110% 15%, 100% 100%, 0% 100%)'
+                : 'polygon(-25% 90%, 130% 0%, 100% 100%, 0% 100%)'
             }}
           >
             <div className="absolute inset-0 overflow-hidden">
@@ -151,17 +153,17 @@ const VideoCarousel = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-16 sm:pt-24 lg:pt-28 pb-8 sm:pb-16">
-        {/* MODIFIED: Changed top and left classes for better mobile layout */}
-        <div className="absolute top-15 left-2 sm:top-20 sm:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
+      <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-8 sm:pb-12 md:pb-16">
+        {/* MODIFIED: Added tablet-specific responsive classes */}
+        <div className="absolute top-15 left-2 sm:top-16 sm:left-8 md:top-18 md:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 md:pr-8 lg:pr-6">
           <div className="overflow-hidden pb-2">
             <h1
               className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out ${
                 scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
               style={{
-                fontSize: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '38px' : '54px',
-                lineHeight: windowWidth < 640 ? '32px' : windowWidth < 1024 ? '42px' : '52px',
+                fontSize: windowWidth < 640 ? '26px' : windowWidth < 768 ? '32px' : windowWidth < 1024 ? '42px' : '54px',
+                lineHeight: windowWidth < 640 ? '32px' : windowWidth < 768 ? '38px' : windowWidth < 1024 ? '48px' : '52px',
                 transform: scaleAtSpeedVisible ? 'translateY(0px)' : 'translateY(32px)'
               }}
             >
@@ -171,17 +173,17 @@ const VideoCarousel = () => {
           </div>
           
           <div
-            className={`mt-1 sm:mt-2 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
+            className={`mt-1 sm:mt-2 md:mt-3 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
               promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}
             style={{
               transform: promiseTextVisible ? 'translateY(0px)' : 'translateY(24px)'
             }}
           >
-            <p className="text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
+            <p className="text-xs sm:text-sm md:text-base lg:text-base text-gray-800 leading-relaxed font-400"
                        style={{
-                         fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px',
-                         lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px'
+                         fontSize: windowWidth < 640 ? '14px' : windowWidth < 768 ? '15px' : windowWidth < 1024 ? '17px' : '18px',
+                         lineHeight: windowWidth < 640 ? '16px' : windowWidth < 768 ? '18px' : windowWidth < 1024 ? '22px' : '24px'
                        }}
                       >
               Our promise to help enterprises across industries transform at speed, agility, resilience, and efficiency to their businesses.
@@ -190,11 +192,11 @@ const VideoCarousel = () => {
         </div>
 
         {/* Right content: Video Title & Button */}
-        <div className="absolute bottom-16 sm:bottom-10 lg:bottom-4 right-4 sm:right-6 lg:right-0 w-full max-w-xs sm:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
-          <h2 className="font-bold leading-tight mb-3 sm:mb-4 lg:mb-6"
+        <div className="absolute bottom-16 sm:bottom-12 md:bottom-8 lg:bottom-4 right-4 sm:right-6 md:right-8 lg:right-0 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
+          <h2 className="font-bold leading-tight mb-3 sm:mb-4 md:mb-5 lg:mb-6"
             style={{
-              fontSize: windowWidth < 640 ? '13px' : windowWidth < 1024 ? '18px' : '24px',
-              lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '24px' : '30px'
+              fontSize: windowWidth < 640 ? '13px' : windowWidth < 768 ? '15px' : windowWidth < 1024 ? '20px' : '24px',
+              lineHeight: windowWidth < 640 ? '16px' : windowWidth < 768 ? '18px' : windowWidth < 1024 ? '26px' : '30px'
             }}
           >
             {videos[currentVideo].title}
@@ -203,13 +205,13 @@ const VideoCarousel = () => {
       </div>
 
       {/* Carousel Navigation Dots */}
-      <div className="absolute bottom-2 sm:bottom-4 lg:bottom-8 left-2 sm:left-4 lg:left-8 z-20 w-auto max-w-xs">
-        <div className="flex space-x-1 sm:space-x-2 lg:space-x-3 mb-2">
+      <div className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 left-2 sm:left-4 md:left-6 lg:left-8 z-20 w-auto max-w-xs">
+        <div className="flex space-x-1 sm:space-x-2 md:space-x-2 lg:space-x-3 mb-2">
           {videos.map((_, index) => (
             <button
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-6 sm:w-8 lg:w-12 h-1 transition-all duration-300 ${
+              className={`w-6 sm:w-8 md:w-10 lg:w-12 h-1 transition-all duration-300 ${
                 index === currentVideo
                   ? 'bg-white'
                   : 'bg-white/40 hover:bg-white/60'

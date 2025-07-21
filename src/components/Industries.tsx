@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 
 const Industries = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  
   const industries = [
     {
       title: "Pharma",
@@ -87,38 +90,93 @@ const Industries = () => {
   const tickerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
+  // Intersection Observer to detect when section is visible
   useEffect(() => {
-    if (cardRef.current) {
-      const cardElement = cardRef.current;
-      const style = window.getComputedStyle(cardElement);
-      const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-      setCardWidth(cardElement.offsetWidth + margin);
+    if (sectionRef.current) {
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // Use requestIdleCallback for non-critical updates
+            if ('requestIdleCallback' in window) {
+              window.requestIdleCallback(() => {
+                setIsVisible(entry.isIntersecting);
+              });
+            } else {
+              setIsVisible(entry.isIntersecting);
+            }
+          });
+        },
+        {
+          threshold: 0.2, // Increased threshold to reduce false triggers
+          rootMargin: '100px 0px' // Larger margin for better performance
+        }
+      );
+
+      observerRef.current.observe(sectionRef.current);
     }
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
+
+  // Debounced resize calculation with passive listeners
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    let rafId: number;
+    
+    const calculateCardWidth = () => {
+      if (cardRef.current) {
+        const cardElement = cardRef.current;
+        const style = window.getComputedStyle(cardElement);
+        const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+        setCardWidth(cardElement.offsetWidth + margin);
+      }
+    };
+
+    const debouncedCalculate = () => {
+      clearTimeout(timeoutId);
+      cancelAnimationFrame(rafId);
+      timeoutId = setTimeout(() => {
+        rafId = requestAnimationFrame(calculateCardWidth);
+      }, 150); // Increased debounce time for better performance
+    };
+
+    // Initial calculation with RAF
+    rafId = requestAnimationFrame(calculateCardWidth);
+
+    // Use passive listeners for better scroll performance
+    window.addEventListener('resize', debouncedCalculate, { passive: true });
+
+    return () => {
+      window.removeEventListener('resize', debouncedCalculate);
+      clearTimeout(timeoutId);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const resetAutoScroll = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex(prev => prev + 1);
-    }, 3000); // Auto-scroll every 3 seconds
-  }, []);
+    
+    // Only start auto-scroll if section is visible and not hovered
+    if (isVisible && !isHovered) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex(prev => prev + 1);
+      }, 3000); // Auto-scroll every 3 seconds
+    }
+  }, [isVisible, isHovered]);
 
-  const handlePrev = () => {
-    setCurrentIndex(prev => prev - 1);
-    resetAutoScroll();
-  };
-
-  const handleNext = () => {
-    setCurrentIndex(prev => prev + 1);
-    resetAutoScroll();
-  };
-
+  // Auto-scroll effect - only when visible
   useEffect(() => {
     if (cardWidth > 0) {
       resetAutoScroll();
@@ -128,37 +186,40 @@ const Industries = () => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [cardWidth, resetAutoScroll]);
+  }, [cardWidth, resetAutoScroll, isVisible, isHovered]);
 
+  // Optimized transform effect - now using inline styles instead of manual DOM manipulation
   useEffect(() => {
-    if (tickerRef.current && cardWidth > 0) {
-      if (currentIndex < 0) {
-        const newIndex = industries.length - 1;
-        tickerRef.current.style.transition = 'none';
-        tickerRef.current.style.transform = `translateX(-${newIndex * cardWidth}px)`;
-        setCurrentIndex(newIndex);
-      } else if (currentIndex >= industries.length) {
-        tickerRef.current.style.transition = 'transform 0.5s ease-in-out';
-        tickerRef.current.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        setTimeout(() => {
-          if (tickerRef.current) {
-            tickerRef.current.style.transition = 'none';
-            tickerRef.current.style.transform = `translateX(0px)`;
-            setCurrentIndex(0);
-          }
-        }, 500);
-      } else {
-        tickerRef.current.style.transition = 'transform 0.5s ease-in-out';
-        tickerRef.current.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-      }
+    if (currentIndex < 0) {
+      // Reset to last item without transition
+      setCurrentIndex(industries.length - 1);
+    } else if (currentIndex >= industries.length) {
+      // Reset to first item after animation completes
+      const timeoutId = setTimeout(() => {
+        setCurrentIndex(0);
+      }, 500);
+      return () => clearTimeout(timeoutId);
     }
-  }, [currentIndex, cardWidth, industries.length]);
+  }, [currentIndex, industries.length]);
+
+  const handleMouseEnter = useCallback(() => {
+    setIsHovered(true);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsHovered(false);
+    resetAutoScroll();
+  }, [resetAutoScroll]);
 
   return (
     <section 
+      ref={sectionRef}
       className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white"
-      onMouseEnter={() => intervalRef.current && clearInterval(intervalRef.current)}
-      onMouseLeave={resetAutoScroll}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -166,26 +227,17 @@ const Industries = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Industries
             </h2>
-            <div className="flex items-center gap-5">
-              <button
-                onClick={handlePrev}
-                aria-label="Previous Item"
-                className="p-3 border-2 border-gray-400 rounded-full hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
-              >
-                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-              </button>
-              <button
-                onClick={handleNext}
-                aria-label="Next Item"
-                className="p-3 border-2 border-gray-400 rounded-full hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-600"
-              >
-                <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-              </button>
-            </div>
           </div>
 
           <div className="relative overflow-hidden w-full">
-            <div className="ticker-track flex w-max" ref={tickerRef}>
+            <div 
+              className="ticker-track flex w-max will-change-transform" 
+              ref={tickerRef}
+              style={{ 
+                transform: cardWidth > 0 ? `translateX(-${currentIndex * cardWidth}px)` : 'translateX(0px)',
+                transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            >
               {[...industries, ...industries].map((industry, index) => (
                 <div
                   ref={index === 0 ? cardRef : null}
@@ -198,7 +250,9 @@ const Industries = () => {
                     <img
                       src={industry.imageUrl}
                       alt={`${industry.title} Visual`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-in-out"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-in-out will-change-transform"
+                      loading="lazy"
+                      decoding="async"
                     />
                     {/* ## CHANGE 2: Adjusted overlay ## */}
                     <div className="absolute inset-0 bg-black/20 transition-all duration-500"></div>

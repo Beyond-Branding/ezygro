@@ -23,16 +23,16 @@ const EzygroHeroSection = () => {
   }, []);
 
   const headingFontSize =
-    windowWidth < 640 ? "28px" : windowWidth < 1024 ? "48px" : "66px";
+    windowWidth < 640 ? "26px" : windowWidth < 1024 ? "38px" : "54px";
   const paraFontSize =
     windowWidth < 640 ? "14px" : windowWidth < 1024 ? "16px" : "18px";
   const paraLineHeight =
-    windowWidth < 640 ? "20px" : windowWidth < 1024 ? "24px" : "28px";
+    windowWidth < 640 ? "16px" : windowWidth < 1024 ? "20px" : "24px";
 
   return (
     <section
       id="ezygro"
-      className="relative min-h-[130vh] bg-gray-50 overflow-hidden pt-32 pb-20"
+      className="relative min-h-screen bg-white overflow-hidden -mt-16"
     >
       <div className="absolute inset-0">
         <div className="absolute right-0 top-0 w-full h-full">
@@ -41,8 +41,8 @@ const EzygroHeroSection = () => {
             style={{
               clipPath:
                 windowWidth < 768
-                  ? "polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)"
-                  : "polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)",
+                ? 'polygon(-375% 75%, 100% 35%, 100% 100%, 0% 100%)'
+                : 'polygon(-25% 90%, 130% 0%, 100% 100%, 0% 100%)'
             }}
           >
             <div className="absolute inset-0 overflow-hidden">
@@ -68,7 +68,7 @@ const EzygroHeroSection = () => {
       {/* Mobile Text Container */}
       <div
         className="absolute left-0 right-0 z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 flex md:hidden flex-col items-start"
-        style={{ top: "0rem", pointerEvents: "none" }}
+        style={{ top: "4rem", pointerEvents: "none" }}
       >
         {/* Mobile text content... */}
         <div className="space-y-2 sm:space-y-4 text-left w-full max-w-full sm:max-w-lg">
@@ -120,53 +120,56 @@ const EzygroHeroSection = () => {
 
       {/* Desktop Text Container */}
       <div
-        className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hidden md:flex`}
-        style={{
-          paddingTop: "3rem",
-          marginTop: "-8rem",
-          justifyContent: "flex-start",
-        }}
+        className={`relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-16 sm:pt-24 lg:pt-28 pb-8 sm:pb-16 hidden md:flex`}
       >
-        <div
-          className="space-y-4 lg:space-y-8 text-left w-full max-w-2xl"
-          style={{ marginLeft: "3vw" }}
+                <div
+          className="absolute top-15 left-2 sm:top-20 sm:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6"
         >
-          <div
-            className={`transition-all duration-1000 ease-out ${
-              textVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            <h1
-              className="font-bold text-gray-900"
-              style={{ fontSize: 60, lineHeight: 1.1, fontWeight: 600 }}
-            >
-              <span className="text-gray-900 block">Grow Easily</span>
-              <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
-            </h1>
-          </div>
-          <div
-            className={`transition-all duration-1000 ease-out delay-300 ${
-              textVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-          >
-            <p
-              className="text-gray-700 leading-snug mt-4 font-400 text-left"
+          <div className="space-y-2 sm:space-y-4 text-left w-full max-w-full sm:max-w-lg">
+            <div className="overflow-hidden pb-2">
+              <h1
+                className={`font-semibold text-gray-900 transition-all duration-1000 ease-out ${
+                  textVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-8 opacity-0"
+                }`}
+                style={{
+                  fontSize: headingFontSize,
+                  lineHeight: windowWidth < 640 ? '32px' : windowWidth < 1024 ? '42px' : '52px',
+                  fontWeight: 600,
+                  transform: textVisible ? 'translateY(0px)' : 'translateY(32px)'
+                }}
+              >
+                <span className="text-gray-900 block">Grow Easily</span>
+                <span className="text-[#4B1D92] block mt-0.5">with EZYGRO</span>
+              </h1>
+            </div>
+
+            <div
+              className={`mt-1 sm:mt-2 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
+                textVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-6 opacity-0"
+              }`}
               style={{
-                fontSize: paraFontSize,
-                lineHeight: paraLineHeight,
-                fontWeight: 400,
+                transform: textVisible ? 'translateY(0px)' : 'translateY(24px)'
               }}
             >
-              In today’s fast paced business environment, success requires
-              financial clarity and compliance you can rely on. EZYGRO empowers
-              you with smart solutions that drive sustainable growth, strategic
-              decision making, and operational excellence all at the speed your
-              business demands.
-            </p>
+              <p 
+                className="text-gray-800 leading-relaxed font-400 text-left"
+                style={{
+                  fontSize: paraFontSize,
+                  lineHeight: paraLineHeight,
+                  fontWeight: 400,
+                }}
+              >
+                In today's fast paced business environment, success requires
+                financial clarity and compliance you can rely on. EZYGRO empowers
+                you with smart solutions that drive sustainable growth, strategic
+                decision making, and operational excellence all at the speed your
+                business demands.
+              </p>
+            </div>
           </div>
         </div>
       </div>

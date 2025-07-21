@@ -140,15 +140,15 @@ const SecretarialCompliances = () => {
 
   return (
     <>
-      <section className="relative min-h-screen bg-white overflow-hidden">
+      <section className="relative min-h-screen bg-white overflow-hidden -mt-16">
         <div className="absolute inset-0">
           <div className="absolute right-0 top-0 w-full h-full">
             <div
               className="w-full h-full bg-transparent"
               style={{
-                clipPath: windowWidth < 768
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
-                : 'polygon(-10% 90%, 130% 0%, 100% 100%, 0% 100%)'
+                clipPath: windowWidth < 1024
+                ? 'polygon(-375% 75%, 100% 35%, 100% 100%, 0% 100%)'
+                : 'polygon(-25% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
               <div className="absolute inset-0 overflow-hidden">
@@ -162,29 +162,37 @@ const SecretarialCompliances = () => {
           </div>
         </div>
 
-        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
-            <div className="absolute top-4 sm:top-8 lg:top-16 left-8 sm:left-12 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
-            <h1
-              className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 transition-all duration-700 ease-out ${
-                scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+        {/* Content */}
+        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 md:px-8 lg:px-16 pt-16 sm:pt-24 md:pt-24 lg:pt-28 pb-8 sm:pb-16">
+          {/* MODIFIED: Changed top and left classes for better mobile layout */}
+          <div className="absolute top-15 left-2 sm:top-20 sm:left-12 md:top-20 md:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-lg md:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 md:pr-6 lg:pr-6">
+            <div className="overflow-hidden pb-2">
+              <h1
+                className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out ${
+                  scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                }`}
+                style={{
+                  fontSize: windowWidth < 640 ? '26px' : windowWidth < 768 ? '32px' : windowWidth < 1024 ? '38px' : '54px',
+                  lineHeight: windowWidth < 640 ? '32px' : windowWidth < 768 ? '36px' : windowWidth < 1024 ? '42px' : '52px',
+                  transform: scaleAtSpeedVisible ? 'translateY(0px)' : 'translateY(32px)'
+                }}
+              >
+                Secretarial <span style={{ color: '#4B1D92' }}>Compliances</span>
+              </h1>
+            </div>
+            <div
+              className={`mt-1 sm:mt-2 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
+                promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
               }`}
               style={{
-                fontSize: windowWidth < 640 ? '22px' : windowWidth < 1024 ? '38px' : '54px',
-                lineHeight: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '40px' : '60px'
+                transform: promiseTextVisible ? 'translateY(0px)' : 'translateY(24px)'
               }}
             >
-              Secretarial <span style={{ color: '#4B1D92' }}>Compliances</span>
-            </h1>
-            <div
-              className={`transition-all duration-700 ease-out ${
-                promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-              }`}
-            >
               <p
-                className="mt-2 sm:mt-4 lg:mt-6 text-xs sm:text-xs lg:text-sm text-gray-800 leading-relaxed font-400"
+                className="text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
                 style={{
-                  fontSize: windowWidth < 640 ? '12px' : windowWidth < 1024 ? '14px' : '16px',
-                  lineHeight: windowWidth < 640 ? '15px' : windowWidth < 1024 ? '18px' : '22px'
+                  fontSize: windowWidth < 640 ? '14px' : windowWidth < 768 ? '15px' : windowWidth < 1024 ? '16px' : '18px',
+                  lineHeight: windowWidth < 640 ? '16px' : windowWidth < 768 ? '18px' : windowWidth < 1024 ? '20px' : '24px'
                 }}
               >
                 Ensure smooth governance with complete Secretarial Compliance services. From MCA filings to board meeting documentation, we help you stay legally sound and effortlessly compliant.
@@ -194,16 +202,16 @@ const SecretarialCompliances = () => {
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <section className="bg-white py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-black">
+            <h2 className="text-3xl md:text-4xl font-bold text-black">
               Stay Compliant Stay Confident
             </h2>
           </div>
           <div>
-            <p className="text-gray-800 leading-relaxed">
-              At EZYGRO, we specialize in end-to-end Corporate Secretarial and Compliance Services tailored to meet the evolving needs of startups, SMEs, and large enterprises. We understand that staying compliant in today’s dynamic regulatory environment is both critical and complex. That’s why our solutions are designed not just for compliance, but to support your business in scaling responsibly and sustainably.
+            <p className="text-gray-800 leading-relaxed md:text-lg">
+              At EZYGRO, we specialize in end-to-end Corporate Secretarial and Compliance Services tailored to meet the evolving needs of startups, SMEs, and large enterprises. We understand that staying compliant in today's dynamic regulatory environment is both critical and complex. That's why our solutions are designed not just for compliance, but to support your business in scaling responsibly and sustainably.
               With deep domain expertise and a constantly updated understanding of legal and regulatory frameworks, we ensure that your company remains legally sound, risk free, and fully compliant with all statutory requirements including the Companies Act, SEBI regulations, FEMA guidelines, and more.
               From incorporation, board governance, and statutory filings to complex corporate restructuring and due diligence, we provide strategic guidance at every step. At EZYGRO, we are more than just service providers we are your long term compliance partners, committed to aligning regulatory integrity with your growth ambitions.
             </p>
@@ -213,10 +221,10 @@ const SecretarialCompliances = () => {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-16 sm:py-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 flex justify-between items-center">
-            <h2 className="text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
+      <section className="bg-gray-50 py-16 sm:py-24 md:py-28 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8">
+          <div className="mb-12 md:mb-16 flex justify-between items-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
             <div className="flex gap-4">
               <button
                 onClick={()=>{handlePrev();pauseAutoScroll()}}
@@ -244,15 +252,15 @@ const SecretarialCompliances = () => {
               }}
             >
               {extendedServices.map((service, index) => (
-                <div key={index} className="px-4" style={{ width: `${100 / extendedServices.length}%` }}>
-                  <div className="bg-white p-8 border border-gray-200 rounded-lg h-full flex flex-col">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                    <p className="text-gray-600 mb-2">{service.description}</p>
-                    <ul className="space-y-4 flex-grow">
+                <div key={index} className="px-4 md:px-6" style={{ width: `${100 / extendedServices.length}%` }}>
+                  <div className="bg-white p-8 md:p-10 border border-gray-200 rounded-lg h-full flex flex-col">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">{service.title}</h3>
+                    <p className="text-gray-600 mb-2 md:mb-4 md:text-lg">{service.description}</p>
+                    <ul className="space-y-4 md:space-y-5 flex-grow">
                       {service.features.map((feature, fIndex) => (
                         <li key={fIndex} className="flex items-start">
                           <span className="text-purple-900 mr-3 mt-1 flex-shrink-0">■</span>
-                          <span className="text-gray-800">{feature}</span>
+                          <span className="text-gray-800 md:text-lg">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -264,9 +272,9 @@ const SecretarialCompliances = () => {
         </div>
       </section>
 
-      <section className="bg-white pb-16">
-        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <p className="text-lg text-gray-800">
+      <section className="bg-white pb-16 md:pb-20">
+        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 md:px-8 lg:px-8">
+            <p className="text-lg md:text-xl text-gray-800">
                 For any queries, please contact us at:{" "}
                 <a 
                     href="tel:+91 9372963906" 
