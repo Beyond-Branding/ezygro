@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
     <footer className="bg-gray-900 text-gray-400">
       {showCareersContact && (
         <div className="" style={{ backgroundColor: '#1e1e1e' }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 ml-0 sm:ml-16 md:ml-32 lg:ml-44">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Careers Section */}
               <div className="text-left">
@@ -46,7 +46,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
       )}
       {/* Bottom Footer - Black Section */}
       <div className="bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ml-0 sm:ml-16 md:ml-32 lg:ml-40">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Tech Mahindra Logo */}
             <div className="lg:col-span-1 flex items-center" style={{ alignItems: 'flex-start' }}>
@@ -118,7 +118,7 @@ const Footer: React.FC<FooterProps> = ({ showCareersContact = true }) => {
       </div>
       {/* Copyright Section */}
       <div className="bg-black border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ml-0 sm:ml-16 md:ml-32 lg:ml-40">
           <div className="flex flex-col lg:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 lg:mb-0">© 2025 EZYGRO Limited</p>
             <div className="flex items-center space-x-6">

@@ -206,7 +206,7 @@ function FinancialAndAccounting() {
                   fontSize: windowWidth < 640 ? '14px' : windowWidth < 768 ? '15px' : windowWidth < 1024 ? '17px' : '18px',
                   lineHeight: windowWidth < 640 ? '16px' : windowWidth < 768 ? '18px' : windowWidth < 1024 ? '22px' : '24px'
                 }}
-              >
+              > 
                 Effortless finances, empowered growth Financial & Accounting Management that blends accuracy, compliance, and clarity. From smart bookkeeping to insightful reporting, it's everything your <br />business needs to stay ahead, without the hassle.
               </p>
             </div>
@@ -214,7 +214,7 @@ function FinancialAndAccounting() {
         </div>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="bg-white py-12 sm:py-16 ml-0 sm:ml-8 md:ml-16 lg:ml-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold text-black">
@@ -229,13 +229,13 @@ function FinancialAndAccounting() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-8 ml-0 sm:ml-8 md:ml-16 lg:ml-24">
+        <div className="max-w-7xl mx-auto ml-0 sm:ml-8 md:ml-16 lg:ml-24">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-purple-900 text-left">
             Price List
           </h2>
         </div>
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 max-w-7xl mx-auto">
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 max-w-7xl mx-auto ml-0 sm:ml-8 md:ml-16 lg:ml-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center items-stretch">
             {pricingPlans.map((plan) => (
               <div key={plan.name} className="w-full flex justify-center">

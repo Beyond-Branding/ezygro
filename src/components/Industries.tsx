@@ -217,7 +217,7 @@ const Industries = () => {
   return (
     <section 
       ref={sectionRef}
-      className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white"
+      className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white ml-0 sm:ml-4 md:ml-8 lg:ml-12"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

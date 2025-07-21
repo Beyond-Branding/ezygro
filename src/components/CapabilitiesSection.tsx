@@ -85,7 +85,7 @@ const CapabilitiesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white ml-0 sm:ml-4 md:ml-8 lg:ml-12">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-12 gap-4 sm:gap-6 lg:gap-8">
