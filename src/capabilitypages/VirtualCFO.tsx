@@ -225,8 +225,9 @@ const VirtualCFO = () => {
             </div>
           </div>
         </div>
-      </section>      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  </section>
+      <section className="bg-white py-16 ml-0 sm:ml-8 md:ml-16 lg:ml-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ml-0 sm:ml-8 md:ml-16 lg:ml-24 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold text-black">
               Your Growth Partner
@@ -243,7 +244,7 @@ const VirtualCFO = () => {
 
       {/* Our Services Section (Carousel) */}
       <section className="bg-gray-50 pt-8 pb-24 sm:pt-12 sm:pb-32">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                 <h2 className="text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
                 <div className="flex gap-4 mt-4 sm:mt-0">
