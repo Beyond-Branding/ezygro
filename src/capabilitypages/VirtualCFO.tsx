@@ -169,8 +169,10 @@ const VirtualCFO = () => {
             <div
               className="w-full h-full bg-transparent"
               style={{
-                clipPath: windowWidth < 768
+                clipPath: windowWidth < 640
                 ? 'polygon(-375% 75%, 100% 35%, 100% 100%, 0% 100%)'
+                : windowWidth < 1024
+                ? 'polygon(-75% 85%, 110% 15%, 100% 100%, 0% 100%)'
                 : 'polygon(-25% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
@@ -217,7 +219,8 @@ const VirtualCFO = () => {
                   lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px'
                 }}
               >
-                Gain strategic direction with our Virtual CFO and Business Growth Consultancy services. From financial planning and cash flow management to performance insights and growth strategies get expert guidance without the cost of a full time CFO.
+                Gain strategic direction with our Virtual CFO and Business Growth Consultancy services. From financial planning and cash flow management to performance insights and growth strategies, get<br />
+                expert guidance without the cost of a full time CFO.
               </p>
             </div>
           </div>
