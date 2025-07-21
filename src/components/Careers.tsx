@@ -73,9 +73,9 @@ const ContactForm = () => {
         setSubmissionStatus('sending');
         setStatusMessage('Sending...');
 
-        const serviceID = 'YOUR_SERVICE_ID';
-        const templateID = 'YOUR_TEMPLATE_ID';
-        const userID = 'YOUR_USER_ID'; 
+        const serviceID = 'service_63kr4cq';
+        const templateID = 'template_1t4hvqp';
+        const userID = '6dmBla4MNyWT-Y8gA';
 
         emailjs.sendForm(serviceID, templateID, form.current, userID)
             
