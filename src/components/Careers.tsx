@@ -115,18 +115,18 @@ const ContactForm = () => {
     );
 
     return (
-        <section className="bg-gray-900 text-white py-16 sm:py-24 w-full">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <section className="bg-gray-900 text-white py-12 sm:py-16 md:py-20 lg:py-24 w-full">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 sm:gap-14 md:gap-16">
                     <div className="lg:col-span-1 text-left">
-                        <h2 className="text-4xl font-bold tracking-tight">Get In Touch</h2>
-                        <p className="mt-4 text-lg text-gray-400">
+                        <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold tracking-tight">Get In Touch</h2>
+                        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-400">
                             Need more information? <br />
                             We will respond to your enquiry.
                         </p>
                     </div>
                     <div className="lg:col-span-2">
-                        <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-left">
+                        <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-4 sm:gap-y-6 text-left">
                             <FormInput id="enquiryType" name="enquiry_type" label="Type of Job" required>
                                 <select id="enquiryType" name="enquiry_type" className="block w-full bg-transparent border-0 border-b border-gray-600 focus:ring-0 focus:border-white py-2 text-white">
                                     <option className="bg-gray-800">Select an enquiry type</option>
@@ -267,8 +267,10 @@ const Careers = () => {
             <div
               className="w-full h-full bg-transparent"
               style={{
-                clipPath: windowWidth < 768 
-                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)' 
+                clipPath: windowWidth < 640
+                ? 'polygon(-375% 75%, 100% 20%, 100% 100%, 0% 100%)'
+                : windowWidth < 1024
+                ? 'polygon(-75% 85%, 110% 15%, 100% 100%, 0% 100%)'
                 : 'polygon(-25% 90%, 130% 0%, 100% 100%, 0% 100%)'
               }}
             >
@@ -284,17 +286,17 @@ const Careers = () => {
           </div>
         </div>
         {/* Content */}
-        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-16 sm:pt-24 lg:pt-28 pb-8 sm:pb-16">
-          {/* MODIFIED: Changed top and left classes for better mobile layout */}
-          <div className="absolute top-15 left-2 sm:top-20 sm:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 lg:pr-6">
+        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-8 sm:pb-12 md:pb-16">
+          {/* MODIFIED: Added tablet-specific responsive classes */}
+          <div className="absolute top-15 left-2 sm:top-16 sm:left-8 md:top-18 md:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 md:pr-8 lg:pr-6">
             <div className="overflow-hidden pb-2">
               <h1
                 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out ${
                   titleVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}
                 style={{
-                  fontSize: windowWidth < 640 ? '26px' : windowWidth < 1024 ? '38px' : '54px',
-                  lineHeight: windowWidth < 640 ? '32px' : windowWidth < 1024 ? '42px' : '52px',
+                  fontSize: windowWidth < 640 ? '26px' : windowWidth < 768 ? '32px' : windowWidth < 1024 ? '42px' : '54px',
+                  lineHeight: windowWidth < 640 ? '32px' : windowWidth < 768 ? '38px' : windowWidth < 1024 ? '48px' : '52px',
                   transform: titleVisible ? 'translateY(0px)' : 'translateY(32px)'
                 }}
               >
@@ -302,17 +304,17 @@ const Careers = () => {
               </h1>
             </div>
             <div
-              className={`mt-1 sm:mt-2 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
+              className={`mt-1 sm:mt-2 md:mt-3 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
                 textVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
               }`}
               style={{
                 transform: textVisible ? 'translateY(0px)' : 'translateY(24px)'
               }}
             >
-              <p className="text-xs sm:text-sm lg:text-base text-gray-800 leading-relaxed font-400"
+              <p className="text-xs sm:text-sm md:text-base lg:text-base text-gray-800 leading-relaxed font-400"
                 style={{
-                  fontSize: windowWidth < 640 ? '14px' : windowWidth < 1024 ? '16px' : '18px',
-                  lineHeight: windowWidth < 640 ? '16px' : windowWidth < 1024 ? '20px' : '24px'
+                  fontSize: windowWidth < 640 ? '14px' : windowWidth < 768 ? '15px' : windowWidth < 1024 ? '17px' : '18px',
+                  lineHeight: windowWidth < 640 ? '16px' : windowWidth < 768 ? '18px' : windowWidth < 1024 ? '22px' : '24px'
                 }}
               >
                 Join a dynamic and growth-driven environment where your ideas matter. At EZYGRO, we nurture talent, encourage innovation, and offer opportunities to build a meaningful, future-ready career.
@@ -322,9 +324,9 @@ const Careers = () => {
         </div>
       </section>
 
-      <div className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto flex flex-col gap-16 sm:gap-24">
+      <div className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-8">
+          <div className="mx-auto flex flex-col gap-12 sm:gap-16 md:gap-20 lg:gap-24">
             {sectionsData.map((section, index) => {
               const isTextOnLeft = index % 2 === 0;
               const [ref, isInView] = useInView({ threshold: 0.1 });
@@ -333,11 +335,11 @@ const Careers = () => {
                 <div
                   ref={ref}
                   key={section.id}
-                  className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 transition-opacity duration-500 ${
+                  className={`flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 transition-opacity duration-500 ${
                     isInView ? 'opacity-100' : 'opacity-50'
                   }`}
                 >
-                  <div className={`lg:w-3/5 lg:py-8 ${isTextOnLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className={`lg:w-3/5 lg:py-6 sm:lg:py-8 ${isTextOnLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                     <div
                       className={`transition-all duration-1000 ease-out ${
                         isInView
@@ -347,10 +349,10 @@ const Careers = () => {
                           : 'translate-x-10 opacity-0'
                       }`}
                     >
-                      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                      <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
                         {section.title}
                       </h2>
-                      <p className="mt-6 text-lg leading-8 text-gray-600">
+                      <p className="mt-4 sm:mt-5 md:mt-6 text-base sm:text-lg md:text-lg leading-6 sm:leading-7 md:leading-8 text-gray-600">
                         {section.description}
                       </p>
                       
