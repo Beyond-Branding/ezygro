@@ -43,7 +43,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm font-poppins">
+    <header className="bg-white sticky top-0 z-50 shadow-sm font-poppins relative">
       <div className="max-w-[1280px] mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex-shrink-0 flex items-center h-full" onClick={handleNavClick}>
@@ -103,23 +103,31 @@ const Header: React.FC = () => {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40">
             <nav className="px-4 py-4 space-y-2">
               {navItems.map((item) => (
                 <div key={item.label}>
                   {item.subItems ? (
                     <>
-                      <button
-                        onClick={() => handleMobileSubMenuToggle(item.label)}
-                        className={`flex items-center justify-between w-full text-left text-sm font-semibold py-2 transition-colors duration-200 ${
-                          location.pathname.startsWith(item.path)
-                            ? 'text-[#4B1D92]'
-                            : 'text-[#333] hover:text-[#4B1D92]'
-                        }`}
-                      >
-                        <span>{item.label}</span>
-                        <ChevronDown className={`w-5 h-5 transition-transform ${openMobileSubMenu === item.label ? 'rotate-180' : ''}`} />
-                      </button>
+                      <div className="flex items-center">
+                        <Link
+                          to={item.path}
+                          onClick={handleNavClick}
+                          className={`flex-1 text-left text-sm font-semibold py-2 transition-colors duration-200 ${
+                            location.pathname.startsWith(item.path)
+                              ? 'text-[#4B1D92]'
+                              : 'text-[#333] hover:text-[#4B1D92]'
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                        <button
+                          onClick={() => handleMobileSubMenuToggle(item.label)}
+                          className="p-2 text-[#333] hover:text-[#4B1D92]"
+                        >
+                          <ChevronDown className={`w-5 h-5 transition-transform ${openMobileSubMenu === item.label ? 'rotate-180' : ''}`} />
+                        </button>
+                      </div>
                       {openMobileSubMenu === item.label && (
                         <div className="pl-4 mt-2 space-y-2 border-l-2 border-gray-200 ml-2">
                           {item.subItems.map((subItem) => (
