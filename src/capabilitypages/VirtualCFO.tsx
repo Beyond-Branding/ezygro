@@ -123,45 +123,48 @@ const VirtualCFO = () => {
     };
   }, []);
   
-  // Effect to handle the "infinite" loop jump
-  useEffect(() => {
-    if (currentIndex === services.length + cloneCount || currentIndex === 0) {
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-        const newIndex = currentIndex === 0 ? services.length : cloneCount;
-        setCurrentIndex(newIndex);
-      }, 500); // Must match the CSS transition duration
-      return () => clearTimeout(timer);
-    }
-    if (!isTransitioning) {
-        // A tiny timeout to allow the jump to happen before re-enabling the transition
-        setTimeout(() => {
-            setIsTransitioning(true);
-        }, 50);
-    }
-  }, [currentIndex, services.length, cloneCount]);
+  // Effect to handle the "infinite" loop jump
+  useEffect(() => {
+    if (currentIndex >= services.length + cloneCount) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(cloneCount);
+      }, 500); // Must match the CSS transition duration
+      return () => clearTimeout(timer);
+    }
 
-  // Autoscroll logic
-  const pauseAutoScroll = () => {
-    if (autoScrollRef.current) clearInterval(autoScrollRef.current);
-    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
-// @ts-ignore
-    resumeTimeoutRef.current = setTimeout(() => {
-// @ts-ignore
-      autoScrollRef.current = setInterval(handleNext, 4000);
-    }, 5000); // Resume after 5 seconds
-  };
-  
-  useEffect(() => {
-// @ts-ignore
-    autoScrollRef.current = setInterval(handleNext, 4000);
-    return () => {
-      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
-      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
-    };
-  }, [isTransitioning]); 
+    if (currentIndex < cloneCount) {
+        const timer = setTimeout(() => {
+            setIsTransitioning(false);
+            setCurrentIndex(services.length + cloneCount - 1);
+        }, 500); // Must match the CSS transition duration
+        return () => clearTimeout(timer);
+    }
 
-  return (
+    if (!isTransitioning) {
+      // A tiny timeout to allow the jump to happen before re-enabling the transition
+      setTimeout(() => {
+        setIsTransitioning(true);
+      }, 50);
+    }
+  }, [currentIndex, services.length, cloneCount]);
+
+  // Autoscroll logic
+  const pauseAutoScroll = () => {
+    if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    resumeTimeoutRef.current = window.setTimeout(() => {
+      autoScrollRef.current = window.setInterval(handleNext, 4000);
+    }, 5000); // Resume after 5 seconds
+  };
+  
+  useEffect(() => {
+    autoScrollRef.current = window.setInterval(handleNext, 2000);
+    return () => {
+      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    };
+  }, [isTransitioning]);  return (
     <>
       <section className="relative min-h-screen bg-white overflow-hidden -mt-16">
         <div className="absolute inset-0">
