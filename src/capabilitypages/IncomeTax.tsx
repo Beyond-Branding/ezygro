@@ -97,7 +97,7 @@ const IncomeTax = () => {
       <section className="bg-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold text-black">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold text-black ml-0 sm:ml-8 md:ml-16 lg:ml-12">
               Tax Made Simple
             </h2>
           </div>
@@ -112,7 +112,7 @@ const IncomeTax = () => {
       <section className="bg-gray-50 py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8">
           <div className="mb-8 sm:mb-10 md:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-900 ml-0 sm:ml-8 md:ml-16 lg:ml-12">Our <span className="text-purple-900">Services</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             

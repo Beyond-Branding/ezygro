@@ -205,7 +205,7 @@ const SecretarialCompliances = () => {
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-black">
+            <h2 className="text-3xl md:text-4xl font-bold text-black sm:ml-8 md:ml-16 lg:ml-12">
               Stay Compliant Stay Confident
             </h2>
           </div>
@@ -223,7 +223,7 @@ const SecretarialCompliances = () => {
 
       <section className="bg-gray-50 py-16 sm:py-24 md:py-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8">
-          <div className="mb-12 md:mb-16 flex justify-between items-center">
+          <div className="mb-12 md:mb-16 flex justify-between items-center sm:ml-8 md:ml-16 lg:ml-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Our <span className="text-purple-900">Services</span></h2>
             <div className="flex gap-4">
               <button
