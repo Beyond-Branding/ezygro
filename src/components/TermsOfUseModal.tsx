@@ -19,7 +19,7 @@ function TermsOfUseModal({ show, onClose }: TermsOfUseModalProps) {
 
   if (!show) return null;
 
-  const terms = `Welcome to Ezygro.in. This website is owned and operated by EZYGRO financial services and having its registered office at 12, Ground Floor, Dadi Building, Rani Sati Marg, Kathiyawadi Chowk, near Union Bank, Malad East, Mumbai, Maharashtra 400097, India. You must understand and agree to accept and adhere to the following terms of service as stated in this policy hereafter referred to as ‘User Agreement’, along with the terms and conditions as stated in our Privacy Policy, by visiting our website and accessing the information, resources, services, products, and tools we provide.
+  const terms = `Welcome to Ezygro.in. This website is owned and operated by EZYGRO financial services and having its registered office at 01, 1st floor, A Wing, Neelyog Samruddhi, Khot Kua Road, Dhanjiwadi, Malad East, Mumbai 400097, Maharashtra, India. You must understand and agree to accept and adhere to the following terms of service as stated in this policy hereafter referred to as ‘User Agreement’, along with the terms and conditions as stated in our Privacy Policy, by visiting our website and accessing the information, resources, services, products, and tools we provide.
 
 a. You may be asked to provide certain information about yourself (such as identification, email, phone number, contact details, etc.) as part of the registration procedure, or as part of your ability to use the resources, in a request to access our resources. You agree that any information you provide will always be accurate, correct, and up to date.
 
