@@ -13,10 +13,10 @@ const Header: React.FC = () => {
 
   const capabilitiesItems = [
     { label: 'Financial & Accounting', path: '/financial-accounting' },
-    { label: 'Income Tax', path: '/income-tax' },
+    { label: 'Income Tax, Audit & GST', path: '/income-tax' },
     { label: 'Virtual CFO', path: '/virtual-cfo' },
     { label: 'Innovative Dashboards', path: '/innovative-dashboards' },
-    { label: 'Loans & Insurance', path: '/loans-insurance' },
+    { label: 'Loans, Insurance & Investments', path: '/loans-insurance' },
     { label: 'Secretarial Compliances', path: '/secretarial-compliances' },
   ];
 
