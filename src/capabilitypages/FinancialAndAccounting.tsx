@@ -83,33 +83,33 @@ const pricingPlans: PricingPlan[] = [
 const PricingCard = ({ plan }: { plan: PricingPlan }) => {
   return (
     <div
-      className="group w-full max-w-md mx-auto shadow-2xl p-8 flex flex-col bg-white text-gray-800 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:bg-[#4B1D92]"
+      className="group w-full max-w-md mx-auto shadow-2xl p-4 sm:p-6 md:p-8 flex flex-col bg-white text-gray-800 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:bg-[#4B1D92]"
     >
-      <h3 className="text-3xl font-extrabold text-center text-black group-hover:text-white transition-colors">
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-center text-black group-hover:text-white transition-colors">
         {plan.name.toUpperCase()}
       </h3>
-      <p className="text-center mt-2 text-sm h-12 text-gray-500 group-hover:text-gray-200 transition-colors">
+      <p className="text-center mt-2 text-xs sm:text-sm md:text-sm min-h-[2.5rem] sm:min-h-[3rem] text-gray-500 group-hover:text-gray-200 transition-colors leading-tight">
         {plan.description}
       </p>
-      <div className="text-center my-6">
-        <span className="text-5xl font-bold text-black group-hover:text-white transition-colors">
+      <div className="text-center my-4 sm:my-5 md:my-6">
+        <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black group-hover:text-white transition-colors">
           {plan.price}
         </span>
       </div>
-      <div className="text-center mb-6 p-3 bg-gray-100 text-gray-700 group-hover:bg-white/10 group-hover:text-white transition-colors">
+      <div className="text-center mb-4 sm:mb-5 md:mb-6 p-2 sm:p-3 bg-gray-100 text-gray-700 group-hover:bg-white/10 group-hover:text-white transition-colors text-xs sm:text-sm">
         <span dangerouslySetInnerHTML={{ __html: plan.entries }} />
       </div>
-      <div className="flex-grow space-y-5">
+      <div className="flex-grow space-y-3 sm:space-y-4 md:space-y-5">
         {plan.features.map((featureSet) => (
           <div key={featureSet.category}>
-            <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-gray-100 transition-colors">
+            <h4 className="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2 text-gray-900 group-hover:text-gray-100 transition-colors">
               {featureSet.category}
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1 sm:space-y-2">
               {featureSet.items.map((item) => (
                 <li key={item} className="flex items-start">
-                  <svg className="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                  <span className="text-gray-600 group-hover:text-gray-300 transition-colors">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-500 mr-1 sm:mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                  <span className="text-xs sm:text-sm md:text-base text-gray-600 group-hover:text-gray-300 transition-colors leading-tight">
                     {item}
                   </span>
                 </li>
@@ -175,17 +175,17 @@ function FinancialAndAccounting() {
           </div>
         </div>
         {/* Content */}
-        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16 pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-8 sm:pb-12 md:pb-16">
-          {/* MODIFIED: Added tablet-specific responsive classes */}
-          <div className="absolute top-15 left-2 sm:top-16 sm:left-8 md:top-18 md:left-12 lg:top-20 lg:left-20 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl lg:w-3/5 pr-4 sm:pr-6 md:pr-8 lg:pr-6">
+        <div className="relative z-10 min-h-screen max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-16 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-8 sm:pb-12 md:pb-16">
+          {/* MODIFIED: Enhanced responsive design for all screen sizes with proper header spacing */}
+          <div className="absolute top-16 left-1 sm:top-20 sm:left-4 md:top-22 md:left-8 lg:top-24 lg:left-16 xl:left-20 w-full max-w-[95%] sm:max-w-sm md:max-w-lg lg:max-w-2xl xl:max-w-3xl lg:w-3/5 pr-2 sm:pr-4 md:pr-6 lg:pr-8">
             <div className="overflow-hidden pb-2">
               <h1
-                className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out ${
+                className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold text-gray-900 transition-all duration-1000 ease-out leading-tight ${
                   scaleAtSpeedVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}
                 style={{
-                  fontSize: windowWidth < 640 ? '26px' : windowWidth < 768 ? '32px' : windowWidth < 1024 ? '42px' : '54px',
-                  lineHeight: windowWidth < 640 ? '32px' : windowWidth < 768 ? '38px' : windowWidth < 1024 ? '48px' : '52px',
+                  fontSize: windowWidth < 480 ? '20px' : windowWidth < 640 ? '24px' : windowWidth < 768 ? '28px' : windowWidth < 1024 ? '36px' : windowWidth < 1280 ? '42px' : '48px',
+                  lineHeight: windowWidth < 480 ? '24px' : windowWidth < 640 ? '28px' : windowWidth < 768 ? '32px' : windowWidth < 1024 ? '40px' : windowWidth < 1280 ? '46px' : '52px',
                   transform: scaleAtSpeedVisible ? 'translateY(0px)' : 'translateY(32px)'
                 }}
               >
@@ -193,7 +193,7 @@ function FinancialAndAccounting() {
               </h1>
             </div>
             <div
-              className={`mt-1 sm:mt-2 md:mt-3 lg:mt-3 transition-all duration-1200 ease-out delay-300 ${
+              className={`mt-2 sm:mt-3 md:mt-4 lg:mt-5 transition-all duration-1200 ease-out delay-300 ${
                 promiseTextVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
               }`}
               style={{
@@ -201,42 +201,42 @@ function FinancialAndAccounting() {
               }}
             >
               <p
-                className="text-xs sm:text-sm md:text-base lg:text-base text-gray-800 leading-relaxed font-400"
+                className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-800 leading-relaxed font-400"
                 style={{
-                  fontSize: windowWidth < 640 ? '14px' : windowWidth < 768 ? '15px' : windowWidth < 1024 ? '17px' : '18px',
-                  lineHeight: windowWidth < 640 ? '16px' : windowWidth < 768 ? '18px' : windowWidth < 1024 ? '22px' : '24px'
+                  fontSize: windowWidth < 480 ? '12px' : windowWidth < 640 ? '13px' : windowWidth < 768 ? '14px' : windowWidth < 1024 ? '16px' : windowWidth < 1280 ? '17px' : '18px',
+                  lineHeight: windowWidth < 480 ? '16px' : windowWidth < 640 ? '18px' : windowWidth < 768 ? '20px' : windowWidth < 1024 ? '24px' : windowWidth < 1280 ? '26px' : '28px'
                 }}
               > 
-                Effortless finances, empowered growth Financial & Accounting Management that blends accuracy, compliance, and clarity. From smart bookkeeping to insightful reporting, it's everything your <br />business needs to stay ahead, without the hassle.
+                Effortless finances, empowered growth Financial & Accounting Management that blends accuracy, compliance, and clarity. From smart bookkeeping to insightful reporting, it's everything your business needs to stay ahead, <br />without the hassle.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-12 sm:py-16 ml-8 md:ml-16 lg:ml-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+      <section className="bg-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 items-center">
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold text-black">
-              Smarter Finance for <br />Smarter Business
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black leading-tight">
+              Smarter Finance for <br className="hidden sm:block" />Smarter Business
             </h2>
           </div>
           <div>
-            <p className="text-sm sm:text-base md:text-base text-gray-800 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-800 leading-relaxed">
               EZYGRO provides end-to-end Financial and Accounting Management Services tailored to meet the dynamic needs of modern businesses. As regulations evolve, technology advances, and talent expectations shift, our expert led solutions ensure your financial operations remain compliant, efficient, and future ready. From streamlining processes and ensuring accurate reporting to optimizing financial strategies, we handle the critical functions so you can focus on innovation, scaling, and driving long-term success. With EZYGRO, finance becomes a catalyst for growth, not a burden.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-8 ml-8 md:ml-16 lg:ml-20">
-        <div className="max-w-7xl mx-auto ml-8 md:ml-16 lg:ml-24">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-purple-900 text-left">
+      <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-purple-900 text-left mb-8 sm:mb-12 md:mb-16 lg:mb-20">
             Price List
           </h2>
         </div>
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center items-stretch">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center items-stretch">
             {pricingPlans.map((plan) => (
               <div key={plan.name} className="w-full flex justify-center">
                   <PricingCard plan={plan} />
@@ -246,29 +246,29 @@ function FinancialAndAccounting() {
         </div>
       </section>
       
-      {/* MODIFIED: Payment Options section with hover effects */}
-      <section className="bg-white pt-8 sm:pt-10 md:pt-12 pb-12 sm:pb-16 px-4 sm:px-6 md:px-8 lg:px-8">
+      {/* MODIFIED: Enhanced Payment Options section with better responsive design */}
+      <section className="bg-white pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-8 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
             Payment Options
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
             {/* Monthly Plan Card */}
-            <div className="group cursor-pointer bg-gray-50 p-6 sm:p-8 rounded-lg border border-gray-200 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:bg-[#4B1D92]">
-              <h3 className="text-xl sm:text-2xl font-bold text-purple-900 mb-3 sm:mb-4 transition-colors group-hover:text-white">
+            <div className="group cursor-pointer bg-gray-50 p-4 sm:p-6 md:p-8 rounded-lg border border-gray-200 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:bg-[#4B1D92]">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-purple-900 mb-2 sm:mb-3 md:mb-4 transition-colors group-hover:text-white">
                 Monthly Plan
               </h3>
-              <p className="text-sm sm:text-base text-gray-800 leading-relaxed transition-colors group-hover:text-gray-200">
+              <p className="text-xs sm:text-sm md:text-base text-gray-800 leading-relaxed transition-colors group-hover:text-gray-200">
                 Perfect for businesses that prefer flexibility. Pay only for the months you need, no long-term commitment.
               </p>
             </div>
             
             {/* Yearly Plan Card */}
-            <div className="group cursor-pointer bg-gray-50 p-6 sm:p-8 rounded-lg border border-gray-200 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:bg-[#4B1D92]">
-              <h3 className="text-xl sm:text-2xl font-bold text-purple-900 mb-3 sm:mb-4 transition-colors group-hover:text-white">
+            <div className="group cursor-pointer bg-gray-50 p-4 sm:p-6 md:p-8 rounded-lg border border-gray-200 transition-all duration-300 ease-in-out hover:-translate-y-4 hover:bg-[#4B1D92]">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-purple-900 mb-2 sm:mb-3 md:mb-4 transition-colors group-hover:text-white">
                 Yearly Plan
               </h3>
-              <p className="text-sm sm:text-base text-gray-800 leading-relaxed transition-colors group-hover:text-gray-200">
+              <p className="text-xs sm:text-sm md:text-base text-gray-800 leading-relaxed transition-colors group-hover:text-gray-200">
                 Get the same great features at a better price. Pay for the full year upfront and receive an instant 5% discount saving you money while staying compliant all year long.
               </p>
             </div>
@@ -276,14 +276,14 @@ function FinancialAndAccounting() {
         </div>
       </section>
 
-      {/* Contact section with clickable phone number */}
-      <section className="bg-white pb-16 sm:pb-20 md:pb-24">
-        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 md:px-8 lg:px-8">
-            <p className="text-base sm:text-lg text-gray-800">
+      {/* Contact section with responsive design and clickable phone number */}
+      <section className="bg-white pb-8 sm:pb-12 md:pb-16 lg:pb-20">
+        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 md:px-8 lg:px-12">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800">
                 For any queries, please contact us at:{" "}
                 <a 
                     href="tel:+919372963906" 
-                    className="text-purple-900 font-bold hover:underline"
+                    className="text-purple-900 font-bold hover:underline transition-colors duration-200"
                 >
                     +91 9372963906
                 </a>
