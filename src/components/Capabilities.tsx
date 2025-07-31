@@ -15,7 +15,7 @@ const Capabilities = () => {
     {
       id: 1,
       title: 'Financial and Accounting Management',
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751477559/financial_ggjj6g.jpg',
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712263/financial_ggjj6g_wrcnjb.jpg',
       link: '/financial-accounting',
     },
     {
@@ -25,13 +25,13 @@ const Capabilities = () => {
           Income Tax, GST and <br /> Audits
         </>
       ),
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478035/Incometax_vzg8fz.jpg',
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Incometax_vzg8fz_z4zq0v.jpg',
       link: '/income-tax',
     },
     {
       id: 3,
       title: 'Virtual CFO and Business Growth Consultancy',
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478055/Virtual_cfo_vup51w.jpg',
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712267/Virtual_cfo_vup51w_yewvcl.jpg',
       link: '/virtual-cfo',
     },
     {
@@ -41,13 +41,13 @@ const Capabilities = () => {
           Innovative <br /> Dashboards
         </>
       ),
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478024/Dashboards_trcrbv.jpg',
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712262/Dashboards_trcrbv_lduln5.jpg',
       link: '/innovative-dashboards',
     },
     {
       id: 5,
       title: 'Loans, Insurance and Investments',
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478036/Loans_x8mwb3.jpg',
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Loans_x8mwb3_olsmcz.jpg',
       link: '/loans-insurance',
     },
     {
@@ -57,7 +57,7 @@ const Capabilities = () => {
           Secretarial <br /> Compliances
         </>
       ),
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751478046/Secretorial_compliances_y3onhw.jpg',
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Secretorial_compliances_y3onhw_d2irdk.jpg',
       link: '/secretarial-compliances',
     },
   ];
@@ -161,7 +161,7 @@ const Capabilities = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751476928/capabilities_kmmqcl.jpg"
+                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712260/capabilities_kmmqcl_won66l.jpg"
                   alt="Capabilities Background"
                   className="w-full h-full object-cover"
                   style={{ opacity: 1 }}

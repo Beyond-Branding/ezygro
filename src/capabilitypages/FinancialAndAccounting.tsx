@@ -166,7 +166,7 @@ function FinancialAndAccounting() {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534369/5_tkrtos.jpg"
+                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712253/5_tkrtos_das1jy.jpg"
                   alt="Financial and Accounting Management"
                   className="w-full h-full object-cover"
                 />

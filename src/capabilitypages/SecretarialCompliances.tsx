@@ -153,7 +153,7 @@ const SecretarialCompliances = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751535087/6_c7rl1n.jpg"
+                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712255/6_c7rl1n_h4r5tf.jpg"
                   alt="About Us"
                   className="w-full h-full object-cover opacity-"
                 />

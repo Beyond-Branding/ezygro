@@ -15,19 +15,19 @@ const VisionPurposeValues = () => {
       key: 'vision',
       title: 'Vision',
       text: 'At EZYGRO, our vision is to become a trusted partner in simplifying compliance and empowering growth.',
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751477132/vission_c61zwo.jpg'
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712265/vission_c61zwo_pjl6j8.jpg'
     },
     {
       key: 'purpose',
       title: 'Purpose',
       text: 'Our purpose is to deliver transparent, reliable, and client-focused solutions.',
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751477131/mission_bbmkfq.jpg'
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712264/values_clz3jp_rkz6ix.jpg'
     },
     {
       key: 'values',
       title: 'Value',
       text: 'Guided by our core values integrity, accountability, and excellence we build lasting relationships and drive meaningful impact.',
-      image: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751477132/values_clz3jp.jpg'
+      image: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1753712263/mission_bbmkfq_ctoz4k.jpg'
     }
   ];
 

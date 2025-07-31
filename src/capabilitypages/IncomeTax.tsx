@@ -44,7 +44,7 @@ const IncomeTax = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534368/2_smojod.jpg"
+                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712251/2_smojod_md88lf.jpg"
                   alt="Tax and Audit Services"
                   className="w-full h-full object-cover"
                 />
