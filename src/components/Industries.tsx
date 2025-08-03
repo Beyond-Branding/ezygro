@@ -1,36 +1,35 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 
-// Move industries data outside component to prevent recreation on every render
 const INDUSTRIES_DATA = [
   {
     id: "pharma",
     title: "Pharma",
     link: "#",
-    imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751531424/pexels-karolina-grabowska-4021811_fydijx.jpg"
+    imageUrl: "https://res.cloudinary.com/daoju0r3c/image/upload/v1754237011/pexels-karolina-grabowska-4021811_monxhi.jpg"
   },
   {
     id: "retail",
     title: "Retail",
     link: "#",
-    imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751531527/pexels-asphotograpy-230544_i77lpd.jpg"
+    imageUrl: "https://res.cloudinary.com/daoju0r3c/image/upload/v1754236479/pexels-asphotograpy-230544_ns9kr7.jpg"
   },
   {
     id: "real-estate",
     title: "Real Estate & Infrastructure",
     link: "#",
-    imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751531756/pexels-brett-sayles-2881224_m6w7rj.jpg"
+    imageUrl: "https://res.cloudinary.com/daoju0r3c/image/upload/v1754236808/pexels-field-engineer-147254-442150_r9zsru.jpg"
   },
   {
     id: "it",
     title: "Information Technology",
     link: "#",
-    imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751531878/pexels-cytonn-955402_ioqecu.jpg"
+    imageUrl: "https://res.cloudinary.com/daoju0r3c/image/upload/v1754236647/pexels-cytonn-955402_hfgkbw.jpg"
   },
   {
     id: "banking",
     title: "Banking, Finance & Investment Insurance",
     link: "#",
-    imageUrl: "https://res.cloudinary.com/dzlxesyxg/image/upload/v1751532018/pexels-artempodrez-5716032_hwbayc.jpg"
+    imageUrl: "https://res.cloudinary.com/daoju0r3c/image/upload/v1754236946/pexels-artempodrez-5716032_k5s94h.jpg"
   },
   {
     id: "telecom",
@@ -102,16 +101,17 @@ const INDUSTRIES_DATA = [
 
 const Industries = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   
   const sectionRef = useRef<HTMLElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | null>(null);
+  const startTimeRef = useRef<number | null>(null);
+  const pausedTimeRef = useRef<number>(0);
 
-  // Create extended array for seamless infinite scroll
+  // Create extended array for seamless infinite scroll - only double for better performance
   const displayIndustries = useMemo(() => {
-    // Add a few extra items at the beginning and end for smooth infinite scroll
-    const extendedArray = [...INDUSTRIES_DATA, ...INDUSTRIES_DATA.slice(0, 4)];
-    return extendedArray;
+    return [...INDUSTRIES_DATA, ...INDUSTRIES_DATA];
   }, []);
 
   // Simplified intersection observer
@@ -121,13 +121,7 @@ const Industries = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          // Reset to beginning when component becomes visible
-          setCurrentIndex(0);
-        } else {
-          setIsVisible(false);
-        }
+        setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.1 }
     );
@@ -137,43 +131,57 @@ const Industries = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Auto-scroll logic - continuous infinite scroll
+  // Optimized continuous scroll animation using CSS transforms directly
   useEffect(() => {
-    // Clear any existing interval first
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-
-    // Start autoscroll only when visible (ignore hover state for continuous scroll)
-    if (!isVisible) {
+    if (!isVisible || !containerRef.current || isPaused) {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
       return;
     }
 
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex(prev => {
-        const nextIndex = prev + 1;
-        // When we reach the duplicated items, reset to the beginning smoothly
-        if (nextIndex >= INDUSTRIES_DATA.length) {
-          return 0;
-        }
-        return nextIndex;
-      });
-    }, 3000);
+    const container = containerRef.current;
+    const cardWidth = 340 + 24; // 340px width + 24px margin
+    const totalWidth = INDUSTRIES_DATA.length * cardWidth;
+    const scrollSpeed = 80; // Reduced speed for smoother performance
+
+    const animate = (currentTime: number) => {
+      if (startTimeRef.current === null) {
+        startTimeRef.current = currentTime - pausedTimeRef.current;
+      }
+
+      const elapsed = (currentTime - startTimeRef.current) / 1000;
+      const translateX = (elapsed * scrollSpeed) % totalWidth;
+
+      // Direct DOM manipulation for better performance
+      container.style.transform = `translateX(-${translateX}px)`;
+      
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
       }
     };
-  }, [isVisible]); // Removed isHovered dependency
+  }, [isVisible, isPaused]);
 
-  // Calculate transform value
-  const transformValue = useMemo(() => {
-    const cardWidth = 340 + 24; // 340px width + 24px margin (mx-3 = 12px * 2)
-    return `translateX(-${currentIndex * cardWidth}px)`;
-  }, [currentIndex]);
+  // Handle mouse enter/leave for pausing animation
+  const handleMouseEnter = () => {
+    if (startTimeRef.current !== null) {
+      pausedTimeRef.current = performance.now() - startTimeRef.current;
+    }
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    startTimeRef.current = null;
+    setIsPaused(false);
+  };
 
   return (
     <section 
@@ -190,25 +198,34 @@ const Industries = () => {
 
           <div className="relative overflow-hidden w-full">
             <div 
+              ref={containerRef}
               className="flex will-change-transform" 
               style={{ 
-                transform: transformValue,
-                transition: 'transform 0.5s ease-out'
+                transform: 'translateX(0px)', // Initial position
+                transition: 'none'
               }}
             >
               {displayIndustries.map((industry, index) => (
                 <div
                   key={`${industry.id}-${index}`}
-                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-all duration-300 ease-in-out aspect-[3/4] cursor-pointer border border-gray-200 mx-3 flex-shrink-0"
+                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-shadow duration-300 ease-in-out aspect-[3/4] cursor-pointer border border-gray-200 mx-3 flex-shrink-0"
                   style={{ width: '340px' }}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={handleMouseEnter} // Also pause on click
                 >
                   <div className="absolute inset-0">
                     <img
                       src={industry.imageUrl}
                       alt={`${industry.title} Visual`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
+                      className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                       loading="lazy"
                       decoding="async"
+                      style={{ 
+                        willChange: 'transform',
+                        backfaceVisibility: 'hidden',
+                        perspective: '1000px'
+                      }}
                     />
                     <div className="absolute inset-0 bg-black/20"></div>
                   </div>

@@ -21,14 +21,14 @@ const sectionsData = [
     title: 'Diversity & Inclusion at EZYGRO',
     description: 'We value what makes each of us unique because it’s the differences that drive innovation. At EZYGRO, we’re proudly diverse and consciously inclusive, creating a workplace where every voice matters and every perspective adds value.',
     alt: 'A mentor guiding a colleague on a laptop in a bright, collaborative space.',
-    imageUrl: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751518835/inclsuionc_aczfux.jpg'
+    imageUrl: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1754236055/inclsuionc_aczfux_kzkg9f.jpg'
   },
   {
     id: 4,
     title: 'Reconnect. Rediscover. Rise Together',
     description: 'Revisit your journey with EZYGRO reconnect with former colleagues, rediscover new opportunities, and inspire the next wave of growth. Join the EZYGRO Alumni Network to stay updated through newsletters, share your story, and explore pathways to return or collaborate.There are countless reasons to be part of EZYConnect – the EZYGRO Alumni Portal. What’s yours?',
     alt: 'An engineer working on complex robotics in a high-tech laboratory.',
-    imageUrl: 'https://res.cloudinary.com/dzlxesyxg/image/upload/v1751518914/resetc_u7smca.jpg'
+    imageUrl: 'https://res.cloudinary.com/daoju0r3c/image/upload/v1754235999/resetc_u7smca_ldersg.jpg'
   },
 ];
 
