@@ -45,7 +45,7 @@ const LoansAndInsurance = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534821/3_xsrqe2.jpg"
+                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712250/3_xsrqe2_vnrna4.jpg"
                   alt="About Us"
                   className="w-full h-full object-cover opacity-"
                 />

@@ -54,7 +54,7 @@ const EzygroHeroSection = () => {
                 playsInline
               >
                 <source
-                  src="https://res.cloudinary.com/dzlxesyxg/video/upload/v1751692183/7_unfk2r.mp4"
+                  src="https://res.cloudinary.com/daoju0r3c/video/upload/v1753712257/7_unfk2r_yvkvq8.mp4"
                   type="video/mp4"
                 />
                 Your browser does not support the video tag.

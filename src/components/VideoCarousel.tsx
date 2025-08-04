@@ -12,27 +12,27 @@ const VideoCarousel = () => {
     {
       id: 1,
       title: "Empowering Growth with Every Number We don’t just file and finish we plan, guide, and grow with you. EZYGRO turns boring numbers into bold moves.",
-      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475664/1_bhjviq.mp4"
+      videoUrl: "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712267/1_bhjviq_jwrrjy.mp4"
     },
     {
       id: 2,
       title: "Driven by Precision. Backed by Ethics. Sharp minds, honest hands. With EZYGRO, you get advice that’s smart, clear, and always has your back.",
-      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475708/2_sv5b42.mp4"
+      videoUrl: "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712267/2_sv5b42_ht3gsl.mp4"
     },
     {
       id: 3,
       title: "Simplifying Compliance, Amplifying Success Legal forms? Tax chaos? Leave that to us. EZYGRO makes the tough stuff simple, so you can focus on winning.",
-      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475745/3_zlm6td.mp4"
+      videoUrl: "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712266/3_zlm6td_edeloy.mp4"
     },
     {
       id: 4,
       title: "Your Partner in Professional Progress Every business needs a solid support system. EZYGRO walks with you through paperwork, plans, and big dreams.",
-      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751475778/4_xdzdvi.mp4"
+      videoUrl: "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712259/4_xdzdvi_s9wvb0.mp4"
     },
     {
       id: 5,
       title: "Where Strategy Meets Service Smart ideas are nothing without action. At EZYGRO, we turn smart plans into smoother journeys no stress, just results.",
-      videoUrl: "https://res.cloudinary.com/dzlxesyxg/video/upload/v1751692184/6_ycd4gn.mp4"
+      videoUrl: "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712257/6_ycd4gn_sjsntq.mp4"
     }
   ];
 
@@ -111,6 +111,38 @@ const VideoCarousel = () => {
     return () => clearTimeout(initialTimer);
   }, []);
 
+  // Video playback management
+  useEffect(() => {
+    const container = document.querySelector('[data-video-container]');
+    if (container) {
+      const videos = container.querySelectorAll('video');
+      videos.forEach((video, index) => {
+        if (index === currentVideo) {
+          video.currentTime = 0;
+          video.load(); // Force reload the video
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }
+  }, [currentVideo]);
+
+  // Initial video setup
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const container = document.querySelector('[data-video-container]');
+      if (container) {
+        const firstVideo = container.querySelector('video');
+        if (firstVideo) {
+          firstVideo.load();
+          firstVideo.play().catch(() => {});
+        }
+      }
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleDotClick = (index: number) => {
     setCurrentVideo(index);
     setProgress(0);
@@ -136,17 +168,45 @@ const VideoCarousel = () => {
             }}
           >
             <div className="absolute inset-0 overflow-hidden">
-              <video
-                key={videos[currentVideo].id}
-                className="w-full h-full object-cover opacity-100"
-                autoPlay
-                muted
-                loop
-                playsInline
+              {/* Sliding container with all videos */}
+              <div 
+                data-video-container
+                className="flex h-full transition-transform duration-1000 ease-in-out"
+                style={{
+                  width: `${videos.length * 100}%`,
+                  transform: `translateX(-${currentVideo * (100 / videos.length)}%)`
+                }}
               >
-                <source src={videos[currentVideo].videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                {videos.map((video, index) => (
+                  <div 
+                    key={video.id} 
+                    className="h-full flex-shrink-0"
+                    style={{ width: `${100 / videos.length}%` }}
+                  >
+                    <video
+                      className="w-full h-full object-cover"
+                      autoPlay={index === currentVideo}
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      onLoadedData={(e) => {
+                        if (index === currentVideo) {
+                          e.currentTarget.play().catch(() => {});
+                        }
+                      }}
+                      onCanPlay={(e) => {
+                        if (index === currentVideo) {
+                          e.currentTarget.play().catch(() => {});
+                        }
+                      }}
+                    >
+                      <source src={video.videoUrl} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -193,14 +253,31 @@ const VideoCarousel = () => {
 
         {/* Right content: Video Title & Button - Enhanced responsive design */}
         <div className="absolute bottom-12 sm:bottom-10 md:bottom-8 lg:bottom-6 right-2 sm:right-4 md:right-6 lg:right-4 xl:right-8 w-full max-w-[90%] sm:max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg lg:w-1/2 pl-0 lg:pl-6 text-white text-left lg:text-right">
-          <h2 className="font-bold leading-tight mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6"
-            style={{
-              fontSize: windowWidth < 480 ? '11px' : windowWidth < 640 ? '12px' : windowWidth < 768 ? '14px' : windowWidth < 1024 ? '18px' : windowWidth < 1280 ? '20px' : '22px',
-              lineHeight: windowWidth < 480 ? '14px' : windowWidth < 640 ? '15px' : windowWidth < 768 ? '17px' : windowWidth < 1024 ? '22px' : windowWidth < 1280 ? '26px' : '28px'
-            }}
-          >
-            {videos[currentVideo].title}
-          </h2>
+          {/* Wrapper with proper overflow containment */}
+          <div className="relative w-full overflow-hidden">
+            {/* Sliding container for titles */}
+            <div
+              className="flex transition-transform duration-1000 ease-in-out"
+              style={{
+                width: `${videos.length * 100}%`,
+                transform: `translateX(-${currentVideo * (100 / videos.length)}%)`
+              }}
+            >
+              {videos.map((video) => (
+                <div
+                  key={video.id}
+                  className="flex-shrink-0 font-bold leading-tight mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 px-2"
+                  style={{
+                    width: `${100 / videos.length}%`,
+                    fontSize: windowWidth < 480 ? '11px' : windowWidth < 640 ? '12px' : windowWidth < 768 ? '14px' : windowWidth < 1024 ? '18px' : windowWidth < 1280 ? '20px' : '22px',
+                    lineHeight: windowWidth < 480 ? '14px' : windowWidth < 640 ? '15px' : windowWidth < 768 ? '17px' : windowWidth < 1024 ? '22px' : windowWidth < 1280 ? '26px' : '28px'
+                  }}
+                >
+                  {video.title}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

@@ -124,7 +124,7 @@ const AboutUs = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751476223/aboutus_uqobbt.jpg"
+                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712259/aboutus_uqobbt_duyker.jpg"
                   alt="About Us"
                   className="w-full h-full object-cover"
                   style={{ opacity: 1 }}
@@ -187,7 +187,7 @@ const AboutUs = () => {
             </div>
             <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-full overflow-hidden rounded-lg">
               <img
-                src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751476463/aboutus2_xazpd2.jpg"
+                src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712259/aboutus2_xazpd2_xjnxqj.jpg"
                 alt="Mahindra Group - Modern office building representing innovation and growth"
                 className="w-full h-full object-cover transition-transform duration-300 ease-out"
                 style={{ transform: `scale(1.05)` }}

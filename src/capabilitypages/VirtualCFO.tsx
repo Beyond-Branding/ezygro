@@ -181,7 +181,7 @@ const VirtualCFO = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dzlxesyxg/image/upload/v1751534368/4_zxvwta.jpg"
+                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712260/4_zxvwta_lggmol.jpg"
                   alt="About Us"
                   className="w-full h-full object-cover opacity-"
                 />
