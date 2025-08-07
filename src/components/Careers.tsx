@@ -129,7 +129,7 @@ const ContactForm = () => {
                         <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-4 sm:gap-y-6 text-left">
                             <FormInput id="enquiryType" name="enquiry_type" label="Type of Job" required>
                                 <select id="enquiryType" name="enquiry_type" className="block w-full bg-transparent border-0 border-b border-gray-600 focus:ring-0 focus:border-white py-2 text-white">
-                                    <option className="bg-gray-800">Select an enquiry type</option>
+                                    <option className="bg-gray-800">Select Your Field</option>
                                     <option className="bg-gray-800">Financial & Accounting</option>
                                     <option className="bg-gray-800">Income Tax</option>
                                     <option className="bg-gray-800">Virtual CFO</option>
