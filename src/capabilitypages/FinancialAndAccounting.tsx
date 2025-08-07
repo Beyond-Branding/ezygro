@@ -250,27 +250,38 @@ const FinancialReportingTable = () => {
 };
 
 const AddOnTableSection = () => {
-  const contactNumber = '+919372963906'; // <-- Replace with your real number
+
+  const contactNumber = '+919372963906';
+  
+  const whatsappNumber = contactNumber.replace('+', '');
+
+  const prefilledMessage = encodeURIComponent("Hello! I'm interested in your Add-On services and would like to know the pricing.");
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${prefilledMessage}`;
+
   const clickableTextClasses = "bg-purple-900 text-white px-3 py-1 rounded hover:bg-purple-800";
+
+  const contactUsButton = (
+    <a 
+      href={whatsappLink} 
+      className={clickableTextClasses}
+      target="_blank" 
+      rel="noopener noreferrer" 
+    >
+      Contact Us for the Pricing
+    </a>
+  );
 
   const rows = [
     {
       id: 1,
       title: "E-way Bill compliance",
-      price: (
-        <a href={`tel:${contactNumber}`} className={clickableTextClasses}>
-          Contact Us for the Pricing
-        </a>
-      ),
+      price: contactUsButton,
     },
     {
       id: 2,
       title: "E-Invoice Compliance",
-      price: (
-        <a href={`tel:${contactNumber}`} className={clickableTextClasses}>
-          Contact Us for the Pricing
-        </a>
-      ),
+      price: contactUsButton,
     },
     {
       id: 3,

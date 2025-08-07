@@ -44,7 +44,7 @@ const InnovativeDashboards = () => {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1754332932/computer-767776_960_720_fi5unh.jpg"
+                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1754555804/innn_uykzcr.jpg"
                   alt="About Us"
                   className="w-full h-full object-cover opacity-"
                 />
