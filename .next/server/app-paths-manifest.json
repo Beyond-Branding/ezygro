@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/careers/page": "app/careers/page.js",
+  "/about/page": "app/about/page.js",
+  "/capabilities/page": "app/capabilities/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/financial-accounting/page": "app/financial-accounting/page.js",
+  "/innovative-dashboards/page": "app/innovative-dashboards/page.js",
+  "/loans-insurance/page": "app/loans-insurance/page.js",
+  "/income-tax/page": "app/income-tax/page.js",
+  "/page": "app/page.js",
+  "/terms-of-use/page": "app/terms-of-use/page.js",
+  "/privacy-notice/page": "app/privacy-notice/page.js",
+  "/secretarial-compliances/page": "app/secretarial-compliances/page.js",
+  "/virtual-cfo/page": "app/virtual-cfo/page.js"
+}
