@@ -1,0 +1,203 @@
+import { useMemo, useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import TechMahindraLogo from "@/assets/logo.png";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+const capabilitiesItems = [
+  { label: "Financial & Accounting", path: "/financial-accounting" },
+  { label: "Income Tax, Audit & GST", path: "/income-tax" },
+  { label: "Virtual CFO", path: "/virtual-cfo" },
+  { label: "Innovative Dashboards", path: "/innovative-dashboards" },
+  { label: "Loans, Insurance & Investments", path: "/loans-insurance" },
+  { label: "Secretarial Compliances", path: "/secretarial-compliances" },
+];
+
+const navItems = [
+  { label: "HOME", path: "/" },
+  { label: "ABOUT US", path: "/about" },
+  {
+    label: "SERVICES",
+    path: "/capabilities",
+    subItems: capabilitiesItems,
+  },
+  { label: "CAREERS", path: "/careers" },
+  { label: "CONTACT US", path: "/contact" },
+];
+
+interface NavItemProps {
+  label: string;
+  path: string;
+  subItems?: NavItemProps[];
+}
+
+function NavItem({ label, path, subItems = [] }: NavItemProps) {
+  const pathname = usePathname();
+  const isActive = useMemo(() => path === pathname, [path, pathname]);
+
+  return (
+    <div key={label} className="relative group">
+      <Link
+        href={path}
+        onClick={() => {}}
+        className={`text-sm font-semibold transition-colors duration-200 pb-1 flex items-center ${
+          isActive
+            ? "border-b-2 text-[#4B1D92] border-[#4B1D92]"
+            : "text-black hover:text-[#4B1D92]"
+        }`}
+      >
+        {label}
+        {subItems.length > 0 && <ChevronDown className="w-4 h-4 ml-1" />}
+      </Link>
+      {subItems.length > 0 && (
+        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64 bg-transparent hidden group-hover:block">
+          <div className="bg-white rounded-lg shadow-lg p-2">
+            <div className="space-y-1">
+              {subItems.map((subItem) => (
+                <Link
+                  key={subItem.label}
+                  href={subItem.path}
+                  onClick={() => {}}
+                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#4B1D92] rounded-md"
+                >
+                  {subItem.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileSubMenu, setOpenMobileSubMenu] = useState<string | null>(
+    null
+  );
+  const location = {
+    pathname: "/",
+  };
+
+  const handleNavClick = () => {
+    setIsMobileMenuOpen(false);
+    setOpenMobileSubMenu(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleMobileSubMenuToggle = (label: string) => {
+    setOpenMobileSubMenu(openMobileSubMenu === label ? null : label);
+  };
+
+  return (
+    <header className="bg-white sticky top-0 z-50 shadow-sm font-poppins">
+      <div className="max-w-[1280px] mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          <Link
+            href="/"
+            className="flex-shrink-0 flex items-center h-full"
+            onClick={handleNavClick}
+          >
+            <Image
+              src={TechMahindraLogo}
+              alt="EZYGRO Logo"
+              className="h-14 md:h-16 object-contain w-auto"
+            />
+          </Link>
+
+          <nav className="hidden lg:flex flex-1 justify-center space-x-10">
+            {navItems.map((item) => (
+              <NavItem
+                key={item.label}
+                label={item.label}
+                path={item.path}
+                subItems={item.subItems}
+              />
+            ))}
+          </nav>
+
+          <div className="flex items-center">
+            <button
+              className="lg:hidden p-2 text-gray-600 hover:text-[#4B1D92]"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40">
+            <nav className="px-4 py-4 space-y-2">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  {item.subItems ? (
+                    <>
+                      <div className="flex items-center">
+                        <Link
+                          href={item.path}
+                          onClick={handleNavClick}
+                          className={`flex-1 text-left text-sm font-semibold py-2 transition-colors duration-200 ${
+                            location.pathname.startsWith(item.path)
+                              ? "text-[#4B1D92]"
+                              : "text-[#333] hover:text-[#4B1D92]"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                        <button
+                          onClick={() => handleMobileSubMenuToggle(item.label)}
+                          className="p-2 text-[#333] hover:text-[#4B1D92]"
+                        >
+                          <ChevronDown
+                            className={`w-5 h-5 transition-transform ${
+                              openMobileSubMenu === item.label
+                                ? "rotate-180"
+                                : ""
+                            }`}
+                          />
+                        </button>
+                      </div>
+                      {openMobileSubMenu === item.label && (
+                        <div className="pl-4 mt-2 space-y-2 border-l-2 border-gray-200 ml-2">
+                          {item.subItems.map((subItem) => (
+                            <Link
+                              key={subItem.label}
+                              href={subItem.path}
+                              onClick={handleNavClick}
+                              className="block text-sm font-semibold text-[#333] hover:text-[#4B1D92] py-1"
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.path}
+                      onClick={handleNavClick}
+                      className={`block text-sm font-semibold py-2 w-full text-left transition-colors duration-200 ${
+                        location.pathname === item.path
+                          ? "text-[#4B1D92]"
+                          : "text-[#333] hover:text-[#4B1D92]"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}
