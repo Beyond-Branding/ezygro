@@ -72,6 +72,9 @@ const VideoCarousel = () => {
 
   // Intersection Observer for scroll-based animations
   useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -89,9 +92,9 @@ const VideoCarousel = () => {
       { threshold: 0.3, rootMargin: "-10% 0px -10% 0px" }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    observer.observe(node);
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      observer.unobserve(node);
     };
   }, []);
 

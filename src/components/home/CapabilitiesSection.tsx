@@ -37,7 +37,7 @@ const CapabilitiesSection: React.FC = () => {
         "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712263/financial_ggjj6g_wrcnjb.jpg",
       description:
         "Digital transformation solutions for financial institutions",
-      link: "/financial-accounting",
+      link: "/capabilities/financial-accounting",
     },
     {
       id: 2,
@@ -50,7 +50,7 @@ const CapabilitiesSection: React.FC = () => {
       image:
         "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Incometax_vzg8fz_z4zq0v.jpg",
       description: "Next-generation communication technologies and solutions",
-      link: "/income-tax",
+      link: "/capabilities/income-tax",
     },
     {
       id: 3,
@@ -59,7 +59,7 @@ const CapabilitiesSection: React.FC = () => {
       image:
         "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712267/Virtual_cfo_vup51w_yewvcl.jpg",
       description: "Smart grid and renewable energy solutions",
-      link: "/virtual-cfo",
+      link: "/capabilities/virtual-cfo",
     },
     {
       id: 4,
@@ -72,7 +72,7 @@ const CapabilitiesSection: React.FC = () => {
       image:
         "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712262/Dashboards_trcrbv_lduln5.jpg",
       description: "Healthcare technology and digital health solutions",
-      link: "/innovative-dashboards",
+      link: "/capabilities/innovative-dashboards",
     },
     {
       id: 5,
@@ -81,7 +81,7 @@ const CapabilitiesSection: React.FC = () => {
       image:
         "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Loans_x8mwb3_olsmcz.jpg",
       description: "Industry 4.0 and smart manufacturing solutions",
-      link: "/loans-insurance",
+      link: "/capabilities/loans-and-insurance",
     },
     {
       id: 6,
@@ -94,7 +94,7 @@ const CapabilitiesSection: React.FC = () => {
       image:
         "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Secretorial_compliances_y3onhw_d2irdk.jpg",
       description: "Digital transformation for travel and logistics",
-      link: "/secretarial-compliances",
+      link: "/capabilities/secretarial-compliances",
     },
   ];
 

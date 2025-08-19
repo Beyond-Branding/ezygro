@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Youtube, Linkedin, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
 import TermsOfUseModal from "./TermsOfUseModal";
+import Link from "next/link";
 
 interface FooterProps {
   showCareersContact?: boolean;
@@ -25,12 +26,12 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 <p className="mb-8 text-lg text-gray-300">
                   Gain a HERITAGE. Leave a LEGACY.
                 </p>
-                <a
+                <Link
                   href="/careers"
                   className="inline-block px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
                 >
                   JOIN US
-                </a>
+                </Link>
               </div>
               {/* Contact Us Section */}
               <div className="text-left">
@@ -40,12 +41,12 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 <p className="mb-8 text-lg text-gray-300">
                   What can we help you achieve?
                 </p>
-                <a
+                <Link
                   href="/contact"
                   className="inline-block px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
                 >
                   SPEAK WITH US
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -77,36 +78,36 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <a
+                  <Link
                     href="/about"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/capabilities"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Capabilities
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/careers"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/contact"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -117,52 +118,52 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <a
+                  <Link
                     href="/financial-accounting"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Financial &amp; Accounting
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/income-tax"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Income Tax
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/virtual-cfo"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Virtual CFO
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/innovative-dashboards"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Innovative Dashboards
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/loans-insurance"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Loans &amp; Insurance
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/secretarial-compliances"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Secretarial Compliances
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -178,24 +179,24 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
               </h3>
               {/* MODIFIED: Social icons updated */}
               <div className="flex space-x-4">
-                <a
+                <Link
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Linkedin size={20} />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://www.instagram.com/ezygro/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Instagram size={20} />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://www.youtube.com/channel/UCYjgY2a1e5E2jMJcjyC1iCA/posts?pvf=CAI%253D"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Youtube size={20} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -214,12 +215,6 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 onClick={() => setShowCookieModal(true)}
               >
                 Terms of Use
-              </button>
-              <button
-                className="text-gray-400 hover:text-white text-sm transition-colors focus:outline-none"
-                onClick={() => setShowCookieModal(true)}
-              >
-                Cookie Preferences
               </button>
             </div>
           </div>

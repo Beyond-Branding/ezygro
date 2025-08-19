@@ -79,6 +79,10 @@ export default function CapabilitiesPage() {
 
   // Intersection Observer for scroll-based animations
   useEffect(() => {
+    const node = sectionRef.current;
+
+    if (!node) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -108,14 +112,10 @@ export default function CapabilitiesPage() {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      observer.unobserve(node);
     };
   }, []);
 

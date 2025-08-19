@@ -49,6 +49,16 @@ export default function TermsOfUseModal({
     };
   }, [show]);
 
+  useEffect(() => {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if (show) onClose();
+      }
+    });
+
+    return () => document.removeEventListener("keydown", () => {});
+  });
+
   if (!show) return null;
 
   // Use React Router for internal navigation
@@ -61,7 +71,7 @@ export default function TermsOfUseModal({
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 ">
       <div className="bg-black text-white rounded-lg shadow-lg w-full max-w-xl p-4 sm:p-6 relative animate-fadeIn max-h-[80vh] overflow-y-auto custom-scrollbar">
         <button
           className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold focus:outline-none"

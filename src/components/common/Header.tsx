@@ -6,12 +6,24 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const capabilitiesItems = [
-  { label: "Financial & Accounting", path: "/financial-accounting" },
-  { label: "Income Tax, Audit & GST", path: "/income-tax" },
-  { label: "Virtual CFO", path: "/virtual-cfo" },
-  { label: "Innovative Dashboards", path: "/innovative-dashboards" },
-  { label: "Loans, Insurance & Investments", path: "/loans-insurance" },
-  { label: "Secretarial Compliances", path: "/secretarial-compliances" },
+  {
+    label: "Financial & Accounting",
+    path: "/capabilities/financial-accounting",
+  },
+  { label: "Income Tax, Audit & GST", path: "/capabilities/income-tax" },
+  { label: "Virtual CFO", path: "/capabilities/virtual-cfo" },
+  {
+    label: "Innovative Dashboards",
+    path: "/capabilities/innovative-dashboards",
+  },
+  {
+    label: "Loans, Insurance & Investments",
+    path: "/capabilities/loans-insurance",
+  },
+  {
+    label: "Secretarial Compliances",
+    path: "/capabilities/secretarial-compliances",
+  },
 ];
 
 const navItems = [
