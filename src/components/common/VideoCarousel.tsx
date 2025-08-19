@@ -4,7 +4,6 @@ const VideoCarousel = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
   const [promiseTextVisible, setPromiseTextVisible] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1024
   );
@@ -51,25 +50,12 @@ const VideoCarousel = () => {
   // Auto-advance carousel with progress tracking
   useEffect(() => {
     const videoDuration = 3000;
-    const progressInterval = 50;
-
-    const progressTimer = setInterval(() => {
-      setProgress((prev) => {
-        const newProgress = prev + (progressInterval / videoDuration) * 100;
-        if (newProgress >= 100) {
-          return 0;
-        }
-        return newProgress;
-      });
-    }, progressInterval);
 
     const videoTimer = setInterval(() => {
       setCurrentVideo((prev) => (prev + 1) % videos.length);
-      setProgress(0);
     }, videoDuration);
 
     return () => {
-      clearInterval(progressTimer);
       clearInterval(videoTimer);
     };
   }, [videos.length, currentVideo]);
@@ -157,7 +143,6 @@ const VideoCarousel = () => {
 
   const handleDotClick = (index: number) => {
     setCurrentVideo(index);
-    setProgress(0);
     setScaleAtSpeedVisible(false);
     setPromiseTextVisible(false);
     setTimeout(() => setScaleAtSpeedVisible(true), 150);
