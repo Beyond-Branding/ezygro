@@ -119,7 +119,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    href="/financial-accounting"
+                    href="/capabilities/financial-accounting"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Financial &amp; Accounting
@@ -127,7 +127,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/income-tax"
+                    href="/capabilities/income-tax"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Income Tax
@@ -135,7 +135,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/virtual-cfo"
+                    href="/capabilities/virtual-cfo"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Virtual CFO
@@ -143,7 +143,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/innovative-dashboards"
+                    href="/capabilities/innovative-dashboards"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Innovative Dashboards
@@ -151,7 +151,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/loans-insurance"
+                    href="/capabilities/loans-insurance"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Loans &amp; Insurance
@@ -159,7 +159,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/secretarial-compliances"
+                    href="/capabilities/secretarial-compliances"
                     className="text-gray-400 hover:text-white text-sm transition-colors"
                   >
                     Secretarial Compliances
