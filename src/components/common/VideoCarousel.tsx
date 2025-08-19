@@ -297,7 +297,7 @@ const VideoCarousel = () => {
                     : windowWidth < 768
                     ? "20px"
                     : windowWidth < 1024
-                    ? "24px"
+                    ? "22px"
                     : windowWidth < 1280
                     ? "26px"
                     : "28px",

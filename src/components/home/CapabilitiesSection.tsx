@@ -65,7 +65,7 @@ const CapabilitiesSection: React.FC = () => {
       id: 4,
       title: () => (
         <>
-          Innovative <br /> Dashboards        
+          Innovative <br /> Dashboards
         </>
       ),
       icon: <Shield className="w-8 h-8" />,
@@ -87,7 +87,7 @@ const CapabilitiesSection: React.FC = () => {
       id: 6,
       title: () => (
         <>
-                    Secretarial <br /> Compliances        
+          Secretarial <br /> Compliances
         </>
       ),
       icon: <Plane className="w-8 h-8" />,
@@ -100,17 +100,13 @@ const CapabilitiesSection: React.FC = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white ml-0 sm:ml-4 md:ml-8 lg:ml-12">
-           
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-               
         <div className="max-w-6xl mx-auto">
-                   
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-12 gap-4 sm:gap-6 lg:gap-8">
-                       
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 lg:w-1/3">
               Services
             </h2>
-                       
+
             <p
               className="text-sm sm:text-base lg:text-lg text-gray-700 lg:w-2/3 leading-relaxed text-left lg:leading-7"
               style={{
@@ -121,11 +117,10 @@ const CapabilitiesSection: React.FC = () => {
             >
               We don&apos;t believe in one-size-fits-all. Your business is
               unique and your legal, tax, audit, and compliance solutions should
-              be too.            
+              be too.
             </p>
-                     
           </div>
-                   
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {capabilities.map((capability, index) => (
               <a
@@ -173,13 +168,9 @@ const CapabilitiesSection: React.FC = () => {
                 </div>
               </a>
             ))}
-                     
           </div>
-                 
         </div>
-             
       </div>
-         
     </section>
   );
 };

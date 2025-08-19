@@ -11,7 +11,7 @@ export default function Home() {
       <CapabilitiesSection />
       <Industries />
       <TechMahindraSection />
-      <RiseSection /> 
+      <RiseSection />
     </>
   );
 }
