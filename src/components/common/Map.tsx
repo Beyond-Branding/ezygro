@@ -12,7 +12,7 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function Map() {
-  const position: [number, number] = [19.18876, 72.85825];
+  const position: [number, number] = [19.184862538093636, 72.85655142425968];
 
   const fullAddress =
     "01, 1st floor, A Wing, Neelyog Samruddhi, Khot Kua Road, Dhanjiwadi, Malad East, Mumbai 400097";
