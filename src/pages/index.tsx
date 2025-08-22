@@ -3,10 +3,46 @@ import CapabilitiesSection from "@/components/home/CapabilitiesSection";
 import Industries from "@/components/home/Industries";
 import RiseSection from "@/components/home/RiseSection";
 import TechMahindraSection from "@/components/home/TechMahindraSection";
-import TestimonialSection from "@/components/home/TestimonialSection";
+import TestimonialSection, {
+  Testimonial,
+} from "@/components/home/TestimonialSection";
+import { sanityClient, urlFor } from "@/lib/sanity";
+import { GetStaticProps } from "next";
 
+export const getStaticProps = (async () => {
+  const SANITY_TESTIMONIAL_QUERY = `*[_type=="testimonial"] | order(_createdAt desc)`;
 
-export default function Home() {
+  try {
+    const response = await sanityClient.fetch<Testimonial[]>(
+      SANITY_TESTIMONIAL_QUERY
+    );
+
+    return {
+      props: {
+        testimonials: response.map((testimonial) => ({
+          ...testimonial,
+          image: urlFor(testimonial.image).url(),
+        })),
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    console.log(error);
+  }
+
+  return {
+    props: {
+      testimonials: [] as Testimonial[],
+    },
+    revalidate: 60,
+  };
+}) satisfies GetStaticProps<{ testimonials: Testimonial[] }>;
+
+export default function Home({
+  testimonials,
+}: {
+  testimonials: Testimonial[];
+}) {
   return (
     <>
       <VideoCarousel />
@@ -14,8 +50,9 @@ export default function Home() {
       <Industries />
       <TechMahindraSection />
       <RiseSection />
-      <TestimonialSection />
-
+      {testimonials.length > 0 && (
+        <TestimonialSection testimonials={testimonials} />
+      )}
     </>
   );
 }
