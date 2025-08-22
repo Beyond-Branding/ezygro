@@ -24,7 +24,7 @@ export const getStaticProps = (async () => {
           image: urlFor(testimonial.image).url(),
         })),
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (error) {
     console.log(error);
@@ -34,7 +34,7 @@ export const getStaticProps = (async () => {
     props: {
       testimonials: [] as Testimonial[],
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }) satisfies GetStaticProps<{ testimonials: Testimonial[] }>;
 

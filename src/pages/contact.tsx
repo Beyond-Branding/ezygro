@@ -28,7 +28,7 @@ export const getStaticProps = (async () => {
       props: {
         contactDetails: response,
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (error) {
     console.log(error);
@@ -38,7 +38,7 @@ export const getStaticProps = (async () => {
     props: {
       contactDetails: {} as ContactDetails,
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }) satisfies GetStaticProps<{ contactDetails: ContactDetails }>;
 
