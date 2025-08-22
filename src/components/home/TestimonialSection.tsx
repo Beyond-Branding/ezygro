@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -25,9 +25,17 @@ export default function TestimonialSection({
 }: {
   testimonials: Testimonial[];
 }) {
+  const [initialRender, setInitialRender] = useState(false);
+
   /* Button Refs */
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
+
+  useEffect(() => {
+    setInitialRender(true);
+  }, []);
+
+  if (!initialRender) return null;
 
   return (
     <section
@@ -82,6 +90,7 @@ export default function TestimonialSection({
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
+          watchOverflow
           className="h-[22rem] sm:h-80 lg:h-96"
         >
           {testimonials.map((item) => {
