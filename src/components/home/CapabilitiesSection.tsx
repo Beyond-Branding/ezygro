@@ -99,16 +99,16 @@ const CapabilitiesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white ml-0 sm:ml-4 md:ml-8 lg:ml-12">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-12 gap-4 sm:gap-6 lg:gap-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 lg:w-1/3">
+    <section className="bg-white ml-0 py-16 md:py-24">
+      <div className="mx-auto">
+        <div className="mx-auto lg:px-12 container">
+          <div className="flex lg:flex-row flex-col justify-between items-start lg:items-center gap-4 sm:gap-6 lg:gap-8 mb-12">
+            <h2 className="lg:w-1/3 font-bold text-gray-900 text-4xl md:text-5xl">
               Services
             </h2>
 
             <p
-              className="text-sm sm:text-base lg:text-lg text-gray-700 lg:w-2/3 leading-relaxed text-left lg:leading-7"
+              className="lg:w-2/3 text-gray-700 text-sm sm:text-base lg:text-lg text-left leading-relaxed lg:leading-7"
               style={{
                 maxWidth: "700px",
                 marginLeft: "auto",
@@ -121,7 +121,7 @@ const CapabilitiesSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((capability, index) => (
               <a
                 href={capability.link}
@@ -135,9 +135,9 @@ const CapabilitiesSection: React.FC = () => {
                   transitionDelay: `${index * 150}ms`,
                 }}
               >
-                <div className="relative bg-white hover:bg-[#4B1D92] p-4 transition-all duration-500 min-h-[470px] h-full flex flex-col justify-between shadow-md">
+                <div className="relative flex flex-col justify-between bg-white hover:bg-[#4B1D92] shadow-md p-4 h-full min-h-[470px] transition-all duration-500">
                   <div className="flex justify-center pt-4">
-                    <div className="w-60 h-60 rounded-full overflow-hidden mx-auto mb-6">
+                    <div className="mx-auto mb-6 rounded-full w-60 h-60 overflow-hidden">
                       <img
                         src={capability.image}
                         alt={
@@ -156,8 +156,8 @@ const CapabilitiesSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex-1 flex flex-col justify-end">
-                    <h3 className="text-xl font-semibold text-gray-900 group-hover:text-white transition-colors duration-500 mb-4 text-center">
+                  <div className="flex flex-col flex-1 justify-end">
+                    <h3 className="mb-4 font-semibold text-gray-900 group-hover:text-white text-xl text-center transition-colors duration-500">
                       {capability.title()}
                     </h3>
 

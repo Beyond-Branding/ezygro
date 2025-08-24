@@ -38,10 +38,10 @@ export default function RiseSection() {
       id="rise-section"
       className="bg-white py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 container">
+        <div className="items-center gap-6 sm:gap-8 lg:gap-12 xl:gap-16 grid grid-cols-1 lg:grid-cols-2">
           {/* Image */}
-          <div className="w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden rounded-lg">
+          <div className="rounded-lg w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden">
             <img
               src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712260/grow_yjqi2b_n4odaf.jpg"
               alt="Misty mountains at sunrise, representing the 'RISE' philosophy"

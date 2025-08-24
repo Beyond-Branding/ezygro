@@ -202,17 +202,17 @@ function Industries() {
   return (
     <section
       ref={sectionRef}
-      className="pt-8 md:pt-12 pb-16 md:pb-24 bg-white ml-0 sm:ml-4 md:ml-8 lg:ml-12"
+      className="bg-white ml-0 pt-8 md:pt-12 pb-16 md:pb-24"
     >
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-row items-center justify-between mb-8 sm:mb-10 lg:mb-12 gap-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+      <div className="mx-auto lg:px-12">
+        <div className="mx-auto container">
+          <div className="flex flex-row justify-between items-center gap-4 mb-8 sm:mb-10 lg:mb-12">
+            <h2 className="font-bold text-gray-900 text-4xl md:text-5xl">
               Industries
             </h2>
           </div>
 
-          <div className="relative overflow-hidden w-full">
+          <div className="relative w-full overflow-hidden">
             <div
               ref={containerRef}
               className="flex will-change-transform"
@@ -224,7 +224,7 @@ function Industries() {
               {displayIndustries.map((industry, index) => (
                 <div
                   key={`${industry.id}-${index}`}
-                  className="relative bg-white overflow-hidden group hover:shadow-xl transition-shadow duration-300 ease-in-out aspect-[3/4] cursor-pointer border border-gray-200 mx-3 flex-shrink-0"
+                  className="group relative flex-shrink-0 bg-white hover:shadow-xl mx-3 border border-gray-200 aspect-[3/4] overflow-hidden transition-shadow duration-300 ease-in-out cursor-pointer"
                   style={{ width: "340px" }}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -234,7 +234,7 @@ function Industries() {
                     <img
                       src={industry.imageUrl}
                       alt={`${industry.title} Visual`}
-                      className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
                       loading="lazy"
                       decoding="async"
                       style={{
@@ -245,8 +245,8 @@ function Industries() {
                     />
                     <div className="absolute inset-0 bg-black/20"></div>
                   </div>
-                  <div className="relative z-10 p-3 sm:p-4 lg:p-6 h-full flex flex-col text-center">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight text-white mb-1 sm:mb-2">
+                  <div className="z-10 relative flex flex-col p-3 sm:p-4 lg:p-6 h-full text-center">
+                    <h3 className="mb-1 sm:mb-2 font-bold text-white text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight">
                       {industry.title}
                     </h3>
                   </div>

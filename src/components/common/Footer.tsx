@@ -15,35 +15,38 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
   return (
     <footer className="bg-gray-900 text-gray-400">
       {showCareersContact && (
-        <div className="" style={{ backgroundColor: "#1e1e1e" }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 ml-0 sm:ml-16 md:ml-32 lg:ml-44">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div
+          className="mx-auto container"
+          style={{ backgroundColor: "#1e1e1e" }}
+        >
+          <div className="ml-0 sm:ml-16 md:ml-32 lg:ml-44 px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div className="gap-12 lg:gap-16 grid grid-cols-1 lg:grid-cols-2">
               {/* Careers Section */}
               <div className="text-left">
-                <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">
+                <h2 className="mb-4 font-light text-white text-3xl lg:text-4xl">
                   Careers
                 </h2>
-                <p className="mb-8 text-lg text-gray-300">
+                <p className="mb-8 text-gray-300 text-lg">
                   Gain a HERITAGE. Leave a LEGACY.
                 </p>
                 <Link
                   href="/careers"
-                  className="inline-block px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
+                  className="inline-block hover:bg-white px-8 py-3 border border-gray-400 font-medium text-white hover:text-black text-sm tracking-wide transition-colors duration-300"
                 >
                   JOIN US
                 </Link>
               </div>
               {/* Contact Us Section */}
               <div className="text-left">
-                <h2 className="text-3xl lg:text-4xl font-light text-white mb-4">
+                <h2 className="mb-4 font-light text-white text-3xl lg:text-4xl">
                   Contact Us
                 </h2>
-                <p className="mb-8 text-lg text-gray-300">
+                <p className="mb-8 text-gray-300 text-lg">
                   What can we help you achieve?
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-block px-8 py-3 border border-gray-400 text-white hover:bg-white hover:text-black transition-colors duration-300 text-sm font-medium tracking-wide"
+                  className="inline-block hover:bg-white px-8 py-3 border border-gray-400 font-medium text-white hover:text-black text-sm tracking-wide transition-colors duration-300"
                 >
                   SPEAK WITH US
                 </Link>
@@ -54,17 +57,17 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
       )}
       {/* Bottom Footer - Black Section */}
       <div className="bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ml-0 sm:ml-16 md:ml-32 lg:ml-40">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="mx-auto ml-0 sm:ml-16 md:ml-32 lg:ml-40 px-4 sm:px-6 lg:px-8 py-12">
+          <div className="gap-8 lg:gap-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto container">
             {/* Tech Mahindra Logo */}
             <div
-              className="lg:col-span-1 flex items-center"
+              className="flex items-center lg:col-span-1"
               style={{ alignItems: "flex-start" }}
             >
               <Image
                 src={logo}
                 alt="Tech Mahindra Logo"
-                className="h-24 w-auto rounded mt-0"
+                className="mt-0 rounded w-auto h-24"
                 style={{
                   marginTop: "-0.75rem",
                   filter: "brightness(0) invert(1)",
@@ -73,7 +76,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
             </div>
             {/* Our Brand */}
             <div>
-              <h3 className="font-semibold text-white mb-6 text-base">
+              <h3 className="mb-6 font-semibold text-white text-base">
                 Our Brand
               </h3>
               <ul className="space-y-3">
@@ -113,7 +116,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
             </div>
             {/* Our Services */}
             <div>
-              <h3 className="font-semibold text-white mb-6 text-base">
+              <h3 className="mb-6 font-semibold text-white text-base">
                 Our Services
               </h3>
               <ul className="space-y-3">
@@ -174,7 +177,7 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
             />
             {/* Follow Us */}
             <div>
-              <h3 className="font-semibold text-white mb-6 text-base">
+              <h3 className="mb-6 font-semibold text-white text-base">
                 Follow Us
               </h3>
               {/* MODIFIED: Social icons updated */}
@@ -203,15 +206,15 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
         </div>
       </div>
       {/* Copyright Section */}
-      <div className="bg-black border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ml-0 sm:ml-16 md:ml-32 lg:ml-40">
-          <div className="flex flex-col lg:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 lg:mb-0">
+      <div className="bg-black border-gray-800 border-t">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 py-6 container">
+          <div className="flex lg:flex-row flex-col justify-between items-center mx-auto container">
+            <p className="mb-4 lg:mb-0 text-gray-400 text-sm">
               © 2025 EZYGRO Limited
             </p>
             <div className="flex items-center space-x-6">
               <button
-                className="text-gray-400 hover:text-white text-sm transition-colors focus:outline-none"
+                className="focus:outline-none text-gray-400 hover:text-white text-sm transition-colors"
                 onClick={() => setShowCookieModal(true)}
               >
                 Terms of Use
