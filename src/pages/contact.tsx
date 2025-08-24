@@ -50,30 +50,30 @@ export default function ContactUsPage({
   contactDetails: ContactDetails;
 }) {
   return (
-    <div className="bg-white text-gray-800 min-h-screen flex flex-col items-center font-sans">
-      <div className="w-full max-w-6xl mx-auto flex flex-col p-4 sm:p-6 md:p-8">
+    <div className="flex flex-col items-center bg-white min-h-screen font-sans text-gray-800">
+      <div className="flex flex-col mx-auto p-6 lg:p-12 container">
         <div className="mb-12 w-full text-left">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-4">
+          <h1 className="mb-4 font-bold text-gray-900 text-5xl md:text-7xl tracking-tight">
             Let&apos;s <span style={{ color: "#4B1D92" }}>Connect</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600">
+          <p className="text-gray-600 text-lg md:text-xl">
             We would love to hear from you!
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
-          <div className="w-full h-[50vh] md:h-full min-h-[500px] bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+        <div className="items-center gap-16 grid grid-cols-1 md:grid-cols-2 mb-16 w-full">
+          <div className="bg-gray-200 shadow-lg rounded-lg w-full h-[50vh] md:h-full min-h-[500px] overflow-hidden">
             <Map />
           </div>
 
           <div className="flex flex-col space-y-8 text-left">
             <div className="flex items-start space-x-4">
-              <div className="shrink-0 pt-1">
+              <div className="pt-1 shrink-0">
                 <MapPin />
               </div>
               <div>
-                <p className="text-lg font-semibold text-gray-800">Address:</p>
-                <p className="text-base text-gray-600 break-words">
+                <p className="font-semibold text-gray-800 text-lg">Address:</p>
+                <p className="text-gray-600 text-base break-words">
                   {contactDetails.address}
                 </p>
               </div>
@@ -84,10 +84,10 @@ export default function ContactUsPage({
                 <PhoneIcon />
               </div>
               <div>
-                <p className="text-lg font-semibold text-gray-800">Phone:</p>
+                <p className="font-semibold text-gray-800 text-lg">Phone:</p>
                 <a
                   href={`tel:${contactDetails.phone}`}
-                  className="text-base text-gray-600 hover:text-indigo-600 break-all"
+                  className="text-gray-600 hover:text-indigo-600 text-base break-all"
                 >
                   {contactDetails.phone}
                 </a>
@@ -99,10 +99,10 @@ export default function ContactUsPage({
                 <EmailIcon />
               </div>
               <div>
-                <p className="text-lg font-semibold text-gray-800">Email:</p>
+                <p className="font-semibold text-gray-800 text-lg">Email:</p>
                 <a
                   href={`mailto:${contactDetails.email}`}
-                  className="text-base text-gray-600 hover:text-indigo-600 break-all"
+                  className="text-gray-600 hover:text-indigo-600 text-base break-all"
                 >
                   {contactDetails.email}
                 </a>

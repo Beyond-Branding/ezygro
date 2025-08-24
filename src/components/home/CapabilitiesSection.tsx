@@ -101,7 +101,7 @@ const CapabilitiesSection: React.FC = () => {
   return (
     <section className="bg-white ml-0 py-16 md:py-24">
       <div className="mx-auto">
-        <div className="mx-auto lg:px-12 container">
+        <div className="mx-auto px-6 lg:px-12 container">
           <div className="flex lg:flex-row flex-col justify-between items-start lg:items-center gap-4 sm:gap-6 lg:gap-8 mb-12">
             <h2 className="lg:w-1/3 font-bold text-gray-900 text-4xl md:text-5xl">
               Services

@@ -204,7 +204,7 @@ function Industries() {
       ref={sectionRef}
       className="bg-white ml-0 pt-8 md:pt-12 pb-16 md:pb-24"
     >
-      <div className="mx-auto lg:px-12">
+      <div className="mx-auto px-6 lg:px-12">
         <div className="mx-auto container">
           <div className="flex flex-row justify-between items-center gap-4 mb-8 sm:mb-10 lg:mb-12">
             <h2 className="font-bold text-gray-900 text-4xl md:text-5xl">
