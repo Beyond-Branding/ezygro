@@ -104,18 +104,18 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm font-poppins">
-      <div className="max-w-[1280px] mx-auto px-4">
+    <header className="bg-white sticky top-0 z-50 font-poppins">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link
             href="/"
-            className="flex-shrink-0 flex items-center h-full"
+            className="flex items-center h-14 md:h-16 w-auto"
             onClick={handleNavClick}
           >
             <Image
               src={TechMahindraLogo}
               alt="EZYGRO Logo"
-              className="h-14 md:h-16 object-contain w-auto"
+              className=" object-contain size-full"
             />
           </Link>
 
