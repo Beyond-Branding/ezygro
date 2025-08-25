@@ -1,4 +1,4 @@
-import L from "leaflet";
+import L, { LatLngTuple } from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -9,11 +9,12 @@ const DefaultIcon = L.icon({
   popupAnchor: [1, -34],
   shadowSize: [41, 41],
 });
+
 L.Marker.prototype.options.icon = DefaultIcon;
 
-export default function Map() {
-  const position: [number, number] = [19.184862538093636, 72.85655142425968];
-
+export default function Map({
+  position = [19.184862538093636, 72.85655142425968],
+}) {
   const fullAddress =
     "01, 1st floor, A Wing, Neelyog Samruddhi, Khot Kua Road, Dhanjiwadi, Malad East, Mumbai 400097";
 
@@ -35,23 +36,23 @@ export default function Map() {
 
   return (
     <MapContainer
-      center={position}
+      center={position as LatLngTuple}
       zoom={17}
       scrollWheelZoom={false}
-      className="w-full h-full relative z-0"
+      className="z-0 relative w-full h-full"
     >
       <TileLayer
         attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
         url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
       />
-      <Marker position={position} icon={customIcon}>
+      <Marker position={position as LatLngTuple} icon={customIcon}>
         {/* === POPUP CODE EDITED HERE === */}
         <Popup>
-          <div className="text-left p-2 w-48">
+          <div className="p-2 w-48 text-left">
             {" "}
             {/* Changed to text-left, added padding, and set a fixed width w-48 (192px) */}
-            <h3 className="font-bold text-base text-gray-800 mb-1">Ezygro</h3>
-            <p className="text-sm text-gray-600 whitespace-normal mb-2">
+            <h3 className="mb-1 font-bold text-gray-800 text-base">Ezygro</h3>
+            <p className="mb-2 text-gray-600 text-sm whitespace-normal">
               {fullAddress}
             </p>
             <a
@@ -60,7 +61,7 @@ export default function Map() {
               )}`} /* Corrected URL */
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 font-semibold hover:underline text-sm"
+              className="font-semibold text-blue-600 text-sm hover:underline"
             >
               Get Directions
             </a>

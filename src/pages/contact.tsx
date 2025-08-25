@@ -14,6 +14,11 @@ interface ContactDetails {
   address: string;
   email: string;
   phone: string;
+  geoPoint: {
+    _type: "geopoint";
+    lat: 19.184862538093636;
+    lng: 72.85655142425968;
+  };
 }
 
 export const getStaticProps = (async () => {
@@ -23,6 +28,8 @@ export const getStaticProps = (async () => {
     const response = await sanityClient.fetch<ContactDetails>(
       SANITY_CONTACT_DETAILS_QUERY
     );
+
+    console.log(response);
 
     return {
       props: {
@@ -63,7 +70,12 @@ export default function ContactUsPage({
 
         <div className="items-center gap-16 grid grid-cols-1 md:grid-cols-2 mb-16 w-full">
           <div className="bg-gray-200 shadow-lg rounded-lg w-full h-[50vh] md:h-full min-h-[500px] overflow-hidden">
-            <Map />
+            <Map
+              position={[
+                contactDetails.geoPoint.lat,
+                contactDetails.geoPoint.lng,
+              ]}
+            />
           </div>
 
           <div className="flex flex-col space-y-8 text-left">
