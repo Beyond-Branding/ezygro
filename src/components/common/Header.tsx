@@ -49,7 +49,7 @@ function NavItem({ label, path, subItems = [] }: NavItemProps) {
   const isActive = useMemo(() => path === pathname, [path, pathname]);
 
   return (
-    <div key={label} className="relative group">
+    <div key={label} className="group relative">
       <Link
         href={path}
         onClick={() => {}}
@@ -60,18 +60,18 @@ function NavItem({ label, path, subItems = [] }: NavItemProps) {
         }`}
       >
         {label}
-        {subItems.length > 0 && <ChevronDown className="w-4 h-4 ml-1" />}
+        {subItems.length > 0 && <ChevronDown className="ml-1 w-4 h-4" />}
       </Link>
       {subItems.length > 0 && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64 bg-transparent hidden group-hover:block">
-          <div className="bg-white rounded-lg shadow-lg p-2">
+        <div className="hidden group-hover:block top-full left-1/2 absolute bg-transparent pt-3 w-64 -translate-x-1/2">
+          <div className="bg-white shadow-lg p-2 rounded-lg">
             <div className="space-y-1">
               {subItems.map((subItem) => (
                 <Link
                   key={subItem.label}
                   href={subItem.path}
                   onClick={() => {}}
-                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#4B1D92] rounded-md"
+                  className="block hover:bg-gray-100 px-4 py-2 rounded-md w-full text-gray-700 hover:text-[#4B1D92] text-sm text-left"
                 >
                   {subItem.label}
                 </Link>
@@ -104,18 +104,18 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white sticky top-0 z-50 font-poppins">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+    <header className="top-0 z-50 sticky bg-white font-poppins">
+      <div className="mx-auto px-6 lg:px-12 container">
+        <div className="flex justify-between items-center h-20">
           <Link
             href="/"
-            className="flex items-center h-14 md:h-16 w-auto"
+            className="flex items-center w-auto h-14 md:h-16"
             onClick={handleNavClick}
           >
             <Image
               src={TechMahindraLogo}
               alt="EZYGRO Logo"
-              className=" object-contain size-full"
+              className="size-full object-contain"
             />
           </Link>
 
@@ -136,17 +136,17 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="w-6 h-6" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40">
-            <nav className="px-4 py-4 space-y-2">
+          <div className="lg:hidden top-full right-0 left-0 z-40 absolute bg-white shadow-lg border-gray-200 border-t">
+            <nav className="space-y-2 px-4 py-4">
               {navItems.map((item) => (
                 <div key={item.label}>
                   {item.subItems ? (
@@ -177,13 +177,13 @@ export default function Header() {
                         </button>
                       </div>
                       {openMobileSubMenu === item.label && (
-                        <div className="pl-4 mt-2 space-y-2 border-l-2 border-gray-200 ml-2">
+                        <div className="space-y-2 mt-2 ml-2 pl-4 border-gray-200 border-l-2">
                           {item.subItems.map((subItem) => (
                             <Link
                               key={subItem.label}
                               href={subItem.path}
                               onClick={handleNavClick}
-                              className="block text-sm font-semibold text-[#333] hover:text-[#4B1D92] py-1"
+                              className="block py-1 font-semibold text-[#333] hover:text-[#4B1D92] text-sm"
                             >
                               {subItem.label}
                             </Link>

@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-undef */
 import LandingSection from "@/components/common/LandingSection";
-import { useState, useEffect } from "react";
 
 export default function InnovativeDashboardsPage() {
   return (
@@ -8,8 +7,7 @@ export default function InnovativeDashboardsPage() {
       <LandingSection
         title={() => (
           <>
-            Innovative
-            <span className="text-[#4B1D92]">Dashboards</span>
+            Innovative <span className="text-[#4B1D92]">Dashboards</span>
           </>
         )}
         subtitle="Make smarter decisions, faster with Innovative Dashboards that turn complex data into clear, visual insights. Track performance, monitor Key Performing Indicators, and stay in control with real time analytics tailored to your business."

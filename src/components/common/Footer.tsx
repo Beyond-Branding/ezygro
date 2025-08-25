@@ -13,12 +13,9 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
   const [showCookieModal, setShowCookieModal] = useState(false);
 
   return (
-    <footer className="bg-gray-900 text-gray-400">
+    <footer className="bg-[#1e1e1e] text-gray-400">
       {showCareersContact && (
-        <div
-          className="mx-auto container"
-          style={{ backgroundColor: "#1e1e1e" }}
-        >
+        <div className="mx-auto container">
           <div className="ml-0 sm:ml-16 md:ml-32 lg:ml-44 px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
             <div className="gap-12 lg:gap-16 grid grid-cols-1 lg:grid-cols-2">
               {/* Careers Section */}
@@ -57,8 +54,8 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
       )}
       {/* Bottom Footer - Black Section */}
       <div className="bg-black">
-        <div className="mx-auto ml-0 sm:ml-16 md:ml-32 lg:ml-40 px-4 sm:px-6 lg:px-8 py-12">
-          <div className="gap-8 lg:gap-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto container">
+        <div className="mx-auto px-6 lg:py-12 container">
+          <div className="lg:gap-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto">
             {/* Tech Mahindra Logo */}
             <div
               className="flex items-center lg:col-span-1"
@@ -69,7 +66,6 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
                 alt="Tech Mahindra Logo"
                 className="mt-0 rounded w-auto h-24"
                 style={{
-                  marginTop: "-0.75rem",
                   filter: "brightness(0) invert(1)",
                 }}
               />
@@ -207,8 +203,8 @@ export default function Footer({ showCareersContact = true }: FooterProps) {
       </div>
       {/* Copyright Section */}
       <div className="bg-black border-gray-800 border-t">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 py-6 container">
-          <div className="flex lg:flex-row flex-col justify-between items-center mx-auto container">
+        <div className="mx-auto px-6 lg:px-12 py-6 container">
+          <div className="flex lg:flex-row flex-col justify-between items-center">
             <p className="mb-4 lg:mb-0 text-gray-400 text-sm">
               © 2025 EZYGRO Limited
             </p>

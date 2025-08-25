@@ -144,7 +144,7 @@ export default function SecretarialCompliancesPage() {
         <div className="items-center gap-8 md:gap-12 grid grid-cols-1 md:grid-cols-2 mx-auto px-4 px-6 lg:px-12 container">
           <div>
             <h2 className="sm:ml-8 md:ml-16 lg:ml-12 font-bold text-black text-3xl md:text-4xl">
-              Stay Compliant Stay Confident
+              Stay Compliant, <br /> Stay Confident
             </h2>
           </div>
           <div>

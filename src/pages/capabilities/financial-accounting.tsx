@@ -6,7 +6,7 @@ import LandingSection from "@/components/common/LandingSection";
 // A helper component for the checkmark symbol
 const CheckIcon = () => (
   <svg
-    className="w-6 h-6 text-green-500"
+    className="md:mx-auto ml-auto w-6 h-6 text-green-500"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -32,6 +32,9 @@ interface PlanFeature {
   returnFiling1: boolean;
   returnFiling2: boolean;
   reminders: boolean;
+  outstandingRecievable: string;
+  balanceSheetAndPC: string;
+  cashflow: string;
 }
 
 interface Plan {
@@ -69,6 +72,9 @@ const PricingTable = () => {
         returnFiling1: true,
         returnFiling2: true,
         reminders: true,
+        outstandingRecievable: "Monthly",
+        balanceSheetAndPC: "Monthly",
+        cashflow: "Quarterly",
       },
     },
     {
@@ -86,6 +92,9 @@ const PricingTable = () => {
         returnFiling1: true,
         returnFiling2: true,
         reminders: true,
+        outstandingRecievable: "Monthly",
+        balanceSheetAndPC: "Monthly",
+        cashflow: "❌",
       },
     },
     {
@@ -104,6 +113,9 @@ const PricingTable = () => {
         returnFiling1: true,
         returnFiling2: true,
         reminders: true,
+        outstandingRecievable: "Monthly",
+        balanceSheetAndPC: "Monthly",
+        cashflow: "❌",
       },
     },
   ];
@@ -126,6 +138,22 @@ const PricingTable = () => {
     { type: "check", key: "returnFiling1", label: "Return Filling 1B 3B" },
     { type: "check", key: "returnFiling2", label: "Return Filling 1B 3B" },
     { type: "check", key: "reminders", label: "Reminder E-Compliance Alert" },
+    { type: "category", label: "Financial Reporting" },
+    {
+      type: "data",
+      key: "outstandingRecievable",
+      label: "Outstanding Recievable and payable",
+    },
+    {
+      type: "data",
+      key: "balanceSheetAndPC",
+      label: "Balance Sheet and P&C",
+    },
+    {
+      type: "data",
+      key: "cashflow",
+      label: "Cashflow",
+    },
   ];
 
   // --- RENDER LOGIC ---
@@ -218,7 +246,7 @@ const PricingTable = () => {
                       {/* Mobile View */}
                       <div
                         className={`lg:hidden text-left ${
-                          row.type === "check"
+                          row.type === "check" || row.type === "data"
                             ? "flex justify-between items-center"
                             : ""
                         }`}
@@ -364,7 +392,7 @@ const FinancialReportingTable = () => {
 const AddOnTableSection = () => {
   const contactNumber = "+919372963906"; // <-- Replace with your real number
   const clickableTextClasses =
-    "bg-purple-900 text-white px-3 py-1 rounded hover:bg-purple-800";
+    "bg-purple-900 text-white px-3 py-1 rounded hover:bg-purple-800 block";
 
   const rows = [
     {
@@ -389,7 +417,7 @@ const AddOnTableSection = () => {
       id: 3,
       title: "TDS Compliance",
       price: (
-        <span className="text-gray-800">
+        <span className="block text-gray-800">
           Rs 2000/- per month will be added in your selected package
         </span>
       ),
@@ -425,34 +453,6 @@ const AddOnTableSection = () => {
 };
 
 export default function FinancialAndAccountingPage() {
-  const [scaleAtSpeedVisible, setScaleAtSpeedVisible] = useState(false);
-  const [promiseTextVisible, setPromiseTextVisible] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1024
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const scaleTimer = setTimeout(() => {
-      setScaleAtSpeedVisible(true);
-    }, 200);
-    const promiseTimer = setTimeout(() => {
-      setPromiseTextVisible(true);
-    }, 400);
-
-    return () => {
-      clearTimeout(scaleTimer);
-      clearTimeout(promiseTimer);
-    };
-  }, []);
-
   return (
     <>
       <LandingSection
@@ -502,11 +502,6 @@ export default function FinancialAndAccountingPage() {
             Price List
           </h2>
           <PricingTable />
-
-          {/* Financial Reporting Table */}
-          <div className="mt-16">
-            <FinancialReportingTable />
-          </div>
 
           {/* Add-On Table */}
           <div className="mt-16">

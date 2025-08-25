@@ -122,6 +122,8 @@ export default function VideCarousel() {
                     autoPlay
                     loop
                     muted
+                    playsInline
+                    controls={false} // React way
                   />
                 </div>
 
@@ -129,7 +131,9 @@ export default function VideCarousel() {
                 <div className="right-0 bottom-18 lg:bottom-24 left-0 absolute mx-auto text-white">
                   <div className="flex justify-between gap-6 mx-auto px-6 md:px-12 text-xl lg:text-4xl text-right container">
                     <div className="ml-auto lg:max-w-1/2">
-                      <h3>{videos.title}</h3>
+                      <h3 className="text-shadow-lg font-semibold">
+                        {videos.title}
+                      </h3>
                     </div>
                   </div>
                 </div>
