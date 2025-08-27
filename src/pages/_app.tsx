@@ -2,15 +2,25 @@ import CookieConsentBanner from "@/components/common/CookieConsentBanner";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import WhatsAppFloater from "@/components/common/WhatsAppFloater";
-import "@/styles/globals.css";
+import Aos from "aos";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
+
+import "@/styles/globals.css";
+import "aos/dist/aos.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const pathName = usePathname();
   const isHomePage = useMemo(() => pathName === "/", [pathName]);
+
+  /* Initialize AOS */
+  useEffect(() => {
+    Aos.init({
+      duration: 750,
+    });
+  }, []);
 
   return (
     <>
