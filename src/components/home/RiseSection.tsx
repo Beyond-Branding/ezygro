@@ -43,7 +43,7 @@ export default function RiseSection() {
           {/* Image */}
           <div className="rounded-lg w-full h-64 sm:h-80 md:h-96 lg:h-full overflow-hidden">
             <img
-              src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712260/grow_yjqi2b_n4odaf.jpg"
+              src="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603485/eixwtaq3tqptrm3cdcz8.jpg"
               alt="Misty mountains at sunrise, representing the 'RISE' philosophy"
               className="w-full h-full object-cover transition-transform duration-300 ease-out"
               style={{ transform: `scale(${scale})` }}

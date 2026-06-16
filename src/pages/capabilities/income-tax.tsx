@@ -39,7 +39,7 @@ export default function IncomeTaxPage() {
           </>
         )}
         subtitle="Stay worry free with end-to-end support for Income Tax, GST, and Audits. From accurate filings to smooth assessments, we ensure your business stays compliant, efficient, and audit-ready at every step."
-        media="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712251/2_smojod_md88lf.jpg"
+        media="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603505/eq4uomcnkwtxvvp5kwce.jpg"
       />
 
       <section className="bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16">

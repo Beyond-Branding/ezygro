@@ -137,7 +137,7 @@ export default function SecretarialCompliancesPage() {
           </>
         )}
         subtitle="Ensure smooth governance with complete Secretarial Compliance services. From MCA filings to board meeting documentation, we help you stay legally sound and effortlesslycompliant."
-        media="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712255/6_c7rl1n_h4r5tf.jpg"
+        media="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603504/oaenzumyaegafdumu1au.jpg"
       />
 
       <section className="bg-white py-16 md:py-20">

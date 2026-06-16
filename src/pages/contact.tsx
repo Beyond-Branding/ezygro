@@ -70,12 +70,14 @@ export default function ContactUsPage({
 
         <div className="items-center gap-16 grid grid-cols-1 md:grid-cols-2 mb-16 w-full">
           <div className="bg-gray-200 shadow-lg rounded-lg w-full h-[50vh] md:h-full min-h-[500px] overflow-hidden">
-            <Map
-              position={[
-                contactDetails.geoPoint.lat,
-                contactDetails.geoPoint.lng,
-              ]}
-            />
+            {contactDetails?.geoPoint && (
+              <Map
+                position={[
+                  contactDetails.geoPoint.lat,
+                  contactDetails.geoPoint.lng,
+                ]}
+              />
+            )}
           </div>
 
           <div className="flex flex-col space-y-8 text-left">

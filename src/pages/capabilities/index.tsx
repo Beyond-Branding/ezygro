@@ -16,7 +16,7 @@ export default function CapabilitiesPage() {
       id: 1,
       title: "Financial and Accounting Management",
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712263/financial_ggjj6g_wrcnjb.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603485/xczmtrbe2pkolzu9wjhl.jpg",
       link: "/financial-accounting",
     },
     {
@@ -27,14 +27,14 @@ export default function CapabilitiesPage() {
         </>
       ),
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Incometax_vzg8fz_z4zq0v.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603487/ddzdn2zskynkjzuwgmoq.jpg",
       link: "/income-tax",
     },
     {
       id: 3,
       title: "Virtual CFO and Business Growth Consultancy",
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712267/Virtual_cfo_vup51w_yewvcl.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603499/tsifig2rnu5n0s5lsjgf.jpg",
       link: "/virtual-cfo",
     },
     {
@@ -45,14 +45,14 @@ export default function CapabilitiesPage() {
         </>
       ),
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712262/Dashboards_trcrbv_lduln5.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603483/kdlecoghxrl8rs5jhjc4.jpg",
       link: "/innovative-dashboards",
     },
     {
       id: 5,
       title: "Loans, Insurance and Investments",
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Loans_x8mwb3_olsmcz.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603489/u5rrxcsqyan2mggjn8sa.jpg",
       link: "/loans-insurance",
     },
     {
@@ -63,7 +63,7 @@ export default function CapabilitiesPage() {
         </>
       ),
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Secretorial_compliances_y3onhw_d2irdk.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603497/pmivnnigs7s29jsquuem.jpg",
       link: "/secretarial-compliances",
     },
   ];
@@ -158,7 +158,7 @@ export default function CapabilitiesPage() {
           </>
         )}
         subtitle="At EZYGRO, we turn smart plans into smoother journeys no stress, just results."
-        media="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712260/capabilities_kmmqcl_won66l.jpg"
+        media="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603481/esukyeooi7lkwq6fiddq.jpg"
       />
 
       {/* Capabilities Cards Section - now outside and below the first section */}

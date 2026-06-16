@@ -104,7 +104,7 @@ export default function TechMahindraSection() {
           <div className="absolute inset-0">
             <video
               className="w-full h-full object-cover"
-              src="https://res.cloudinary.com/daoju0r3c/video/upload/v1753712257/7_unfk2r_yvkvq8.mp4"
+              src="https://res.cloudinary.com/dt6hlbtfo/video/upload/v1781603527/wsymodr2ufhxhjojuf8s.mp4"
               autoPlay
               loop
               muted

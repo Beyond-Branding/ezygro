@@ -11,7 +11,7 @@ export default function InnovativeDashboardsPage() {
           </>
         )}
         subtitle="Make smarter decisions, faster with Innovative Dashboards that turn complex data into clear, visual insights. Track performance, monitor Key Performing Indicators, and stay in control with real time analytics tailored to your business."
-        media="https://res.cloudinary.com/daoju0r3c/image/upload/v1754332932/computer-767776_960_720_fi5unh.jpg"
+        media="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603482/e6fblh8el3zvunpqkscq.jpg"
       />
 
       <section className="bg-white py-12 sm:py-16">

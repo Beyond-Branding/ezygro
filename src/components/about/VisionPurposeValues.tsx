@@ -16,21 +16,21 @@ export default function VisionPurposeValues() {
       title: "Vision",
       text: "At EZYGRO, our vision is to become a trusted partner in simplifying compliance and empowering growth.",
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712265/vission_c61zwo_pjl6j8.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603499/omnexiismqupabghf8c3.jpg",
     },
     {
       key: "purpose",
       title: "Purpose",
       text: "Our purpose is to deliver transparent, reliable, and client-focused solutions.",
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712264/values_clz3jp_rkz6ix.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603498/uxe3opnmnwvskfi8x2eu.jpg",
     },
     {
       key: "values",
       title: "Value",
       text: "Guided by our core values integrity, accountability, and excellence we build lasting relationships and drive meaningful impact.",
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712263/mission_bbmkfq_ctoz4k.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603489/wqzkuqu5xaku1uouj1xm.jpg",
     },
   ];
 
