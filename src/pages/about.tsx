@@ -122,7 +122,7 @@ const AboutUs = () => {
           </>
         )}
         subtitle="We believe We have the power to revolutionize financial services and uplift communities across the globe."
-        media="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712259/aboutus_uqobbt_duyker.jpg"
+        media="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603504/ouqateooqfpxlruw7wyv.jpg"
       />
 
       <section className="bg-white py-8 sm:py-10 md:py-12 lg:py-16 xl:py-24 overflow-hidden">
@@ -164,7 +164,7 @@ const AboutUs = () => {
             </div>
             <div className="rounded-lg w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-full overflow-hidden">
               <img
-                src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712259/aboutus2_xazpd2_xjnxqj.jpg"
+                src="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603480/odaoitsz9rx39jlucm7k.jpg"
                 alt="Mahindra Group - Modern office building representing innovation and growth"
                 className="w-full h-full object-cover transition-transform duration-300 ease-out"
                 style={{ transform: `scale(1.05)` }}

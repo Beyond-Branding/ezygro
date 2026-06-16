@@ -34,7 +34,7 @@ const CapabilitiesSection: React.FC = () => {
       title: () => <>Financial and Accounting Management</>,
       icon: <Building2 className="w-8 h-8" />,
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712263/financial_ggjj6g_wrcnjb.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603485/xczmtrbe2pkolzu9wjhl.jpg",
       description:
         "Digital transformation solutions for financial institutions",
       link: "/capabilities/financial-accounting",
@@ -48,7 +48,7 @@ const CapabilitiesSection: React.FC = () => {
       ),
       icon: <Phone className="w-8 h-8" />,
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Incometax_vzg8fz_z4zq0v.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603487/ddzdn2zskynkjzuwgmoq.jpg",
       description: "Next-generation communication technologies and solutions",
       link: "/capabilities/income-tax",
     },
@@ -57,7 +57,7 @@ const CapabilitiesSection: React.FC = () => {
       title: () => "Virtual CFO and Business Growth Consultancy",
       icon: <Zap className="w-8 h-8" />,
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712267/Virtual_cfo_vup51w_yewvcl.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603499/tsifig2rnu5n0s5lsjgf.jpg",
       description: "Smart grid and renewable energy solutions",
       link: "/capabilities/virtual-cfo",
     },
@@ -70,7 +70,7 @@ const CapabilitiesSection: React.FC = () => {
       ),
       icon: <Shield className="w-8 h-8" />,
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712262/Dashboards_trcrbv_lduln5.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603483/kdlecoghxrl8rs5jhjc4.jpg",
       description: "Healthcare technology and digital health solutions",
       link: "/capabilities/innovative-dashboards",
     },
@@ -79,7 +79,7 @@ const CapabilitiesSection: React.FC = () => {
       title: () => "Loans, Insurance and Investments",
       icon: <Factory className="w-8 h-8" />,
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Loans_x8mwb3_olsmcz.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603489/u5rrxcsqyan2mggjn8sa.jpg",
       description: "Industry 4.0 and smart manufacturing solutions",
       link: "/capabilities/loans-and-insurance",
     },
@@ -92,7 +92,7 @@ const CapabilitiesSection: React.FC = () => {
       ),
       icon: <Plane className="w-8 h-8" />,
       image:
-        "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712266/Secretorial_compliances_y3onhw_d2irdk.jpg",
+        "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603497/pmivnnigs7s29jsquuem.jpg",
       description: "Digital transformation for travel and logistics",
       link: "/capabilities/secretarial-compliances",
     },

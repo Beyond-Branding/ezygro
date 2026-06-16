@@ -9,35 +9,35 @@ const videos = [
     title:
       "Empowering Growth with Every Number We don’t just file and finish we plan, guide, and grow with you. EZYGRO turns boring numbers into bold moves.",
     videoUrl:
-      "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712267/1_bhjviq_jwrrjy.mp4",
+      "https://res.cloudinary.com/dt6hlbtfo/video/upload/v1781603511/hwdzudwyjrunhgiym38d.mp4",
   },
   {
     id: 2,
     title:
       "Driven by Precision. Backed by Ethics. Sharp minds, honest hands. With EZYGRO, you get advice that’s smart, clear, and always has your back.",
     videoUrl:
-      "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712267/2_sv5b42_ht3gsl.mp4",
+      "https://res.cloudinary.com/dt6hlbtfo/video/upload/v1781603513/ugelm9xckk9yhxycn0fk.mp4",
   },
   {
     id: 3,
     title:
       "Simplifying Compliance, Amplifying Success Legal forms? Tax chaos? Leave that to us. EZYGRO makes the tough stuff simple, so you can focus on winning.",
     videoUrl:
-      "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712266/3_zlm6td_edeloy.mp4",
+      "https://res.cloudinary.com/dt6hlbtfo/video/upload/v1781603517/pr8a391nfouygc97hgzg.mp4",
   },
   {
     id: 4,
     title:
       "Your Partner in Professional Progress Every business needs a solid support system. EZYGRO walks with you through paperwork, plans, and big dreams.",
     videoUrl:
-      "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712259/4_xdzdvi_s9wvb0.mp4",
+      "https://res.cloudinary.com/dt6hlbtfo/video/upload/v1781603527/wsymodr2ufhxhjojuf8s.mp4",
   },
   {
     id: 5,
     title:
       "Where Strategy Meets Service Smart ideas are nothing without action. At EZYGRO, we turn smart plans into smoother journeys no stress, just results.",
     videoUrl:
-      "https://res.cloudinary.com/daoju0r3c/video/upload/v1753712257/6_ycd4gn_sjsntq.mp4",
+      "https://res.cloudinary.com/dt6hlbtfo/video/upload/v1781603531/nbdypiwdjtwkjnx5nwwc.mp4",
   },
 ];
 

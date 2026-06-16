@@ -6,112 +6,112 @@ const INDUSTRIES_DATA = [
     title: "Pharma",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756291411/pexels-karolina-grabowska-4021811_monxhi_1_h5rsso.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603190/tvgsmclezgwgaxjqiru9.jpg",
   },
   {
     id: "retail",
     title: "Retail",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756291546/pexels-asphotograpy-230544_ns9kr7_1_uw1qjv.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603190/odxgnfdadi8hzuvbrd0r.jpg",
   },
   {
     id: "real-estate",
     title: "Real Estate & Infrastructure",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756291605/pexels-field-engineer-147254-442150_r9zsru_1_ihvglg.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603191/rbgr7iuejfeimcnuilaj.jpg",
   },
   {
     id: "it",
     title: "Information Technology",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756291787/pexels-cytonn-955402_hfgkbw_1_b4ys6p.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603191/n7dc6xnb0uirprnvvqjw.jpg",
   },
   {
     id: "banking",
     title: "Banking, Finance & Investment Insurance",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756291831/pexels-artempodrez-5716032_k5s94h_1_shh6zo.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603190/a7uyxrlsh7lwa3eystbm.jpg",
   },
   {
     id: "telecom",
     title: "Telecom",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756291876/pexels-tuichupanh-32779161_dwefsm_nk1ev6_1_cj91xi.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603192/wljqzwr3ph6fix4jfpc3.jpg",
   },
   {
     id: "hospitality",
     title: "Hospitality & Leisure",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756291922/pexels-nubikini-386009_lrntht_ezoyyd_1_me3igb.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603191/h0lcgyq1psiyeozn3a7a.jpg",
   },
   {
     id: "fmcg",
     title: "FMCG",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756292002/pexels-freestocks-1366594_byxpvw_u8vbpg_1_1_kejdpt.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603191/wpkiq04uysiyow7cefrq.jpg",
   },
   {
     id: "automotive",
     title: "Automotive",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756292041/pexels-pixabay-417018_bllqjy_zg6z66_1_ke4nl4.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603192/xerlnsnmzfkoqywq8gor.jpg",
   },
   {
     id: "food-beverage",
     title: "Food & Beverage",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756292089/pexels-miff-ibra-387362143-32824086_wckbad_mdcv6f_1_jp0yfq.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603191/slfl5v7m13vtp94c36oq.jpg",
   },
   {
     id: "advertising",
     title: "Advertising",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756292129/pexels-meganbucknall-2448522_etgfdh_uodptf_1_rlgald.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603191/tjf8jb9nilxylrr6u8ct.jpg",
   },
   {
     id: "healthcare",
     title: "Health Care",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756292163/pexels-pixabay-356040_mke2cx_uw4yhh_1_gdw1uh.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603192/tiv93jkrbvc2rkhsc1y7.jpg",
   },
   {
     id: "apparel",
     title: "Apparel & Accessories",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756292202/pexels-arina-krasnikova-5418889_dtyvzu_rn7ymt_1_b6wuri.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603191/hedn9xgccgen9muuhk6v.jpg",
   },
   {
     id: "call-centers",
     title: "Call Centers",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756292247/pexels-shkrabaanthony-7971724_q7qzz4_bcqzft_1_bwziaa.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603192/iu2mvhfhezrp6diikhjq.jpg",
   },
   {
     id: "consumer-industrial",
     title: "Consumer and Industrial Products",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1753712251/pexels-shkrabaanthony-5486124_hlyjhp_l4vppj.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603192/ky1sob2chsyc5t2xhfey.jpg",
   },
   {
     id: "educational",
     title: "Educational Institutions",
     link: "#",
     imageUrl:
-      "https://res.cloudinary.com/daoju0r3c/image/upload/v1756292340/pexels-ivan-samkov-5676736_yheiaz_tg30uc_1_qmowag.jpg",
+      "https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603191/u6ynwwlkvyon2glsbcwm.jpg",
   },
 ];
 

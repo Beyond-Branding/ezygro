@@ -467,7 +467,7 @@ export default function FinancialAndAccountingPage() {
           </>
         )}
         subtitle="Effortless finances, empowered growth Financial & Accounting Management that blends accuracy, compliance, and clarity. From smart bookkeeping to insightful reporting, it's everything your business needs to stay ahead, without the hassle."
-        media="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712253/5_tkrtos_das1jy.jpg"
+        media="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603504/qmfocpe7rjuog36b6hth.jpg"
       />
 
       <section className="bg-white px-4 py-8 sm:py-12 md:py-16">

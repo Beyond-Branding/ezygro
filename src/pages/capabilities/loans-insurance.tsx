@@ -41,7 +41,7 @@ export default function LoansAndInsurancePage() {
           </>
         )}
         subtitle="Access the right financial tools with our expert support in Loans, Insurance, and Investments. Whether it’s securing capital, protecting assets, or growing wealth we help you make informed, confident choices."
-        media="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712250/3_xsrqe2_vnrna4.jpg"
+        media="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603502/jtm2lygywd8l99wrkyks.jpg"
       />
 
       <section className="bg-white py-12 sm:py-16">

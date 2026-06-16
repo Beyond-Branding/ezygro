@@ -188,7 +188,7 @@ export default function VirtualCFOPage() {
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/daoju0r3c/image/upload/v1753712260/4_zxvwta_lggmol.jpg"
+                  src="https://res.cloudinary.com/dt6hlbtfo/image/upload/v1781603504/ouqateooqfpxlruw7wyv.jpg"
                   alt="About Us"
                   className="w-full h-full object-cover opacity-"
                 />
